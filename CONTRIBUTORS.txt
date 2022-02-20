@@ -9,3 +9,5 @@
 # they accept any liabilities with respect to them.
 
 - Rafael Corchuelo (corchu@us.es)
+- Javier Grosso Gomez de Terreros (javgrogom@alum.us.es)
+- Jesús Roldán Cadena (jesrolcad@alum.us.es)
