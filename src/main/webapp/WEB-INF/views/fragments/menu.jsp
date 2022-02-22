@@ -23,7 +23,7 @@
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-javier" action="https://www.nintendo.es/"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-jesus" action="http://www.vamosmisevilla.com/"/>
 		</acme:menu-option>
- 
+
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
 			<acme:menu-suboption code="master.menu.administrator.user-accounts" action="/administrator/user-account/list"/>
 			<acme:menu-separator/>
