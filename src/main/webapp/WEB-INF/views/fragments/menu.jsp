@@ -19,9 +19,13 @@
 <acme:menu-bar code="master.menu.home">
 	<acme:menu-left>
 		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
+			<acme:menu-suboption code="master.menu.anonymous.favourite-link-julia" action="https://this-person-does-not-exist.com/es"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-pablo" action="https://www.marca.com/"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-javier" action="https://www.nintendo.es/"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-jesus" action="http://www.vamosmisevilla.com/"/>
+			<acme:menu-suboption code="master.menu.anonymous.favourite-link-alejandro" action="https://www.youtube.com/watch?v=IfAcrSwaeU0"/>
+			<acme:menu-suboption code="master.menu.anonymous.favourite-link-roman" action="https://www.youtube.com/watch?v=gdsUKphmB3Y&ab_channel=NFL"/>
+			
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
