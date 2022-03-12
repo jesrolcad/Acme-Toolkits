@@ -45,19 +45,5 @@ public class Toolkit extends AbstractEntity {
 	protected String optionalLink;
 	
 	
-	//No tocar, esta pendiente de hablarse en la reunion sobre el UML del sabado
-	//Ahora no funcionaria, es leftcode
-	//Relations with other entities
-//	//Many to one with component
-//	@NotNull
-//	@Valid
-//	@OneToMany(mappedBy="code")
-//	protected List<Component> component;
-	
-	//One to one with toolEntity
-//	@NotNull
-//	@Valid
-//	@OneToOne(optional=false, mappedBy="code")
-//	protected ToolEntity toolEntity;
-	
+
 }
