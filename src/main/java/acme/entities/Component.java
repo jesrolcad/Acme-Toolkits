@@ -15,7 +15,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Component extends Artefacto{
+public class Component extends Artefact{
 	
 /**
 	 * 
