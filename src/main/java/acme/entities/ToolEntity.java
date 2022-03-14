@@ -8,6 +8,7 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
+import acme.framework.datatypes.Money;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -23,7 +24,7 @@ public class ToolEntity extends Artefacto {
 	
 	//a retail price (zero or positive), 
 	@Min(0)
-	protected Double retailPrice;
+	protected Money retailPrice;
 	
 	@Column(unique = true)
 	@Pattern(regexp="^[A-Z]{3}-[0-9]{3}(-[A-Z])?$")
