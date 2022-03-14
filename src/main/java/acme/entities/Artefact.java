@@ -13,7 +13,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Artefacto extends AbstractEntity {
+public class Artefact extends AbstractEntity {
 
 	/**
 	 * 

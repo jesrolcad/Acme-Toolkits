@@ -8,13 +8,14 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Positive;
 
+import acme.framework.datatypes.Money;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-public class Component extends Artefacto{
+public class Component extends Artefact{
 	
 /**
 	 * 
@@ -23,7 +24,7 @@ public class Component extends Artefacto{
 
 // a retail price (positive)
 	@Positive
-	protected Double retailPrice;
+	protected Money retailPrice;
 	
 	@Column(unique = true)
 	@Pattern(regexp="^[A-Z]{3}-[0-9]{3}(-[A-Z])?$")
