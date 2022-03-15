@@ -1,4 +1,4 @@
-package acme.features.patron.dashboard;
+package acme.features.patronage.dashboard;
 
 import javax.annotation.PostConstruct;
 
@@ -6,18 +6,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import acme.forms.PatronDashboard;
+import acme.forms.PatronageDashboard;
 import acme.framework.controllers.AbstractController;
 import acme.framework.roles.Administrator;
 
 @Controller
 @RequestMapping("/administrator/dashboard/")
-public class PatronDashboardController extends AbstractController<Administrator, PatronDashboard> {
+public class PatronageDashboardController extends AbstractController<Administrator, PatronageDashboard> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected PatronDashboardShowService showService;
+	protected PatronageDashboardShowService showService;
 
 	// Constructors -----------------------------------------------------------
 

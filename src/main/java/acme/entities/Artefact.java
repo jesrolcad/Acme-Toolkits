@@ -27,7 +27,7 @@ public class Artefact extends AbstractEntity {
 	
 	@NotBlank
 	@Length(max=101)
-	protected String technology;
+	protected String b;
 	
 	@NotBlank
 	@Length(max=256)

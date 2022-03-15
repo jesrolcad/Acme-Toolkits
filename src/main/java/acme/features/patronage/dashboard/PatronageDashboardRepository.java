@@ -1,4 +1,4 @@
-package acme.features.patron.dashboard;
+package acme.features.patronage.dashboard;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
-public interface PatronDashboardRepository extends AbstractRepository {
+public interface PatronageDashboardRepository extends AbstractRepository {
 
 	@Query ("select count(p) from Patronage p where p.status = PROPOSED")
 	Integer totalNumberOfProposedPatronages();
@@ -100,18 +100,5 @@ public interface PatronDashboardRepository extends AbstractRepository {
 	@Query ("select min(p) from Patronage p where p.status = DENIED and p.budget.currency==GBP")
 	Integer minPatronageDeniedGBP();
 
-//	@Query ("select count(t) from Task t where t.executionPeriodEnd > CURRENT_TIMESTAMP")
-//	Integer totalNumberOfNonFinishedTasks();
-//	@Query("select avg(datediff(t.executionPeriodEnd,t.executionPeriodInit)) from Task t")
-//	Double averageTaskExecutionPeriods();
-//	@Query ("select stddev(datediff(t.executionPeriodInit, t.executionPeriodEnd)) from Task t")
-//	Double deviationTaskExecutionPeriods();
-//
-//	@Query ("select min(datediff(t.executionPeriodEnd,t.executionPeriodInit)) from Task t")
-//	Double minimumTaskExecutionPeriods();
-
-//	@Query ("select max(datediff(t.executionPeriodEnd,t.executionPeriodInit)) from Task t")
-//	Double maximumTaskExecutionPeriods();
-//	@Query ("select t from Task t")
-//	List<Task> allTasks();
+ 
 }
