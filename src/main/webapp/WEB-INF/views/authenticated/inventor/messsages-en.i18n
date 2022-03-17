@@ -13,7 +13,7 @@ authenticated.inventor.inventor.form.title.update = Update your worker data
 
 authenticated.inventor.inventor.form.label.company = Company
 authenticated.inventor.inventor.form.label.statement = Statement
-authenticated.inventor.inventor.form.label.email = Email
+authenticated.inventor.inventor.form.label.link = Link
 
 authenticated.inventor.inventor.form.button.create = Register
 authenticated.inventor.inventor.form.button.update = Update

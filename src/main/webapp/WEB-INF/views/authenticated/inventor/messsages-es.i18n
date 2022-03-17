@@ -13,7 +13,7 @@ authenticated.inventor.inventor.form.title.update = Actualiza tus datos de traba
 
 authenticated.inventor.inventor.form.label.compañía = Compañía
 authenticated.inventor.inventor.form.label.statement = Declaración
-authenticated.inventor.inventor.form.label.email = Email
+authenticated.inventor.inventor.form.label.link = Enlace
 
 authenticated.inventor.inventor.form.button.create = Registrar
 authenticated.inventor.inventor.form.button.update = Actualizar

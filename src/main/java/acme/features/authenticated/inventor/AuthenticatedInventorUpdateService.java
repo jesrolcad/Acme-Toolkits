@@ -56,7 +56,7 @@ public class AuthenticatedInventorUpdateService implements AbstractUpdateService
 		assert entity != null;
 		assert errors != null;
 
-		request.bind(entity, errors, "company", "statement", "email");
+		request.bind(entity, errors, "company", "statement", "link");
 	}
 
 	@Override
@@ -65,7 +65,7 @@ public class AuthenticatedInventorUpdateService implements AbstractUpdateService
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "company", "statement", "email");
+		request.unbind(entity, model, "company", "statement", "link");
 	}
 
 	@Override

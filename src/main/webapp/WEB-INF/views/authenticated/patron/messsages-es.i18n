@@ -13,7 +13,7 @@ authenticated.patron.patron.form.title.update = Actualiza tus datos de trabajado
 
 authenticated.patron.patron.form.label.compañía = Compañía
 authenticated.patron.patron.form.label.statement = Declaración
-authenticated.patron.patron.form.label.email = Email
+authenticated.patron.patron.form.label.link = Enlace
 
 authenticated.patron.patron.form.button.create = Registrar
 authenticated.patron.patron.form.button.update = Actualizar
