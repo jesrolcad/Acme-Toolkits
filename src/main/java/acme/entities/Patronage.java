@@ -12,6 +12,7 @@
 package acme.entities;
 
 
+
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -23,6 +24,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
+
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
@@ -56,6 +58,7 @@ public class Patronage extends AbstractEntity {
 	@Length(max = 256)
 	protected String 			legalStuff;
 	
+
 	@Valid
 	protected Money				budget;
 	
@@ -65,6 +68,7 @@ public class Patronage extends AbstractEntity {
 	
 	@Temporal(TemporalType.TIMESTAMP)
 	@NotNull
+
 	protected Date				endDate;
 	
 	@URL
