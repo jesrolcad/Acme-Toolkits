@@ -37,10 +37,6 @@ public class Announcement extends AbstractEntity {
 	@NotBlank
 	protected String			title;
 
-	@Length(max = 101)
-	@NotBlank
-	protected String			author;
-
 	@Length(max = 256)
 	@NotBlank
 	protected String			body;
