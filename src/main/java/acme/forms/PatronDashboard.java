@@ -7,7 +7,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class PatronageDashboard implements Serializable {
+public class PatronDashboard implements Serializable {
 
 	// Serialisation identifier -----------------------------------------------
 

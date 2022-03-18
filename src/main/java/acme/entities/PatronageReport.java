@@ -1,14 +1,17 @@
-
 package acme.entities;
+
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
+import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
@@ -20,7 +23,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Announcement extends AbstractEntity {
+public class PatronageReport extends AbstractEntity {
 
 	// Serialisation identifier -----------------------------------------------
 
@@ -28,27 +31,27 @@ public class Announcement extends AbstractEntity {
 
 	// Attributes -------------------------------------------------------------
 
+	@Pattern(regexp = "^<[A-Z]{3}-[0-9]{3}(-[A-Z])?:[0-9]{4,6}>$")
+	@Column(unique = true)
+	protected String			sequenceNumber;
+	
 	@Temporal(TemporalType.TIMESTAMP)
 	@Past
 	@NotNull
-	protected Date				moment;
-
-	@Length(max = 101)
-	@NotBlank
-	protected String			title;
-
-	@Length(max = 256)
-	@NotBlank
-	protected String			body;
+	protected Date				creationMoment;
 	
-	@NotNull
-	protected Boolean			critical;
+	@NotBlank
+	@Length(max = 256)
+	protected String 			memorandum;
 	
 	@URL
-	protected String			info;
-
+	protected String			link;
+	
 	// Derived attributes -----------------------------------------------------
 
+	
 	// Relationships ----------------------------------------------------------
-
+	@JoinColumn(name = "patronageId", referencedColumnName = "id")
+	protected Patronage			patronage;
+	
 }

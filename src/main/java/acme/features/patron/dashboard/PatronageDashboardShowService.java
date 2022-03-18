@@ -1,16 +1,16 @@
-package acme.features.patronage.dashboard;
+package acme.features.patron.dashboard;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.forms.PatronageDashboard;
+import acme.forms.PatronDashboard;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.roles.Administrator;
 import acme.framework.services.AbstractShowService;
 
 @Service
-public class PatronageDashboardShowService implements AbstractShowService<Administrator, PatronageDashboard> {
+public class PatronageDashboardShowService implements AbstractShowService<Administrator, PatronDashboard> {
 
 
 	@Autowired
@@ -19,14 +19,14 @@ public class PatronageDashboardShowService implements AbstractShowService<Admini
 
 
 	@Override
-	public boolean authorise(final Request<PatronageDashboard> request) {
+	public boolean authorise(final Request<PatronDashboard> request) {
 		assert request != null;
 
 		return true;
 	}
 
 	@Override
-	public void unbind(final Request<PatronageDashboard> request, final PatronageDashboard entity, final Model model) {
+	public void unbind(final Request<PatronDashboard> request, final PatronDashboard entity, final Model model) {
 		assert request != null;
 		assert entity != null;
 		assert model != null;
@@ -48,10 +48,10 @@ public class PatronageDashboardShowService implements AbstractShowService<Admini
 	}
 
 	@Override
-	public PatronageDashboard findOne(final Request<PatronageDashboard> request) {
+	public PatronDashboard findOne(final Request<PatronDashboard> request) {
 		assert request != null;
 
-		PatronageDashboard result;
+		PatronDashboard result;
 		 Integer totalNumberOfProposedPatronages;
 		 Integer totalNumberOfAccepedPatronages;
 		 Integer totalNumberOfDeniedPatronages;
@@ -104,7 +104,7 @@ public class PatronageDashboardShowService implements AbstractShowService<Admini
 		 Double minBudgetPatronageDeniedUSD;
 		 Double minBudgetPatronageDeniedGBP;
 
-		result = new PatronageDashboard();
+		result = new PatronDashboard();
 
 		return result;
 	}
