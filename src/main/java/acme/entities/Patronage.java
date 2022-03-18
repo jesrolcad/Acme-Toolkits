@@ -12,12 +12,10 @@
 package acme.entities;
 
 
-import java.sql.Date;
+
+import java.util.Date;
 
 import javax.persistence.Column;
-
-
-
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.Temporal;
@@ -26,7 +24,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
-import javax.validation.constraints.PositiveOrZero;
+
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
@@ -60,14 +58,17 @@ public class Patronage extends AbstractEntity {
 	@Length(max = 256)
 	protected String 			legalStuff;
 	
-	@PositiveOrZero
+
 	@Valid
 	protected Money				budget;
 	
-	@Temporal(TemporalType.DATE)
+	@Temporal(TemporalType.TIMESTAMP)
+	@NotNull
 	protected Date				startDate;
 	
-	@Temporal(TemporalType.DATE)
+	@Temporal(TemporalType.TIMESTAMP)
+	@NotNull
+
 	protected Date				endDate;
 	
 	@URL
