@@ -56,53 +56,53 @@ public class PatronageDashboardShowService implements AbstractShowService<Admini
 		 Integer totalNumberOfAccepedPatronages;
 		 Integer totalNumberOfDeniedPatronages;
 		 
-		 Integer deviationBudgetPatronageProposedEUR;
-		 Integer deviationBudgetPatronageProposedUSD;
-		 Integer deviationBudgetPatronageProposedGBP;
+		 Double deviationBudgetPatronageProposedEUR;
+		 Double deviationBudgetPatronageProposedUSD;
+		 Double deviationBudgetPatronageProposedGBP;
 		 
-		 Integer deviationBudgetPatronageAcceptedEUR;
-		 Integer deviationBudgetPatronageAcceptedUSD;
-		 Integer deviationBudgetPatronageAcceptedGBP;
+		 Double deviationBudgetPatronageAcceptedEUR;
+		 Double deviationBudgetPatronageAcceptedUSD;
+		 Double deviationBudgetPatronageAcceptedGBP;
 		 
-		 Integer deviationBudgetPatronageDeniedEUR;
-		 Integer deviationBudgetPatronageDeniedUSD;
-		 Integer deviationBudgetPatronageDeniedGBP;
+		 Double deviationBudgetPatronageDeniedEUR;
+		 Double deviationBudgetPatronageDeniedUSD;
+		 Double deviationBudgetPatronageDeniedGBP;
 		 
-		 Integer averageBudgetPatronageProposedEUR;
-		 Integer averageBudgetPatronageProposedUSD;
-		 Integer averageBudgetPatronageProposedGBP;
+		 Double averageBudgetPatronageProposedEUR;
+		 Double averageBudgetPatronageProposedUSD;
+		 Double averageBudgetPatronageProposedGBP;
 		 
-		 Integer averageBudgetPatronageAcceptedEUR;
-		 Integer averageBudgetPatronageAcceptedUSD;
-		 Integer averageBudgetPatronageAcceptedGBP;
+		 Double averageBudgetPatronageAcceptedEUR;
+		 Double averageBudgetPatronageAcceptedUSD;
+		 Double averageBudgetPatronageAcceptedGBP;
 		 
-		 Integer averageBudgetPatronageDeniedEUR;
-		 Integer averageBudgetPatronageDeniedUSD;
-		 Integer averageBudgetPatronageDeniedGBP;
+		 Double averageBudgetPatronageDeniedEUR;
+		 Double averageBudgetPatronageDeniedUSD;
+		 Double averageBudgetPatronageDeniedGBP;
 		 
-		 Integer maxBudgetPatronageProposedEUR;
-		 Integer maxBudgetPatronageProposedUSD;
-		 Integer maxBudgetPatronageProposedGBP;
+		 Double maxBudgetPatronageProposedEUR;
+		 Double maxBudgetPatronageProposedUSD;
+		 Double maxBudgetPatronageProposedGBP;
 		 
-		 Integer maxBudgetPatronageAcceptedEUR;
-		 Integer maxBudgetPatronageAcceptedUSD;
-		 Integer maxBudgetPatronageAcceptedGBP;
+		 Double maxBudgetPatronageAcceptedEUR;
+		 Double maxBudgetPatronageAcceptedUSD;
+		 Double maxBudgetPatronageAcceptedGBP;
 		 
-		 Integer maxBudgetPatronageDeniedEUR;
-		 Integer maxBudgetPatronageDeniedUSD;
-		 Integer maxBudgetPatronageDeniedGBP;
+		 Double maxBudgetPatronageDeniedEUR;
+		 Double maxBudgetPatronageDeniedUSD;
+		 Double maxBudgetPatronageDeniedGBP;
 		 
-		 Integer minBudgetPatronageProposedEUR;
-		 Integer minBudgetPatronageProposedUSD;
-		 Integer minBudgetPatronageProposedGBP;
+		 Double minBudgetPatronageProposedEUR;
+		 Double minBudgetPatronageProposedUSD;
+		 Double minBudgetPatronageProposedGBP;
 		 
-		 Integer minBudgetPatronageAcceptedEUR;
-		 Integer minBudgetPatronageAcceptedUSD;
-		 Integer minBudgetPatronageAcceptedGBP;
+		 Double minBudgetPatronageAcceptedEUR;
+		 Double minBudgetPatronageAcceptedUSD;
+		 Double minBudgetPatronageAcceptedGBP;
 		 
-		 Integer minBudgetPatronageDeniedEUR;
-		 Integer minBudgetPatronageDeniedUSD;
-		 Integer minBudgetPatronageDeniedGBP;
+		 Double minBudgetPatronageDeniedEUR;
+		 Double minBudgetPatronageDeniedUSD;
+		 Double minBudgetPatronageDeniedGBP;
 
 		result = new PatronageDashboard();
 

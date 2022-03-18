@@ -9,96 +9,96 @@ import acme.framework.repositories.AbstractRepository;
 public interface PatronageDashboardRepository extends AbstractRepository {
 
 	@Query ("select count(p) from Patronage p where p.status = PROPOSED")
-	Integer totalNumberOfProposedPatronages();
+	Double totalNumberOfProposedPatronages();
 	@Query ("select count(p) from Patronage p where p.status = ACCEPTED")
-	Integer totalNumberOfAccepedPatronages();
+	Double totalNumberOfAccepedPatronages();
 	@Query ("select count(p) from Patronage p where p.status = DENIED")
-	Integer totalNumberOfDeniedPatronages();
+	Double totalNumberOfDeniedPatronages();
 	
 	@Query ("select stddev(p) from Patronage p where p.status = PROPOSED and p.budget.currency==EUR")
-	Integer deviationPatronageProposedEUR();
+	Double deviationPatronageProposedEUR();
 	@Query ("select stddev(p) from Patronage p where p.status = PROPOSED and p.budget.currency==USD")
-	Integer deviationPatronageProposedUSD();
+	Double deviationPatronageProposedUSD();
 	@Query ("select stddev(p) from Patronage p where p.status = PROPOSED and p.budget.currency==GBP")
-	Integer deviationPatronageProposedGBP();
+	Double deviationPatronageProposedGBP();
 	
 	@Query ("select stddev(p) from Patronage p where p.status = ACCEPTED and p.budget.currency==EUR")
-	Integer deviationPatronageAcceptedEUR();
+	Double deviationPatronageAcceptedEUR();
 	@Query ("select stddev(p) from Patronage p where p.status = ACCEPTED and p.budget.currency==USD")
-	Integer deviationPatronageAcceptedUSD();
+	Double deviationPatronageAcceptedUSD();
 	@Query ("select stddev(p) from Patronage p where p.status = ACCEPTED and p.budget.currency==GBP")
-	Integer deviationPatronageAcceptedGBP();
+	Double deviationPatronageAcceptedGBP();
 	
 	@Query ("select stddev(p) from Patronage p where p.status = DENIED and p.budget.currency==EUR")
-	Integer deviationPatronageDeniedEUR();
+	Double deviationPatronageDeniedEUR();
 	@Query ("select stddev(p) from Patronage p where p.status = DENIED and p.budget.currency==USD")
-	Integer deviationPatronageDeniedUSD();
+	Double deviationPatronageDeniedUSD();
 	@Query ("select stddev(p) from Patronage p where p.status = DENIED and p.budget.currency==GBP")
-	Integer deviationPatronageDeniedGBP();
+	Double deviationPatronageDeniedGBP();
 	
 	@Query ("select avg(p) from Patronage p where p.status = PROPOSED and p.budget.currency==EUR")
-	Integer averagePatronageProposedEUR();
+	Double averagePatronageProposedEUR();
 	@Query ("select avg(p) from Patronage p where p.status = PROPOSED and p.budget.currency==USD")
-	Integer averagePatronageProposedUSD();
+	Double averagePatronageProposedUSD();
 	@Query ("select avg(p) from Patronage p where p.status = PROPOSED and p.budget.currency==GBP")
-	Integer averagePatronageProposedGBP();
+	Double averagePatronageProposedGBP();
 	
 	@Query ("select avg(p) from Patronage p where p.status = ACCEPTED and p.budget.currency==EUR")
-	Integer averagePatronageAcceptedEUR();
+	Double averagePatronageAcceptedEUR();
 	@Query ("select avg(p) from Patronage p where p.status = ACCEPTED and p.budget.currency==USD")
-	Integer averagePatronageAcceptedUSD();
+	Double averagePatronageAcceptedUSD();
 	@Query ("select avg(p) from Patronage p where p.status = ACCEPTED and p.budget.currency==GBP")
-	Integer averagePatronageAcceptedGBP();
+	Double averagePatronageAcceptedGBP();
 	
 	@Query ("select avg(p) from Patronage p where p.status = DENIED and p.budget.currency==EUR")
-	Integer averagePatronageDeniedEUR();
+	Double averagePatronageDeniedEUR();
 	@Query ("select avg(p) from Patronage p where p.status = DENIED and p.budget.currency==USD")
-	Integer averagePatronageDeniedUSD();
+	Double averagePatronageDeniedUSD();
 	@Query ("select avg(p) from Patronage p where p.status = DENIED and p.budget.currency==GBP")
-	Integer averagePatronageDeniedGBP();
+	Double averagePatronageDeniedGBP();
 	
 	@Query ("select max(p) from Patronage p where p.status = PROPOSED and p.budget.currency==EUR")
-	Integer maxPatronageProposedEUR();
+	Double maxPatronageProposedEUR();
 	@Query ("select max(p) from Patronage p where p.status = PROPOSED and p.budget.currency==USD")
-	Integer maxPatronageProposedUSD();
+	Double maxPatronageProposedUSD();
 	@Query ("select max(p) from Patronage p where p.status = PROPOSED and p.budget.currency==GBP")
-	Integer maxPatronageProposedGBP();
+	Double maxPatronageProposedGBP();
 	
 	@Query ("select max(p) from Patronage p where p.status = ACCEPTED and p.budget.currency==EUR")
-	Integer maxPatronageAcceptedEUR();
+	Double maxPatronageAcceptedEUR();
 	@Query ("select max(p) from Patronage p where p.status = ACCEPTED and p.budget.currency==USD")
-	Integer maxPatronageAcceptedUSD();
+	Double maxPatronageAcceptedUSD();
 	@Query ("select max(p) from Patronage p where p.status = ACCEPTED and p.budget.currency==GBP")
-	Integer maxPatronageAcceptedGBP();
+	Double maxPatronageAcceptedGBP();
 	
 	@Query ("select max(p) from Patronage p where p.status = DENIED and p.budget.currency==EUR")
-	Integer maxPatronageDeniedEUR();
+	Double maxPatronageDeniedEUR();
 	@Query ("select max(p) from Patronage p where p.status = DENIED and p.budget.currency==USD")
-	Integer maxPatronageDeniedUSD();
+	Double maxPatronageDeniedUSD();
 	@Query ("select max(p) from Patronage p where p.status = DENIED and p.budget.currency==GBP")
-	Integer maxPatronageDeniedGBP();
+	Double maxPatronageDeniedGBP();
 	
 	
 	@Query ("select min(p) from Patronage p where p.status = PROPOSED and p.budget.currency==EUR")
-	Integer minPatronageProposedEUR();
+	Double minPatronageProposedEUR();
 	@Query ("select min(p) from Patronage p where p.status = PROPOSED and p.budget.currency==USD")
-	Integer minPatronageProposedUSD();
+	Double minPatronageProposedUSD();
 	@Query ("select min(p) from Patronage p where p.status = PROPOSED and p.budget.currency==GBP")
-	Integer minPatronageProposedGBP();
+	Double minPatronageProposedGBP();
 	
 	@Query ("select min(p) from Patronage p where p.status = ACCEPTED and p.budget.currency==EUR")
-	Integer minPatronageAcceptedEUR();
+	Double minPatronageAcceptedEUR();
 	@Query ("select min(p) from Patronage p where p.status = ACCEPTED and p.budget.currency==USD")
-	Integer minPatronageAcceptedUSD();
+	Double minPatronageAcceptedUSD();
 	@Query ("select min(p) from Patronage p where p.status = ACCEPTED and p.budget.currency==GBP")
-	Integer minPatronageAcceptedGBP();
+	Double minPatronageAcceptedGBP();
 	
 	@Query ("select min(p) from Patronage p where p.status = DENIED and p.budget.currency==EUR")
-	Integer minPatronageDeniedEUR();
+	Double minPatronageDeniedEUR();
 	@Query ("select min(p) from Patronage p where p.status = DENIED and p.budget.currency==USD")
-	Integer minPatronageDeniedUSD();
+	Double minPatronageDeniedUSD();
 	@Query ("select min(p) from Patronage p where p.status = DENIED and p.budget.currency==GBP")
-	Integer minPatronageDeniedGBP();
+	Double minPatronageDeniedGBP();
 
  
 }

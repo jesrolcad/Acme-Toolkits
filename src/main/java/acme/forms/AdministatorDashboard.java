@@ -16,52 +16,52 @@ public class AdministatorDashboard implements Serializable {
 		// Attributes -------------------------------------------------------------
 
 	 Integer totalNumberOfComponents;
-	 Integer averageComponentsRetailPriceEUR;
-	 Integer averageComponentsRetailPriceGBP;
-	 Integer averageComponentsRetailPriceUSD;
-	 Integer deviationComponentsRetailPriceEUR;
-	 Integer deviationComponentsRetailPriceGBP;
-	 Integer deviationComponentsRetailPriceUSD;
-	 Integer maxComponentsRetailPriceEUR;
-	 Integer maxComponentsRetailPriceGBP;
-	 Integer maxComponentsRetailPriceUSD;
-	 Integer minComponentsRetailPriceEUR;
-	 Integer minComponentsRetailPriceGBP;
-	 Integer minComponentsRetailPriceUSD;
+	 Double averageComponentsRetailPriceEUR;
+	 Double averageComponentsRetailPriceGBP;
+	 Double averageComponentsRetailPriceUSD;
+	 Double deviationComponentsRetailPriceEUR;
+	 Double deviationComponentsRetailPriceGBP;
+	 Double deviationComponentsRetailPriceUSD;
+	 Double maxComponentsRetailPriceEUR;
+	 Double maxComponentsRetailPriceGBP;
+	 Double maxComponentsRetailPriceUSD;
+	 Double minComponentsRetailPriceEUR;
+	 Double minComponentsRetailPriceGBP;
+	 Double minComponentsRetailPriceUSD;
 	 
 	 
-	 Integer totalNumberOfTools;
-	 Integer averageToolsRetailPriceEUR;
-	 Integer averageToolsRetailPriceGBP;
-	 Integer averageToolsRetailPriceUSD;
-	 Integer deviationToolsRetailPriceEUR;
-	 Integer deviationToolsRetailPriceGBP;
-	 Integer deviationToolsRetailPriceUSD;
-	 Integer maxToolsRetailPriceEUR;
-	 Integer maxToolsRetailPriceGBP;
-	 Integer maxToolsRetailPriceUSD;
-	 Integer minCToolsRetailPriceEUR;
-	 Integer minToolsRetailPriceGBP;
-	 Integer minToolsRetailPriceUSD;
+	 Double totalNumberOfTools;
+	 Double averageToolsRetailPriceEUR;
+	 Double averageToolsRetailPriceGBP;
+	 Double averageToolsRetailPriceUSD;
+	 Double deviationToolsRetailPriceEUR;
+	 Double deviationToolsRetailPriceGBP;
+	 Double deviationToolsRetailPriceUSD;
+	 Double maxToolsRetailPriceEUR;
+	 Double maxToolsRetailPriceGBP;
+	 Double maxToolsRetailPriceUSD;
+	 Double minCToolsRetailPriceEUR;
+	 Double minToolsRetailPriceGBP;
+	 Double minToolsRetailPriceUSD;
 	 
-	 Integer totalNumberOfProposedPatronages;
-	 Integer totalNumberOfAccepedPatronages;
-	 Integer totalNumberOfDeniedPatronages;
+	 Double totalNumberOfProposedPatronages;
+	 Double totalNumberOfAccepedPatronages;
+	 Double totalNumberOfDeniedPatronages;
 	 
-	 Integer deviationBudgetPatronageProposed;
-	 Integer deviationBudgetPatronageAccepted;
-	 Integer deviationBudgetPatronageDenied;
+	 Double deviationBudgetPatronageProposed;
+	 Double deviationBudgetPatronageAccepted;
+	 Double deviationBudgetPatronageDenied;
 	 
-	 Integer averageBudgetPatronageProposed;
-	 Integer averageBudgetPatronageAccepted;
-	 Integer averageBudgetPatronageDenied;
+	 Double averageBudgetPatronageProposed;
+	 Double averageBudgetPatronageAccepted;
+	 Double averageBudgetPatronageDenied;
 	 
-	 Integer maxBudgetPatronageProposed;
-	 Integer maxBudgetPatronageAccepted;
-	 Integer maxBudgetPatronageDenied;
+	 Double maxBudgetPatronageProposed;
+	 Double maxBudgetPatronageAccepted;
+	 Double maxBudgetPatronageDenied;
 	 
-	 Integer minBudgetPatronageProposed;
-	 Integer minBudgetPatronageAccepted;
-	 Integer minBudgetPatronageDenied;
+	 Double minBudgetPatronageProposed;
+	 Double minBudgetPatronageAccepted;
+	 Double minBudgetPatronageDenied;
 }
 
