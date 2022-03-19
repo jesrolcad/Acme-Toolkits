@@ -17,15 +17,11 @@ public class PatronDashboard implements Serializable {
 	protected static final long	serialVersionUID	= 1L;
 
 	// Attributes -------------------------------------------------------------
-
 	Map<String,Integer> totalNumberPatronagesByStatus;
-    Map<Pair<String,String>,Double> averageBudgetByCurrency;
-    Map<Pair<String,String>,Double> deviationBudgetByCurrency;
-    Map<Pair<String,String>,Double> minBudgetByCurrency;
-    Map<Pair<String,String>,Double> maxBudgetByCurrency;
-
-
-
+	Map<Pair<String,String>,Double> averageBudgetByCurrency;
+	Map<Pair<String,String>,Double> deviationBudgetByCurrency;
+	Map<Pair<String,String>,Double> minBudgetByCurrency;
+	Map<Pair<String,String>,Double> maxBudgetByCurrency;
 
 	// Derived attributes -----------------------------------------------------
 
