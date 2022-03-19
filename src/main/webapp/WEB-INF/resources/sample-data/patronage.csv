@@ -1,0 +1,6 @@
+key,status,code,legal-stuff,budget,start-date,end-date,link,key:patron,key:inventor
+patronage-01,ACCEPTED,CBA-321,No law has been broken,EUR 200.00,2022/05/18 16:00,2022/06/18 16:00,null,patron-01,inventor-01
+patronage-02,PROPOSED,CBB-321,No law has been broken,USD 200.00,2022/05/18 16:00,2022/06/18 16:00,null,patron-02,inventor-02
+patronage-03,DENIED,CBC-321,No law has been broken,GBP 200.00,2022/05/18 16:00,2022/06/18 16:00,null,patron-03,inventor-03
+patronage-04,ACCEPTED,CBD-321,No law has been broken,EUR 100.00,2022/05/18 16:00,2022/06/18 16:00,null,patron-04,inventor-04
+patronage-05,DENIED,CBE-321,No law has been broken,USD 1200.00,2022/05/18 16:00,2022/06/18 16:00,null,patron-05,inventor-05
