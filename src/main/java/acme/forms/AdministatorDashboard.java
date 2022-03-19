@@ -1,6 +1,9 @@
 package acme.forms;
 
 import java.io.Serializable;
+import java.util.Map;
+
+import org.springframework.data.util.Pair;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -15,53 +18,19 @@ public class AdministatorDashboard implements Serializable {
 
 		// Attributes -------------------------------------------------------------
 
-	 Integer totalNumberOfComponents;
-	 Double averageComponentsRetailPriceEUR;
-	 Double averageComponentsRetailPriceGBP;
-	 Double averageComponentsRetailPriceUSD;
-	 Double deviationComponentsRetailPriceEUR;
-	 Double deviationComponentsRetailPriceGBP;
-	 Double deviationComponentsRetailPriceUSD;
-	 Double maxComponentsRetailPriceEUR;
-	 Double maxComponentsRetailPriceGBP;
-	 Double maxComponentsRetailPriceUSD;
-	 Double minComponentsRetailPriceEUR;
-	 Double minComponentsRetailPriceGBP;
-	 Double minComponentsRetailPriceUSD;
-	 
-	 
-	 Double totalNumberOfTools;
-	 Double averageToolsRetailPriceEUR;
-	 Double averageToolsRetailPriceGBP;
-	 Double averageToolsRetailPriceUSD;
-	 Double deviationToolsRetailPriceEUR;
-	 Double deviationToolsRetailPriceGBP;
-	 Double deviationToolsRetailPriceUSD;
-	 Double maxToolsRetailPriceEUR;
-	 Double maxToolsRetailPriceGBP;
-	 Double maxToolsRetailPriceUSD;
-	 Double minCToolsRetailPriceEUR;
-	 Double minToolsRetailPriceGBP;
-	 Double minToolsRetailPriceUSD;
-	 
-	 Double totalNumberOfProposedPatronages;
-	 Double totalNumberOfAccepedPatronages;
-	 Double totalNumberOfDeniedPatronages;
-	 
-	 Double deviationBudgetPatronageProposed;
-	 Double deviationBudgetPatronageAccepted;
-	 Double deviationBudgetPatronageDenied;
-	 
-	 Double averageBudgetPatronageProposed;
-	 Double averageBudgetPatronageAccepted;
-	 Double averageBudgetPatronageDenied;
-	 
-	 Double maxBudgetPatronageProposed;
-	 Double maxBudgetPatronageAccepted;
-	 Double maxBudgetPatronageDenied;
-	 
-	 Double minBudgetPatronageProposed;
-	 Double minBudgetPatronageAccepted;
-	 Double minBudgetPatronageDenied;
+		Map<String, Integer> totalNumberItems;
+		Map<Pair<String,String>,Double>averageRetailPriceOfComponents;
+		Map<Pair<String,String>,Double>deviationRetailPriceOfComponents;
+		Map<Pair<String,String>,Double>minRetailPriceOfComponents;
+		Map<Pair<String,String>,Double>maxRetailPriceOfComponents;
+		Map<String,Double> averageRetailPriceOfTools;
+		Map<String,Double> deviationRetailPriceOfTools;
+		Map<String,Double> maxRetailPriceOfTools;
+		Map<String,Double> minRetailPriceOfTools;
+		Map<String,Integer> totalNumberPatronagesByStatus;
+		Map<String,Double> averageBudgetByCurrency;
+		Map<String,Double> deviationBudgetByCurrency;
+		Map<String,Double> minBudgetByCurrency;
+		Map<String,Double> maxBudgetByCurrency;
 }
 

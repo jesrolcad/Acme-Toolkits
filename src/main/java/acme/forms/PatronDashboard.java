@@ -23,7 +23,6 @@ public class PatronDashboard implements Serializable {
 	Map<Pair<String,String>,Double> minBudgetByCurrency;
 	Map<Pair<String,String>,Double> maxBudgetByCurrency;
 
-
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
