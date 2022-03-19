@@ -17,7 +17,9 @@ public class PatronDashboard implements Serializable {
 	protected static final long	serialVersionUID	= 1L;
 
 	// Attributes -------------------------------------------------------------
-	Map<String,Integer> totalNumberPatronagesByStatus;
+	int totalNumberOfProposedPatronages;
+	int totalNumberOfAcceptedPatronages;
+	int totalNumberOfDeniedPatronages;
 	Map<Pair<String,String>,Double> averageBudgetByCurrency;
 	Map<Pair<String,String>,Double> deviationBudgetByCurrency;
 	Map<Pair<String,String>,Double> minBudgetByCurrency;

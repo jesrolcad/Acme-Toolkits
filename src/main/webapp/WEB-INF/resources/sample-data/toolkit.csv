@@ -1,0 +1,11 @@
+key,code,description,assembly-notes,optional-link,key:inventor
+toolkit-01,ABC-123-X,Toolkit created in order to build the new Ferrari car,Take in consideration the new carbon fiber spoiler,null,inventor-01
+toolkit-02,ABC-124-O,This is the second toolkit.,Assembly notes for Toolkit 02,https://es.wikipedia.org/wiki/Link,inventor-01
+toolkit-03,QWE-125,This is the third toolkit.,Assembly notes for Toolkit 03,null,inventor-01
+toolkit-04,ABC-126,This is the fourth toolkit.,Assembly notes for Toolkit 04,https://es.wikipedia.org/wiki/Link,inventor-01
+toolkit-05,OOO-222,This is the fifth toolkit.,Assembly notes for Toolkit 05,null,inventor-04
+toolkit-06,IEJ-999-S,This is the sixth toolkit.,Assembly notes for Toolkit 06,https://es.wikipedia.org/wiki/Link,inventor-05
+toolkit-07,SSE-127-A,This is the seventh toolkit.,Assembly notes for Toolkit 07,https://es.wikipedia.org/wiki/Link,inventor-05
+toolkit-08,QQQ-982,This is the eighth toolkit.,Assembly notes for Toolkit 08,https://es.wikipedia.org/wiki/Link,inventor-03
+toolkit-09,ABC-761-A,This is the ninth toolkit.,Assembly notes for Toolkit 09,https://es.wikipedia.org/wiki/Link,inventor-02
+toolkit-10,JRC-000-Z,This is the tenth toolkit.,Assembly notes for Toolkit 10,null,inventor-02

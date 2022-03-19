@@ -18,7 +18,8 @@ public class AdministatorDashboard implements Serializable {
 
 		// Attributes -------------------------------------------------------------
 
-		Map<String, Integer> totalNumberItems;
+		int totalNumberOfComponents;
+		int totalNumberOfTools;
 		Map<Pair<String,String>,Double>averageRetailPriceOfComponents;
 		Map<Pair<String,String>,Double>deviationRetailPriceOfComponents;
 		Map<Pair<String,String>,Double>minRetailPriceOfComponents;
@@ -27,7 +28,9 @@ public class AdministatorDashboard implements Serializable {
 		Map<String,Double> deviationRetailPriceOfTools;
 		Map<String,Double> maxRetailPriceOfTools;
 		Map<String,Double> minRetailPriceOfTools;
-		Map<String,Integer> totalNumberPatronagesByStatus;
+		int totalNumberOfProposedPatronages;
+		int totalNumberOfAcceptedPatronages;
+		int totalNumberOfDeniedPatronages;
 		Map<String,Double> averageBudgetByCurrency;
 		Map<String,Double> deviationBudgetByCurrency;
 		Map<String,Double> minBudgetByCurrency;
