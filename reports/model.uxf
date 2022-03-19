@@ -297,6 +297,92 @@ has v</panel_attributes>
       <w>195</w>
       <h>85</h>
     </coordinates>
+    <panel_attributes>&lt;&lt;Role&gt;&gt;
+Inventor
+--
++ company: String {NotBlank, Length(Max=101)}
++ link: String
++ statement: String {NotBlank, Length(Max=256)}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>306</x>
+      <y>486</y>
+      <w>288</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Role&gt;&gt;
+Patron
+--
++ company: String {NotBlank, Length(Max=101)}
++ link: String
++ statement: String {NotBlank, Length(Max=256)}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>9</x>
+      <y>378</y>
+      <w>198</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Datatype&gt;&gt;
+Money
+--
++ amount: double {Digits(10, 2)}
++ currentcy: String {NotBlank}
+
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>9</x>
+      <y>468</y>
+      <w>198</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enum&gt;&gt;
+BasicCommand
+--
++ LIST
++ SHOW
++ CREATE
++ UPDATE
++ DELETE
+
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>9</x>
+      <y>603</y>
+      <w>198</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enum&gt;&gt;
+HttpMethod
+--
++ GET
++ POST
+
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>621</x>
+      <y>180</y>
+      <w>306</w>
+      <h>117</h>
+    </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Chirp
 --
@@ -306,6 +392,20 @@ Chirp
 + body: String {NotBlank, Length(Max=256)}
 + email: String {Email}</panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>774</x>
+      <y>288</y>
+      <w>63</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-&gt;
+m1=1
+m2=*
+has v</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;140.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -582,6 +682,81 @@ Item
 Only one instance of a particular
 tool is allowed.
 </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>549</x>
+      <y>1026</y>
+      <w>558</w>
+      <h>153</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Toolkit
+
+--
++ code: String {Pattern (“^[A-Z]{3}-[0-9]{3}(-[A-Z])?$”), Unique}
++ title: String {NotBlank, Length(5,101)}
++ description: String {NotBlank, Length(5,256)}
++ assemblyNotes: String {NotBlank, Length(5,256)}
++ link: String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1089</x>
+      <y>45</y>
+      <w>360</w>
+      <h>153</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Patronage
+
+--
++ status: String {NotBlank}
++ code: String {Pattern (“^[A-Z]{3}-[0-9]{3}(-[A-Z])?$”), Unique}
++ legalStuff: String {NotBlank, Length(Max=256)}
++ budget: Money {Valid}
++ time: {Temporal(TIMESTAMP), NotNull}
++ link: String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1035</x>
+      <y>270</y>
+      <w>432</w>
+      <h>153</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Patronage report
+
+--
++ sequence: String {NotBlank, Pattern(“〈patronage-code〉:〈serial-number〉”)}
++ moment: Date {NotNull, Temporal(TIMESTAMP), Past}
++ memorandum: String {NotBlank, Length(Max=256)}
++ link: String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>657</x>
+      <y>585</y>
+      <w>324</w>
+      <h>135</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Artefact
+--
+bg=yellow
++ name: String {NotBlank, Length(Max=101)}
++ technology: String {NotBlank, Length(Max=101)}
++ link: String
++ description: String {NotBlank, Length(Max=256)}</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
