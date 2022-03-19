@@ -1,6 +1,11 @@
 key,status,code,legal-stuff,budget,start-date,end-date,link,key:patron,key:inventor
-patronage-01,ACCEPTED,CBA-321,No law has been broken,EUR 200.00,2022/05/18 16:00,2022/06/18 16:00,null,patron-01,inventor-01
-patronage-02,PROPOSED,CBB-321,No law has been broken,USD 200.00,2022/05/18 16:00,2022/06/18 16:00,null,patron-02,inventor-02
-patronage-03,DENIED,CBC-321,No law has been broken,GBP 200.00,2022/05/18 16:00,2022/06/18 16:00,null,patron-03,inventor-03
-patronage-04,ACCEPTED,CBD-321,No law has been broken,EUR 100.00,2022/05/18 16:00,2022/06/18 16:00,null,patron-04,inventor-04
-patronage-05,DENIED,CBE-321,No law has been broken,USD 1200.00,2022/05/18 16:00,2022/06/18 16:00,null,patron-05,inventor-05
+patronage-01,ACCEPTED,AAA-321-S,No law has been broken,EUR 0.01,2023/05/18 16:00,2023/06/18 16:05,https://www.google.com/,patron-01,inventor-01
+patronage-02,PROPOSED,BBB-888,No law has been broken,USD 200.00,2023/05/18 16:00,2023/06/18 16:00,null,patron-02,inventor-02
+patronage-03,DENIED,CBC-321-A,No law has been broken,"GBP 2,000.00",2023/05/18 16:00,2023/07/18 16:00,https://www.google.com/,patron-03,inventor-03
+patronage-04,ACCEPTED,SSA-321-B,No law has been broken,EUR 0.20,2023/05/18 16:00,2023/09/12 16:00,null,patron-04,inventor-04
+patronage-05,PROPOSED,CBE-321-C,No law has been broken,"USD 1,200.00",2023/04/28 16:00,2023/06/18 22:00,null,patron-05,inventor-05
+patronage-06,DENIED,CBU-888,No law has been broken,GBP 355.23,2022/01/18 16:00,2022/06/18 16:00,https://www.google.com/,patron-01,inventor-01
+patronage-07,ACCEPTED,QWE-742,No law has been broken,EUR 3.00,2022/05/18 16:00,2022/06/18 18:10,null,patron-02,inventor-02
+patronage-08,PROPOSED,ABS-222-O,No law has been broken,USD 0.02,2022/05/18 16:58,2022/06/18 16:59,null,patron-03,inventor-03
+patronage-09,DENIED,CBX-345,No law has been broken,GBP 17.99,2022/05/18 14:35,2022/06/18 14:36,null,patron-04,inventor-04
+patronage-10,DENIED,IUO-567,No law has been broken,EUR 0.98,2022/03/18 16:00,2022/06/18 16:00,null,patron-05,inventor-05
