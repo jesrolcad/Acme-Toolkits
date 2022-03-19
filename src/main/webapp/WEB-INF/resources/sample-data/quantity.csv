@@ -1,0 +1,11 @@
+key,number,key:item,key:toolkit
+quantity-01,1,item-01,toolkit-01
+quantity-02,2,item-02,toolkit-01
+quantity-03,4,item-03,toolkit-03
+quantity-04,7,item-04,toolkit-05
+quantity-05,1,item-05,toolkit-02
+quantity-06,3,item-06,toolkit-02
+quantity-07,10,item-07,toolkit-04
+quantity-08,5,item-08,toolkit-01
+quantity-09,8,item-09,toolkit-03
+quantity-10,1,item-10,toolkit-04

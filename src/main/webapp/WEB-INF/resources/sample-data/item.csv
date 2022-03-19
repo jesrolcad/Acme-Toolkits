@@ -1,0 +1,11 @@
+key,tipo,name,technology,description,retail-price,code,key:inventor
+item-01,TOOL,Vapormax,NikeTech silk,This are the new Nike Vapormax it will provide you more speed,EUR 150.00,AAA-123,inventor-01
+item-02,COMPONENT,Example name,Technology1,Example description text,EUR 120.00,ABC-312,inventor-02
+item-03,COMPONENT,Example name,Technology2,Example description text,EUR 120.00,ABD-312,inventor-03
+item-04,TOOL,Example name,Technology3,Example description text,USD 20.00,ABE-312,inventor-03
+item-05,COMPONENT,Example name,Technology2,Example description text,EUR 120.00,ABF-312,inventor-04
+item-06,TOOL,Example name,Technology3,Example description text,USD 85.00,ABG-312,inventor-05
+item-07,TOOL,Example name,NikeTech silk,Example description text,EUR 90.00,ABH-312,inventor-01
+item-08,COMPONENT,Example name,Technology2,Example description text,EUR 76.00,ABI-312,inventor-02
+item-09,TOOL,Example name,Technology1,Example description text,GBP 120.00,ABJ-312,inventor-05
+item-10,COMPONENT,Example name,Technology3,Example description text,GBP 180.00,ABK-312,inventor-04
