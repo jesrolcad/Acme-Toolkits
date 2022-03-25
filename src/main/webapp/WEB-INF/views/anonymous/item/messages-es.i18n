@@ -1,0 +1,17 @@
+anonymous.tool.list.label.tipo = Tipo
+anonymous.tool.list.label.name = Nombre
+anonymous.tool.list.label.code = Código
+anonymous.tool.list.label.technology = Tecnología
+anonymous.tool.list.label.description = Descripción
+anonymous.tool.list.label.retail-price = Precio de venta
+anonymous.tool.list.label.optional-link = Link
+anonymous.tool.list.label.inventor = Inventor
+
+anonymous.tool.form.label.tipo = Tipo:
+anonymous.tool.form.label.name = Nombre:
+anonymous.tool.form.label.code = Código:
+anonymous.tool.form.label.technology = Tecnología:
+anonymous.tool.form.label.description = Descripción:
+anonymous.tool.form.label.retail-price = Precio de venta:
+anonymous.tool.form.label.optional-link = Link:
+anonymous.tool.form.label.inventor = Inventor:
