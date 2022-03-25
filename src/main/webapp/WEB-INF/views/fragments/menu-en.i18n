@@ -18,6 +18,7 @@ master.menu.sign-out = Sign out
 # master.menu.anonymous #######################################################
 
 master.menu.anonymous = Anonymous
+master.menu.anonymous.tools.list = List published tools
 master.menu.anonymous.favourite-link-pablo = 49063639Q: Gutiérrez Ceballos, Pablo
 master.menu.anonymous.favourite-link-javier = 77866469S: Grosso Gomez de Terreros, Javier
 master.menu.anonymous.favourite-link-jesus = 29557570V: Roldán Cadena, Jesús
@@ -25,11 +26,19 @@ master.menu.anonymous.favourite-link-julia = 29555723X: Ibáñez Montero, Julia
 master.menu.anonymous.favourite-link-alejandro = 49092051T: Baños González, Alejandro
 master.menu.anonymous.favourite-link-roman = 28838510Y: Flores Rodríguez, Román
 
+
+# master.menu.authenticated #######################################################
+
+master.menu.authenticated = Authenticated
+master.menu.authenticated.tools.list = List published tools
+
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrator
+master.menu.administrator.tools.list = List published tools
 master.menu.administrator.dashboard = Dashboard
 master.menu.administrator.user-accounts = User accounts
+master.menu.administrator.system-configuration = System configuration
 master.menu.administrator.populate-initial = Populate DB (initial)
 master.menu.administrator.populate-sample = Populate DB (samples)
 master.menu.administrator.shut-down = Shut down
@@ -47,11 +56,13 @@ master.menu.consumer.favourite-link = Favourite link
 # master.menu.patron ##########################################################
 
 master.menu.patron = Patron
+master.menu.patron.tools.list = List published tools
 master.menu.patron.favourite-link = Favourite link
 
 # master.menu.inventor ##########################################################
 
 master.menu.inventor = Inventor
+master.menu.inventor.tools.list = List published tools
 master.menu.inventor.favourite-link = Favourite link
 
 # master.menu.user-account ####################################################
