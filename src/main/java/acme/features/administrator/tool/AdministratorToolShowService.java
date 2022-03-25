@@ -1,4 +1,4 @@
-package acme.features.anonymous.tool;
+package acme.features.administrator.tool;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -6,16 +6,16 @@ import org.springframework.stereotype.Service;
 import acme.entities.Item;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
-import acme.framework.roles.Anonymous;
+import acme.framework.roles.Administrator;
 import acme.framework.services.AbstractShowService;
 
 @Service
-public class AnonymousToolShowService implements AbstractShowService<Anonymous, Item>{
+public class AdministratorToolShowService implements AbstractShowService<Administrator, Item>{
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AnonymousToolRepository repository;
+	protected AdministratorToolRepository repository;
 		
 	@Override
 	public boolean authorise(final Request<Item> request) {

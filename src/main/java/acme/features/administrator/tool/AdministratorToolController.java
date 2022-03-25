@@ -1,4 +1,4 @@
-package acme.features.anonymous.tool;
+package acme.features.administrator.tool;
 
 import javax.annotation.PostConstruct;
 
@@ -7,18 +7,18 @@ import org.springframework.stereotype.Controller;
 
 import acme.entities.Item;
 import acme.framework.controllers.AbstractController;
-import acme.framework.roles.Anonymous;
+import acme.framework.roles.Administrator;
 
 @Controller
-public class AnonymousToolController extends AbstractController<Anonymous, Item>{
+public class AdministratorToolController extends AbstractController<Administrator, Item>{
 	
 	// Internal state ---------------------------------------------------------
 
 		@Autowired
-		protected AnonymousToolListAllService		listAllService;
+		protected AdministratorToolListAllService		listAllService;
 
 		@Autowired
-		protected AnonymousToolShowService	showService;
+		protected AdministratorToolShowService	showService;
 
 		// Constructors -----------------------------------------------------------
 

@@ -1,18 +1,18 @@
-anonymous.tool.list.label.tipo = Type
-anonymous.tool.list.label.name = Name
-anonymous.tool.list.label.code = Code
-anonymous.tool.list.label.technology = Technology
-anonymous.tool.list.label.description = Description
-anonymous.tool.list.label.retail-price = Retail price
-anonymous.tool.list.label.optional-link = Link
-anonymous.tool.list.label.inventor = Inventor
+anonymous.item.list.label.tipo = Type
+anonymous.item.list.label.name = Name
+anonymous.item.list.label.code = Code
+anonymous.item.list.label.technology = Technology
+anonymous.item.list.label.description = Description
+anonymous.item.list.label.retail-price = Retail price
+anonymous.item.list.label.optional-link = Link
+anonymous.item.list.label.inventor = Inventor
 
-anonymous.tool.form.label.tipo = Type:
-anonymous.tool.form.label.name = Name:
-anonymous.tool.form.label.code = Code:
-anonymous.tool.form.label.technology = Technology:
-anonymous.tool.form.label.description = Description:
-anonymous.tool.form.label.retail-price = Retail price:
-anonymous.tool.form.label.optional-link = Link:
-anonymous.tool.form.label.inventor = Inventor:
+anonymous.item.form.label.tipo = Type:
+anonymous.item.form.label.name = Name:
+anonymous.item.form.label.code = Code:
+anonymous.item.form.label.technology = Technology:
+anonymous.item.form.label.description = Description:
+anonymous.item.form.label.retail-price = Retail price:
+anonymous.item.form.label.optional-link = Link:
+anonymous.item.form.label.inventor = Inventor:
 

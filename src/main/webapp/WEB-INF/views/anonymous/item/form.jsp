@@ -4,12 +4,15 @@
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
 <acme:form>
-	<acme:input-textbox code="anonymous.tool.form.label.tipo" path="tipo"/>	
-	<acme:input-textbox code="anonymous.tool.form.label.name" path="name"/>
-	<acme:input-textbox code="anonymous.tool.form.label.code" path="code"/>	
-	<acme:input-textbox code="anonymous.tool.form.label.technology" path="technology"/>
-	<acme:input-textbox code="anonymous.tool.form.label.description" path="description"/>	
-	<acme:input-textbox code="anonymous.tool.form.label.retail-price" path="retailPrice"/>
-	<acme:input-textbox code="anonymous.tool.form.label.optional-link" path="optionalLink"/>	
-	<acme:input-textbox code="anonymous.tool.form.label.inventor" path="item.inventor.username"/>
+	<acme:input-select code="anonymous.item.form.label.tipo" path="tipo">	
+		<acme:input-option code="TOOL" value="TOOL" selected="${tipo == 'TOOL'}"/>
+		<acme:input-option code="COMPONENT" value="COMPONENT" selected="${tipo == 'COMPONENT'}"/>
+	</acme:input-select>
+	<acme:input-textbox code="anonymous.item.form.label.name" path="name"/>
+	<acme:input-textbox code="anonymous.item.form.label.code" path="code"/>	
+	<acme:input-textbox code="anonymous.item.form.label.technology" path="technology"/>
+	<acme:input-textarea code="anonymous.item.form.label.description" path="description"/>	
+	<acme:input-money code="anonymous.item.form.label.retail-price" path="retailPrice"/>
+	<acme:input-url code="anonymous.item.form.label.optional-link" path="optionalLink"/>	
+	<acme:input-textbox code="anonymous.item.form.label.inventor" path="item.inventor"/>
 </acme:form>
