@@ -1,4 +1,4 @@
-package acme.features.patron.tool;
+package acme.features.patron.item;
 
 import javax.annotation.PostConstruct;
 
@@ -10,22 +10,26 @@ import acme.framework.controllers.AbstractController;
 import acme.roles.Patron;
 
 @Controller
-public class PatronToolController extends AbstractController<Patron, Item>{
+public class PatronItemController extends AbstractController<Patron, Item>{
 	
 	// Internal state ---------------------------------------------------------
 
 		@Autowired
-		protected PatronToolListAllService		listAllService;
+		protected PatronComponentListAllService		componentListAllService;
+		
+		@Autowired
+		protected PatronToolListAllService		toolListAllService;
 
 		@Autowired
-		protected PatronToolShowService	showService;
+		protected PatronItemShowService	showService;
 
 		// Constructors -----------------------------------------------------------
 
 
 		@PostConstruct
 		protected void initialise() {
-			super.addCommand("list-all-tools", "list", this.listAllService);
+			super.addCommand("list-all-tools", "list", this.toolListAllService);
+			super.addCommand("list-all-components", "list", this.componentListAllService);
 			super.addCommand("show", this.showService);
 		}
 

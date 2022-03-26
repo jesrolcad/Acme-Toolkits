@@ -1,4 +1,4 @@
-package acme.features.authenticated.tool;
+package acme.features.anonymous.item;
 
 import javax.annotation.PostConstruct;
 
@@ -7,25 +7,29 @@ import org.springframework.stereotype.Controller;
 
 import acme.entities.Item;
 import acme.framework.controllers.AbstractController;
-import acme.framework.roles.Authenticated;
+import acme.framework.roles.Anonymous;
 
 @Controller
-public class AuthenticatedToolController extends AbstractController<Authenticated, Item>{
+public class AnonymousItemController extends AbstractController<Anonymous, Item>{
 	
 	// Internal state ---------------------------------------------------------
 
 		@Autowired
-		protected AuthenticatedToolListAllService		listAllService;
+		protected AnonymousComponentListAllService		componentListAllService;
+		
+		@Autowired
+		protected AnonymousToolListAllService		toolListAllService;
 
 		@Autowired
-		protected AuthenticatedToolShowService	showService;
+		protected AnonymousItemShowService	showService;
 
 		// Constructors -----------------------------------------------------------
 
 
 		@PostConstruct
 		protected void initialise() {
-			super.addCommand("list-all-tools", "list", this.listAllService);
+			super.addCommand("list-all-tools", "list", this.toolListAllService);
+			super.addCommand("list-all-components", "list", this.componentListAllService);
 			super.addCommand("show", this.showService);
 		}
 

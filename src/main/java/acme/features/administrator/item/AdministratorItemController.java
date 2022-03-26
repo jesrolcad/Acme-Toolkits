@@ -1,4 +1,4 @@
-package acme.features.inventor.tool;
+package acme.features.administrator.item;
 
 import javax.annotation.PostConstruct;
 
@@ -7,25 +7,29 @@ import org.springframework.stereotype.Controller;
 
 import acme.entities.Item;
 import acme.framework.controllers.AbstractController;
-import acme.roles.Inventor;
+import acme.framework.roles.Administrator;
 
 @Controller
-public class InventorToolController extends AbstractController<Inventor, Item>{
+public class AdministratorItemController extends AbstractController<Administrator, Item>{
 	
 	// Internal state ---------------------------------------------------------
 
 		@Autowired
-		protected InventorToolListAllService		listAllService;
+		protected AdministratorComponentListAllService		componentListAllService;
+		
+		@Autowired
+		protected AdministratorToolListAllService		toolListAllService;
 
 		@Autowired
-		protected InventorToolShowService	showService;
+		protected AdministratorItemShowService	showService;
 
 		// Constructors -----------------------------------------------------------
 
 
 		@PostConstruct
 		protected void initialise() {
-			super.addCommand("list-all-tools", "list", this.listAllService);
+			super.addCommand("list-all-tools", "list", this.toolListAllService);
+			super.addCommand("list-all-components", "list", this.componentListAllService);
 			super.addCommand("show", this.showService);
 		}
 
