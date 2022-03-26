@@ -67,7 +67,7 @@
 		
 		
 		<acme:menu-option code="master.menu.inventor" access="hasRole('Inventor')">
-			<acme:menu-suboption code="master.menu.inventor.components.list" action="/administrator/item/list-all-components"/>
+			<acme:menu-suboption code="master.menu.inventor.components.list" action="/inventor/item/list-all-components"/>
 			<acme:menu-suboption code="master.menu.inventor.tools.list" action="/inventor/item/list-all-tools"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.inventor.favourite-link" action="http://www.example.com/"/>

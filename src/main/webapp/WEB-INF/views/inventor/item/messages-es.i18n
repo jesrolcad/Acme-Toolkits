@@ -2,10 +2,6 @@ inventor.item.list.label.tipo = Tipo
 inventor.item.list.label.name = Nombre
 inventor.item.list.label.code = Código
 inventor.item.list.label.technology = Tecnología
-inventor.item.list.label.description = Descripción
-inventor.item.list.label.retail-price = Precio de venta
-inventor.item.list.label.optional-link = Link
-inventor.item.list.label.inventor = Inventor
 
 inventor.item.form.label.tipo = Tipo:
 inventor.item.form.label.name = Nombre:
