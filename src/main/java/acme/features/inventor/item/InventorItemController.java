@@ -1,4 +1,4 @@
-package acme.features.anonymous.tool;
+package acme.features.inventor.item;
 
 import javax.annotation.PostConstruct;
 
@@ -7,25 +7,29 @@ import org.springframework.stereotype.Controller;
 
 import acme.entities.Item;
 import acme.framework.controllers.AbstractController;
-import acme.framework.roles.Anonymous;
+import acme.roles.Inventor;
 
 @Controller
-public class AnonymousToolController extends AbstractController<Anonymous, Item>{
+public class InventorItemController extends AbstractController<Inventor, Item>{
 	
 	// Internal state ---------------------------------------------------------
 
 		@Autowired
-		protected AnonymousToolListAllService		listAllService;
+		protected InventorComponentListAllService		componentListAllService;
+		
+		@Autowired
+		protected InventorToolListAllService		toolListAllService;
 
 		@Autowired
-		protected AnonymousToolShowService	showService;
+		protected InventorItemShowService	showService;
 
 		// Constructors -----------------------------------------------------------
 
 
 		@PostConstruct
 		protected void initialise() {
-			super.addCommand("list-all-tools", "list", this.listAllService);
+			super.addCommand("list-all-tools", "list", this.toolListAllService);
+			super.addCommand("list-all-components", "list", this.componentListAllService);
 			super.addCommand("show", this.showService);
 		}
 
