@@ -11,5 +11,5 @@
 	<acme:list-column code="anonymous.item.list.label.description" path="description" width="20%"/>	
 	<acme:list-column code="anonymous.item.list.label.retail-price" path="retailPrice" width="20%"/>
 	<acme:list-column code="anonymous.item.list.label.optional-link" path="optionalLink" width="80%"/>	
-	<acme:list-column code="anonymous.item.list.label.inventor" path="item.inventor" width="20%"/>
+	<acme:list-column code="anonymous.item.list.label.inventor" path="item.inventor.userAccount.username" width="20%"/>
 </acme:list>

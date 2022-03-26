@@ -1,6 +1,4 @@
-package acme.features.anonymous.tool;
-
-import java.util.Collection;
+package acme.features.administrator.item;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -8,17 +6,17 @@ import org.springframework.stereotype.Service;
 import acme.entities.Item;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
-import acme.framework.roles.Anonymous;
-import acme.framework.services.AbstractListService;
+import acme.framework.roles.Administrator;
+import acme.framework.services.AbstractShowService;
 
 @Service
-public class AnonymousToolListAllService implements AbstractListService<Anonymous, Item>{
-	
+public class AdministratorItemShowService implements AbstractShowService<Administrator, Item>{
+
 	// Internal state ---------------------------------------------------------
 
-		@Autowired
-		protected AnonymousToolRepository repository;
-
+	@Autowired
+	protected AdministratorItemRepository repository;
+		
 	@Override
 	public boolean authorise(final Request<Item> request) {
 		assert request != null;
@@ -27,12 +25,14 @@ public class AnonymousToolListAllService implements AbstractListService<Anonymou
 	}
 
 	@Override
-	public Collection<Item> findMany(final Request<Item> request) {
+	public Item findOne(final Request<Item> request) {
 		assert request != null;
 
-		Collection<Item> result;
+		Item result;
+		int id;
 
-		result = this.repository.findMany();
+		id = request.getModel().getInteger("id");
+		result = this.repository.findOneItemById(id);
 
 		return result;
 	}
@@ -44,8 +44,10 @@ public class AnonymousToolListAllService implements AbstractListService<Anonymou
 		assert model != null;
 
 		request.unbind(entity, model, "tipo", "name", "code", "technology",
-			"description","retailPrice", "optionalLink", "item.inventor.username");
+			"description","retailPrice", "optionalLink", "item.inventor");
 		
 	}
+
+	
 
 }

@@ -1,4 +1,4 @@
-package acme.features.patron.tool;
+package acme.features.authenticated.item;
 
 import java.util.Collection;
 
@@ -8,16 +8,16 @@ import org.springframework.stereotype.Service;
 import acme.entities.Item;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
+import acme.framework.roles.Authenticated;
 import acme.framework.services.AbstractListService;
-import acme.roles.Patron;
 
 @Service
-public class PatronToolListAllService implements AbstractListService<Patron, Item>{
+public class AuthenticatedToolListAllService implements AbstractListService<Authenticated, Item>{
 	
 	// Internal state ---------------------------------------------------------
 
 		@Autowired
-		protected PatronToolRepository repository;
+		protected AuthenticatedItemRepository repository;
 
 	@Override
 	public boolean authorise(final Request<Item> request) {
@@ -32,7 +32,7 @@ public class PatronToolListAllService implements AbstractListService<Patron, Ite
 
 		Collection<Item> result;
 
-		result = this.repository.findMany();
+		result = this.repository.findManyTools();
 
 		return result;
 	}
