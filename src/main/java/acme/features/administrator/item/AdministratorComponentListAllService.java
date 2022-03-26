@@ -1,4 +1,4 @@
-package acme.features.inventor.tool;
+package acme.features.administrator.item;
 
 import java.util.Collection;
 
@@ -8,16 +8,16 @@ import org.springframework.stereotype.Service;
 import acme.entities.Item;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
+import acme.framework.roles.Administrator;
 import acme.framework.services.AbstractListService;
-import acme.roles.Inventor;
 
 @Service
-public class InventorToolListAllService implements AbstractListService<Inventor, Item>{
+public class AdministratorComponentListAllService implements AbstractListService<Administrator, Item>{
 	
 	// Internal state ---------------------------------------------------------
 
 		@Autowired
-		protected InventorToolRepository repository;
+		protected AdministratorItemRepository repository;
 
 	@Override
 	public boolean authorise(final Request<Item> request) {
@@ -32,7 +32,7 @@ public class InventorToolListAllService implements AbstractListService<Inventor,
 
 		Collection<Item> result;
 
-		result = this.repository.findMany();
+		result = this.repository.findManyComponents();
 
 		return result;
 	}
@@ -44,7 +44,7 @@ public class InventorToolListAllService implements AbstractListService<Inventor,
 		assert model != null;
 
 		request.unbind(entity, model, "tipo", "name", "code", "technology",
-			"description","retailPrice", "optionalLink", "item.inventor.username");
+			"description","retailPrice", "optionalLink", "item.inventor.userAccount.username");
 		
 	}
 
