@@ -30,9 +30,10 @@
 			
 		</acme:menu-option>
 		
-		<acme:menu-option code="master.menu.authenticated" access="hasRole('Authenticated')">
+		<acme:menu-option code="master.menu.authenticated" access="isAuthenticated()">
 			<acme:menu-suboption code="master.menu.authenticated.components.list" action="/authenticated/item/list-all-components"/>
-			<acme:menu-suboption code="master.menu.authenticated.tools.list" action="/authenticated/item/list-all-tools"/>			
+			<acme:menu-suboption code="master.menu.authenticated.tools.list" action="/authenticated/item/list-all-tools"/>	
+			<acme:menu-suboption code="master.menu.authenticated.announcement.list" action="/authenticated/announcement/list-recent"/>		
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
