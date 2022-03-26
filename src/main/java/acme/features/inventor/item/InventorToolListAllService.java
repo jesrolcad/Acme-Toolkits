@@ -1,4 +1,4 @@
-package acme.features.authenticated.tool;
+package acme.features.inventor.item;
 
 import java.util.Collection;
 
@@ -8,16 +8,16 @@ import org.springframework.stereotype.Service;
 import acme.entities.Item;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
-import acme.framework.roles.Authenticated;
 import acme.framework.services.AbstractListService;
+import acme.roles.Inventor;
 
 @Service
-public class AuthenticatedToolListAllService implements AbstractListService<Authenticated, Item>{
+public class InventorToolListAllService implements AbstractListService<Inventor, Item>{
 	
 	// Internal state ---------------------------------------------------------
 
 		@Autowired
-		protected AuthenticatedToolRepository repository;
+		protected InventorItemRepository repository;
 
 	@Override
 	public boolean authorise(final Request<Item> request) {
@@ -32,7 +32,7 @@ public class AuthenticatedToolListAllService implements AbstractListService<Auth
 
 		Collection<Item> result;
 
-		result = this.repository.findMany();
+		result = this.repository.findManyTools();
 
 		return result;
 	}
