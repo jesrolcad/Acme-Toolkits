@@ -2,10 +2,6 @@ authenticated.item.list.label.tipo = Type
 authenticated.item.list.label.name = Name
 authenticated.item.list.label.code = Code
 authenticated.item.list.label.technology = Technology
-authenticated.item.list.label.description = Description
-authenticated.item.list.label.retail-price = Retail price
-authenticated.item.list.label.optional-link = Link
-authenticated.item.list.label.inventor = Inventor
 
 authenticated.item.form.label.tipo = Type:
 authenticated.item.form.label.name = Name:

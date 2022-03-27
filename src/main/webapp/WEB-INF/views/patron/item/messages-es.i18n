@@ -2,10 +2,6 @@ patron.item.list.label.tipo = Tipo
 patron.item.list.label.name = Nombre
 patron.item.list.label.code = Código
 patron.item.list.label.technology = Tecnología
-patron.item.list.label.description = Descripción
-patron.item.list.label.retail-price = Precio de venta
-patron.item.list.label.optional-link = Link
-patron.item.list.label.inventor = Inventor
 
 patron.item.form.label.tipo = Tipo:
 patron.item.form.label.name = Nombre:

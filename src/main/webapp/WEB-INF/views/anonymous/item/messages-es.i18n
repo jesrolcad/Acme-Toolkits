@@ -2,10 +2,6 @@ anonymous.item.list.label.tipo = Tipo
 anonymous.item.list.label.name = Nombre
 anonymous.item.list.label.code = Código
 anonymous.item.list.label.technology = Tecnología
-anonymous.item.list.label.description = Descripción
-anonymous.item.list.label.retail-price = Precio de venta
-anonymous.item.list.label.optional-link = Link
-anonymous.item.list.label.inventor = Inventor
 
 anonymous.item.form.label.tipo = Tipo:
 anonymous.item.form.label.name = Nombre:
