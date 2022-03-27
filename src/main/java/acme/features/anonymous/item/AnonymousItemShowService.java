@@ -44,7 +44,7 @@ public class AnonymousItemShowService implements AbstractShowService<Anonymous, 
 		assert model != null;
 
 		request.unbind(entity, model, "tipo", "name", "code", "technology",
-			"description","retailPrice", "optionalLink", "item.inventor");
+			"description","retailPrice", "optionalLink", "item.inventor.userAccount.username");
 		
 	}
 

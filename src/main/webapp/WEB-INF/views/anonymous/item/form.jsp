@@ -14,5 +14,5 @@
 	<acme:input-textarea code="anonymous.item.form.label.description" path="description"/>	
 	<acme:input-money code="anonymous.item.form.label.retail-price" path="retailPrice"/>
 	<acme:input-url code="anonymous.item.form.label.optional-link" path="optionalLink"/>	
-	<acme:input-textbox code="anonymous.item.form.label.inventor" path="item.inventor"/>
+	<acme:input-textbox code="anonymous.item.form.label.inventor" path="item.inventor.userAccount.username"/>
 </acme:form>

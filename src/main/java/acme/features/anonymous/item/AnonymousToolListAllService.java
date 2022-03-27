@@ -44,7 +44,7 @@ public class AnonymousToolListAllService implements AbstractListService<Anonymou
 		assert model != null;
 
 		request.unbind(entity, model, "tipo", "name", "code", "technology",
-			"description","retailPrice", "optionalLink", "item.inventor.username");
+			"description","retailPrice", "optionalLink", "item.inventor.userAccount.username");
 		
 	}
 

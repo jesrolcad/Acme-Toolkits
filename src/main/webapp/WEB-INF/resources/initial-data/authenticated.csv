@@ -1,3 +1,13 @@
 key,key:user-account
 authenticated-administrator-01,user-account-administrator-01
 authenticated-authenticated-01,user-account-authenticated-01
+authenticated-inventor-01,user-account-inventor-01
+authenticated-inventor-02,user-account-inventor-02
+authenticated-inventor-03,user-account-inventor-03
+authenticated-inventor-04,user-account-inventor-04
+authenticated-inventor-05,user-account-inventor-05
+authenticated-patron-01,user-account-patron-01
+authenticated-patron-02,user-account-patron-02
+authenticated-patron-03,user-account-patron-03
+authenticated-patron-04,user-account-patron-04
+authenticated-patron-05,user-account-patron-05
