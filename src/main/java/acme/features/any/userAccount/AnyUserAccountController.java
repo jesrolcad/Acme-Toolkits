@@ -26,8 +26,8 @@ public class AnyUserAccountController extends AbstractController<Any, UserAccoun
 
 	@PostConstruct
 	protected void initialise() {
-		super.addCommand("list-userAcc", this.listService);
-		super.addCommand("show-userAcc", this.showService);
+		super.addCommand("list-userAcc","list", this.listService);
+		super.addCommand("show-userAcc", "show", this.showService);
 	}
 
 }
