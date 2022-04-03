@@ -21,7 +21,7 @@
 		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
 			<acme:menu-suboption code="master.menu.anonymous.all-components" action="/any/item/list-all-components"/>		
 			<acme:menu-suboption code="master.menu.anonymous.all-tools" action="/any/item/list-all-tools"/>
-			<acme:menu-suboption code="master.menu.anonymous.all-userAccounts" action="/any/userAccount/list-userAcc"/>
+			<acme:menu-suboption code="master.menu.anonymous.all-userAccounts" action="/any/user-account/list-userAcc"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-julia" action="https://this-person-does-not-exist.com/es"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-pablo" action="https://www.marca.com/"/>
