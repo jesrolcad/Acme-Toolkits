@@ -1,0 +1,17 @@
+inventor.item.tool.list.label.tipo = Tipo
+inventor.item.tool.list.label.name = Nombre
+inventor.item.tool.list.label.code = Código
+inventor.item.tool.list.label.technology = Tecnología
+inventor.item.tool.list.label.description = Descripción
+inventor.item.tool.list.label.retailPrice = Retail Price
+inventor.item.tool.list.label.optionalLink = Link opcional
+inventor.item.tool.list.label.inventor = Inventor
+
+inventor.item.tool.form.label.tipo = Tipo
+inventor.item.tool.form.label.name = Nombre
+inventor.item.tool.form.label.code = Código
+inventor.item.tool.form.label.technology = Tecnología
+inventor.item.tool.form.label.description = Descripción
+inventor.item.tool.form.label.retailPrice = Retail Price
+inventor.item.tool.form.label.optionalLink = Link opcional
+inventor.item.tool.form.label.inventor = Inventor
