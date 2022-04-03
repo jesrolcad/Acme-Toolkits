@@ -25,14 +25,6 @@ public class AnyChirpListAllTest extends TestHarness {
 		super.checkColumnHasValue(recordIndex, 3, body);
 		super.checkColumnHasValue(recordIndex, 4, email);
 
-		super.clickOnListingRecord(recordIndex);
-		
-		super.checkInputBoxHasValue("title", title);
-		super.checkInputBoxHasValue("author", author);
-		super.checkInputBoxHasValue("moment", moment);
-		super.checkInputBoxHasValue("body", body);
-		super.checkInputBoxHasValue("email", email);
-
 	}
 
 	// Ancillary methods ------------------------------------------------------
