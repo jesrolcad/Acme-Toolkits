@@ -1,4 +1,6 @@
-any.user-account.list.label.username = Nombre de usuario
-any.user-account.list.label.name = Nombre
-any.user-account.list.label.surname	= Apellido
-any.user-account.list.label.email = Correo electrónico
+any.user-account.list.label.roles = Roles
+
+any.user-account.form.label.username = Nombre de usuario
+any.user-account.form.label.name = Nombre
+any.user-account.form.label.surname	= Apellidos
+any.user-account.form.label.email = Correo electrónico

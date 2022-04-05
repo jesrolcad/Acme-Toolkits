@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.entities.UserAccount;
-import acme.framework.entities.UserAccountStatus;
+import acme.framework.roles.Administrator;
 import acme.framework.roles.Any;
 import acme.framework.roles.UserRole;
 import acme.framework.services.AbstractListService;
@@ -42,22 +42,23 @@ public class AnyUserAccountListService implements AbstractListService<Any, UserA
 		StringBuilder buffer;
 		Collection<UserRole> roles;
 
-		request.unbind(entity, model, "username","password", "enabled", "identity.name", "identity.surname", "identity.email");
+		request.unbind(entity, model);
 
 		roles = entity.getRoles();
 		buffer = new StringBuilder();
-		for (final UserRole role : roles) {
-			buffer.append(role.getAuthorityName());
-			buffer.append(" ");
+		for (final UserRole rol : roles) {
+			final boolean rolAnonimo = rol.getUserAccount().isAnonymous();
+			final boolean rolAdministrator = rol.getUserAccount().hasRole(Administrator.class);
+			
+			if(!rolAnonimo && !rolAdministrator) {
+				buffer.append(rol.getAuthorityName());
+				buffer.append(" ");
+			}
+			
 		}
-
-		model.setAttribute("roleList", buffer.toString());
-
-		if (entity.isEnabled()) {
-			model.setAttribute("status", UserAccountStatus.ENABLED);
-		} else {
-			model.setAttribute("status", UserAccountStatus.DISABLED);
-		}
+		
+		model.setAttribute("roles", buffer.toString());
+		System.out.println(buffer.toString().length());
 	}
 
 	@Override
@@ -68,7 +69,8 @@ public class AnyUserAccountListService implements AbstractListService<Any, UserA
 
 		result = this.repository.findAllUserAccounts();
 		for (final UserAccount userAccount : result) {
-			userAccount.getRoles().forEach(r -> { ; });
+			userAccount.getRoles().forEach(r -> {
+			});
 		}
 
 		return result;
