@@ -42,6 +42,8 @@ public class Toolkit extends AbstractEntity {
 	@NotBlank
 	@Length(max=256)
 	protected String assemblyNotes;
+	
+	protected boolean published;
 
 	
 	@URL
