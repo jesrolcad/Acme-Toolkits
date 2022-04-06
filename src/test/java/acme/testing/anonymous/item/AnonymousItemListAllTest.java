@@ -33,7 +33,7 @@ public class AnonymousItemListAllTest extends TestHarness{
 		super.checkInputBoxHasValue("description", description);
 		super.checkInputBoxHasValue("retailPrice", retailPrice);
 		super.checkInputBoxHasValue("optionalLink", optionalLink);
-		super.checkInputBoxHasValue("item.inventor", inventor);
+		super.checkInputBoxHasValue("inventor", inventor);
 
 	}
 	
@@ -62,7 +62,7 @@ public class AnonymousItemListAllTest extends TestHarness{
 		super.checkInputBoxHasValue("description", description);
 		super.checkInputBoxHasValue("retailPrice", retailPrice);
 		super.checkInputBoxHasValue("optionalLink", optionalLink);
-		super.checkInputBoxHasValue("item.inventor", inventor);
+		super.checkInputBoxHasValue("inventor", inventor);
 
 	}
 
