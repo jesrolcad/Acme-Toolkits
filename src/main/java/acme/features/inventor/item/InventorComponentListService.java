@@ -12,7 +12,7 @@ import acme.framework.services.AbstractListService;
 import acme.roles.Inventor; 
  
 @Service 
-public class InventorToolListService implements AbstractListService<Inventor, Item> { 
+public class InventorComponentListService implements AbstractListService<Inventor, Item> { 
 	// Internal state --------------------------------------------------------- 
  
 	@Autowired 
@@ -33,7 +33,7 @@ public class InventorToolListService implements AbstractListService<Inventor, It
 		Collection<Item> result; 
 		final int UAId = request.getPrincipal().getAccountId();
 		final int InventorId = this.repository.findInventorByUserAccountId(UAId).getId();
-		result = this.repository.findManyTools(InventorId); 
+		result = this.repository.findManyComponents(InventorId); 
  
 		return result; 
 	} 

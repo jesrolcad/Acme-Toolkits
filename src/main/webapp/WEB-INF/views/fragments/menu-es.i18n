@@ -61,6 +61,7 @@ master.menu.patron.favourite-link = Enlace favorito
 master.menu.inventor = Inventor
 master.menu.inventor.favourite-link = Enlace favorito
 master.menu.inventor.item.tool.list = Lista de mis tools 
+master.menu.inventor.item.component.list = Lista de mis components
 
 # master.menu.user-account ####################################################
 

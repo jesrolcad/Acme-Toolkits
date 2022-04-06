@@ -62,6 +62,7 @@ master.menu.patron.favourite-link = Favourite link
 master.menu.inventor = Inventor
 master.menu.inventor.favourite-link = Favourite link
 master.menu.inventor.item.tool.list = My own published Tools
+master.menu.inventor.item.component.list = My own published Components
 
 # master.menu.user-account ####################################################
 

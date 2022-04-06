@@ -15,11 +15,12 @@ public interface InventorItemRepository extends AbstractRepository{
 	@Query("select i from Item i where i.tipo = 1 and i.inventor.id = :id")
 	Collection<Item> findManyTools(int id);
 	 
-	@Query("select i from Item i where i.id = :id")
-	Item findToolById(int id);
-	
 	@Query("Select i from Inventor i where i.userAccount.id = :id")
 	Inventor findInventorByUserAccountId(int id);
  
- 
+	@Query("select i from Item i where i.tipo = 0 and i.inventor.id = :id")
+	Collection<Item> findManyComponents(int id);
+	 
+	@Query("select i from Item i where i.id = :id")
+	Item findItemlById(int id);
 } 

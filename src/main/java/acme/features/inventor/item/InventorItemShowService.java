@@ -10,7 +10,7 @@ import acme.framework.services.AbstractShowService;
 import acme.roles.Inventor;
 
 @Service
-public class InventorToolShowService implements AbstractShowService<Inventor, Item> {
+public class InventorItemShowService implements AbstractShowService<Inventor, Item> {
 
 	@Autowired
 	protected InventorItemRepository repository;
@@ -30,7 +30,7 @@ public class InventorToolShowService implements AbstractShowService<Inventor, It
 		int id;
 
 		id = request.getModel().getInteger("id");
-		result = this.repository.findToolById(id);
+		result = this.repository.findItemlById(id);
 		return result;
 	}
 
@@ -41,8 +41,8 @@ public class InventorToolShowService implements AbstractShowService<Inventor, It
 		assert model != null;
 
 		request.unbind(entity, model, "tipo",  
-			"name","code", "technology","description", "retailPrice", "optionalLink",  
-			"toolkit.inventor.userAccount.username");
+			"name","code", "technology","description", "retailPrice", "published", "optionalLink",  
+			"inventor.userAccount.username");
 		
 	}
 
