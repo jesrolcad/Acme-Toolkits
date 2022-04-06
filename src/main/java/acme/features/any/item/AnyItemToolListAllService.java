@@ -43,8 +43,7 @@ public class AnyItemToolListAllService implements AbstractListService<Any, Item>
 			assert entity != null;
 			assert model != null;
 
-			request.unbind(entity, model, "tipo", "name", "code", "technology",
-				"description","retailPrice", "optionalLink", "item.inventor.userAccount.username");
+			request.unbind(entity, model, "tipo", "name", "code", "technology");
 			
 		}
 		
