@@ -1,4 +1,4 @@
-package acme.features.authenticated.inventor.patronage;
+package acme.features.inventor.patronage;
 
 import java.util.Collection;
 
@@ -10,7 +10,7 @@ import acme.framework.repositories.AbstractRepository;
 import acme.roles.Inventor; 
  
 @Repository 
-public interface AuthenticatedInventorPatronageRepository extends AbstractRepository{ 
+public interface InventorPatronageRepository extends AbstractRepository{ 
 	 
 	@Query("Select p from Patronage p where p.inventor.id = :id") 
 	Collection<Patronage> findPatronagesByInventorId(int id); 

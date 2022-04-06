@@ -1,4 +1,4 @@
-package acme.features.authenticated.inventor.patronage;
+package acme.features.inventor.patronage;
 
 import javax.annotation.PostConstruct;
 
@@ -7,16 +7,16 @@ import org.springframework.stereotype.Controller;
 
 import acme.entities.Patronage;
 import acme.framework.controllers.AbstractController;
-import acme.framework.roles.Authenticated; 
+import acme.roles.Inventor; 
  
 @Controller 
-public class AuthenticatedInventorPatronageController extends AbstractController<Authenticated, Patronage> { 
+public class InventorPatronageController extends AbstractController<Inventor, Patronage> { 
 	//Internal State 
 	 
 	@Autowired 
-	protected AuthenticatedInventorPatronageListService listRecentService; 
+	protected InventorPatronageListService listRecentService; 
 	@Autowired 
-	protected AuthenticatedInventorPatronageShowService showService; 
+	protected InventorPatronageShowService showService; 
 	 
 	 
 	//Constructors 

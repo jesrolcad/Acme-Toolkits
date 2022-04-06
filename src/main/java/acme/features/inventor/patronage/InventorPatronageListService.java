@@ -1,4 +1,4 @@
-package acme.features.authenticated.inventor.patronage;
+package acme.features.inventor.patronage;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,14 +7,14 @@ import org.springframework.stereotype.Service;
 import acme.entities.Patronage;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
-import acme.framework.roles.Authenticated;
-import acme.framework.services.AbstractListService; 
+import acme.framework.services.AbstractListService;
+import acme.roles.Inventor; 
  
 @Service 
-public class AuthenticatedInventorPatronageListService implements AbstractListService<Authenticated, Patronage> { 
+public class InventorPatronageListService implements AbstractListService<Inventor, Patronage> { 
 	 
 	@Autowired 
-	protected AuthenticatedInventorPatronageRepository repository; 
+	protected InventorPatronageRepository repository; 
  
 	@Override 
 	public boolean authorise(final Request<Patronage> request) { 
@@ -39,7 +39,7 @@ public class AuthenticatedInventorPatronageListService implements AbstractListSe
 		assert request != null; 
 		assert entity != null; 
 		assert model != null; 
-		request.unbind(entity, model, "code","budget.amount", "budget.currency", "legalStuff", "link", "startDate","endDate","status","patron_id");		 
+		request.unbind(entity, model, "code","budget", "legalStuff", "link", "startDate","endDate","status","patron_id");		 
 	} 
  
 } 

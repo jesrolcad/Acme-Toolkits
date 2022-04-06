@@ -5,12 +5,9 @@
  
 <acme:list> 
 	<acme:list-column code="authenticated.patronage.list.label.code" path="code"/> 
-	<acme:list-column code="authenticated.patronage.list.label.currency" path="budget.currency"/>	 
-	<acme:list-column code="authenticated.patronage.list.label.amount" path="budget.amount" /> 
+	<acme:list-column code="authenticated.patronage.list.label.budget" path="budget"/>	 
 	<acme:list-column code="authenticated.patronage.list.label.start_date" path="startDate"/>	 
 	<acme:list-column code="authenticated.patronage.list.label.end_date" path="endDate"/>
-	<acme:list-column code="authenticated.patronage.list.label.legal_stuff" path="legalStuff"/>	 
-	<acme:list-column code="authenticated.patronage.list.label.link" path="link" /> 
 	<acme:list-column code="authenticated.patronage.list.label.status" path="status"/>
 	 
 </acme:list>                                                                                               
