@@ -19,8 +19,9 @@
 <acme:menu-bar code="master.menu.home">
 	<acme:menu-left>
 		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
-			<acme:menu-suboption code="master.menu.anonymous.components.list" action="/anonymous/item/list-all-components"/>
-			<acme:menu-suboption code="master.menu.anonymous.tools.list" action="/anonymous/item/list-all-tools"/>			
+			<acme:menu-suboption code="master.menu.anonymous.all-components" action="/any/item/list-all-components"/>		
+			<acme:menu-suboption code="master.menu.anonymous.all-tools" action="/any/item/list-all-tools"/>
+			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-julia" action="https://this-person-does-not-exist.com/es"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-pablo" action="https://www.marca.com/"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-javier" action="https://www.nintendo.es/"/>
@@ -30,9 +31,11 @@
 			
 		</acme:menu-option>
 		
-		<acme:menu-option code="master.menu.authenticated" access="isAuthenticated()">
-			<acme:menu-suboption code="master.menu.authenticated.components.list" action="/authenticated/item/list-all-components"/>
-			<acme:menu-suboption code="master.menu.authenticated.tools.list" action="/authenticated/item/list-all-tools"/>	
+
+		<acme:menu-option code="master.menu.authenticated" access="isAuthenticated">
+			<acme:menu-suboption code="master.menu.authenticated.all-components" action="/any/item/list-all-components"/>
+			<acme:menu-suboption code="master.menu.authenticated.all-tools" action="/any/item/list-all-tools"/>
+			<acme:menu-separator/>	
 			<acme:menu-suboption code="master.menu.authenticated.announcement.list" action="/authenticated/announcement/list-recent"/>		
 		</acme:menu-option>
 
@@ -70,6 +73,7 @@
 		<acme:menu-option code="master.menu.inventor" access="hasRole('Inventor')">
 			<acme:menu-suboption code="master.menu.inventor.components.list" action="/administrator/item/list-all-components"/>
 			<acme:menu-suboption code="master.menu.inventor.tools.list" action="/inventor/item/list-all-tools"/>
+			<acme:menu-suboption code="master.menu.inventor.toolkits.list" action="/inventor/toolkit/listToolkits"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.inventor.favourite-link" action="http://www.example.com/"/>
 		</acme:menu-option>

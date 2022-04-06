@@ -38,8 +38,6 @@ master.menu.authenticated.announcement.list = List of recent announcements
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrator
-master.menu.administrator.tools.list = List published tools
-master.menu.administrator.components.list = List published components
 master.menu.administrator.dashboard = Dashboard
 master.menu.administrator.user-accounts = User accounts
 master.menu.administrator.system-configuration = System configuration
@@ -69,6 +67,7 @@ master.menu.patron.favourite-link = Favourite link
 master.menu.inventor = Inventor
 master.menu.inventor.components.list = List published components
 master.menu.inventor.tools.list = List published tools
+master.menu.inventor.toolkits.list = List published toolkits
 master.menu.inventor.favourite-link = Favourite link
 
 # master.menu.user-account ####################################################
