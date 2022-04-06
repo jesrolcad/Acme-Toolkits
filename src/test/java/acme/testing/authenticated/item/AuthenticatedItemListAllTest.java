@@ -35,7 +35,7 @@ public class AuthenticatedItemListAllTest extends TestHarness{
 		super.checkInputBoxHasValue("description", description);
 		super.checkInputBoxHasValue("retailPrice", retailPrice);
 		super.checkInputBoxHasValue("optionalLink", optionalLink);
-		super.checkInputBoxHasValue("item.inventor", inventor);
+		super.checkInputBoxHasValue("inventor", inventor);
 
 		super.signOut();
 	}
@@ -67,7 +67,7 @@ public class AuthenticatedItemListAllTest extends TestHarness{
 		super.checkInputBoxHasValue("description", description);
 		super.checkInputBoxHasValue("retailPrice", retailPrice);
 		super.checkInputBoxHasValue("optionalLink", optionalLink);
-		super.checkInputBoxHasValue("item.inventor", inventor);
+		super.checkInputBoxHasValue("inventor", inventor);
 
 		super.signOut();
 	}
