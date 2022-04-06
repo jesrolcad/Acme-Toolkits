@@ -48,6 +48,7 @@ public class Item extends AbstractEntity {
 	@Valid
 	protected Money retailPrice;
 	
+	protected boolean published;
 	
 	@URL
 	protected String optionalLink;
