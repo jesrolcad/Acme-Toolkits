@@ -31,10 +31,12 @@
 			
 		</acme:menu-option>
 		
+
 		<acme:menu-option code="master.menu.authenticated" access="isAuthenticated">
 			<acme:menu-suboption code="master.menu.authenticated.all-components" action="/any/item/list-all-components"/>
 			<acme:menu-suboption code="master.menu.authenticated.all-tools" action="/any/item/list-all-tools"/>
-			<acme:menu-separator/>
+			<acme:menu-separator/>	
+			<acme:menu-suboption code="master.menu.authenticated.announcement.list" action="/authenticated/announcement/list-recent"/>		
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
