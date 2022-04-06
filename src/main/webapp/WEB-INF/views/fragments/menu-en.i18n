@@ -37,8 +37,6 @@ master.menu.authenticated.components.list = List published components
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrator
-master.menu.administrator.tools.list = List published tools
-master.menu.administrator.components.list = List published components
 master.menu.administrator.dashboard = Dashboard
 master.menu.administrator.user-accounts = User accounts
 master.menu.administrator.system-configuration = System configuration
