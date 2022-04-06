@@ -1,4 +1,4 @@
-package acme.features.authenticated.patron.patronage;
+package acme.features.patron.patronage;
 
 import javax.annotation.PostConstruct;
 
@@ -7,16 +7,16 @@ import org.springframework.stereotype.Controller;
 
 import acme.entities.Patronage;
 import acme.framework.controllers.AbstractController;
-import acme.framework.roles.Authenticated; 
+import acme.roles.Patron; 
  
 @Controller 
-public class AuthenticatedPatronPatronageController extends AbstractController<Authenticated, Patronage> { 
+public class PatronPatronageController extends AbstractController<Patron, Patronage> { 
 	//Internal State 
 	 
 	@Autowired 
-	protected AuthenticatedPatronPatronageListService listRecentService; 
+	protected PatronPatronageListService listRecentService; 
 	@Autowired 
-	protected AuthenticatedPatronPatronageShowService showService; 
+	protected PatronPatronageShowService showService; 
 	 
 	 
 	//Constructors 
