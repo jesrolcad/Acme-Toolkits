@@ -55,6 +55,7 @@
 		</acme:menu-option>
 		<acme:menu-option code="master.menu.patron" access="hasRole('Patron')">
 			<acme:menu-suboption code="master.menu.patron.favourite-link" action="http://www.example.com/"/>
+			<acme:menu-suboption code="master.menu.patron.list-patronage-reports" action="/patron/patronage-report/list/"/>
 		</acme:menu-option>
 		<acme:menu-option code="master.menu.inventor" access="hasRole('Inventor')">
 			<acme:menu-suboption code="master.menu.inventor.favourite-link" action="http://www.example.com/"/>
