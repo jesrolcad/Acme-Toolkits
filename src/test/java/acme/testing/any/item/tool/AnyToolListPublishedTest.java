@@ -1,4 +1,4 @@
-package acme.testing.authenticated.item;
+package acme.testing.any.item.tool;
 
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -6,25 +6,23 @@ import org.junit.jupiter.params.provider.CsvFileSource;
 
 import acme.testing.TestHarness;
 
-public class AuthenticatedItemListAllTest extends TestHarness{
+public class AnyToolListPublishedTest extends TestHarness{
 	
 	@ParameterizedTest
-	@CsvFileSource(resources = "/authenticated/item/component/list.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@CsvFileSource(resources = "/any/item/tool/list.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
-	public void positiveComponent(final int recordIndex, final String tipo, final String name,
+	public void anonymousPositive(final int recordIndex, final String tipo, final String name,
 		final String code, final String technology, final String description, 
-		final String retailPrice, final String optionalLink, final String inventor) {
+		final String retailPrice, final String optionalLink, final String inventor, final String published) {
 		
-		
-		super.signIn("administrator", "administrator");
 
-		super.clickOnMenu("Authenticated", "List all components");
+		super.clickOnMenu("Anonymous", "List published tools");
 		super.checkListingExists();
-		super.sortListing(1, "asc");
-		super.checkColumnHasValue(recordIndex, 0, tipo);
-		super.checkColumnHasValue(recordIndex, 1, name);
-		super.checkColumnHasValue(recordIndex, 2, code);
-		super.checkColumnHasValue(recordIndex, 3, technology);
+		super.sortListing(0, "asc");
+		super.checkColumnHasValue(recordIndex, 0, name);
+		super.checkColumnHasValue(recordIndex, 1, code);
+		super.checkColumnHasValue(recordIndex, 2, technology);
+		super.checkColumnHasValue(recordIndex, 3, retailPrice);
 
 		super.clickOnListingRecord(recordIndex);
 		super.checkFormExists();
@@ -36,27 +34,27 @@ public class AuthenticatedItemListAllTest extends TestHarness{
 		super.checkInputBoxHasValue("retailPrice", retailPrice);
 		super.checkInputBoxHasValue("optionalLink", optionalLink);
 		super.checkInputBoxHasValue("inventor", inventor);
+		super.checkInputBoxHasValue("published", published);
 
-		super.signOut();
 	}
 	
 	@ParameterizedTest
-	@CsvFileSource(resources = "/authenticated/item/tool/list.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@CsvFileSource(resources = "/any/item/tool/list.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
-	public void positiveTool(final int recordIndex, final String tipo, final String name,
+	public void authenticatedPositive(final int recordIndex, final String tipo, final String name,
 		final String code, final String technology, final String description, 
-		final String retailPrice, final String optionalLink, final String inventor) {
+		final String retailPrice, final String optionalLink, final String inventor, final String published) {
 		
 		
-		super.signIn("administrator", "administrator");
+		super.signIn("patron1", "patron1");
 
-		super.clickOnMenu("Authenticated", "List all tools");
+		super.clickOnMenu("Authenticated", "List published tools");
 		super.checkListingExists();
-		super.sortListing(1, "asc");
-		super.checkColumnHasValue(recordIndex, 0, tipo);
-		super.checkColumnHasValue(recordIndex, 1, name);
-		super.checkColumnHasValue(recordIndex, 2, code);
-		super.checkColumnHasValue(recordIndex, 3, technology);
+		super.sortListing(0, "asc");
+		super.checkColumnHasValue(recordIndex, 0, name);
+		super.checkColumnHasValue(recordIndex, 1, code);
+		super.checkColumnHasValue(recordIndex, 2, technology);
+		super.checkColumnHasValue(recordIndex, 3, retailPrice);
 
 		super.clickOnListingRecord(recordIndex);
 		super.checkFormExists();
@@ -68,8 +66,10 @@ public class AuthenticatedItemListAllTest extends TestHarness{
 		super.checkInputBoxHasValue("retailPrice", retailPrice);
 		super.checkInputBoxHasValue("optionalLink", optionalLink);
 		super.checkInputBoxHasValue("inventor", inventor);
-
+		super.checkInputBoxHasValue("published", published);
+		
 		super.signOut();
+
 	}
 
 	// Ancillary methods ------------------------------------------------------

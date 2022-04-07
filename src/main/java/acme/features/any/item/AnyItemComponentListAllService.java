@@ -32,7 +32,7 @@ public class AnyItemComponentListAllService implements AbstractListService<Any, 
 
 			Collection<Item> result;
 
-			result = this.repository.findManyComponents();
+			result = this.repository.findManyPublishedComponents();
 
 			return result;
 		}
@@ -43,7 +43,7 @@ public class AnyItemComponentListAllService implements AbstractListService<Any, 
 			assert entity != null;
 			assert model != null;
 
-			request.unbind(entity, model, "tipo", "name", "code", "technology");
+			request.unbind(entity, model, "tipo", "name", "code", "technology", "retailPrice");
 			
 		}
 

@@ -18,8 +18,8 @@ master.menu.sign-out = Salir
 # master.menu.anonymous #######################################################
 
 master.menu.anonymous = Anónimo
-master.menu.anonymous.all-components = Listar todos los componentes
-master.menu.anonymous.all-tools = Listar todas las herramientas
+master.menu.anonymous.all-components = Listar componentes publicados
+master.menu.anonymous.all-tools = Listar herramientas publicadas
 master.menu.anonymous.favourite-link-pablo = 49063639Q: Gutiérrez Ceballos, Pablo
 master.menu.anonymous.favourite-link-javier = 77866469S: Grosso Gomez de Terreros, Javier
 master.menu.anonymous.favourite-link-jesus = 29557570V: Roldán Cadena, Jesús
@@ -30,8 +30,8 @@ master.menu.anonymous.favourite-link-roman = 28838510Y: Flores Rodríguez, Romá
 
 # master.menu.authenticated ###################################################
 master.menu.authenticated = Autentificado
-master.menu.authenticated.all-components = Listar todos los componentes
-master.menu.authenticated.all-tools = Listar todas las herramientas
+master.menu.authenticated.all-components = Listar componentes publicados
+master.menu.authenticated.all-tools = Listar herramientas publicadas
 
 # master.menu.administrator ###################################################
 
