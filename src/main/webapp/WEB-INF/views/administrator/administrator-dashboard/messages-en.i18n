@@ -8,6 +8,34 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
+
+patron.patron-dashboard.form.label.and-technology = and technology
+patron.patron-dashboard.form.label.colon = :
+patron.patron-dashboard.form.label.componentsTitle = COMPONENTS
+patron.patron-dashboard.form.label.toolsTitle = TOOLS
+patron.patron-dashboard.form.label.patronageTitle = PATRONAGES
+patron.patron-dashboard.form.label.patronage-average-sentence= Average retail price by status
+patron.patron-dashboard.form.label.patronage-deviation-sentence= Deviation retail price by status
+patron.patron-dashboard.form.label.patronage-max-sentence= Maximum retail price by status
+patron.patron-dashboard.form.label.patronage-min-sentence= Minimum retail price by status
+
+patron.patron-dashboard.form.label.average-sentence = Average retail price by currency 
+patron.patron-dashboard.form.label.deviation-sentence = Deviation retail price by currency 
+patron.patron-dashboard.form.label.max-sentence = Maximum retail price by currency
+patron.patron-dashboard.form.label.min-sentence = Minimum retail price by currency
+
+patron.patron-dashboard.form.label.avg-title = Averages information.
+patron.patron-dashboard.form.label.deviationTitle= Deviations information.
+patron.patron-dashboard.form.label.maxTitle= Maximums information.
+patron.patron-dashboard.form.label.minTitle= Minimums information.
+patron.patron-dashboard.form.label.absoluteTitle = Total Metrics
+
+patron.patron-dashboard.form.label.totalNumberOfProposedPatronages = Total number of proposed patronages:
+patron.patron-dashboard.form.label.totalNumberOfAcceptedPatronages = Total number of accepted patronages:
+patron.patron-dashboard.form.label.totalNumberOfDeniedPatronages = Total number of denied patronages:
+
+patron.patron-dashboard.form.label.totalNumberOfTools= Total number of tools:
+patron.patron-dashboard.form.label.totalNumberOfComponents= Total number of components: 
 anonymous.user-account.form.title.create = Sign up
 
 anonymous.user-account.form.label.username = Username:

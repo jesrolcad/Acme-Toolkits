@@ -15,186 +15,294 @@
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 <%@taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
 <acme:form>
-		<acme:message code="patron.patron-dashboard.form.label.averageTitle"/>
-		<br>		
-		<jstl:forEach items="${averageRetailPriceOfComponents}" var="entry"> 
-		<br>		
-		<acme:message code="patron.patron-dashboard.form.label.currency"/>		
-		<jstl:set var = "string1" value = "${entry.key}"/>
-		<jstl:set var = "string2" value = "${fn:split(string1, '->')}" />
-		<acme:print value="${string2[0]}"/>
-		<acme:message code="patron.patron-dashboard.form.label.status"/>		
-		<acme:print value="${string2[1]}"/>
-		<acme:message code="patron.patron-dashboard.form.label.avgvalue"/>		
-		<acme:print value="${entry.value}"/>
-		</jstl:forEach>
-		<br>
-		<br>
-		<acme:message code="patron.patron-dashboard.form.label.deviationTitle"/>
-		<br>		
-		<jstl:forEach items="${deviationRetailPriceOfComponents}" var="entry"> 
-		<br>		
-		<acme:message code="patron.patron-dashboard.form.label.currency"/>		
-		<jstl:set var = "string1" value = "${entry.key}"/>
-		<jstl:set var = "string2" value = "${fn:split(string1, '->')}" />
-		<acme:print value="${string2[0]}"/>
-		<acme:message code="patron.patron-dashboard.form.label.status"/>		
-		<acme:print value="${string2[1]}"/>
-		<acme:message code="patron.patron-dashboard.form.label.avgvalue"/>		
-		<acme:print value="${entry.value}"/>
-		</jstl:forEach>
-		<br>
-		<br>
-		<acme:message code="patron.patron-dashboard.form.label.averageTitle"/>
-		<br>		
-		<jstl:forEach items="${minRetailPriceOfComponents}" var="entry"> 
-		<br>		
-		<acme:message code="patron.patron-dashboard.form.label.currency"/>		
-		<jstl:set var = "string1" value = "${entry.key}"/>
-		<jstl:set var = "string2" value = "${fn:split(string1, '->')}" />
-		<acme:print value="${string2[0]}"/>
-		<acme:message code="patron.patron-dashboard.form.label.status"/>		
-		<acme:print value="${string2[1]}"/>
-		<acme:message code="patron.patron-dashboard.form.label.avgvalue"/>		
-		<acme:print value="${entry.value}"/>
-		</jstl:forEach>
-		<br>
-		<br>
-		<acme:message code="patron.patron-dashboard.form.label.averageTitle"/>
-		<br>		
-		<jstl:forEach items="${maxRetailPriceOfComponents}" var="entry"> 
-		<br>		
-		<acme:message code="patron.patron-dashboard.form.label.currency"/>		
-		<jstl:set var = "string1" value = "${entry.key}"/>
-		<jstl:set var = "string2" value = "${fn:split(string1, '->')}" />
-		<acme:print value="${string2[0]}"/>
-		<acme:message code="patron.patron-dashboard.form.label.status"/>		
-		<acme:print value="${string2[1]}"/>
-		<acme:message code="patron.patron-dashboard.form.label.avgvalue"/>		
-		<acme:print value="${entry.value}"/>
-		</jstl:forEach>
-		<br>
-		<acme:message code="patron.patron-dashboard.form.label.averageRetailPriceOfTools"/>
-		<br>		
-		<jstl:forEach items="${averageRetailPriceOfTools}" var="entry"> 
-		<br>		
-		<acme:message code="patron.patron-dashboard.form.label.currency"/>		
-		<jstl:set var = "string1" value = "${entry.key}"/>
-		<jstl:set var = "string2" value = "${fn:split(string1, '->')}" />
-		<acme:print value="${string2[0]}"/>
-		<acme:message code="patron.patron-dashboard.form.label.status"/>		
-		<acme:print value="${string2[1]}"/>
-		<acme:message code="patron.patron-dashboard.form.label.avgvalue"/>		
-		<acme:print value="${entry.value}"/>
-		</jstl:forEach>
-		<br>
-		<acme:message code="patron.patron-dashboard.form.label.deviationRetailPriceOfTools"/>
-		<br>		
-		<jstl:forEach items="${deviationRetailPriceOfTools}" var="entry"> 
-		<br>		
-		<acme:message code="patron.patron-dashboard.form.label.currency"/>		
-		<jstl:set var = "string1" value = "${entry.key}"/>
-		<jstl:set var = "string2" value = "${fn:split(string1, '->')}" />
-		<acme:print value="${string2[0]}"/>
-		<acme:message code="patron.patron-dashboard.form.label.status"/>		
-		<acme:print value="${string2[1]}"/>
-		<acme:message code="patron.patron-dashboard.form.label.avgvalue"/>		
-		<acme:print value="${entry.value}"/>
-		</jstl:forEach>
-		<br><acme:message code="patron.patron-dashboard.form.label.maxRetailPriceOfTools"/>
-		<br>		
-		<jstl:forEach items="${maxRetailPriceOfTools}" var="entry"> 
-		<br>		
-		<acme:message code="patron.patron-dashboard.form.label.currency"/>		
-		<jstl:set var = "string1" value = "${entry.key}"/>
-		<jstl:set var = "string2" value = "${fn:split(string1, '->')}" />
-		<acme:print value="${string2[0]}"/>
-		<acme:message code="patron.patron-dashboard.form.label.status"/>		
-		<acme:print value="${string2[1]}"/>
-		<acme:message code="patron.patron-dashboard.form.label.avgvalue"/>		
-		<acme:print value="${entry.value}"/>
-		</jstl:forEach>
-		<br><acme:message code="patron.patron-dashboard.form.label.minRetailPriceOfTools"/>
-		<br>		
-		<jstl:forEach items="${minRetailPriceOfTools}" var="entry"> 
-		<br>		
-		<acme:message code="patron.patron-dashboard.form.label.currency"/>		
-		<jstl:set var = "string1" value = "${entry.key}"/>
-		<jstl:set var = "string2" value = "${fn:split(string1, '->')}" />
-		<acme:print value="${string2[0]}"/>
-		<acme:message code="patron.patron-dashboard.form.label.status"/>		
-		<acme:print value="${string2[1]}"/>
-		<acme:message code="patron.patron-dashboard.form.label.avgvalue"/>		
-		<acme:print value="${entry.value}"/>
-		</jstl:forEach>
-		<br>
-		<acme:message code="patron.patron-dashboard.form.label.minRetailPriceOfTools"/>
-		<br>		
-		<jstl:forEach items="${averageBudgetByStatus}" var="entry"> 
-		<br>		
-		<acme:message code="patron.patron-dashboard.form.label.currency"/>		
-		<jstl:set var = "string1" value = "${entry.key}"/>
-		<jstl:set var = "string2" value = "${fn:split(string1, '->')}" />
-		<acme:print value="${string2[0]}"/>
-		<acme:message code="patron.patron-dashboard.form.label.status"/>		
-		<acme:print value="${string2[1]}"/>
-		<acme:message code="patron.patron-dashboard.form.label.avgvalue"/>		
-		<acme:print value="${entry.value}"/>
-		</jstl:forEach>
-		<br>
-		<acme:message code="patron.patron-dashboard.form.label.minRetailPriceOfTools"/>
-		<br>		
-		<jstl:forEach items="${deviationBudgetByStatus}" var="entry"> 
-		<br>		
-		<acme:message code="patron.patron-dashboard.form.label.currency"/>		
-		<jstl:set var = "string1" value = "${entry.key}"/>
-		<jstl:set var = "string2" value = "${fn:split(string1, '->')}" />
-		<acme:print value="${string2[0]}"/>
-		<acme:message code="patron.patron-dashboard.form.label.status"/>		
-		<acme:print value="${string2[1]}"/>
-		<acme:message code="patron.patron-dashboard.form.label.avgvalue"/>		
-		<acme:print value="${entry.value}"/>
-		</jstl:forEach>
-		<br><acme:message code="patron.patron-dashboard.form.label.minRetailPriceOfTools"/>
-		<br>		
-		<jstl:forEach items="${minBudgetByStatus}" var="entry"> 
-		<br>		
-		<acme:message code="patron.patron-dashboard.form.label.currency"/>		
-		<jstl:set var = "string1" value = "${entry.key}"/>
-		<jstl:set var = "string2" value = "${fn:split(string1, '->')}" />
-		<acme:print value="${string2[0]}"/>
-		<acme:message code="patron.patron-dashboard.form.label.status"/>		
-		<acme:print value="${string2[1]}"/>
-		<acme:message code="patron.patron-dashboard.form.label.avgvalue"/>		
-		<acme:print value="${entry.value}"/>
-		</jstl:forEach>
-		<br><acme:message code="patron.patron-dashboard.form.label.minRetailPriceOfTools"/>
-		<br>		
-		<jstl:forEach items="${maxBudgetByStatus}" var="entry"> 
-		<br>		
-		<acme:message code="patron.patron-dashboard.form.label.currency"/>		
-		<jstl:set var = "string1" value = "${entry.key}"/>
-		<jstl:set var = "string2" value = "${fn:split(string1, '->')}" />
-		<acme:print value="${string2[0]}"/>
-		<acme:message code="patron.patron-dashboard.form.label.status"/>		
-		<acme:print value="${string2[1]}"/>
-		<acme:message code="patron.patron-dashboard.form.label.avgvalue"/>		
-		<acme:print value="${entry.value}"/>
-		</jstl:forEach>
-		<br>
-		<acme:message code="patron.patron-dashboard.form.label.totalNumberOfDeniedPatronages"/>		
-		<acme:print value="${totalNumberOfComponents}"/>
-		<br>
-		<acme:message code="patron.patron-dashboard.form.label.totalNumberOfDeniedPatronages"/>		
-		<acme:print value="${totalNumberOfTools}"/>
-		<br>
-		<acme:message code="patron.patron-dashboard.form.label.totalNumberOfDeniedPatronages"/>		
-		<acme:print value="${totalNumberOfProposedPatronages}"/>
-		<br>
-		<acme:message code="patron.patron-dashboard.form.label.totalNumberOfDeniedPatronages"/>		
-		<acme:print value="${totalNumberOfDeniedPatronages}"/>
-		<br>
-		<acme:message code="patron.patron-dashboard.form.label.totalNumberOfDeniedPatronages"/>		
-		<acme:print value="${totalNumberOfAcceptedPatronages}"/>
+	<acme:message code="patron.patron-dashboard.form.label.componentsTitle"/>
+	<br>	
 	
+	<acme:message code="patron.patron-dashboard.form.label.avg-title"/>	
+	<table class="table table-sm">	
+		<jstl:forEach items="${averageRetailPriceOfComponents}" var="entry"> 	
+		<tr>	
+			<th>	
+			<acme:message code="patron.patron-dashboard.form.label.average-sentence"/>		
+			<jstl:set var = "string1" value = "${entry.key}"/>
+			<jstl:set var = "string2" value = "${fn:split(string1, '->')}" />
+			<acme:print value="${string2[0]}"/>
+			<acme:message code="patron.patron-dashboard.form.label.and-technology"/>
+			<acme:print value="${string2[1]}"/>
+			<acme:message code="patron.patron-dashboard.form.label.colon"/>
+			</th>
+			<td>
+				<acme:print value="${entry.value}"/>
+				
+			</td>		
+		</tr>
+		</jstl:forEach>
+	</table>
+	
+	<acme:message code="patron.patron-dashboard.form.label.deviationTitle"/>	
+	<table class="table table-sm">	
+		<jstl:forEach items="${deviationRetailPriceOfComponents}" var="entry"> 	
+		<tr>	
+			<th>	
+			<acme:message code="patron.patron-dashboard.form.label.deviation-sentence"/>		
+			<jstl:set var = "string1" value = "${entry.key}"/>
+			<jstl:set var = "string2" value = "${fn:split(string1, '->')}" />
+			<acme:print value="${string2[0]}"/>
+			<acme:message code="patron.patron-dashboard.form.label.and-technology"/>
+			<acme:print value="${string2[1]}"/>
+			<acme:message code="patron.patron-dashboard.form.label.colon"/>
+			</th>
+			<td>
+				<acme:print value="${entry.value}"/>
+				
+			</td>		
+		</tr>
+		</jstl:forEach>
+	</table>
+	<acme:message code="patron.patron-dashboard.form.label.minTitle"/>	
+	<table class="table table-sm">	
+		<jstl:forEach items="${minRetailPriceOfComponents}" var="entry"> 	
+		<tr>	
+			<th>	
+			<acme:message code="patron.patron-dashboard.form.label.min-sentence"/>		
+			<jstl:set var = "string1" value = "${entry.key}"/>
+			<jstl:set var = "string2" value = "${fn:split(string1, '->')}" />
+			<acme:print value="${string2[0]}"/>
+			<acme:message code="patron.patron-dashboard.form.label.and-technology"/>
+			<acme:print value="${string2[1]}"/>
+			<acme:message code="patron.patron-dashboard.form.label.colon"/>
+			</th>
+			<td>
+				<acme:print value="${entry.value}"/>
+				
+			</td>		
+		</tr>
+		</jstl:forEach>
+	</table>
+	
+	<acme:message code="patron.patron-dashboard.form.label.maxTitle"/>	
+	<table class="table table-sm">	
+		<jstl:forEach items="${maxRetailPriceOfComponents}" var="entry"> 	
+		<tr>	
+			<th>	
+			<acme:message code="patron.patron-dashboard.form.label.max-sentence"/>		
+			<jstl:set var = "string1" value = "${entry.key}"/>
+			<jstl:set var = "string2" value = "${fn:split(string1, '->')}" />
+			<acme:print value="${string2[0]}"/>
+			<acme:message code="patron.patron-dashboard.form.label.and-technology"/>
+			<acme:print value="${string2[1]}"/>
+			<acme:message code="patron.patron-dashboard.form.label.colon"/>
+			</th>
+			<td>
+				<acme:print value="${entry.value}"/>
+				
+			</td>		
+		</tr>
+		</jstl:forEach>
+	</table>
+		<acme:message code="patron.patron-dashboard.form.label.toolsTitle"/>	
+		<br>	
+	
+	<acme:message code="patron.patron-dashboard.form.label.avg-title"/>	
+	<table class="table table-sm">	
+		<jstl:forEach items="${averageRetailPriceOfTools}" var="entry"> 	
+		<tr>	
+			<th>	
+			<acme:message code="patron.patron-dashboard.form.label.average-sentence"/>		
+			<jstl:set var = "string1" value = "${entry.key}"/>
+			<jstl:set var = "string2" value = "${fn:split(string1, '->')}" />
+
+			<acme:print value="${string2[0]}"/>
+			<acme:message code="patron.patron-dashboard.form.label.colon"/>
+			</th>
+			<td>
+				<acme:print value="${entry.value}"/>
+				
+			</td>		
+		</tr>
+		</jstl:forEach>
+	</table>
+	
+	<acme:message code="patron.patron-dashboard.form.label.deviationTitle"/>	
+	<table class="table table-sm">	
+		<jstl:forEach items="${averageRetailPriceOfTools}" var="entry"> 	
+		<tr>	
+			<th>	
+			<acme:message code="patron.patron-dashboard.form.label.deviation-sentence"/>		
+			<jstl:set var = "string1" value = "${entry.key}"/>
+			<jstl:set var = "string2" value = "${fn:split(string1, '->')}" />
+
+			<acme:print value="${string2[0]}"/>
+			<acme:message code="patron.patron-dashboard.form.label.colon"/>
+			</th>
+			<td>
+				<acme:print value="${entry.value}"/>
+				
+			</td>		
+		</tr>
+		</jstl:forEach>
+	</table>
+	
+	<acme:message code="patron.patron-dashboard.form.label.minTitle"/>	
+	<table class="table table-sm">	
+		<jstl:forEach items="${minRetailPriceOfTools}" var="entry"> 	
+		<tr>	
+			<th>	
+			<acme:message code="patron.patron-dashboard.form.label.min-sentence"/>		
+			<jstl:set var = "string1" value = "${entry.key}"/>
+			<jstl:set var = "string2" value = "${fn:split(string1, '->')}" />
+
+			<acme:print value="${string2[0]}"/>
+			<acme:message code="patron.patron-dashboard.form.label.colon"/>
+			</th>
+			<td>
+				<acme:print value="${entry.value}"/>
+				
+			</td>		
+		</tr>
+		</jstl:forEach>
+	</table>
+	<acme:message code="patron.patron-dashboard.form.label.maxTitle"/>	
+	<table class="table table-sm">	
+		<jstl:forEach items="${maxRetailPriceOfTools}" var="entry"> 	
+		<tr>	
+			<th>	
+			<acme:message code="patron.patron-dashboard.form.label.max-sentence"/>		
+			<jstl:set var = "string1" value = "${entry.key}"/>
+			<jstl:set var = "string2" value = "${fn:split(string1, '->')}" />
+
+			<acme:print value="${string2[0]}"/>
+			<acme:message code="patron.patron-dashboard.form.label.colon"/>
+			</th>
+			<td>
+				<acme:print value="${entry.value}"/>
+				
+			</td>		
+		</tr>
+		</jstl:forEach>
+	</table>
+		<acme:message code="patron.patron-dashboard.form.label.patronageTitle"/>	
+		<br>
+	<acme:message code="patron.patron-dashboard.form.label.avg-title"/>	
+	<table class="table table-sm">	
+		<jstl:forEach items="${averageBudgetByStatus}" var="entry"> 	
+		<tr>	
+			<th>	
+			<acme:message code="patron.patron-dashboard.form.label.patronage-average-sentence"/>		
+			<jstl:set var = "string1" value = "${entry.key}"/>
+			<jstl:set var = "string2" value = "${fn:split(string1, '->')}" />
+
+			<acme:print value="${string2[0]}"/>
+			<acme:message code="patron.patron-dashboard.form.label.colon"/>
+			</th>
+			<td>
+				<acme:print value="${entry.value}"/>
+				
+			</td>		
+		</tr>
+		</jstl:forEach>
+	</table>
+	<acme:message code="patron.patron-dashboard.form.label.deviationTitle"/>	
+	<table class="table table-sm">	
+		<jstl:forEach items="${deviationBudgetByStatus}" var="entry"> 	
+		<tr>	
+			<th>	
+			<acme:message code="patron.patron-dashboard.form.label.patronage-deviation-sentence"/>		
+			<jstl:set var = "string1" value = "${entry.key}"/>
+			<jstl:set var = "string2" value = "${fn:split(string1, '->')}" />
+
+			<acme:print value="${string2[0]}"/>
+			<acme:message code="patron.patron-dashboard.form.label.colon"/>
+			</th>
+			<td>
+				<acme:print value="${entry.value}"/>
+				
+			</td>		
+		</tr>
+		</jstl:forEach>
+	</table>
+	<acme:message code="patron.patron-dashboard.form.label.minTitle"/>	
+	<table class="table table-sm">	
+		<jstl:forEach items="${minBudgetByStatus}" var="entry"> 	
+		<tr>	
+			<th>	
+			<acme:message code="patron.patron-dashboard.form.label.patronage-min-sentence"/>		
+			<jstl:set var = "string1" value = "${entry.key}"/>
+			<jstl:set var = "string2" value = "${fn:split(string1, '->')}" />
+
+			<acme:print value="${string2[0]}"/>
+			<acme:message code="patron.patron-dashboard.form.label.colon"/>
+			</th>
+			<td>
+				<acme:print value="${entry.value}"/>
+				
+			</td>		
+		</tr>
+		</jstl:forEach>
+	</table>
+	
+	<acme:message code="patron.patron-dashboard.form.label.maxTitle"/>	
+	<table class="table table-sm">	
+		<jstl:forEach items="${maxBudgetByStatus}" var="entry"> 	
+		<tr>	
+			<th>	
+			<acme:message code="patron.patron-dashboard.form.label.patronage-max-sentence"/>		
+			<jstl:set var = "string1" value = "${entry.key}"/>
+			<jstl:set var = "string2" value = "${fn:split(string1, '->')}" />
+
+			<acme:print value="${string2[0]}"/>
+			<acme:message code="patron.patron-dashboard.form.label.colon"/>
+			</th>
+			<td>
+				<acme:print value="${entry.value}"/>
+				
+			</td>		
+		</tr>
+		</jstl:forEach>
+	</table>		
+		<acme:message code="patron.patron-dashboard.form.label.absoluteTitle"/>		
+	<table class="table table-sm">
+			<tr>	
+				<th>
+					<acme:message code="patron.patron-dashboard.form.label.totalNumberOfProposedPatronages"/>		
+		
+				</th>
+				<td>
+					<acme:print value="${totalNumberOfProposedPatronages}"/>
+				</td>		
+			</tr>
+			<tr>	
+				<th>
+					<acme:message code="patron.patron-dashboard.form.label.totalNumberOfAcceptedPatronages"/>
+				</th>
+				<td>
+					<acme:print value="${totalNumberOfAcceptedPatronages}"/>
+				</td>		
+			</tr>
+			<tr>	
+				<th>
+					<acme:message code="patron.patron-dashboard.form.label.totalNumberOfDeniedPatronages"/>		
+				</th>
+				<td>
+					<acme:print value="${totalNumberOfDeniedPatronages}"/> 
+				</td>		
+			</tr>
+			<tr>	
+				<th>
+					<acme:message code="patron.patron-dashboard.form.label.totalNumberOfComponents"/>		
+				</th>
+				<td>
+					<acme:print value="${totalNumberOfComponents}"/> 
+				</td>		
+			</tr>
+			<tr>	
+				<th>
+					<acme:message code="patron.patron-dashboard.form.label.totalNumberOfTools"/>		
+				</th>
+				<td>
+					<acme:print value="${totalNumberOfTools}"/> 
+				</td>		
+			</tr>
+	</table>
+		
 </acme:form>
