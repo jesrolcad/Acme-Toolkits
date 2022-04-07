@@ -15,4 +15,5 @@
 	<acme:input-money code="any.item.form.label.retail-price" path="retailPrice"/>
 	<acme:input-url code="any.item.form.label.optional-link" path="optionalLink"/>	
 	<acme:input-textbox code="any.item.form.label.inventor" path="inventor"/>
+	<acme:input-textbox code="any.item.form.label.published" path="published"/>
 </acme:form>
