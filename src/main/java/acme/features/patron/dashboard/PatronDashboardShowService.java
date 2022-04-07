@@ -29,57 +29,57 @@ public class PatronDashboardShowService implements AbstractShowService<Patron, P
 	public PatronDashboard findOne(final Request<PatronDashboard> request) {
 
 		assert request != null;
-		PatronDashboard result=new PatronDashboard();
-		int totalNumberOfProposedPatronages=this.repository.totalNumberOfProposedPatronages();
-		int totalNumberOfAcceptedPatronages=this.repository.totalNumberOfAcceptedPatronages();
-		int totalNumberOfDeniedPatronages=this.repository.totalNumberOfDeniedPatronages();
-		Map<Pair<String, String>, Double> averageBudgetByCurrency = new HashMap<Pair<String, String>, Double>();
-		Map<Pair<String, String>, Double> deviationBudgetByCurrency = new HashMap<Pair<String, String>, Double>();
-		Map<Pair<String, String>, Double> minBudgetByCurrency = new HashMap<Pair<String, String>, Double>();
-		Map<Pair<String, String>, Double> maxBudgetByCurrency = new HashMap<Pair<String, String>, Double>();
+		final PatronDashboard result=new PatronDashboard();
+		final int totalNumberOfProposedPatronages=this.repository.totalNumberOfProposedPatronages();
+		final int totalNumberOfAcceptedPatronages=this.repository.totalNumberOfAcceptedPatronages();
+		final int totalNumberOfDeniedPatronages=this.repository.totalNumberOfDeniedPatronages();
+		final Map<Pair<String, String>, Double> averageBudgetByCurrency = new HashMap<Pair<String, String>, Double>();
+		final Map<Pair<String, String>, Double> deviationBudgetByCurrency = new HashMap<Pair<String, String>, Double>();
+		final Map<Pair<String, String>, Double> minBudgetByCurrency = new HashMap<Pair<String, String>, Double>();
+		final Map<Pair<String, String>, Double> maxBudgetByCurrency = new HashMap<Pair<String, String>, Double>();
 
 		int i=0;
 	
 		while(i<this.repository.averageBudgetByCurrency().size()) {
-			String linea= this.repository.averageBudgetByCurrency().get(i);
-			String[] sub=linea.split(",");
-			Double key=Double.parseDouble(sub[1]);
-			String divisa=sub[0];
-			String estado= sub[2];
-			Pair<String, String> res=Pair.of(divisa, estado);
+			final String linea= this.repository.averageBudgetByCurrency().get(i);
+			final String[] sub=linea.split(",");
+			final Double key=Double.parseDouble(sub[1]);
+			final String divisa=sub[0];
+			final String estado= sub[2];
+			final Pair<String, String> res=Pair.of(divisa, estado);
 			averageBudgetByCurrency.put(res, key);
 			i++;
 		}
 		i=0;
 		while(i<this.repository.deviationBudgetByCurrency().size()) {
-			String linea= this.repository.deviationBudgetByCurrency().get(i);
-			String[] sub=linea.split(",");
-			Double key=Double.parseDouble(sub[1]);
-			String divisa=sub[0];
-			String estado= sub[2];
-			Pair<String, String> res=Pair.of(divisa, estado);
+			final String linea= this.repository.deviationBudgetByCurrency().get(i);
+			final String[] sub=linea.split(",");
+			final Double key=Double.parseDouble(sub[1]);
+			final String divisa=sub[0];
+			final String estado= sub[2];
+			final Pair<String, String> res=Pair.of(divisa, estado);
 			deviationBudgetByCurrency.put(res, key);
 			i++;
 		}
 		i=0;
 		while(i<this.repository.minBudgetByCurrency().size()) {
-			String linea= this.repository.minBudgetByCurrency().get(i);
-			String[] sub=linea.split(",");
-			Double key=Double.parseDouble(sub[1]);
-			String divisa=sub[0];
-			String estado= sub[2];
-			Pair<String, String> res=Pair.of(divisa, estado);
+			final String linea= this.repository.minBudgetByCurrency().get(i);
+			final String[] sub=linea.split(",");
+			final Double key=Double.parseDouble(sub[1]);
+			final String divisa=sub[0];
+			final String estado= sub[2];
+			final Pair<String, String> res=Pair.of(divisa, estado);
 			minBudgetByCurrency.put(res, key);
 			i++;
 		}
 		i=0;
 		while(i<this.repository.maxBudgetByCurrency().size()) {
-			String linea= this.repository.maxBudgetByCurrency().get(i);
-			String[] sub=linea.split(",");
-			Double key=Double.parseDouble(sub[1]);
-			String divisa=sub[0];
-			String estado= sub[2];
-			Pair<String, String> res=Pair.of(divisa, estado);
+			final String linea= this.repository.maxBudgetByCurrency().get(i);
+			final String[] sub=linea.split(",");
+			final Double key=Double.parseDouble(sub[1]);
+			final String divisa=sub[0];
+			final String estado= sub[2];
+			final Pair<String, String> res=Pair.of(divisa, estado);
 			maxBudgetByCurrency.put(res, key);
 			i++;
 		}
@@ -90,7 +90,6 @@ public class PatronDashboardShowService implements AbstractShowService<Patron, P
 		result.setDeviationBudgetByCurrency(deviationBudgetByCurrency);
 		result.setMinBudgetByCurrency(minBudgetByCurrency);
 		result.setMaxBudgetByCurrency(maxBudgetByCurrency);
-		System.out.println(result.toString());
 
 		return result;
 	}

@@ -8,22 +8,21 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
+patron.patron-dashboard.form.label.and-status = and status
+patron.patron-dashboard.form.label.colon = :
+
+patron.patron-dashboard.form.label.average-sentence = Average budget by currency 
+patron.patron-dashboard.form.label.deviation-sentence = Deviation budget by currency 
+patron.patron-dashboard.form.label.max-sentence = Maximum budget by currency
+patron.patron-dashboard.form.label.min-sentence = Minimum budget by currency
+
+patron.patron-dashboard.form.label.avg-title = Averages information.
+patron.patron-dashboard.form.label.deviationTitle= Deviations information.
+patron.patron-dashboard.form.label.maxTitle= Maximums information.
+patron.patron-dashboard.form.label.minTitle= Minimums information.
+patron.patron-dashboard.form.label.absoluteTitle = Total Metrics
+
 patron.patron-dashboard.form.label.totalNumberOfProposedPatronages = Total number of proposed patronages:
 patron.patron-dashboard.form.label.totalNumberOfAcceptedPatronages = Total number of accepted patronages:
 patron.patron-dashboard.form.label.totalNumberOfDeniedPatronages = Total number of denied patronages:
-patron.patron-dashboard.form.label.currency = Currency:
-patron.patron-dashboard.form.label.status = Status:
-patron.patron-dashboard.form.label.avgvalue = Average budget by currency:
-patron.patron-dashboard.form.label.deviationvalue = Deviation budget by currency:
-patron.patron-dashboard.form.label.maxvalue = Max budget by currency:
-patron.patron-dashboard.form.label.minvalue = Min budget by currency:
-patron.patron-dashboard.form.label.minvalue = Min budget by currency:
 
-patron.patron-dashboard.form.label.averageTitle= AVERAGE INFORMATION.
-patron.patron-dashboard.form.label.deviationTitle= DEVIATION INFORMATION.
-patron.patron-dashboard.form.label.maxTitle= MAX INFORMATION.
-patron.patron-dashboard.form.label.minTitle= MIN INFORMATION.
-
-patron.patronDashboard.form.label.deviationBudgetByCurrency = Deviation budget by currency
-patron.patronDashboard.form.label.minBudgetByCurrency = Min budget by currency
-patron.patronDashboard.form.label.minBudgetByCurrency = Max budget by currency
