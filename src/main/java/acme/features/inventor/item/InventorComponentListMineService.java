@@ -33,7 +33,7 @@ public class InventorComponentListMineService implements AbstractListService<Inv
 		Collection<Item> result; 
 		final int UAId = request.getPrincipal().getAccountId();
 		final int InventorId = this.repository.findInventorByUserAccountId(UAId).getId();
-		result = this.repository.findManyComponents(InventorId); 
+		result = this.repository.findManyComponentsByInventorId(InventorId); 
  
 		return result; 
 	} 
@@ -46,8 +46,7 @@ public class InventorComponentListMineService implements AbstractListService<Inv
 		
 		
  
-		request.unbind(entity, model, "tipo",  
-			"name","code", "technology","description", "retailPrice", "published", "optionalLink", "inventor.userAccount.username"); 
+		request.unbind(entity, model, "name","code", "technology", "retailPrice"); 
 		 
 		 
 	} 

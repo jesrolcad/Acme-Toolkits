@@ -56,10 +56,11 @@
 		<acme:menu-option code="master.menu.patron" access="hasRole('Patron')">
 			<acme:menu-suboption code="master.menu.patron.favourite-link" action="http://www.example.com/"/>
 		</acme:menu-option>
+		
 		<acme:menu-option code="master.menu.inventor" access="hasRole('Inventor')">
-			<acme:menu-suboption code="master.menu.inventor.favourite-link" action="http://www.example.com/"/>
-			<acme:menu-suboption code="master.menu.inventor.item.tool.list" action="/inventor/item/listTools"/>
 			<acme:menu-suboption code="master.menu.inventor.item.component.list" action="/inventor/item/listComponents"/>
+			<acme:menu-suboption code="master.menu.inventor.item.tool.list" action="/inventor/item/listTools"/>
+			<acme:menu-suboption code="master.menu.inventor.favourite-link" action="http://www.example.com/"/>
 		</acme:menu-option>
 	</acme:menu-left>
 
