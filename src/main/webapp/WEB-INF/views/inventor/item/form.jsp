@@ -16,7 +16,7 @@
 	<acme:input-textbox code="inventor.item.form.label.published"
 		path="published" />
 	<acme:input-textbox code="inventor.item.form.label.optionalLink"
-		path="optionalLik" />
+		path="optionalLink" />
 	<acme:input-textbox code="inventor.item.form.label.inventor"
 		path="inventor.userAccount.username" />
 </acme:form>

@@ -1,3 +1,4 @@
+
 package acme.features.inventor.item;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +15,8 @@ public class InventorItemShowService implements AbstractShowService<Inventor, It
 
 	@Autowired
 	protected InventorItemRepository repository;
-	
+
+
 	@Override
 	public boolean authorise(final Request<Item> request) {
 		assert request != null;
@@ -39,11 +41,11 @@ public class InventorItemShowService implements AbstractShowService<Inventor, It
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-
-		request.unbind(entity, model, "tipo",  
-			"name","code", "technology","description", "retailPrice", "published", "optionalLink",  
-			"inventor.userAccount.username");
 		
+		
+
+		request.unbind(entity, model, "tipo", "name", "code", "technology", "description", "retailPrice", "published", "optionalLink", "inventor.userAccount.username");
+
 	}
 
 }

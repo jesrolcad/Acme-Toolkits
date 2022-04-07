@@ -12,7 +12,7 @@ import acme.framework.services.AbstractListService;
 import acme.roles.Inventor; 
  
 @Service 
-public class InventorToolListService implements AbstractListService<Inventor, Item> { 
+public class InventorToolListMineService implements AbstractListService<Inventor, Item> { 
 	// Internal state --------------------------------------------------------- 
  
 	@Autowired 
@@ -43,6 +43,8 @@ public class InventorToolListService implements AbstractListService<Inventor, It
 		assert request != null; 
 		assert entity != null; 
 		assert model != null; 
+		
+		
  
 		request.unbind(entity, model, "tipo",  
 			"name","code", "technology","description", "retailPrice", "published", "optionalLink",  
