@@ -1,5 +1,5 @@
-package acme.features.inventor.item; 
- 
+package acme.features.inventor.item;
+
 import java.util.Collection;
 
 import org.springframework.data.jpa.repository.Query;

@@ -1,4 +1,3 @@
-
 package acme.features.inventor.item;
 
 import javax.annotation.PostConstruct;
@@ -30,4 +29,5 @@ public class InventorItemController extends AbstractController<Inventor, Item> {
 		super.addCommand("listComponents", "list", this.componentListMineService);
 		super.addCommand("show", this.itemShowService);
 	}
+
 }

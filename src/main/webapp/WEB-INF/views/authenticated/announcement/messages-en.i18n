@@ -1,0 +1,13 @@
+authenticated.announcement.list.label.title = Title
+authenticated.announcement.list.label.moment= Moment	
+authenticated.announcement.list.label.body = Body
+authenticated.announcement.list.label.info = info	
+authenticated.announcement.list.label.critical = critical
+
+
+authenticated.announcement.form.label.title = Title
+authenticated.announcement.form.label.moment= Moment	
+authenticated.announcement.form.label.body = Body
+authenticated.announcement.form.label.info = info	
+authenticated.announcement.form.label.critical = critical
+
