@@ -47,6 +47,7 @@ master.menu.administrator.system-configuration = Configuración del sistema
 master.menu.administrator.populate-initial = Poblar BD (inicial)
 master.menu.administrator.populate-sample = Poblar BD (ejemplos)
 master.menu.administrator.shut-down = Parar el sistema
+master.menu.administrator.administrator-dashboard = Panel de información
 
 # master.menu.provider ########################################################
 

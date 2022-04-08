@@ -10,7 +10,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class AdministatorDashboard implements Serializable {
+public class AdministratorDashboard implements Serializable {
 	
 	// Serialisation identifier -----------------------------------------------
 
@@ -31,9 +31,9 @@ public class AdministatorDashboard implements Serializable {
 		int totalNumberOfProposedPatronages;
 		int totalNumberOfAcceptedPatronages;
 		int totalNumberOfDeniedPatronages;
-		Map<String,Double> averageBudgetByCurrency;
-		Map<String,Double> deviationBudgetByCurrency;
-		Map<String,Double> minBudgetByCurrency;
-		Map<String,Double> maxBudgetByCurrency;
+		Map<String,Double> averageBudgetByStatus;
+		Map<String,Double> deviationBudgetByStatus;
+		Map<String,Double> minBudgetByStatus;
+		Map<String,Double> maxBudgetByStatus;
 }
 

@@ -1,0 +1,55 @@
+# i18n_en.messages
+#
+# Copyright (C) 2012-2021 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+
+patron.patron-dashboard.form.label.and-technology = and technology
+patron.patron-dashboard.form.label.colon = :
+patron.patron-dashboard.form.label.componentsTitle = COMPONENTS
+patron.patron-dashboard.form.label.toolsTitle = TOOLS
+patron.patron-dashboard.form.label.patronageTitle = PATRONAGES
+patron.patron-dashboard.form.label.patronage-average-sentence= Average retail price by status
+patron.patron-dashboard.form.label.patronage-deviation-sentence= Deviation retail price by status
+patron.patron-dashboard.form.label.patronage-max-sentence= Maximum retail price by status
+patron.patron-dashboard.form.label.patronage-min-sentence= Minimum retail price by status
+
+patron.patron-dashboard.form.label.average-sentence = Average retail price by currency 
+patron.patron-dashboard.form.label.deviation-sentence = Deviation retail price by currency 
+patron.patron-dashboard.form.label.max-sentence = Maximum retail price by currency
+patron.patron-dashboard.form.label.min-sentence = Minimum retail price by currency
+
+patron.patron-dashboard.form.label.avg-title = Averages information.
+patron.patron-dashboard.form.label.deviationTitle= Deviations information.
+patron.patron-dashboard.form.label.maxTitle= Maximums information.
+patron.patron-dashboard.form.label.minTitle= Minimums information.
+patron.patron-dashboard.form.label.absoluteTitle = Total Metrics
+
+patron.patron-dashboard.form.label.totalNumberOfProposedPatronages = Total number of proposed patronages:
+patron.patron-dashboard.form.label.totalNumberOfAcceptedPatronages = Total number of accepted patronages:
+patron.patron-dashboard.form.label.totalNumberOfDeniedPatronages = Total number of denied patronages:
+
+patron.patron-dashboard.form.label.totalNumberOfTools= Total number of tools:
+patron.patron-dashboard.form.label.totalNumberOfComponents= Total number of components: 
+anonymous.user-account.form.title.create = Sign up
+
+anonymous.user-account.form.label.username = Username:
+anonymous.user-account.form.label.password = Password:
+anonymous.user-account.form.label.confirmation = Confirmation:
+anonymous.user-account.form.label.name = Name:
+anonymous.user-account.form.label.surname = Surname:
+anonymous.user-account.form.label.email = Email:
+anonymous.user-account.form.label.phone = Phone: (optional)
+anonymous.user-account.form.label.accept = I do accept the license
+
+anonymous.user-account.form.button.create = Sign up
+
+anonymous.user-account.form.error.duplicated = This name is already taken
+anonymous.user-account.form.error.must-accept = Must accept the license
+anonymous.user-account.form.error.confirmation-no-match = Confirmation doesn't match
+
