@@ -9,3 +9,8 @@ patronage-07,ACCEPTED,QWE-742,No law has been broken,EUR 3.00,2022/05/18 16:00,2
 patronage-08,PROPOSED,ABS-222-O,No law has been broken,USD 0.02,2022/05/18 16:58,2022/06/18 16:59,null,patron-03,inventor-03
 patronage-09,DENIED,CBX-345,No law has been broken,GBP 17.99,2022/05/18 14:35,2022/06/18 14:36,null,patron-04,inventor-04
 patronage-10,DENIED,IUO-567,No law has been broken,EUR 0.98,2022/03/18 16:00,2022/06/18 16:00,null,patron-05,inventor-05
+patronage-11,PROPOSED,IAU-187,No law has been broken,GBP 0.97,2022/03/18 16:00,2022/06/18 16:00,null,patron-05,inventor-05
+patronage-12,ACCEPTED,AUB-184,No law has been broken,GBP 1.97,2022/03/18 16:00,2022/06/18 16:00,null,patron-05,inventor-05
+patronage-13,ACCEPTED,UUA-185,No law has been broken,USD 1.47,2022/03/18 16:00,2022/06/18 16:00,null,patron-05,inventor-05
+patronage-14,DENIED,AUA-185,No law has been broken,USD 1.27,2022/03/18 16:00,2022/06/18 16:00,null,patron-05,inventor-05
+patronage-15,PROPOSED,IAO-167,No law has been broken,EUR 0.92,2022/03/18 16:00,2022/06/18 16:00,null,patron-05,inventor-05

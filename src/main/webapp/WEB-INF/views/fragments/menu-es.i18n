@@ -64,6 +64,7 @@ master.menu.patron = Patrocinador
 master.menu.patron.components.list = Listar componentes publicados
 master.menu.patron.tools.list = Listar herramientas publicadas
 master.menu.patron.favourite-link = Enlace favorito
+master.menu.patron.patron-dashboard = Panel de indicadores
 master.menu.patron.list-patronage-reports = Reportes de patrocinios
 master.menu.patron.list-patronages = Listar patrocinios
 
