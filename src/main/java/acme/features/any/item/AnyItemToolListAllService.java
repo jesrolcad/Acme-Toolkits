@@ -32,7 +32,7 @@ public class AnyItemToolListAllService implements AbstractListService<Any, Item>
 
 			Collection<Item> result;
 
-			result = this.repository.findManyTools();
+			result = this.repository.findManyPublishedTools();
 
 			return result;
 		}
@@ -43,7 +43,7 @@ public class AnyItemToolListAllService implements AbstractListService<Any, Item>
 			assert entity != null;
 			assert model != null;
 
-			request.unbind(entity, model, "tipo", "name", "code", "technology");
+			request.unbind(entity, model, "name", "code", "technology", "retailPrice");
 			
 		}
 		
