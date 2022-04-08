@@ -40,13 +40,19 @@
 			<acme:menu-suboption code="master.menu.authenticated.all-components" action="/any/item/list-all-components"/>
 			<acme:menu-suboption code="master.menu.authenticated.all-tools" action="/any/item/list-all-tools"/>
 			<acme:menu-suboption code="master.menu.authenticated.all-chirps" action="/any/chirp/list-all-chirps"/>	
+      <acme:menu-suboption code="master.menu.authenticated.announcement.list" action="/authenticated/announcement/list-recent"/>
 			<acme:menu-suboption code="master.menu.authenticated.enabled-userAccounts" action="/any/user-account/list-enabled-user-accounts"/>
 			<acme:menu-separator/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
+			<acme:menu-suboption code="master.menu.administrator.components.list" action="/administrator/item/list-all-components"/>
+			<acme:menu-suboption code="master.menu.administrator.tools.list" action="/administrator/item/list-all-tools"/>
+			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.user-accounts" action="/administrator/user-account/list"/>
 			<acme:menu-suboption code="master.menu.administrator.all-chirps" action="/any/chirp/list-all-chirps"/>	
+			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.administrator.system-configuration" action="/administrator/system-configuration/show"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.populate-initial" action="/administrator/populate-initial"/>
 			<acme:menu-suboption code="master.menu.administrator.populate-sample" action="/administrator/populate-sample"/>			
@@ -61,10 +67,20 @@
 		<acme:menu-option code="master.menu.consumer" access="hasRole('Consumer')">
 			<acme:menu-suboption code="master.menu.consumer.favourite-link" action="http://www.example.com/"/>
 		</acme:menu-option>
+		
+		
 		<acme:menu-option code="master.menu.patron" access="hasRole('Patron')">
+			<acme:menu-suboption code="master.menu.patron.components.list" action="/patron/item/list-all-components"/>
+			<acme:menu-suboption code="master.menu.patron.tools.list" action="/patron/item/list-all-tools"/>
+			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.patron.favourite-link" action="http://www.example.com/"/>
 		</acme:menu-option>
+		
+		
 		<acme:menu-option code="master.menu.inventor" access="hasRole('Inventor')">
+			<acme:menu-suboption code="master.menu.inventor.components.list" action="/administrator/item/list-all-components"/>
+			<acme:menu-suboption code="master.menu.inventor.tools.list" action="/inventor/item/list-all-tools"/>
+			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.inventor.favourite-link" action="http://www.example.com/"/>
 		</acme:menu-option>
 	</acme:menu-left>

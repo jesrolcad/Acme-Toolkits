@@ -35,14 +35,15 @@ master.menu.authenticated = Authenticated
 master.menu.authenticated.all-components = List published components
 master.menu.authenticated.all-tools = List published tools
 master.menu.authenticaded.all-chirps = List all chirps
+master.menu.authenticated.announcement.list = List of recent announcements
 master.menu.authenticated.enabled-userAccounts = List enabled user accounts
-
 
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrator
 master.menu.administrator.all-chirps = List all chirps
 master.menu.administrator.user-accounts = User accounts
+master.menu.administrator.system-configuration = System configuration
 master.menu.administrator.populate-initial = Populate DB (initial)
 master.menu.administrator.populate-sample = Populate DB (samples)
 master.menu.administrator.shut-down = Shut down
@@ -60,11 +61,15 @@ master.menu.consumer.favourite-link = Favourite link
 # master.menu.patron ##########################################################
 
 master.menu.patron = Patron
+master.menu.patron.components.list = List published components
+master.menu.patron.tools.list = List published tools
 master.menu.patron.favourite-link = Favourite link
 
 # master.menu.inventor ##########################################################
 
 master.menu.inventor = Inventor
+master.menu.inventor.components.list = List published components
+master.menu.inventor.tools.list = List published tools
 master.menu.inventor.favourite-link = Favourite link
 
 # master.menu.user-account ####################################################

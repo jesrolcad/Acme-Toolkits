@@ -35,6 +35,7 @@ master.menu.authenticated = Autentificado
 master.menu.authenticated.all-components = Listar componentes publicados
 master.menu.authenticated.all-tools = Listar herramientas publicadas
 master.menu.authenticaded.all-chirps = Listar todos los chirridos
+master.menu.authenticated.announcement.list = Lista de anuncios recientes
 master.menu.authenticated.enabled-userAccounts = Listar cuentas de usuario activadas
 
 # master.menu.administrator ###################################################
@@ -42,6 +43,7 @@ master.menu.authenticated.enabled-userAccounts = Listar cuentas de usuario activ
 master.menu.administrator = Administrador
 master.menu.administrator.all-chirps = Listar todos los chirridos
 master.menu.administrator.user-accounts = Cuentas de usuario
+master.menu.administrator.system-configuration = Configuración del sistema
 master.menu.administrator.populate-initial = Poblar BD (inicial)
 master.menu.administrator.populate-sample = Poblar BD (ejemplos)
 master.menu.administrator.shut-down = Parar el sistema
@@ -58,12 +60,16 @@ master.menu.consumer.favourite-link = Enlace favorito
 
 # master.menu.patron ####################################################
 
-master.menu.patron = Patrón
+master.menu.patron = Patrocinador
+master.menu.patron.components.list = Listar componentes publicados
+master.menu.patron.tools.list = Listar herramientas publicadas
 master.menu.patron.favourite-link = Enlace favorito
 
 # master.menu.inventor ####################################################
 
 master.menu.inventor = Inventor
+master.menu.inventor.components.list = Listar componentes publicados
+master.menu.inventor.tools.list = Listar herramientas publicadas
 master.menu.inventor.favourite-link = Enlace favorito
 
 # master.menu.user-account ####################################################
@@ -74,7 +80,7 @@ master.menu.user-account.provider = Datos de proveedor
 master.menu.user-account.become-provider = Hazte proveedor
 master.menu.user-account.consumer = Datos de consumidor
 master.menu.user-account.become-consumer = Hazte consumidor
-master.menu.user-account.patron = Datos de patrón
-master.menu.user-account.become-patron = Hazte patrón
+master.menu.user-account.patron = Datos de patrocinador
+master.menu.user-account.become-patron = Hazte patrocinador
 master.menu.user-account.inventor = Datos de inventor
 master.menu.user-account.become-inventor = Hazte inventor
