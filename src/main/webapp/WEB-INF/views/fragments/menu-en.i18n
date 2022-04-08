@@ -69,8 +69,8 @@ master.menu.patron.favourite-link = Favourite link
 # master.menu.inventor ##########################################################
 
 master.menu.inventor = Inventor
-master.menu.inventor.components.list = List published components
-master.menu.inventor.tools.list = List published tools
+master.menu.inventor.item.component.list = List my components
+master.menu.inventor.item.tool.list = List my tools
 master.menu.inventor.favourite-link = Favourite link
 
 # master.menu.user-account ####################################################
