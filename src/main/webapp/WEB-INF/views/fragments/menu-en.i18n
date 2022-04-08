@@ -65,6 +65,7 @@ master.menu.patron = Patron
 master.menu.patron.components.list = List published components
 master.menu.patron.tools.list = List published tools
 master.menu.patron.favourite-link = Favourite link
+master.menu.patron.list-patronages = List patronages
 
 # master.menu.inventor ##########################################################
 

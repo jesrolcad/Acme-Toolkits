@@ -74,6 +74,7 @@
 			<acme:menu-suboption code="master.menu.patron.tools.list" action="/patron/item/list-all-tools"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.patron.favourite-link" action="http://www.example.com/"/>
+			<acme:menu-suboption code="master.menu.patron.list-patronages" action="/patron/patronage/list"/>
 		</acme:menu-option>
 		
 
