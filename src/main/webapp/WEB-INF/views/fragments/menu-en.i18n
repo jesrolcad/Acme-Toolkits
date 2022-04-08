@@ -20,6 +20,7 @@ master.menu.sign-out = Sign out
 master.menu.anonymous = Anonymous
 master.menu.anonymous.all-components = List published components
 master.menu.anonymous.all-tools = List published tools
+master.menu.anonymous.all-chirps = List all chirps
 master.menu.anonymous.enabled-userAccounts = List enabled user accounts
 master.menu.anonymous.favourite-link-pablo = 49063639Q: Gutiérrez Ceballos, Pablo
 master.menu.anonymous.favourite-link-javier = 77866469S: Grosso Gomez de Terreros, Javier
@@ -33,12 +34,14 @@ master.menu.anonymous.favourite-link-roman = 28838510Y: Flores Rodríguez, Romá
 master.menu.authenticated = Authenticated
 master.menu.authenticated.all-components = List published components
 master.menu.authenticated.all-tools = List published tools
+master.menu.authenticaded.all-chirps = List all chirps
 master.menu.authenticated.enabled-userAccounts = List enabled user accounts
 
 
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrator
+master.menu.administrator.all-chirps = List all chirps
 master.menu.administrator.user-accounts = User accounts
 master.menu.administrator.populate-initial = Populate DB (initial)
 master.menu.administrator.populate-sample = Populate DB (samples)
