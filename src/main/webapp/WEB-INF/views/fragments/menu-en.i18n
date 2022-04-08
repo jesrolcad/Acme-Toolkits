@@ -37,6 +37,7 @@ master.menu.authenticated.all-tools = List published tools
 master.menu.authenticaded.all-chirps = List all chirps
 master.menu.authenticated.announcement.list = List of recent announcements
 master.menu.authenticated.enabled-userAccounts = List enabled user accounts
+master.menu.authenticated.system-configuration = System configuration
 
 # master.menu.administrator ###################################################
 
