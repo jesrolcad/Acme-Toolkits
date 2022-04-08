@@ -1,0 +1,3 @@
+recordIndex,tipo,name,code,technology,description,retail-price,optional-link,inventor,published
+0,COMPONENT,Component 1,KBK-312,Technology2,This is the component 1 and uses the tecnology 2,EUR 0.01,https://www.google.com/,inventor1,true
+1,COMPONENT,Component 2,AUK-312,Technology3,This is the component 2 and uses the tecnology 3,USD 0.01,,inventor1,true

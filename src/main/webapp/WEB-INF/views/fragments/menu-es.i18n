@@ -18,8 +18,10 @@ master.menu.sign-out = Salir
 # master.menu.anonymous #######################################################
 
 master.menu.anonymous = Anónimo
-master.menu.anonymous.all-components = Listar todos los componentes
-master.menu.anonymous.all-tools = Listar todas las herramientas
+master.menu.anonymous.all-components = Listar componentes publicados
+master.menu.anonymous.all-tools = Listar herramientas publicadas
+master.menu.anonymous.all-chirps = Listar todos los chirridos
+master.menu.anonymous.enabled-userAccounts = Listar cuentas de usuario activadas
 master.menu.anonymous.favourite-link-pablo = 49063639Q: Gutiérrez Ceballos, Pablo
 master.menu.anonymous.favourite-link-javier = 77866469S: Grosso Gomez de Terreros, Javier
 master.menu.anonymous.favourite-link-jesus = 29557570V: Roldán Cadena, Jesús
@@ -27,16 +29,21 @@ master.menu.anonymous.favourite-link-julia = 29555723X: Ibáñez Montero, Julia
 master.menu.anonymous.favourite-link-alejandro = 49092051T: Baños González, Alejandro
 master.menu.anonymous.favourite-link-roman = 28838510Y: Flores Rodríguez, Román
 
-
 # master.menu.authenticated ###################################################
 master.menu.authenticated = Autentificado
-master.menu.authenticated.all-components = Listar todos los componentes
-master.menu.authenticated.all-tools = Listar todas las herramientas
+master.menu.authenticated.all-components = Listar componentes publicados
+master.menu.authenticated.all-tools = Listar herramientas publicadas
+master.menu.authenticaded.all-chirps = Listar todos los chirridos
+master.menu.authenticated.announcement.list = Lista de anuncios recientes
+master.menu.authenticated.enabled-userAccounts = Listar cuentas de usuario activadas
+master.menu.authenticated.system-configuration = Configuración del sistema
 
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrador
+master.menu.administrator.all-chirps = Listar todos los chirridos
 master.menu.administrator.user-accounts = Cuentas de usuario
+master.menu.administrator.system-configuration = Configuración del sistema
 master.menu.administrator.populate-initial = Poblar BD (inicial)
 master.menu.administrator.populate-sample = Poblar BD (ejemplos)
 master.menu.administrator.shut-down = Parar el sistema
@@ -53,13 +60,23 @@ master.menu.consumer.favourite-link = Enlace favorito
 
 # master.menu.patron ####################################################
 
-master.menu.patron = Patrón
+master.menu.patron = Patrocinador
+master.menu.patron.components.list = Listar componentes publicados
+master.menu.patron.tools.list = Listar herramientas publicadas
 master.menu.patron.favourite-link = Enlace favorito
-master.menu.patron.patron-dashboard = Panel de información
+master.menu.patron.patron-dashboard = Panel de indicadores
+master.menu.patron.list-patronage-reports = Reportes de patrocinios
+master.menu.patron.list-patronages = Listar patrocinios
+
 # master.menu.inventor ####################################################
 
 master.menu.inventor = Inventor
+master.menu.inventor.item.component.list = Listar mis componentes
+master.menu.inventor.item.tool.list = Listar mis herramientas 
 master.menu.inventor.favourite-link = Enlace favorito
+master.menu.inventor.patronage-reports = Reportes de patrocinios
+master.menu.inventor.list-patronages = Listar patrocinios
+
 
 # master.menu.user-account ####################################################
 
@@ -69,7 +86,7 @@ master.menu.user-account.provider = Datos de proveedor
 master.menu.user-account.become-provider = Hazte proveedor
 master.menu.user-account.consumer = Datos de consumidor
 master.menu.user-account.become-consumer = Hazte consumidor
-master.menu.user-account.patron = Datos de patrón
-master.menu.user-account.become-patron = Hazte patrón
+master.menu.user-account.patron = Datos de patrocinador
+master.menu.user-account.become-patron = Hazte patrocinador
 master.menu.user-account.inventor = Datos de inventor
 master.menu.user-account.become-inventor = Hazte inventor
