@@ -1,0 +1,6 @@
+any.user-account.list.label.roles = Roles
+
+any.user-account.form.label.username = Nombre de usuario
+any.user-account.form.label.name = Nombre
+any.user-account.form.label.surname	= Apellidos
+any.user-account.form.label.email = Correo electrónico
