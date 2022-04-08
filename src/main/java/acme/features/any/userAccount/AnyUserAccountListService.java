@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.entities.UserAccount;
-import acme.framework.roles.Administrator;
 import acme.framework.roles.Any;
 import acme.framework.roles.UserRole;
 import acme.framework.services.AbstractListService;
@@ -47,18 +46,14 @@ public class AnyUserAccountListService implements AbstractListService<Any, UserA
 		roles = entity.getRoles();
 		buffer = new StringBuilder();
 		for (final UserRole rol : roles) {
-			final boolean rolAnonimo = rol.getUserAccount().isAnonymous();
-			final boolean rolAdministrator = rol.getUserAccount().hasRoleClass(Administrator.class);
-			
-			if(!rolAnonimo && !rolAdministrator) {
+//			final boolean rolAnonimo = rol.getUserAccount().isAnonymous();
+//			final boolean rolAdministrator = rol.getUserAccount().hasRole(Administrator.class);
 				buffer.append(rol.getAuthorityName());
 				buffer.append(" ");
-			}
 			
 		}
 		
 		model.setAttribute("roles", buffer.toString());
-		System.out.println(buffer.toString().length());
 	}
 
 	@Override
