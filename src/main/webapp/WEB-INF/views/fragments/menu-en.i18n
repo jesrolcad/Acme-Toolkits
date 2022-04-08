@@ -42,7 +42,6 @@ master.menu.authenticated.system-configuration = System configuration
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrator
-master.menu.administrator.all-chirps = List all chirps
 master.menu.administrator.user-accounts = User accounts
 master.menu.administrator.system-configuration = System configuration
 master.menu.administrator.populate-initial = Populate DB (initial)
@@ -63,8 +62,6 @@ master.menu.consumer.favourite-link = Favourite link
 # master.menu.patron ##########################################################
 
 master.menu.patron = Patron
-master.menu.patron.components.list = List published components
-master.menu.patron.tools.list = List published tools
 master.menu.patron.favourite-link = Favourite link
 master.menu.patron.patron-dashboard = Dashboard
 master.menu.patron.list-patronage-reports = Patronage reports
