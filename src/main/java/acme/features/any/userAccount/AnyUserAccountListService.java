@@ -46,8 +46,6 @@ public class AnyUserAccountListService implements AbstractListService<Any, UserA
 		roles = entity.getRoles();
 		buffer = new StringBuilder();
 		for (final UserRole rol : roles) {
-//			final boolean rolAnonimo = rol.getUserAccount().isAnonymous();
-//			final boolean rolAdministrator = rol.getUserAccount().hasRole(Administrator.class);
 				buffer.append(rol.getAuthorityName());
 				buffer.append(" ");
 			
@@ -62,8 +60,8 @@ public class AnyUserAccountListService implements AbstractListService<Any, UserA
 
 		Collection<UserAccount> result;
 
-		result = this.repository.findPatronUserAccounts();
-		result.addAll(this.repository.findInventorUserAccounts());
+		result = this.repository.findEnabledPatronUserAccounts();
+		result.addAll(this.repository.findEnabledInventorUserAccounts());
 		for (final UserAccount userAccount : result) {
 			userAccount.getRoles().forEach(r -> {
 			});
