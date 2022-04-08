@@ -1,0 +1,9 @@
+recordIndex,roles,username,name,surname,email
+0,Inventor,inventor3,Matt,Smith,mattsmith@acme.com
+1,Inventor,inventor2,Michael,Jordan,michaelj23@acme.com
+2,Inventor,inventor4,Joe,Brown,jbrown@acme.com
+3,Inventor,inventor1,Peter,Parker,imnotspiderman@acme.com
+4,Patron,patron1,Bugs,Bunny,whatsupfolks@acme.com
+5,Patron,patron2,Sandra,Bullock,interstellar@acme.com
+6,Patron,patron5,Carla,Williams,carlawilliams@acme.com
+7,Patron,patron4,Bruce,Davies,brucedavies@acme.com
