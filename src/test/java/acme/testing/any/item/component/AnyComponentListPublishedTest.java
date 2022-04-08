@@ -1,4 +1,4 @@
-package acme.testing.anonymous.item;
+package acme.testing.any.item.component;
 
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -6,23 +6,23 @@ import org.junit.jupiter.params.provider.CsvFileSource;
 
 import acme.testing.TestHarness;
 
-public class AnonymousItemListAllTest extends TestHarness{
+public class AnyComponentListPublishedTest extends TestHarness{
 	
 	@ParameterizedTest
-	@CsvFileSource(resources = "/anonymous/item/component/list.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@CsvFileSource(resources = "/any/item/component/list.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
-	public void positiveComponent(final int recordIndex, final String tipo, final String name,
+	public void anonymousPositive(final int recordIndex, final String tipo, final String name,
 		final String code, final String technology, final String description, 
-		final String retailPrice, final String optionalLink, final String inventor) {
+		final String retailPrice, final String optionalLink, final String inventor, final String published) {
 		
 
-		super.clickOnMenu("Anonymous", "List all components");
+		super.clickOnMenu("Anonymous", "List published components");
 		super.checkListingExists();
-		super.sortListing(1, "asc");
-		super.checkColumnHasValue(recordIndex, 0, tipo);
-		super.checkColumnHasValue(recordIndex, 1, name);
-		super.checkColumnHasValue(recordIndex, 2, code);
-		super.checkColumnHasValue(recordIndex, 3, technology);
+		super.sortListing(0, "asc");
+		super.checkColumnHasValue(recordIndex, 0, name);
+		super.checkColumnHasValue(recordIndex, 1, code);
+		super.checkColumnHasValue(recordIndex, 2, technology);
+		super.checkColumnHasValue(recordIndex, 3, retailPrice);
 
 		super.clickOnListingRecord(recordIndex);
 		super.checkFormExists();
@@ -34,24 +34,26 @@ public class AnonymousItemListAllTest extends TestHarness{
 		super.checkInputBoxHasValue("retailPrice", retailPrice);
 		super.checkInputBoxHasValue("optionalLink", optionalLink);
 		super.checkInputBoxHasValue("inventor", inventor);
+		super.checkInputBoxHasValue("published", published);
 
 	}
 	
 	@ParameterizedTest
-	@CsvFileSource(resources = "/anonymous/item/tool/list.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@CsvFileSource(resources = "/any/item/component/list.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
-	public void positiveTool(final int recordIndex, final String tipo, final String name,
+	public void authenticatedPositive(final int recordIndex, final String tipo, final String name,
 		final String code, final String technology, final String description, 
-		final String retailPrice, final String optionalLink, final String inventor) {
+		final String retailPrice, final String optionalLink, final String inventor, final String published) {
 		
+		super.signIn("administrator", "administrator");
 
-		super.clickOnMenu("Anonymous", "List all tools");
+		super.clickOnMenu("Authenticated", "List published components");
 		super.checkListingExists();
-		super.sortListing(1, "asc");
-		super.checkColumnHasValue(recordIndex, 0, tipo);
-		super.checkColumnHasValue(recordIndex, 1, name);
-		super.checkColumnHasValue(recordIndex, 2, code);
-		super.checkColumnHasValue(recordIndex, 3, technology);
+		super.sortListing(0, "asc");
+		super.checkColumnHasValue(recordIndex, 0, name);
+		super.checkColumnHasValue(recordIndex, 1, code);
+		super.checkColumnHasValue(recordIndex, 2, technology);
+		super.checkColumnHasValue(recordIndex, 3, retailPrice);
 
 		super.clickOnListingRecord(recordIndex);
 		super.checkFormExists();
@@ -63,6 +65,9 @@ public class AnonymousItemListAllTest extends TestHarness{
 		super.checkInputBoxHasValue("retailPrice", retailPrice);
 		super.checkInputBoxHasValue("optionalLink", optionalLink);
 		super.checkInputBoxHasValue("inventor", inventor);
+		super.checkInputBoxHasValue("published", published);
+		
+		super.signOut();
 
 	}
 
