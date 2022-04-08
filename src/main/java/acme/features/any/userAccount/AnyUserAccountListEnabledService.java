@@ -15,7 +15,7 @@ import acme.framework.roles.UserRole;
 import acme.framework.services.AbstractListService;
 
 @Service
-public class AnyUserAccountListService implements AbstractListService<Any, UserAccount> {
+public class AnyUserAccountListEnabledService implements AbstractListService<Any, UserAccount> {
 
 	// Internal state ---------------------------------------------------------
 

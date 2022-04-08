@@ -16,7 +16,7 @@ public class AnyUserAccountController extends AbstractController<Any, UserAccoun
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AnyUserAccountListService	listService;
+	protected AnyUserAccountListEnabledService	listService;
 
 	@Autowired
 	protected AnyUserAccountShowService	showService;
@@ -26,7 +26,7 @@ public class AnyUserAccountController extends AbstractController<Any, UserAccoun
 
 	@PostConstruct
 	protected void initialise() {
-		super.addCommand("list-userAcc","list", this.listService);
+		super.addCommand("list-enabled-user-accounts","list", this.listService);
 		super.addCommand("show", this.showService);
 	}
 
