@@ -16,15 +16,15 @@
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
 <acme:form>
-	<acme:input-textbox code="authenticated.patronage.form.label.code" path="code"/>
-	<acme:input-moment code="authenticated.patronage.form.label.startDate" path="startDate"/>
-	<acme:input-moment code="authenticated.patronage.form.label.endDate" path="endDate"/>
-	<acme:input-textbox code="authenticated.patronage.form.label.legalStuff" path="legalStuff"/>
-	<acme:input-money code="authenticated.patronage.form.label.budget" path="budget"/>
-	<acme:input-textbox code="authenticated.patronage.form.label.link" path="link"/>
-	<acme:input-textbox code="authenticated.patronage.form.label.status" path="status"/>
-	<acme:input-textbox code="authenticated.patronage.form.label.company" path="patron.company"/>
-	<acme:input-textbox code="authenticated.patronage.form.label.link" path="patron.link"/>
-	<acme:input-textbox code="authenticated.patronage.form.label.statement" path="patron.statement"/>
+	<acme:input-textbox code="inventor.patronage.form.label.code" path="code"/>
+	<acme:input-moment code="inventor.patronage.form.label.startDate" path="startDate"/>
+	<acme:input-moment code="inventor.patronage.form.label.endDate" path="endDate"/>
+	<acme:input-textbox code="inventor.patronage.form.label.legalStuff" path="legalStuff"/>
+	<acme:input-money code="inventor.patronage.form.label.budget" path="budget"/>
+	<acme:input-textbox code="inventor.patronage.form.label.link" path="link"/>
+	<acme:input-textbox code="inventor.patronage.form.label.status" path="status"/>
+	<acme:input-textbox code="inventor.patronage.form.label.company" path="patron.company"/>
+	<acme:input-textbox code="inventor.patronage.form.label.link" path="patron.link"/>
+	<acme:input-textbox code="inventor.patronage.form.label.statement" path="patron.statement"/>
 
 </acme:form>

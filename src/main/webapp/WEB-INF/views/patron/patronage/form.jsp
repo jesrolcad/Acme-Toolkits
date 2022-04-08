@@ -16,16 +16,16 @@
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
 <acme:form>
-	<acme:input-textbox code="authenticated.patronage.form.label.code" path="code"/>
-	<acme:input-moment code="authenticated.patronage.form.label.startDate" path="startDate"/>
-	<acme:input-moment code="authenticated.patronage.form.label.endDate" path="endDate"/>
-	<acme:input-textbox code="authenticated.patronage.form.label.legalStuff" path="legalStuff"/>
-	<acme:input-money code="authenticated.patronage.form.label.budget" path="budget"/>
-	<acme:input-textbox code="authenticated.patronage.form.label.link" path="link"/>
-	<acme:input-textbox code="authenticated.patronage.form.label.status" path="status"/>
-	<acme:input-textbox code="authenticated.patronage.form.label.username" path="inventor.userAccount.username"/>
-	<acme:input-textbox code="authenticated.patronage.form.label.company" path="inventor.company"/>
-	<acme:input-textbox code="authenticated.patronage.form.label.link" path="inventor.link"/>
-	<acme:input-textbox code="authenticated.patronage.form.label.statement" path="inventor.statement"/>
+	<acme:input-textbox code="patron.patronage.form.label.code" path="code"/>
+	<acme:input-moment code="patron.patronage.form.label.startDate" path="startDate"/>
+	<acme:input-moment code="patron.patronage.form.label.endDate" path="endDate"/>
+	<acme:input-textbox code="patron.patronage.form.label.legalStuff" path="legalStuff"/>
+	<acme:input-money code="patron.patronage.form.label.budget" path="budget"/>
+	<acme:input-textbox code="patron.patronage.form.label.link" path="link"/>
+	<acme:input-textbox code="patron.patronage.form.label.status" path="status"/>
+	<acme:input-textbox code="patron.patronage.form.label.username" path="inventor.userAccount.username"/>
+	<acme:input-textbox code="patron.patronage.form.label.company" path="inventor.company"/>
+	<acme:input-textbox code="patron.patronage.form.label.link" path="inventor.link"/>
+	<acme:input-textbox code="patron.patronage.form.label.statement" path="inventor.statement"/>
 
 </acme:form>
