@@ -18,8 +18,10 @@ master.menu.sign-out = Salir
 # master.menu.anonymous #######################################################
 
 master.menu.anonymous = Anónimo
-master.menu.anonymous.tools.list = Listar herramientas publicadas
-master.menu.anonymous.components.list = Listar componentes publicados
+master.menu.anonymous.all-components = Listar componentes publicados
+master.menu.anonymous.all-tools = Listar herramientas publicadas
+master.menu.anonymous.all-chirps = Listar todos los chirridos
+master.menu.anonymous.enabled-userAccounts = Listar cuentas de usuario activadas
 master.menu.anonymous.favourite-link-pablo = 49063639Q: Gutiérrez Ceballos, Pablo
 master.menu.anonymous.favourite-link-javier = 77866469S: Grosso Gomez de Terreros, Javier
 master.menu.anonymous.favourite-link-jesus = 29557570V: Roldán Cadena, Jesús
@@ -28,20 +30,18 @@ master.menu.anonymous.favourite-link-alejandro = 49092051T: Baños González, Al
 master.menu.anonymous.favourite-link-roman = 28838510Y: Flores Rodríguez, Román
 
 
-# master.menu.authenticated #######################################################
-
-master.menu.authenticated = Autenticado
-master.menu.authenticated.tools.list = Listar herramientas publicadas
-master.menu.authenticated.components.list = Listar componentes publicados
+# master.menu.authenticated ###################################################
+master.menu.authenticated = Autentificado
+master.menu.authenticated.all-components = Listar componentes publicados
+master.menu.authenticated.all-tools = Listar herramientas publicadas
+master.menu.authenticaded.all-chirps = Listar todos los chirridos
 master.menu.authenticated.announcement.list = Lista de anuncios recientes
-
+master.menu.authenticated.enabled-userAccounts = Listar cuentas de usuario activadas
 
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrador
-master.menu.administrator.tools.list = Listar herramientas publicadas
-master.menu.administrator.components.list = Listar componentes publicados
-master.menu.administrator.dashboard = Panel de indicadores
+master.menu.administrator.all-chirps = Listar todos los chirridos
 master.menu.administrator.user-accounts = Cuentas de usuario
 master.menu.administrator.system-configuration = Configuración del sistema
 master.menu.administrator.populate-initial = Poblar BD (inicial)
