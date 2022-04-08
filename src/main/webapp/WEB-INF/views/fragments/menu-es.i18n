@@ -71,7 +71,7 @@ master.menu.inventor = Inventor
 master.menu.inventor.item.component.list = Listar mis componentes
 master.menu.inventor.item.tool.list = Listar mis herramientas 
 master.menu.inventor.favourite-link = Enlace favorito
-
+master.menu.inventor.list-patronages = Listar mecenazgos
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Cuenta
