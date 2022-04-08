@@ -72,6 +72,7 @@ master.menu.inventor = Inventor
 master.menu.inventor.item.component.list = List my components
 master.menu.inventor.item.tool.list = List my tools
 master.menu.inventor.favourite-link = Favourite link
+master.menu.inventor.patronage-reports = Patronage reports
 master.menu.inventor.list-patronages = List patronages
 
 # master.menu.user-account ####################################################
