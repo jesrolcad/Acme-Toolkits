@@ -25,8 +25,6 @@ master.menu.any.published-items = List published items
 # master.menu.anonymous #######################################################
 
 master.menu.anonymous = Anonymous
-master.menu.anonymous.all-components = List published components
-master.menu.anonymous.all-tools = List published tools
 master.menu.anonymous.all-chirps = List all chirps
 master.menu.anonymous.enabled-userAccounts = List enabled user accounts
 master.menu.anonymous.favourite-link-pablo = 49063639Q: Gutiérrez Ceballos, Pablo
@@ -39,8 +37,6 @@ master.menu.anonymous.favourite-link-roman = 28838510Y: Flores Rodríguez, Romá
 
 # master.menu.authenticated ###################################################
 master.menu.authenticated = Authenticated
-master.menu.authenticated.all-components = List published components
-master.menu.authenticated.all-tools = List published tools
 master.menu.authenticated.all-chirps = List all chirps
 master.menu.authenticated.announcement.list = List of recent announcements
 master.menu.authenticated.enabled-userAccounts = List enabled user accounts
