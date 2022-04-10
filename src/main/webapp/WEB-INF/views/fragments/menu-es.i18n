@@ -15,6 +15,12 @@ master.menu.sign-up = Registrarse
 master.menu.sign-in = Entrar
 master.menu.sign-out = Salir
 
+# master.menu.any #######################################################
+
+master.menu.any = Cualquier usuario
+master.menu.any.published-items = Listar ítems publicados
+
+
 # master.menu.anonymous #######################################################
 
 master.menu.anonymous = Anónimo
