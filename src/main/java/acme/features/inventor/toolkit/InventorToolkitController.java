@@ -15,7 +15,7 @@ public class InventorToolkitController extends AbstractController<Inventor, Tool
 
 			@Autowired
 			protected InventorToolkitListAllService		toolkitListAllService;
-		
+			
 
 			@Autowired
 			protected InventorToolkitShowService	showService;

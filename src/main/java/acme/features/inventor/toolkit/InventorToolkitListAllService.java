@@ -31,8 +31,11 @@ public class InventorToolkitListAllService implements AbstractListService<Invent
 		assert request != null;
 
 		Collection<Toolkit> result;
+		final int UAId = request.getPrincipal().getAccountId();
+		final int InventorId = this.repository.findInventorByUserAccountId(UAId).getId();
+		
 
-		result = this.repository.findManyToolkits();
+		result = this.repository.findManyToolkitsByInventorId(InventorId);
 
 		return result;
 	}
@@ -45,7 +48,7 @@ public class InventorToolkitListAllService implements AbstractListService<Invent
 
 		request.unbind(entity, model, "code", 
 			"description","assemblyNotes", "optionalLink", 
-			"toolkit.inventor.userAccount.username");
+			"inventor.userAccount.username");
 		
 		
 	}

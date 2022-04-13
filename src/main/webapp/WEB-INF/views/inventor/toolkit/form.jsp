@@ -9,5 +9,7 @@
 	<acme:input-textbox code="inventor.toolkit.form.label.description" path="description"/>	
 	<acme:input-textbox code="inventor.toolkit.form.label.assemblyNotes" path="assemblyNotes"/>
 	<acme:input-textbox code="inventor.toolkit.form.label.optional-link" path="optionalLink"/>	
-	<acme:input-textbox code="inventor.toolkit.form.label.inventor" path="toolkit.inventor"/>
+	<acme:input-textbox code="inventor.toolkit.form.label.inventor" path="inventor.userAccount.username"/>
+	
+	<acme:button code="inventor.toolkit.form.button.items" action="/inventor/item/listToolkitItems?id=${id}"/>
 </acme:form>
