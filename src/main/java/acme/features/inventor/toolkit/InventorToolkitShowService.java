@@ -27,10 +27,14 @@ public class InventorToolkitShowService implements AbstractShowService<Inventor,
 		assert request != null;
 
 		Toolkit result;
+		Double retailPrice;
 		int id;
 
+		
 		id = request.getModel().getInteger("id");
 		result = this.repository.findOneToolkitById(id);
+		retailPrice = this.repository.retailPriceOfToolkitById(id);
+		result.setRetailPrice(retailPrice);
 		return result;
 	}
 
@@ -42,7 +46,7 @@ public class InventorToolkitShowService implements AbstractShowService<Inventor,
 
 		request.unbind(entity, model, "code", 
 			"description","assemblyNotes", "optionalLink", 
-			"inventor.userAccount.username");
+			"inventor.userAccount.username","retailPrice");
 		
 	}
 

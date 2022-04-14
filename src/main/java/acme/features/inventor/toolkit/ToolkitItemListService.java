@@ -29,19 +29,16 @@ public class ToolkitItemListService implements AbstractListService<Inventor, Ite
 	public Collection<Item> findMany(final Request<Item> request) {
 		 final Collection<Item> result = new HashSet<Item>();
 		int toolkitid;
-		System.out.println("Uno");
 		toolkitid = request.getModel().getInteger("id");
-		System.out.println("dos "+toolkitid);
-		final Collection<Quantity> QuantityId = this.repository.findQuantityByToolkitId(toolkitid);
-		System.out.println("tres "+ QuantityId);
+		final Collection<Quantity> quantityId = this.repository.findQuantityByToolkitId(toolkitid);
 		
-		for(final Quantity quantity: QuantityId) {
+		
+		for(final Quantity quantity: quantityId) {
 			final int id=quantity.getId();
 			final Collection<Item> items=this.repository.findManyItemByQuantityId(id);
 			result.addAll(items);
 		}
 		
-		System.out.println("ni puta idea entonces "+result.toString());
 		return result;
 	}
 

@@ -54,6 +54,9 @@ public class Toolkit extends AbstractEntity {
 	@ManyToOne(optional=false)
 	protected Inventor inventor;
 	
+	//derived transient attribute
+	Double retailPrice;
+	
 	
 	
 
