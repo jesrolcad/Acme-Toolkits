@@ -14,11 +14,10 @@ public interface AnyUserAccountRepository extends AbstractRepository {
 	@Query("select ua from UserAccount ua where ua.id = :id")
 	UserAccount findOneUserAccountById(int id);
 	
-	@Query("select p.userAccount from Patron p where p.userAccount.enabled = 1")
-	Collection<UserAccount> findEnabledPatronUserAccounts();
-	
-	@Query("select i.userAccount from Inventor i where i.userAccount.enabled = 1")
-	Collection<UserAccount> findEnabledInventorUserAccounts();
+	@Query("select distinct(ua) from UserAccount ua join ua.roles r where ua.enabled = true "
+		+ "and (type(r) = Inventor or type(r) = Patron) and Administrator not in "
+		+ "(select type(r) from UserAccount ua2 join ua2.roles r where ua2.id = ua.id)")
+	Collection<UserAccount> findEnabledUserAccounts();
 	
 
 }
