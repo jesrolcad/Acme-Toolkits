@@ -6,7 +6,7 @@ import org.junit.jupiter.params.provider.CsvFileSource;
 
 import acme.testing.TestHarness;
 
-public class AnyChirpListAllTest extends TestHarness {
+public class AnyChirpListRecentTest extends TestHarness {
 
 	// Lifecycle management ---------------------------------------------------
 
@@ -16,7 +16,7 @@ public class AnyChirpListAllTest extends TestHarness {
 	@CsvFileSource(resources = "/any/chirp/chirp.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
 	public void positive(final int recordIndex, final String title, final String author, final String moment, final String body, final String email) {
-		super.clickOnMenu("Anonymous", "List all chirps");
+		super.clickOnMenu("Any", "List recent chirps");
 
 		super.checkListingExists();
 		super.checkColumnHasValue(recordIndex, 0, title);

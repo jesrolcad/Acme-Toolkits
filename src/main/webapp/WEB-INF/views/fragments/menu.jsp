@@ -21,14 +21,13 @@
 	
 		<acme:menu-option code="master.menu.any">
 			<acme:menu-suboption code="master.menu.any.published-items" action="/any/item/list"/>
-			<acme:menu-suboption code="master.menu.any.enabled-userAccounts" action="/any/user-account/list"/>		
+			<acme:menu-suboption code="master.menu.any.enabled-userAccounts" action="/any/user-account/list"/>
+			<acme:menu-suboption code="master.menu.any.all-chirps" action="/any/chirp/list"/>
 		</acme:menu-option>
 	
 	
 	
 		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
-			<acme:menu-suboption code="master.menu.anonymous.all-chirps" action="/any/chirp/list-all-chirps"/>
-			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-julia" action="https://this-person-does-not-exist.com/es"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-pablo" action="https://www.marca.com/"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-javier" action="https://www.nintendo.es/"/>
@@ -40,9 +39,8 @@
 		
 		
 		<acme:menu-option code="master.menu.authenticated" access="isAuthenticated">
-			<acme:menu-suboption code="master.menu.authenticated.all-chirps" action="/any/chirp/list-all-chirps"/>	
-      <acme:menu-suboption code="master.menu.authenticated.announcement.list" action="/authenticated/announcement/list-recent"/>
-      <acme:menu-suboption code="master.menu.authenticated.system-configuration" action="/authenticated/system-configuration/show"/>
+      		<acme:menu-suboption code="master.menu.authenticated.announcement.list" action="/authenticated/announcement/list-recent"/>
+      		<acme:menu-suboption code="master.menu.authenticated.system-configuration" action="/authenticated/system-configuration/show"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
