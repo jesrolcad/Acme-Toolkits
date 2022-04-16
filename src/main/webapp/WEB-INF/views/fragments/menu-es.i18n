@@ -15,11 +15,15 @@ master.menu.sign-up = Registrarse
 master.menu.sign-in = Entrar
 master.menu.sign-out = Salir
 
+# master.menu.any #######################################################
+
+master.menu.any = Cualquier usuario
+master.menu.any.published-items = Listar ítems publicados
+
+
 # master.menu.anonymous #######################################################
 
 master.menu.anonymous = Anónimo
-master.menu.anonymous.all-components = Listar componentes publicados
-master.menu.anonymous.all-tools = Listar herramientas publicadas
 master.menu.anonymous.all-chirps = Listar todos los chirridos
 master.menu.anonymous.enabled-userAccounts = Listar cuentas de usuario activadas
 master.menu.anonymous.favourite-link-pablo = 49063639Q: Gutiérrez Ceballos, Pablo
@@ -31,8 +35,6 @@ master.menu.anonymous.favourite-link-roman = 28838510Y: Flores Rodríguez, Romá
 
 # master.menu.authenticated ###################################################
 master.menu.authenticated = Autentificado
-master.menu.authenticated.all-components = Listar componentes publicados
-master.menu.authenticated.all-tools = Listar herramientas publicadas
 master.menu.authenticated.all-chirps = Listar todos los chirridos
 master.menu.authenticated.announcement.list = Lista de anuncios recientes
 master.menu.authenticated.enabled-userAccounts = Listar cuentas de usuario activadas
@@ -62,8 +64,6 @@ master.menu.consumer.favourite-link = Enlace favorito
 # master.menu.patron ####################################################
 
 master.menu.patron = Patrocinador
-master.menu.patron.components.list = Listar componentes publicados
-master.menu.patron.tools.list = Listar herramientas publicadas
 master.menu.patron.favourite-link = Enlace favorito
 master.menu.patron.patron-dashboard = Panel de indicadores
 master.menu.patron.list-patronage-reports = Reportes de patrocinios
