@@ -18,8 +18,23 @@ public class InventorToolkitShowService implements AbstractShowService<Inventor,
 	@Override
 	public boolean authorise(final Request<Toolkit> request) {
 		assert request != null;
+		boolean res=false;
+		int id;
+		int inventorId;
+		int userId;
+		id=request.getModel().getInteger("id");
+		final Toolkit toolkit = this.repository.findOneToolkitById(id);
+		inventorId = toolkit.getInventor().getId();
+		userId= request.getPrincipal().getAccountId();
+		final Inventor invent=this.repository.findInventorByUserAccountId(userId);
+		final int inventorIdUser=invent.getId();
+		
+		if(inventorId == inventorIdUser) {
+			res=true;
+		}
 
-		return true;
+		
+		return res;
 	}
 
 	@Override
@@ -35,6 +50,15 @@ public class InventorToolkitShowService implements AbstractShowService<Inventor,
 		result = this.repository.findOneToolkitById(id);
 		retailPrice = this.repository.retailPriceOfToolkitById(id);
 		result.setRetailPrice(retailPrice);
+//		
+//		SystemConfiguration configuracion;
+//		configuracion=this.repository.findSystemConfiguration().stream().findFirst().get();
+//		String acceptedCurrencies= configuracion.getAcceptedCurrencies();
+//		String systemcurrency=configuracion.getSystemCurrency();
+		
+		
+		
+		
 		return result;
 	}
 

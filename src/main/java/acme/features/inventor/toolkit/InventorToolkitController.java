@@ -22,7 +22,7 @@ public class InventorToolkitController extends AbstractController<Inventor, Tool
 			
 			@PostConstruct
 			protected void initialise() {
-				super.addCommand("listToolkits", "list", this.toolkitListAllService);
+				super.addCommand("list", "list", this.toolkitListAllService);
 				super.addCommand("show", this.showService);
 			}
 }

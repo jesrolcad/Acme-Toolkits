@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.Item;
 import acme.entities.Quantity;
+import acme.entities.Toolkit;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.services.AbstractListService;
@@ -20,9 +21,24 @@ public class ToolkitItemListService implements AbstractListService<Inventor, Ite
 	protected InventorToolkitRepository repository;
 	@Override
 	public boolean authorise(final Request<Item> request) {
-		assert request != null; 
-		 
-		return true; 
+		assert request != null;
+		boolean res=false;
+		int id;
+		int inventorId;
+		int userId;
+		id=request.getModel().getInteger("id");
+		final Toolkit toolkit = this.repository.findOneToolkitById(id);
+		inventorId = toolkit.getInventor().getId();
+		userId= request.getPrincipal().getAccountId();
+		final Inventor invent=this.repository.findInventorByUserAccountId(userId);
+		final int inventorIdUser=invent.getId();
+
+		if(inventorId == inventorIdUser) {
+			res=true;
+		}
+
+		
+		return res;
 	}
 
 	@Override
