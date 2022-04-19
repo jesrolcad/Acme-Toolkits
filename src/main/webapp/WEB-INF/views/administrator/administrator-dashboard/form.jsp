@@ -16,10 +16,18 @@
 <%@taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
 <acme:form>
 	<acme:message code="patron.patron-dashboard.form.label.componentsTitle"/>
+	<jstl:if test="${empty averageRetailPriceOfComponents}">
+	<br>
+	<acme:message code="patron.patron-dashboard.form.label.nohayComponentes"/>
+		<br>
+		<br>
+	
+	</jstl:if>	
 	<br>	
 	
 	<acme:message code="patron.patron-dashboard.form.label.avg-title"/>	
 	<table class="table table-sm">	
+				
 		<jstl:forEach items="${averageRetailPriceOfComponents}" var="entry"> 	
 		<tr>	
 			<th>	
@@ -31,9 +39,8 @@
 			<acme:print value="${string2[1]}"/>
 			<acme:message code="patron.patron-dashboard.form.label.colon"/>
 			</th>
-			<td>
-				<acme:print value="${entry.value}"/>
-				
+			<td align="right">				
+			<acme:print value="${entry.value}"/>				
 			</td>		
 		</tr>
 		</jstl:forEach>
@@ -52,7 +59,7 @@
 			<acme:print value="${string2[1]}"/>
 			<acme:message code="patron.patron-dashboard.form.label.colon"/>
 			</th>
-			<td>
+			<td align="right">
 				<acme:print value="${entry.value}"/>
 				
 			</td>		
@@ -72,7 +79,7 @@
 			<acme:print value="${string2[1]}"/>
 			<acme:message code="patron.patron-dashboard.form.label.colon"/>
 			</th>
-			<td>
+			<td align="right">
 				<acme:print value="${entry.value}"/>
 				
 			</td>		
@@ -93,14 +100,23 @@
 			<acme:print value="${string2[1]}"/>
 			<acme:message code="patron.patron-dashboard.form.label.colon"/>
 			</th>
-			<td>
+			<td align="right">
 				<acme:print value="${entry.value}"/>
 				
 			</td>		
 		</tr>
 		</jstl:forEach>
 	</table>
-		<acme:message code="patron.patron-dashboard.form.label.toolsTitle"/>	
+		<acme:message code="patron.patron-dashboard.form.label.toolsTitle"/>
+	<jstl:if test="${empty averageRetailPriceOfTools}">
+	<br>
+	
+	<acme:message code="patron.patron-dashboard.form.label.nohayHerramientas"/>
+	
+		<br>
+		<br>
+	
+	</jstl:if>		
 		<br>	
 	
 	<acme:message code="patron.patron-dashboard.form.label.avg-title"/>	
@@ -115,7 +131,7 @@
 			<acme:print value="${string2[0]}"/>
 			<acme:message code="patron.patron-dashboard.form.label.colon"/>
 			</th>
-			<td>
+			<td align="right">
 				<acme:print value="${entry.value}"/>
 				
 			</td>		
@@ -135,7 +151,7 @@
 			<acme:print value="${string2[0]}"/>
 			<acme:message code="patron.patron-dashboard.form.label.colon"/>
 			</th>
-			<td>
+			<td align="right">
 				<acme:print value="${entry.value}"/>
 				
 			</td>		
@@ -155,7 +171,7 @@
 			<acme:print value="${string2[0]}"/>
 			<acme:message code="patron.patron-dashboard.form.label.colon"/>
 			</th>
-			<td>
+			<td align="right">
 				<acme:print value="${entry.value}"/>
 				
 			</td>		
@@ -174,14 +190,21 @@
 			<acme:print value="${string2[0]}"/>
 			<acme:message code="patron.patron-dashboard.form.label.colon"/>
 			</th>
-			<td>
+			<td align="right">
 				<acme:print value="${entry.value}"/>
 				
 			</td>		
 		</tr>
 		</jstl:forEach>
 	</table>
-		<acme:message code="patron.patron-dashboard.form.label.patronageTitle"/>	
+		<acme:message code="patron.patron-dashboard.form.label.patronageTitle"/>
+	<jstl:if test="${empty averageBudgetByStatus}">
+	<br>
+	<acme:message code="patron.patron-dashboard.form.label.nohayPatrocinios"/>
+		<br>
+		<br>
+	
+	</jstl:if>		
 		<br>
 	<acme:message code="patron.patron-dashboard.form.label.avg-title"/>	
 	<table class="table table-sm">	
@@ -195,7 +218,7 @@
 			<acme:print value="${string2[0]}"/>
 			<acme:message code="patron.patron-dashboard.form.label.colon"/>
 			</th>
-			<td>
+			<td align="right">
 				<acme:print value="${entry.value}"/>
 				
 			</td>		
@@ -214,7 +237,7 @@
 			<acme:print value="${string2[0]}"/>
 			<acme:message code="patron.patron-dashboard.form.label.colon"/>
 			</th>
-			<td>
+			<td align="right">
 				<acme:print value="${entry.value}"/>
 				
 			</td>		
@@ -233,7 +256,7 @@
 			<acme:print value="${string2[0]}"/>
 			<acme:message code="patron.patron-dashboard.form.label.colon"/>
 			</th>
-			<td>
+			<td align="right">
 				<acme:print value="${entry.value}"/>
 				
 			</td>		
@@ -253,7 +276,7 @@
 			<acme:print value="${string2[0]}"/>
 			<acme:message code="patron.patron-dashboard.form.label.colon"/>
 			</th>
-			<td>
+			<td align="right">
 				<acme:print value="${entry.value}"/>
 				
 			</td>		
@@ -267,7 +290,7 @@
 					<acme:message code="patron.patron-dashboard.form.label.totalNumberOfProposedPatronages"/>		
 		
 				</th>
-				<td>
+				<td align="right">
 					<acme:print value="${totalNumberOfProposedPatronages}"/>
 				</td>		
 			</tr>
@@ -275,7 +298,7 @@
 				<th>
 					<acme:message code="patron.patron-dashboard.form.label.totalNumberOfAcceptedPatronages"/>
 				</th>
-				<td>
+				<td align="right">
 					<acme:print value="${totalNumberOfAcceptedPatronages}"/>
 				</td>		
 			</tr>
@@ -283,7 +306,7 @@
 				<th>
 					<acme:message code="patron.patron-dashboard.form.label.totalNumberOfDeniedPatronages"/>		
 				</th>
-				<td>
+				<td align="right">
 					<acme:print value="${totalNumberOfDeniedPatronages}"/> 
 				</td>		
 			</tr>
@@ -291,7 +314,7 @@
 				<th>
 					<acme:message code="patron.patron-dashboard.form.label.totalNumberOfComponents"/>		
 				</th>
-				<td>
+				<td align="right">
 					<acme:print value="${totalNumberOfComponents}"/> 
 				</td>		
 			</tr>
@@ -299,7 +322,7 @@
 				<th>
 					<acme:message code="patron.patron-dashboard.form.label.totalNumberOfTools"/>		
 				</th>
-				<td>
+				<td align="right">
 					<acme:print value="${totalNumberOfTools}"/> 
 				</td>		
 			</tr>

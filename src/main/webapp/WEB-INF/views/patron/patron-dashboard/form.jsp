@@ -29,7 +29,7 @@
 			<acme:print value="${string2[1]}"/>
 			<acme:message code="patron.patron-dashboard.form.label.colon"/>
 			</th>
-			<td>
+			<td align="right">
 				<acme:print value="${entry.value}"/>
 				
 			</td>		
@@ -50,7 +50,7 @@
 				<acme:print value="${string2[1]}"/>
 				<acme:message code="patron.patron-dashboard.form.label.colon"/>		
 			</th>
-			<td>
+			<td align="right">
 				<acme:print value="${entry.value}"/>
 			</td>		
 		</tr>
@@ -71,7 +71,7 @@
 					<acme:print value="${string2[1]}"/>
 					<acme:message code="patron.patron-dashboard.form.label.colon"/>		
 				</th>
-				<td>
+				<td align="right">
 					<acme:print value="${entry.value}"/>
 				</td>		
 			</tr>
@@ -90,7 +90,7 @@
 					<acme:print value="${string2[1]}"/>
 					<acme:message code="patron.patron-dashboard.form.label.colon"/>		
 				</th>
-				<td>
+				<td align="right">
 					<acme:print value="${entry.value}"/>
 				</td>		
 			</tr>
@@ -103,7 +103,7 @@
 					<acme:message code="patron.patron-dashboard.form.label.totalNumberOfProposedPatronages"/>		
 		
 				</th>
-				<td>
+				<td align="right">
 					<acme:print value="${totalNumberOfProposedPatronages}"/>
 				</td>		
 			</tr>
@@ -111,7 +111,7 @@
 				<th>
 					<acme:message code="patron.patron-dashboard.form.label.totalNumberOfAcceptedPatronages"/>
 				</th>
-				<td>
+				<td align="right">
 					<acme:print value="${totalNumberOfAcceptedPatronages}"/>
 				</td>		
 			</tr>
@@ -119,7 +119,7 @@
 				<th>
 					<acme:message code="patron.patron-dashboard.form.label.totalNumberOfDeniedPatronages"/>		
 				</th>
-				<td>
+				<td align="right">
 					<acme:print value="${totalNumberOfDeniedPatronages}"/> 
 				</td>		
 			</tr>
