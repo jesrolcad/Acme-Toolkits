@@ -22,6 +22,9 @@ patron.patron-dashboard.form.label.min-sentence = Presupuesto mínimo por divisa
 
 patron.patron-dashboard.form.label.and-technology = y tecnologia
 patron.patron-dashboard.form.label.colon = :
+patron.patron-dashboard.form.label.nohayComponentes=	No hay componentes en bd!!
+patron.patron-dashboard.form.label.nohayHerramientas=	No hay herramientas en bd!!
+patron.patron-dashboard.form.label.nohayPatrocinios=	No hay patrocinios en bd!!
 
 patron.patron-dashboard.form.label.patronage-average-sentence= Presupuesto medio del precio de venta por estado
 patron.patron-dashboard.form.label.patronage-deviation-sentence= Desviación típica del precio de venta por estado.

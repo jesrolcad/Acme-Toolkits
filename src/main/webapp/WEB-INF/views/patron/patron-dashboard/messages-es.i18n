@@ -1,0 +1,29 @@
+# i18n-en.i18n
+#
+# Copyright (C) 2012-2022 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+patron.patron-dashboard.form.label.and-status = y estado
+patron.patron-dashboard.form.label.colon = :
+
+patron.patron-dashboard.form.label.average-sentence = Presupuesto medio del presupuesto por divisa 
+patron.patron-dashboard.form.label.deviation-sentence = Desviación típica del presupuesto por divisa 
+patron.patron-dashboard.form.label.max-sentence = Presupuesto máximo por divisa
+patron.patron-dashboard.form.label.min-sentence = Presupuesto mínimo por divisa
+
+patron.patron-dashboard.form.label.avg-title = Información de las medias.
+patron.patron-dashboard.form.label.deviationTitle= Información de las desviaciones típicas.
+patron.patron-dashboard.form.label.maxTitle= Información de los máximos.
+patron.patron-dashboard.form.label.minTitle= Información de los mínimos.
+patron.patron-dashboard.form.label.absoluteTitle = Métricas totales.
+patron.patron-dashboard.form.label.nohayPatrocinios=	No hay patrocinios en bd!!
+
+patron.patron-dashboard.form.label.totalNumberOfProposedPatronages = Total de mecenazgos propuestos:
+patron.patron-dashboard.form.label.totalNumberOfAcceptedPatronages = Total de mecenazgos aceptados:
+patron.patron-dashboard.form.label.totalNumberOfDeniedPatronages = Total de mecenazgos rechazados:
+

@@ -2,6 +2,7 @@ any.item.list.label.tipo = Tipo
 any.item.list.label.name = Nombre
 any.item.list.label.code = Código
 any.item.list.label.technology = Tecnología
+any.item.list.label.retail-price = Precio de venta
 
 any.item.form.label.tipo = Tipo:
 any.item.form.label.name = Nombre:
@@ -11,3 +12,4 @@ any.item.form.label.description = Descripción:
 any.item.form.label.retail-price = Precio de venta:
 any.item.form.label.optional-link = Link:
 any.item.form.label.inventor = Inventor:
+any.item.form.label.published = Publicado:

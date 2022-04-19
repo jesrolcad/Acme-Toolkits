@@ -1,0 +1,21 @@
+# i18n-es.i18n
+#
+# Copyright (C) 2012-2022 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+authenticated.user-account.form.label.username = Apodo:
+authenticated.user-account.form.label.password = Contraseña:
+authenticated.user-account.form.label.confirmation = Confirmación:
+authenticated.user-account.form.label.name = Nombre:
+authenticated.user-account.form.label.surname = Apellidos:
+authenticated.user-account.form.label.email = E-mail:
+authenticated.user-account.form.label.phone = Teléfono: (Opcional)
+ 
+authenticated.user-account.form.button.update = Actualizar
+
+authenticated.user-account.form.error.confirmation-no-match = La confirmación no cuadra

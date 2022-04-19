@@ -1,0 +1,14 @@
+inventor.item.list.label.name = Name
+inventor.item.list.label.code = Code
+inventor.item.list.label.technology = Technology
+inventor.item.list.label.retail-price = Retail Price
+
+inventor.item.form.label.tipo = Type
+inventor.item.form.label.name = Name
+inventor.item.form.label.code = Code
+inventor.item.form.label.technology = Technology
+inventor.item.form.label.description = Description
+inventor.item.form.label.retail-price = Retail Price
+inventor.item.form.label.optional-link = Link
+inventor.item.form.label.inventor = Inventor
+inventor.item.form.label.published = Published
