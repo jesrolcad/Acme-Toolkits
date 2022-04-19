@@ -18,6 +18,13 @@
 
 	<acme:message code="patron.patron-dashboard.form.label.avg-title"/>	
 	<table class="table table-sm">	
+		
+		
+	<jstl:if test="${empty averageBudgetByCurrency}">
+	<acme:message code="patron.patron-dashboard.form.label.nohayPatrocinios"/>	
+	<br>
+	<br>
+	</jstl:if>	
 		<jstl:forEach items="${averageBudgetByCurrency}" var="entry"> 	
 		<tr>	
 			<th>	
