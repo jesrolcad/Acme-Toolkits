@@ -17,8 +17,17 @@ public class PatronPatronageShowService implements AbstractShowService<Patron, P
 	
 	@Override 
 	public boolean authorise(final Request<Patronage> request) { 
-		assert request != null; 
-		return true; 
+		assert request != null;
+		boolean result;
+		int patronageID;
+		Patron patron;
+		Patronage pat;
+		
+		patronageID = request.getModel().getInteger("id");
+		pat = this.repository.findPatronageById(patronageID);
+		patron =this.repository.findPatronByUserAccountId(request.getPrincipal().getAccountId());
+		result = pat.getPatron().equals(patron);
+		return result; 
 	} 
  
 	@Override 
