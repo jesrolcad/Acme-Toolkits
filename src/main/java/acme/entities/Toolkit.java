@@ -3,6 +3,7 @@ package acme.entities;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.Transient;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -11,6 +12,7 @@ import javax.validation.constraints.Pattern;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
+import acme.framework.datatypes.Money;
 import acme.framework.entities.AbstractEntity;
 import acme.roles.Inventor;
 import lombok.Getter;
@@ -54,8 +56,9 @@ public class Toolkit extends AbstractEntity {
 	@ManyToOne(optional=false)
 	protected Inventor inventor;
 	
-	//derived transient attribute
-	Double retailPrice;
+	//derived attributes
+	@Transient
+	protected Money retailPrice;
 	
 	
 	

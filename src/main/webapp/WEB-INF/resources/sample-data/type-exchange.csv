@@ -1,0 +1,7 @@
+key,currency,factor,key:currency-exchange
+type-exchange-01,EUR,0.93,currency-exchange-01
+type-exchange-02,GBP,0.76,currency-exchange-01
+type-exchange-03,USD,1.08,currency-exchange-02
+type-exchange-04,GBP,0.83,currency-exchange-02
+type-exchange-05,EUR,1.20,currency-exchange-03
+type-exchange-06,USD,1.30,currency-exchange-03

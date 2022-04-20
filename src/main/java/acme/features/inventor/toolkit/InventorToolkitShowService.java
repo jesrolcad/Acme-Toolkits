@@ -1,11 +1,15 @@
 package acme.features.inventor.toolkit;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.Quantity;
 import acme.entities.Toolkit;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
+import acme.framework.datatypes.Money;
 import acme.framework.services.AbstractShowService;
 import acme.roles.Inventor;
 
@@ -42,25 +46,22 @@ public class InventorToolkitShowService implements AbstractShowService<Inventor,
 		assert request != null;
 
 		Toolkit result;
-		Double retailPrice;
-		int id;
-
+		Money retailPrice;
+		int id;;
 		
 		id = request.getModel().getInteger("id");
 		result = this.repository.findOneToolkitById(id);
-		retailPrice = this.repository.retailPriceOfToolkitById(id);
+//		retailPrice = this.repository.retailPriceOfToolkitById(id);
+//		result.setRetailPrice(retailPrice);
+		retailPrice = this.retailPriceOfToolkit(id);
 		result.setRetailPrice(retailPrice);
-//		
-//		SystemConfiguration configuracion;
-//		configuracion=this.repository.findSystemConfiguration().stream().findFirst().get();
-//		String acceptedCurrencies= configuracion.getAcceptedCurrencies();
-//		String systemcurrency=configuracion.getSystemCurrency();
-		
 		
 		
 		
 		return result;
 	}
+	
+	
 
 	@Override
 	public void unbind(final Request<Toolkit> request, final Toolkit entity, final Model model) {
@@ -73,5 +74,34 @@ public class InventorToolkitShowService implements AbstractShowService<Inventor,
 			"inventor.userAccount.username","retailPrice");
 		
 	}
+	
+	
+	//Metodos adicionales
+	
+	private Money retailPriceOfToolkit(final int toolkitid) {
+		final Money result;
+		result= new Money();
+		result.setAmount(0.0);
+		result.setCurrency("EUR");
+		
+		final Collection<Quantity> quantitis=this.repository.findQuantityByToolkitId(toolkitid);
+		
+		for(final Quantity quantity:quantitis) {
+			final Money moneyOfItem= quantity.getItem().getRetailPrice();
+			final Integer numberOfItem = quantity.getNumber();
+			
+			final Money ExchangeMoneyOfItem = MoneyExchange.changeCurrency(moneyOfItem, "EUR", this.repository);
+			
+			final Double newAmount = result.getAmount()+ ExchangeMoneyOfItem.getAmount()*numberOfItem;
+			result.setAmount(newAmount);
+		}
+		
+		return result;
+	}
+	
+	
+	
+	
+	
 
 }
