@@ -41,17 +41,24 @@ public class AnyUserAccountListEnabledService implements AbstractListService<Any
 		StringBuilder buffer;
 		Collection<UserRole> roles;
 
-		request.unbind(entity, model);
-
 		roles = entity.getRoles();
 		buffer = new StringBuilder();
+		
+		int i = roles.size();
+		
 		for (final UserRole rol : roles) {
 				buffer.append(rol.getAuthorityName());
-				buffer.append(" ");
+				
+				if(i > 1) {
+					buffer.append(", ");
+					i--;
+				}
 			
 		}
 		
 		model.setAttribute("roles", buffer.toString());
+		
+		request.unbind(entity, model, "username", "identity.email");
 	}
 
 	@Override
@@ -59,12 +66,11 @@ public class AnyUserAccountListEnabledService implements AbstractListService<Any
 		assert request != null;
 
 		Collection<UserAccount> result;
-
-		result = this.repository.findEnabledPatronUserAccounts();
-		result.addAll(this.repository.findEnabledInventorUserAccounts());
+		
+		result = this.repository.findEnabledUserAccounts();
+		
 		for (final UserAccount userAccount : result) {
-			userAccount.getRoles().forEach(r -> {
-			});
+			userAccount.getRoles().forEach(r -> { ; });
 		}
 
 		return result;
