@@ -1,7 +1,7 @@
 /*
- * AuthenticatedPatronController.java
+ * AdministratorDashboardController.java
  *
- * Copyright (C) 2012-2022 Alejandro Baños.
+ * Copyright (C) 2012-2022 Rafael Corchuelo.
  *
  * In keeping with the traditional purpose of furthering education and research, it is
  * the policy of the copyright owner to permit non-commercial use and redistribution of
@@ -10,37 +10,31 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.authenticated.inventor;
+package acme.features.authenticated.moneyExchange;
 
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
 
+import acme.forms.MoneyExchange;
 import acme.framework.controllers.AbstractController;
 import acme.framework.roles.Authenticated;
-import acme.roles.Inventor;
 
 @Controller
-@RequestMapping("/authenticated/inventor/")
-public class AuthenticatedInventorController extends AbstractController<Authenticated, Inventor> {
+public class AuthenticatedMoneyExchangeController extends AbstractController<Authenticated, MoneyExchange> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AuthenticatedInventorCreateService	createService;
-
-	@Autowired
-	protected AuthenticatedInventorUpdateService	updateService;
+	protected AuthenticatedMoneyExchangePerformService exchangeService;
 
 	// Constructors -----------------------------------------------------------
 
 
 	@PostConstruct
 	protected void initialise() {
-		super.addCommand("create", this.createService);
-		super.addCommand("update", this.updateService);
+		super.addCommand("perform", this.exchangeService);
 	}
 
 }
