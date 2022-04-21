@@ -1,38 +1,31 @@
-package acme.features.any.item;
+package acme.features.any.toolkit;
 
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
-import acme.entities.Item;
-import acme.features.any.toolkit.AnyToolkitItemListService;
+import acme.entities.Toolkit;
 import acme.framework.controllers.AbstractController;
 import acme.framework.roles.Any;
 
 @Controller
-public class AnyItemController extends AbstractController<Any, Item>{
+public class AnyToolkitController extends AbstractController<Any, Toolkit>{
 	
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AnyItemListPublishedService		itemListPublishedService;
-	
+	protected AnyToolkitListPublishedService		toolkitListPublishedService;
 
 	@Autowired
-	protected AnyItemShowService	showService;
-	
-	
-	@Autowired
-	protected AnyToolkitItemListService toolkitItemListService;
+	protected AnyToolkitShowService	showService;
 
 	// Constructors -----------------------------------------------------------
 
 
 	@PostConstruct
 	protected void initialise() {
-		super.addCommand("list", this.itemListPublishedService);
-		super.addCommand("listToolkitItems", "list", this.toolkitItemListService);
+		super.addCommand("list", "list", this.toolkitListPublishedService);
 		super.addCommand("show", this.showService);
 	}
 
