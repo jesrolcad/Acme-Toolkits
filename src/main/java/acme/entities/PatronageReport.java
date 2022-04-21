@@ -33,7 +33,7 @@ public class PatronageReport extends AbstractEntity {
 
 	// Attributes -------------------------------------------------------------
 
-	@Pattern(regexp = "^<[A-Z]{3}-[0-9]{3}(-[A-Z])?:[0-9]{4,6}>$")
+	@Pattern(regexp = "^[A-Z]{3}-[0-9]{3}(-[A-Z])?:[0-9]{4,6}$")
 	@Column(unique = true)
 	@NotBlank
 	protected String			sequenceNumber;

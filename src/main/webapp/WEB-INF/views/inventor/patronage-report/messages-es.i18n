@@ -8,11 +8,11 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-authenticated.patronageReport.form.label.sequenceNumber = Número de secuencia
-authenticated.patronageReport.form.label.creationMoment = Momento de creación
-authenticated.patronageReport.form.label.memorandum = Memorandum
-authenticated.patronageReport.form.label.link = Enlace
+inventor.patronageReport.form.label.sequenceNumber = Número de secuencia
+inventor.patronageReport.form.label.creationMoment = Momento de creación
+inventor.patronageReport.form.label.memorandum = Memorandum
+inventor.patronageReport.form.label.link = Enlace
 
-authenticated.patronageReport.list.label.sequenceNumber = Número de secuencia
-authenticated.patronageReport.list.label.creationMoment = Momento de creación
-authenticated.patronageReport.list.label.link = Enlace
+inventor.patronageReport.list.label.sequenceNumber = Número de secuencia
+inventor.patronageReport.list.label.creationMoment = Momento de creación
+inventor.patronageReport.list.label.link = Enlace

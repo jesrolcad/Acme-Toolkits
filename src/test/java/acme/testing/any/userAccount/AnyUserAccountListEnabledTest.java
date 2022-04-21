@@ -15,10 +15,13 @@ public class AnyUserAccountListEnabledTest extends TestHarness{
 		final String username, final String name, final String surname, final String email) {
 		
 
-		super.clickOnMenu("Anonymous", "List enabled user accounts");
+		super.clickOnMenu("Any", "List enabled user accounts");
 		super.checkListingExists();
 		super.sortListing(0, "asc");
 		super.checkColumnHasValue(recordIndex, 0, roles);
+		super.checkColumnHasValue(recordIndex, 1, username);
+		super.checkColumnHasValue(recordIndex, 2, email);
+		
 
 		super.clickOnListingRecord(recordIndex);
 		super.checkFormExists();
@@ -26,30 +29,6 @@ public class AnyUserAccountListEnabledTest extends TestHarness{
 		super.checkInputBoxHasValue("identity.name", name);
 		super.checkInputBoxHasValue("identity.surname", surname);
 		super.checkInputBoxHasValue("identity.email", email);
-
-	}
-	
-	@ParameterizedTest
-	@CsvFileSource(resources = "/any/user-account/list.csv", encoding = "utf-8", numLinesToSkip = 1)
-	@Order(10)
-	public void authenticatedPositive(final int recordIndex, final String roles, 
-		final String username, final String name, final String surname, final String email) {
-		
-		super.signIn("inventor1", "inventor1");
-
-		super.clickOnMenu("Authenticated", "List enabled user accounts");
-		super.checkListingExists();
-		super.sortListing(0, "asc");
-		super.checkColumnHasValue(recordIndex, 0, roles);
-
-		super.clickOnListingRecord(recordIndex);
-		super.checkFormExists();
-		super.checkInputBoxHasValue("username", username);
-		super.checkInputBoxHasValue("identity.name", name);
-		super.checkInputBoxHasValue("identity.surname", surname);
-		super.checkInputBoxHasValue("identity.email", email);
-		
-		super.signOut();
 
 	}
 	

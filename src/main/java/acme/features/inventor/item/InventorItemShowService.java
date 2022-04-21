@@ -10,18 +10,26 @@ import acme.framework.services.AbstractShowService;
 import acme.roles.Inventor;
 
 @Service
-public class InventorItemShowService implements AbstractShowService<Inventor, Item>{
-
-	// Internal state ---------------------------------------------------------
+public class InventorItemShowService implements AbstractShowService<Inventor, Item> {
 
 	@Autowired
 	protected InventorItemRepository repository;
-		
+
+
 	@Override
 	public boolean authorise(final Request<Item> request) {
 		assert request != null;
 
-		return true;
+		boolean result;
+		int itemId;
+		Item item;
+
+		itemId = request.getModel().getInteger("id");
+		item = this.repository.findItemlById(itemId);
+		result = item != null && item.getInventor().getId() == request.getPrincipal().getActiveRoleId();
+
+		return result;
+
 	}
 
 	@Override
@@ -43,12 +51,9 @@ public class InventorItemShowService implements AbstractShowService<Inventor, It
 		assert entity != null;
 		assert model != null;
 
+		//model.setAttribute("inventor", entity.getInventor().getUserAccount().getUsername());
 
-		request.unbind(entity, model, "tipo", "name", "code", "technology", 
-			"description", "retailPrice", "optionalLink","inventor.userAccount.username","published");
-		
+		request.unbind(entity, model, "tipo", "name", "code", "technology", "description", "retailPrice", "optionalLink", "inventor.userAccount.username", "published");
+
 	}
-
-	
-
 }
