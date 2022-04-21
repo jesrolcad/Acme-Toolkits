@@ -18,6 +18,13 @@
 
 	<acme:message code="patron.patron-dashboard.form.label.avg-title"/>	
 	<table class="table table-sm">	
+		
+		
+	<jstl:if test="${empty averageBudgetByCurrency}">
+	<acme:message code="patron.patron-dashboard.form.label.nohayPatrocinios"/>	
+	<br>
+	<br>
+	</jstl:if>	
 		<jstl:forEach items="${averageBudgetByCurrency}" var="entry"> 	
 		<tr>	
 			<th>	
@@ -29,7 +36,7 @@
 			<acme:print value="${string2[1]}"/>
 			<acme:message code="patron.patron-dashboard.form.label.colon"/>
 			</th>
-			<td>
+			<td align="right">
 				<acme:print value="${entry.value}"/>
 				
 			</td>		
@@ -50,7 +57,7 @@
 				<acme:print value="${string2[1]}"/>
 				<acme:message code="patron.patron-dashboard.form.label.colon"/>		
 			</th>
-			<td>
+			<td align="right">
 				<acme:print value="${entry.value}"/>
 			</td>		
 		</tr>
@@ -71,7 +78,7 @@
 					<acme:print value="${string2[1]}"/>
 					<acme:message code="patron.patron-dashboard.form.label.colon"/>		
 				</th>
-				<td>
+				<td align="right">
 					<acme:print value="${entry.value}"/>
 				</td>		
 			</tr>
@@ -90,7 +97,7 @@
 					<acme:print value="${string2[1]}"/>
 					<acme:message code="patron.patron-dashboard.form.label.colon"/>		
 				</th>
-				<td>
+				<td align="right">
 					<acme:print value="${entry.value}"/>
 				</td>		
 			</tr>
@@ -103,7 +110,7 @@
 					<acme:message code="patron.patron-dashboard.form.label.totalNumberOfProposedPatronages"/>		
 		
 				</th>
-				<td>
+				<td align="right">
 					<acme:print value="${totalNumberOfProposedPatronages}"/>
 				</td>		
 			</tr>
@@ -111,7 +118,7 @@
 				<th>
 					<acme:message code="patron.patron-dashboard.form.label.totalNumberOfAcceptedPatronages"/>
 				</th>
-				<td>
+				<td align="right">
 					<acme:print value="${totalNumberOfAcceptedPatronages}"/>
 				</td>		
 			</tr>
@@ -119,7 +126,7 @@
 				<th>
 					<acme:message code="patron.patron-dashboard.form.label.totalNumberOfDeniedPatronages"/>		
 				</th>
-				<td>
+				<td align="right">
 					<acme:print value="${totalNumberOfDeniedPatronages}"/> 
 				</td>		
 			</tr>
