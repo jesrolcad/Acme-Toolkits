@@ -16,6 +16,7 @@ public class AnyItemController extends AbstractController<Any, Item>{
 
 	@Autowired
 	protected AnyItemListPublishedService		itemListPublishedService;
+	
 
 	@Autowired
 	protected AnyItemShowService	showService;
