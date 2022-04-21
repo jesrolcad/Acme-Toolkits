@@ -15,7 +15,7 @@ import acme.framework.services.AbstractListService;
 import acme.roles.Inventor;
 
 @Service 
-public class ToolkitItemListService implements AbstractListService<Inventor, Item>{
+public class InventorToolkitItemListService implements AbstractListService<Inventor, Item>{
 	
 	@Autowired
 	protected InventorToolkitRepository repository;
