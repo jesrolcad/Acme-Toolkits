@@ -22,15 +22,18 @@ patron.patron-dashboard.form.label.min-sentence = Presupuesto mínimo por divisa
 
 patron.patron-dashboard.form.label.and-technology = y tecnologia
 patron.patron-dashboard.form.label.colon = :
+patron.patron-dashboard.form.label.nohayComponentes=	No hay componentes en bd!!
+patron.patron-dashboard.form.label.nohayHerramientas=	No hay herramientas en bd!!
+patron.patron-dashboard.form.label.nohayPatrocinios=	No hay patrocinios en bd!!
 
 patron.patron-dashboard.form.label.patronage-average-sentence= Presupuesto medio del precio de venta por estado
 patron.patron-dashboard.form.label.patronage-deviation-sentence= Desviación típica del precio de venta por estado.
 patron.patron-dashboard.form.label.patronage-max-sentence= Máximo precio de venta por estado
 patron.patron-dashboard.form.label.patronage-min-sentence= Mínimo precio de venta por estado
 
-patron.patron-dashboard.form.label.totalNumberOfProposedPatronages = Total de mecenazgos propuestos:
-patron.patron-dashboard.form.label.totalNumberOfAcceptedPatronages = Total de mecenazgos aceptados:
-patron.patron-dashboard.form.label.totalNumberOfDeniedPatronages = Total de mecenazgos rechazados:
+patron.patron-dashboard.form.label.totalNumberOfProposedPatronages = Total de patrocinios propuestos:
+patron.patron-dashboard.form.label.totalNumberOfAcceptedPatronages = Total de patrocinios aceptados:
+patron.patron-dashboard.form.label.totalNumberOfDeniedPatronages = Total de patrocinios rechazados:
 patron.patron-dashboard.form.label.totalNumberOfTools= Total de herramientas: 
 patron.patron-dashboard.form.label.totalNumberOfComponents= Total de compomentes: 
 
