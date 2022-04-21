@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.Quantity;
 import acme.entities.Toolkit;
+import acme.features.authenticated.moneyExchange.AuthenticatedMoneyExchangePerformService;
+import acme.forms.MoneyExchange;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.datatypes.Money;
@@ -46,15 +48,12 @@ public class InventorToolkitShowService implements AbstractShowService<Inventor,
 		assert request != null;
 
 		Toolkit result;
-		Money retailPrice;
-		int id;;
+		int id;
 		
 		id = request.getModel().getInteger("id");
 		result = this.repository.findOneToolkitById(id);
-//		retailPrice = this.repository.retailPriceOfToolkitById(id);
-//		result.setRetailPrice(retailPrice);
-		retailPrice = this.retailPriceOfToolkit(id);
-		result.setRetailPrice(retailPrice);
+		
+		result.setRetailPrice(this.retailPriceOfToolkit(id));
 		
 		
 		
@@ -79,25 +78,29 @@ public class InventorToolkitShowService implements AbstractShowService<Inventor,
 	//Metodos adicionales
 	
 	private Money retailPriceOfToolkit(final int toolkitid) {
-		final Money result;
-		result= new Money();
+		final Money result = new Money();
 		result.setAmount(0.0);
 		result.setCurrency("EUR");
 		
+		final AuthenticatedMoneyExchangePerformService moneyExchange = new AuthenticatedMoneyExchangePerformService();
 		final Collection<Quantity> quantitis=this.repository.findQuantityByToolkitId(toolkitid);
 		
 		for(final Quantity quantity:quantitis) {
 			final Money moneyOfItem= quantity.getItem().getRetailPrice();
-			final Integer numberOfItem = quantity.getNumber();
-			
-			final Money ExchangeMoneyOfItem = MoneyExchange.changeCurrency(moneyOfItem, "EUR", this.repository);
-			
-			final Double newAmount = result.getAmount()+ ExchangeMoneyOfItem.getAmount()*numberOfItem;
+			final int numberOfItem = quantity.getNumber();
+			final MoneyExchange exchangeMoneyOfItem = moneyExchange.computeMoneyExchange(moneyOfItem, "EUR");
+			final Double newAmount = result.getAmount() + exchangeMoneyOfItem.getTarget().getAmount()*numberOfItem;
 			result.setAmount(newAmount);
 		}
 		
 		return result;
+		
 	}
+		
+		
+		
+		
+		
 	
 	
 	

@@ -7,9 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import acme.entities.Item;
 import acme.entities.Quantity;
-import acme.entities.SystemConfiguration;
 import acme.entities.Toolkit;
-import acme.entities.TypeExchange;
 import acme.framework.repositories.AbstractRepository;
 import acme.roles.Inventor;
 
@@ -30,12 +28,6 @@ public interface InventorToolkitRepository extends AbstractRepository{
 	
 	@Query("Select q.item from Quantity q where q.id = :id")
 	 Collection<Item> findManyItemByQuantityId(int id);
-	
-	
-	@Query("select sc from SystemConfiguration sc")
-	Collection<SystemConfiguration> findSystemConfiguration();
 
-	@Query("select t from TypeExchange t where t.currencyExchange.base = :currency and t.currency = :targetCurrency")
-	TypeExchange findTypeExchangeBySourceCurrency(String currency, String targetCurrency);
 
 }

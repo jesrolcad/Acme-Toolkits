@@ -46,10 +46,10 @@ public class ToolkitItemListService implements AbstractListService<Inventor, Ite
 		 final Collection<Item> result = new HashSet<Item>();
 		int toolkitid;
 		toolkitid = request.getModel().getInteger("id");
-		final Collection<Quantity> quantityId = this.repository.findQuantityByToolkitId(toolkitid);
+		final Collection<Quantity> quantities = this.repository.findQuantityByToolkitId(toolkitid);
 		
 		
-		for(final Quantity quantity: quantityId) {
+		for(final Quantity quantity: quantities) {
 			final int id=quantity.getId();
 			final Collection<Item> items=this.repository.findManyItemByQuantityId(id);
 			result.addAll(items);
@@ -66,7 +66,7 @@ public class ToolkitItemListService implements AbstractListService<Inventor, Ite
 		
 		
  
-		request.unbind(entity, model, "name","code", "technology", "retailPrice"); 
+		request.unbind(entity, model, "tipo", "name","code", "technology", "retailPrice"); 
 		 
 	}
 
