@@ -1,0 +1,3 @@
+recordIndex,tipo,name,code,technology,description,retail-price,optional-link,inventor,published
+0,TOOL,Tool 2,ABC-312-A,Technology2,This is the tool 2 and uses the tecnology 2,EUR 0.00,https://www.google.com/,inventor1,true
+1,TOOL,Vapormax,AAA-123-F,Technology1,This are the new Nike Vapormax it will provide you more speed,EUR 150.00,,inventor1,true

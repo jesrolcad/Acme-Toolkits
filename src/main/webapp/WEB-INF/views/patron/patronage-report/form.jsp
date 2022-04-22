@@ -16,10 +16,10 @@
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
 <acme:form>
-	<acme:input-textbox code="authenticated.patronageReport.form.label.sequenceNumber" path="sequenceNumber"/>
-	<acme:input-moment code="authenticated.patronageReport.form.label.creationMoment" path="creationMoment"/>
-	<acme:input-textbox code="authenticated.patronageReport.form.label.memorandum" path="memorandum"/>
-	<acme:input-textbox code="authenticated.patronageReport.form.label.link" path="link"/>
+	<acme:input-textbox code="patron.patronageReport.form.label.sequenceNumber" path="sequenceNumber"/>
+	<acme:input-moment code="patron.patronageReport.form.label.creationMoment" path="creationMoment"/>
+	<acme:input-textbox code="patron.patronageReport.form.label.memorandum" path="memorandum"/>
+	<acme:input-textbox code="patron.patronageReport.form.label.link" path="link"/>
 
 
 </acme:form>
