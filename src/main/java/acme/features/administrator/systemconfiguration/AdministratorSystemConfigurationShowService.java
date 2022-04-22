@@ -29,7 +29,7 @@ public class AdministratorSystemConfigurationShowService implements AbstractShow
 		assert request != null;
 
 		SystemConfiguration result;
-		result = this.repository.findSystemConfiguration().stream().findFirst().get();
+		result = this.repository.findSystemConfiguration();
 		return result;
 	}
 
