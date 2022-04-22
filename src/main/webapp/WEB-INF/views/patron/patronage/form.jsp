@@ -25,7 +25,7 @@
 	<acme:input-textbox code="patron.patronage.form.label.status" path="status"/>
 	<acme:input-textbox code="patron.patronage.form.label.username" path="inventor.userAccount.username"/>
 	<acme:input-textbox code="patron.patronage.form.label.company" path="inventor.company"/>
-	<acme:input-textbox code="patron.patronage.form.label.link" path="inventor.link"/>
+	<acme:input-textbox code="patron.patronage.form.label.inventor.link" path="inventor.link"/>
 	<acme:input-textbox code="patron.patronage.form.label.statement" path="inventor.statement"/>
 
 </acme:form>
