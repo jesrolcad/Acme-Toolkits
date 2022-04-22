@@ -41,7 +41,7 @@
 		
 		<acme:menu-option code="master.menu.authenticated" access="isAuthenticated">
 			<acme:menu-suboption code="master.menu.authenticated.all-chirps" action="/any/chirp/list-all-chirps"/>	
-      <acme:menu-suboption code="master.menu.authenticated.announcement.list" action="/authenticated/announcement/list-recent"/>
+      <acme:menu-suboption code="master.menu.authenticated.announcement.list" action="/authenticated/announcement/list"/>
       <acme:menu-suboption code="master.menu.authenticated.system-configuration" action="/authenticated/system-configuration/show"/>
 		</acme:menu-option>
 
