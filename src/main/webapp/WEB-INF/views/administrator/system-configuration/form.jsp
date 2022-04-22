@@ -7,7 +7,7 @@
 	<acme:input-textbox code="administrator.systemconfiguration.form.label.accepted-currencies" path="acceptedCurrencies"/>	
 	<acme:input-textbox code="administrator.systemconfiguration.form.label.system-currency" path="systemCurrency"/>
 	<acme:input-textbox code="administrator.systemconfiguration.form.label.strong-spam-words" path="strongSpamWords"/>
-	<acme:input-double code="administrator.systemconfiguration.form.label.strong-spam-threshold" path="strongSpamThreshold"/>
+	<acme:input-textbox code="administrator.systemconfiguration.form.label.strong-spam-threshold" path="strongSpamThreshold"/>
 	<acme:input-textbox code="administrator.systemconfiguration.form.label.weak-spam-words" path="weakSpamWords"/>
-	<acme:input-double code="administrator.systemconfiguration.form.label.weak-spam-threshold" path="weakSpamThreshold"/>
+	<acme:input-textbox code="administrator.systemconfiguration.form.label.weak-spam-threshold" path="weakSpamThreshold"/>
 </acme:form>

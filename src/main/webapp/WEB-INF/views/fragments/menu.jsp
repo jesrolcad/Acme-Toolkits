@@ -21,8 +21,9 @@
 	
 		<acme:menu-option code="master.menu.any">
 			<acme:menu-suboption code="master.menu.any.published-items" action="/any/item/list"/>
-			<acme:menu-suboption code="master.menu.any.enabled-userAccounts" action="/any/user-account/list"/>
 			<acme:menu-suboption code="master.menu.any.all-chirps" action="/any/chirp/list"/>
+			<acme:menu-suboption code="master.menu.any.published-toolkits" action="/any/toolkit/list"/>
+			<acme:menu-suboption code="master.menu.any.enabled-userAccounts" action="/any/user-account/list"/>		
 		</acme:menu-option>
 	
 	
@@ -78,9 +79,9 @@
 		
 
 		<acme:menu-option code="master.menu.inventor" access="hasRole('Inventor')">
-			<acme:menu-suboption code="master.menu.inventor.item.component.list" action="/inventor/item/listComponents"/>
-			<acme:menu-suboption code="master.menu.inventor.item.tool.list" action="/inventor/item/listTools"/>
-      <acme:menu-suboption code="master.menu.inventor.patronage-reports" action="/inventor/patronage-report/list"/>
+			<acme:menu-suboption code="master.menu.inventor.item.list" action="/inventor/item/list"/>
+			<acme:menu-suboption code="master.menu.inventor.toolkits.list" action="/inventor/toolkit/list"/>
+      		<acme:menu-suboption code="master.menu.inventor.patronage-reports" action="/inventor/patronage-report/list"/>
 			<acme:menu-suboption code="master.menu.inventor.list-patronages" action="/inventor/patronage/list"/>
 			<acme:menu-suboption code="master.menu.inventor.favourite-link" action="http://www.example.com/"/>
 		</acme:menu-option>

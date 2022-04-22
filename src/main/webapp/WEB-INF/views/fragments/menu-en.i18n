@@ -20,6 +20,7 @@ master.menu.sign-out = Sign out
 
 master.menu.any = Any
 master.menu.any.published-items = List published items
+master.menu.any.published-toolkits = List published toolkits
 master.menu.any.enabled-userAccounts = List enabled user accounts
 master.menu.any.all-chirps = List recent chirps
 
@@ -70,8 +71,9 @@ master.menu.patron.list-patronages = List patronages
 # master.menu.inventor ##########################################################
 
 master.menu.inventor = Inventor
-master.menu.inventor.item.component.list = List my components
-master.menu.inventor.item.tool.list = List my tools
+
+master.menu.inventor.toolkits.list = List my toolkits
+master.menu.inventor.item.list = List my items
 master.menu.inventor.favourite-link = Favourite link
 master.menu.inventor.patronage-reports = Patronage reports
 master.menu.inventor.list-patronages = List patronages
