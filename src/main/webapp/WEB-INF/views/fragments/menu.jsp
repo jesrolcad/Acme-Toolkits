@@ -21,6 +21,7 @@
 	
 		<acme:menu-option code="master.menu.any">
 			<acme:menu-suboption code="master.menu.any.published-items" action="/any/item/list"/>
+			<acme:menu-suboption code="master.menu.any.published-toolkits" action="/any/toolkit/list"/>
 			<acme:menu-suboption code="master.menu.any.enabled-userAccounts" action="/any/user-account/list"/>		
 		</acme:menu-option>
 	

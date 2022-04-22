@@ -20,6 +20,7 @@ master.menu.sign-out = Sign out
 
 master.menu.any = Any
 master.menu.any.published-items = List published items
+master.menu.any.published-toolkits = List published toolkits
 master.menu.any.enabled-userAccounts = List enabled user accounts
 
 # master.menu.anonymous #######################################################
