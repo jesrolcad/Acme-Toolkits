@@ -58,7 +58,7 @@ public class AnyToolkitShowService implements AbstractShowService<Any, Toolkit>{
 			model.setAttribute("inventor", entity.getInventor().getUserAccount().getUsername());
 			
 			request.unbind(entity, model, "code", "description", "assemblyNotes", "published",
-				"optionalLink", "retailPrice");
+				"optionalLink", "retailPrice", "inventor.userAccount.username");
 			
 		}
 		
@@ -74,6 +74,7 @@ public class AnyToolkitShowService implements AbstractShowService<Any, Toolkit>{
 				final Money moneyOfItem= quantity.getItem().getRetailPrice();
 				final int numberOfItem = quantity.getNumber();
 				final MoneyExchange exchangeMoneyOfItem = moneyExchange.computeMoneyExchange(moneyOfItem, "EUR");
+				
 				final Double newAmount = result.getAmount() + exchangeMoneyOfItem.getTarget().getAmount()*numberOfItem;
 				result.setAmount(newAmount);
 			}

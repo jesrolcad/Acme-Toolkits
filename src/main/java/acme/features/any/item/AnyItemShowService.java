@@ -51,10 +51,8 @@ public class AnyItemShowService implements AbstractShowService<Any, Item>{
 			assert entity != null;
 			assert model != null;
 			
-			model.setAttribute("inventor", entity.getInventor().getUserAccount().getUsername());
-			
 			request.unbind(entity, model, "tipo", "name", "code", "technology",
-				"description","retailPrice", "optionalLink", "published");
+				"description","retailPrice", "optionalLink", "inventor.userAccount.username","published");
 			
 		}
 
