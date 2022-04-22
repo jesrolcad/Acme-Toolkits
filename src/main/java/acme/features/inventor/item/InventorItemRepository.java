@@ -12,15 +12,12 @@ import acme.roles.Inventor;
 @Repository 
 public interface InventorItemRepository extends AbstractRepository{ 
 	 
-	@Query("select i from Item i where i.tipo = 1 and i.inventor.id = :id")
-	Collection<Item> findManyToolsByInventorId(int id);
+	@Query("select i from Item i where i.inventor.id = :id")
+	Collection<Item> findManyItemsByInventorId(int id);
 	 
 	@Query("Select i from Inventor i where i.userAccount.id = :id")
 	Inventor findInventorByUserAccountId(int id);
- 
-	@Query("select i from Item i where i.tipo = 0 and i.inventor.id = :id")
-	Collection<Item> findManyComponentsByInventorId(int id);
-	 
+	
 	@Query("select i from Item i where i.id = :id")
 	Item findItemlById(int id);
 } 

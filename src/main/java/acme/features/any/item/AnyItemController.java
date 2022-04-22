@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import acme.entities.Item;
+import acme.features.any.toolkit.AnyToolkitItemListService;
 import acme.framework.controllers.AbstractController;
 import acme.framework.roles.Any;
 
@@ -16,9 +17,14 @@ public class AnyItemController extends AbstractController<Any, Item>{
 
 	@Autowired
 	protected AnyItemListPublishedService		itemListPublishedService;
+	
 
 	@Autowired
 	protected AnyItemShowService	showService;
+	
+	
+	@Autowired
+	protected AnyToolkitItemListService toolkitItemListService;
 
 	// Constructors -----------------------------------------------------------
 
@@ -26,6 +32,7 @@ public class AnyItemController extends AbstractController<Any, Item>{
 	@PostConstruct
 	protected void initialise() {
 		super.addCommand("list", this.itemListPublishedService);
+		super.addCommand("listToolkitItems", "list", this.toolkitItemListService);
 		super.addCommand("show", this.showService);
 	}
 
