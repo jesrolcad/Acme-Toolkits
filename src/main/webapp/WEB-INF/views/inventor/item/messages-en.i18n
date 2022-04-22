@@ -15,4 +15,5 @@ inventor.item.form.label.description = Description:
 inventor.item.form.label.retail-price = Retail price:
 inventor.item.form.label.optional-link = Link:
 inventor.item.form.label.inventor = Inventor:
+inventor.item.form.label.published = Published:
 
