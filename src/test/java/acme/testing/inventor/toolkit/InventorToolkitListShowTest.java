@@ -12,7 +12,7 @@ public class InventorToolkitListShowTest extends TestHarness{
 	@CsvFileSource(resources = "/inventor/toolkit/list.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
 	public void positiveItem(final int recordIndex, final String code, final String description,
-		final String assemblynotes, final String link, final String inventor) {
+		final String assemblynotes, final String link,final String published, final String inventor) {
 		
 		
 		super.signIn("inventor1", "inventor1");
@@ -31,7 +31,7 @@ public class InventorToolkitListShowTest extends TestHarness{
 		super.checkInputBoxHasValue("description", description);
 		super.checkInputBoxHasValue("assemblyNotes", assemblynotes);
 		super.checkInputBoxHasValue("optionalLink", link);
-		//super.checkInputBoxHasValue("retailPrice", retailprice);
+		super.checkInputBoxHasValue("published", published);
 		super.checkInputBoxHasValue("inventor.userAccount.username", inventor);
 		super.clickOnButton("Items");
 		super.checkListingExists();

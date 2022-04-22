@@ -69,7 +69,7 @@ public class InventorToolkitShowService implements AbstractShowService<Inventor,
 		assert model != null;
 
 		request.unbind(entity, model, "code", 
-			"description","assemblyNotes", "optionalLink", 
+			"description","assemblyNotes","published", "optionalLink", 
 			"inventor.userAccount.username","retailPrice");
 		
 	}
