@@ -6,7 +6,8 @@ any.toolkit.list.label.optional-link = Link
 
 any.toolkit.form.label.code = Código:
 any.toolkit.form.label.description = Descripción:
-any.toolkit.form.label.assembly-notes = Notas de montaje
+any.toolkit.form.label.assembly-notes = Notas de montaje:
 any.toolkit.form.label.optional-link = Link:
-any.toolkit.form.label.retailPrice = Precio comercial
+any.toolkit.form.label.retailPrice = Precio comercial:
+any.toolkit.form.label.inventor = Inventor:
 any.toolkit.form.button.items = Ítems

@@ -1,6 +1,6 @@
-recordIndex,code,description,assemblyNotes,
-0,ABC-123-X,Toolkit created in order to build the new Ferrari car,Take in consideration the new carbon fiber spoiler
-1,ABC-124-O,This is the second toolkit.,Assembly notes for Toolkit 02
-2,ABC-126,This is the fourth toolkit.,Assembly notes for Toolkit 04
-3,OOO-222, This is the fifth toolkit.,Assembly notes for Toolkit 05
-4,QWE-125,This is the third toolkit.,Assembly notes for Toolkit 03
+recordIndex,code,description,assemblyNotes,link
+0,ABC-123-X,Toolkit created in order to build the new Ferrari car,Take in consideration the new carbon fiber spoiler,
+1,ABC-124-O,This is the second toolkit.,Assembly notes for Toolkit 02,https://es.wikipedia.org/wiki/Link
+2,ABC-126,This is the fourth toolkit.,Assembly notes for Toolkit 04,https://es.wikipedia.org/wiki/Link
+3,OOO-222,This is the fifth toolkit.,Assembly notes for Toolkit 05,
+4,QWE-125,This is the third toolkit.,Assembly notes for Toolkit 03,

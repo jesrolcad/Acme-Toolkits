@@ -34,7 +34,7 @@ public class AnyItemListPublishedTest extends TestHarness{
 		super.checkInputBoxHasValue("description", description);
 		super.checkInputBoxHasValue("retailPrice", retailPrice);
 		super.checkInputBoxHasValue("optionalLink", optionalLink);
-		super.checkInputBoxHasValue("inventor", inventor);
+		super.checkInputBoxHasValue("inventor.userAccount.username", inventor);
 		super.checkInputBoxHasValue("published", published);
 
 	}
