@@ -14,7 +14,9 @@ public class AdministratorDashboardShowTest extends TestHarness {
 	@ParameterizedTest
 	@CsvFileSource(resources = "/administrator/dashboard/show.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
-	public void administatorDashboardPositive(final String deviationBudgetGBP,final String deviationBudgetEUR,final String deviationBudgetUSD,
+	public void administatorDashboardPositive(
+		final String averageBudgetGBP,final String averageBudgetEUR,final String averageBudgetUSD,
+		final String deviationBudgetGBP,final String deviationBudgetEUR,final String deviationBudgetUSD,
 		final String minBudgetGBP,final String minBudgetEUR,final String minBudgetUSD,
 		final String maxBudgetGBP,final String maxBudgetEUR,final String maxBudgetUSD,
 		final String deviationBToolEUR, final String deviationBToolGBP, final String deviationBToolUSD,
@@ -30,6 +32,14 @@ public class AdministratorDashboardShowTest extends TestHarness {
 	
 		BrowserDriver driver= super.getDriver();
 		//components
+		
+		WebElement averageByBudgetGBP = driver.locateOne(By.cssSelector("table.table:nth-child(5) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2)"));
+		WebElement averageByBudgetEUR = driver.locateOne(By.cssSelector("table.table:nth-child(5) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(2)"));
+		WebElement averageByBudgetUSD = driver.locateOne(By.cssSelector("table.table:nth-child(5) > tbody:nth-child(1) > tr:nth-child(3) > td:nth-child(2)"));
+		System.out.println(averageByBudgetGBP +"entrada"+averageBudgetGBP);
+		assert averageBudgetGBP.equals(averageByBudgetGBP.getText());
+		assert averageBudgetEUR.equals(averageByBudgetEUR.getText());
+		assert averageBudgetUSD.equals(averageByBudgetUSD.getText());
 		WebElement deviationBGBP = driver.locateOne(By.cssSelector("table.table:nth-child(6) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2)"));
 		WebElement deviationBEUR = driver.locateOne(By.cssSelector("table.table:nth-child(6) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(2)"));
 		WebElement deviationBUSD = driver.locateOne(By.cssSelector("table.table:nth-child(6) > tbody:nth-child(1) > tr:nth-child(3) > td:nth-child(2)"));
@@ -48,15 +58,7 @@ public class AdministratorDashboardShowTest extends TestHarness {
 
 //		tools
 		
-		//problema en bd
-//		WebElement deviationToolBEUR = driver.locateOne(By.cssSelector("table.table:nth-child(11) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2)"));
-//		WebElement deviationToolBGBP = driver.locateOne(By.cssSelector("table.table:nth-child(11) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(2)"));
-//		WebElement deviationToolBUSD = driver.locateOne(By.cssSelector("table.table:nth-child(11) > tbody:nth-child(1) > tr:nth-child(3) > td:nth-child(2)"));
-//		
-//	
-//		assert deviationBToolEUR.equals(deviationToolBEUR.getText());
-//		assert deviationBToolGBP.equals(deviationToolBGBP.getText());
-//		assert deviationBToolUSD.equals(deviationToolBUSD.getText());
+
 		
 		WebElement minBuToolEUR = driver.locateOne(By.cssSelector("table.table:nth-child(12) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2)"));
 		WebElement minBuToolGBP = driver.locateOne(By.cssSelector("table.table:nth-child(12) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(2)"));

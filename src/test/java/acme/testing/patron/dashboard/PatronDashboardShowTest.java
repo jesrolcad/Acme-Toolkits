@@ -16,13 +16,25 @@ public class PatronDashboardShowTest  extends TestHarness {
 	@CsvFileSource(resources = "/patron/dashboard/show.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
 
-	public void PatronDashboardShowTest(final String deviationEURACCEPTED,final String deviationUSDPROPOSED, final String deviationEURDENIED, final String deviationGBPDENIED,
+	public void patronDashboardShowTest(
+		final String averageBudgetEURACCEPTED,final String averageBudgetUSDPROPOSED,final String averageBudgetEURDENIED,final String averageBudgetGBPDENIED,
+		final String deviationEURACCEPTED,final String deviationUSDPROPOSED, final String deviationEURDENIED, final String deviationGBPDENIED,
 		final String minEURACCEPTED,final String minUSDPROPOSED,final String minEURDENIED,final String minGBPDENIED,final String maxEURACCEPTED,final String maxUSDPROPOSED,final String maxEURDENIED,final String maxGBPDENIED,
 		final String totalPROPOSED,final String totalACCEPTED,final String totalDENIED) {
 	super.signIn("patron1", "patron1");
 	super.clickOnMenu("Patron", "Dashboard");
 
 	BrowserDriver driver= super.getDriver();
+	WebElement averageBudgetBYEURACCEPTED = driver.locateOne(By.cssSelector("table.table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2)"));
+	WebElement averageBudgetBYUSDPROPOSED = driver.locateOne(By.cssSelector("table.table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(2)"));
+	WebElement averageBudgetBYEURDENIED = driver.locateOne(By.cssSelector("table.table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(3) > td:nth-child(2)"));
+	WebElement averageBudgetBYGBPDENIED = driver.locateOne(By.cssSelector("table.table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(4) > td:nth-child(2)"));
+	assert averageBudgetEURACCEPTED.equals(averageBudgetBYEURACCEPTED.getText());
+	assert averageBudgetUSDPROPOSED.equals(averageBudgetBYUSDPROPOSED.getText());
+	assert averageBudgetEURDENIED.equals(averageBudgetBYEURDENIED.getText());
+	assert averageBudgetGBPDENIED.equals(averageBudgetBYGBPDENIED.getText());
+
+
 	WebElement deviationByEURACCEPTED = driver.locateOne(By.cssSelector("table.table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2)"));
 	WebElement deviationByUSDPROPOSED = driver.locateOne(By.cssSelector("table.table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(2)"));
 	WebElement deviationByEURDENIED = driver.locateOne(By.cssSelector("table.table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(3) > td:nth-child(2)"));
