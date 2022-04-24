@@ -5,10 +5,10 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.MoneyExchange;
 import acme.entities.Quantity;
 import acme.entities.Toolkit;
 import acme.features.authenticated.moneyExchange.AuthenticatedMoneyExchangePerformService;
-import acme.forms.MoneyExchange;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.datatypes.Money;
@@ -69,18 +69,34 @@ public class AnyToolkitShowService implements AbstractShowService<Any, Toolkit>{
 			
 			final AuthenticatedMoneyExchangePerformService moneyExchange = new AuthenticatedMoneyExchangePerformService();
 			final Collection<Quantity> quantitis=this.repository.findQuantityByToolkitId(toolkitid);
+			final String systemCurrency = this.repository.findSystemCurrency();
 			
 			for(final Quantity quantity:quantitis) {
+				final Double conversionAmount;
 				final Money moneyOfItem= quantity.getItem().getRetailPrice();
+				final String itemCurrency = moneyOfItem.getCurrency();
 				final int numberOfItem = quantity.getNumber();
-				final MoneyExchange exchangeMoneyOfItem = moneyExchange.computeMoneyExchange(moneyOfItem, "EUR");
 				
-				final Double newAmount = result.getAmount() + exchangeMoneyOfItem.getTarget().getAmount()*numberOfItem;
+				//Si la moneda del precio del ítem es diferente de la moneda del sistema, llamo a la API.
+				if(!systemCurrency.equals(itemCurrency)) {
+					
+					MoneyExchange conversion;
+					conversion = moneyExchange.computeMoneyExchange(moneyOfItem, systemCurrency);
+					conversionAmount = conversion.getTarget().getAmount();
+					
+					
+				}
+				//Si las monedas coinciden, no hay que realizar ninguna conversión
+				else {
+					conversionAmount = moneyOfItem.getAmount();
+				}
+				
+				final Double newAmount = (double) Math.round((result.getAmount() + conversionAmount*numberOfItem)*100)/100;
 				result.setAmount(newAmount);
 			}
 			
 			return result;
-			
+
 		}
 
 }

@@ -18,7 +18,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import acme.components.ExchangeRate;
-import acme.forms.MoneyExchange;
+import acme.entities.MoneyExchange;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
@@ -136,7 +136,7 @@ public class AuthenticatedMoneyExchangePerformService implements AbstractPerform
 
 			result = new MoneyExchange();
 			result.setSource(source);
-			result.setTargetCurrency(targetCurrency);
+			result.setCurrencyTarget(targetCurrency);
 			result.setDate(record.getDate());
 			result.setTarget(target);
 		} catch (final Throwable oops) {

@@ -1,3 +1,4 @@
+
 package acme.features.inventor.toolkit;
 
 import java.util.Collection;
@@ -5,10 +6,10 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.MoneyExchange;
 import acme.entities.Quantity;
 import acme.entities.Toolkit;
 import acme.features.authenticated.moneyExchange.AuthenticatedMoneyExchangePerformService;
-import acme.forms.MoneyExchange;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.datatypes.Money;
@@ -16,30 +17,30 @@ import acme.framework.services.AbstractShowService;
 import acme.roles.Inventor;
 
 @Service
-public class InventorToolkitShowService implements AbstractShowService<Inventor,Toolkit> {
+public class InventorToolkitShowService implements AbstractShowService<Inventor, Toolkit> {
 
 	@Autowired
 	protected InventorToolkitRepository repository;
-	
+
+
 	@Override
 	public boolean authorise(final Request<Toolkit> request) {
 		assert request != null;
-		boolean res=false;
+		boolean res = false;
 		int id;
 		int inventorId;
 		int userId;
-		id=request.getModel().getInteger("id");
+		id = request.getModel().getInteger("id");
 		final Toolkit toolkit = this.repository.findOneToolkitById(id);
 		inventorId = toolkit.getInventor().getId();
-		userId= request.getPrincipal().getAccountId();
-		final Inventor invent=this.repository.findInventorByUserAccountId(userId);
-		final int inventorIdUser=invent.getId();
-		
-		if(inventorId == inventorIdUser) {
-			res=true;
+		userId = request.getPrincipal().getAccountId();
+		final Inventor invent = this.repository.findInventorByUserAccountId(userId);
+		final int inventorIdUser = invent.getId();
+
+		if (inventorId == inventorIdUser) {
+			res = true;
 		}
 
-		
 		return res;
 	}
 
@@ -59,8 +60,6 @@ public class InventorToolkitShowService implements AbstractShowService<Inventor,
 		
 		return result;
 	}
-	
-	
 
 	@Override
 	public void unbind(final Request<Toolkit> request, final Toolkit entity, final Model model) {
@@ -71,12 +70,11 @@ public class InventorToolkitShowService implements AbstractShowService<Inventor,
 		request.unbind(entity, model, "code", 
 			"description","assemblyNotes","published", "optionalLink", 
 			"inventor.userAccount.username","retailPrice");
-		
+
 	}
-	
-	
+
 	//Metodos adicionales
-	
+
 	private Money retailPriceOfToolkit(final int toolkitid) {
 		final Money result = new Money();
 		result.setAmount(0.0);
@@ -84,27 +82,34 @@ public class InventorToolkitShowService implements AbstractShowService<Inventor,
 		
 		final AuthenticatedMoneyExchangePerformService moneyExchange = new AuthenticatedMoneyExchangePerformService();
 		final Collection<Quantity> quantitis=this.repository.findQuantityByToolkitId(toolkitid);
+		final String systemCurrency = this.repository.findSystemCurrency();
 		
 		for(final Quantity quantity:quantitis) {
+			final Double conversionAmount;
 			final Money moneyOfItem= quantity.getItem().getRetailPrice();
+			final String itemCurrency = moneyOfItem.getCurrency();
 			final int numberOfItem = quantity.getNumber();
-			final MoneyExchange exchangeMoneyOfItem = moneyExchange.computeMoneyExchange(moneyOfItem, "EUR");
-			final Double newAmount = result.getAmount() + exchangeMoneyOfItem.getTarget().getAmount()*numberOfItem;
+			
+			//Si la moneda del precio del ítem es diferente de la moneda del sistema, llamo a la API.
+			if(!systemCurrency.equals(itemCurrency)) {
+				
+				MoneyExchange conversion;
+				conversion = moneyExchange.computeMoneyExchange(moneyOfItem, systemCurrency);
+				conversionAmount = conversion.getTarget().getAmount();
+				
+				
+			}
+			//Si las monedas coinciden, no hay que realizar ninguna conversión
+			else {
+				conversionAmount = moneyOfItem.getAmount();
+			}
+			
+			final Double newAmount = (double) Math.round((result.getAmount() + conversionAmount*numberOfItem)*100)/100;
 			result.setAmount(newAmount);
 		}
 		
 		return result;
-		
+
 	}
-		
-		
-		
-		
-		
-	
-	
-	
-	
-	
 
 }
