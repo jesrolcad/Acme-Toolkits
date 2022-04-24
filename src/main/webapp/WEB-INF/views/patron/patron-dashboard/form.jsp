@@ -18,6 +18,7 @@
 
 	<acme:message code="patron.patron-dashboard.form.label.avg-title"/>	
 	<table class="table table-sm">	
+		<caption></caption>
 		
 		
 	<jstl:if test="${empty averageBudgetByCurrency}">
@@ -27,7 +28,7 @@
 	</jstl:if>	
 		<jstl:forEach items="${averageBudgetByCurrency}" var="entry"> 	
 		<tr>	
-			<th>	
+			<th id="">	
 			<acme:message code="patron.patron-dashboard.form.label.average-sentence"/>		
 			<jstl:set var = "string1" value = "${entry.key}"/>
 			<jstl:set var = "string2" value = "${fn:split(string1, '->')}" />
@@ -36,7 +37,7 @@
 			<acme:print value="${string2[1]}"/>
 			<acme:message code="patron.patron-dashboard.form.label.colon"/>
 			</th>
-			<td align="right">
+			<td style= "text-align:right;">
 				<acme:print value="${entry.value}"/>
 				
 			</td>		
@@ -46,9 +47,10 @@
 	
 	<acme:message code="patron.patron-dashboard.form.label.deviationTitle"/>		
 	<table class="table table-sm">
+		<caption></caption>
 		<jstl:forEach items="${deviationBudgetByCurrency}" var="entry"> 
 		<tr>	
-			<th>
+			<th id="">
 				<acme:message code="patron.patron-dashboard.form.label.deviation-sentence"/>		
 				<jstl:set var = "string1" value = "${entry.key}"/>
 				<jstl:set var = "string2" value = "${fn:split(string1, '->')}" />
@@ -57,7 +59,7 @@
 				<acme:print value="${string2[1]}"/>
 				<acme:message code="patron.patron-dashboard.form.label.colon"/>		
 			</th>
-			<td align="right">
+			<td style= "text-align:right;">
 				<acme:print value="${entry.value}"/>
 			</td>		
 		</tr>
@@ -67,9 +69,10 @@
 	
 	<acme:message code="patron.patron-dashboard.form.label.minTitle"/>
 	<table class="table table-sm">	
+		<caption></caption>
 		<jstl:forEach items="${minBudgetByCurrency}" var="entry"> 
 			<tr>	
-				<th>
+				<th id="">
 					<acme:message code="patron.patron-dashboard.form.label.min-sentence"/>		
 					<jstl:set var = "string1" value = "${entry.key}"/>
 					<jstl:set var = "string2" value = "${fn:split(string1, '->')}" />
@@ -78,7 +81,7 @@
 					<acme:print value="${string2[1]}"/>
 					<acme:message code="patron.patron-dashboard.form.label.colon"/>		
 				</th>
-				<td align="right">
+				<td style= "text-align:right;">
 					<acme:print value="${entry.value}"/>
 				</td>		
 			</tr>
@@ -86,9 +89,10 @@
 	</table>		
 	<acme:message code="patron.patron-dashboard.form.label.maxTitle"/>		
 	<table class="table table-sm">	
+		<caption></caption>
 		<jstl:forEach items="${maxBudgetByCurrency}" var="entry"> 
 			<tr>	
-				<th>
+				<th id="">
 					<acme:message code="patron.patron-dashboard.form.label.max-sentence"/>		
 					<jstl:set var = "string1" value = "${entry.key}"/>
 					<jstl:set var = "string2" value = "${fn:split(string1, '->')}" />
@@ -97,7 +101,7 @@
 					<acme:print value="${string2[1]}"/>
 					<acme:message code="patron.patron-dashboard.form.label.colon"/>		
 				</th>
-				<td align="right">
+				<td style= "text-align:right;">
 					<acme:print value="${entry.value}"/>
 				</td>		
 			</tr>
@@ -105,28 +109,29 @@
 	</table>
 	<acme:message code="patron.patron-dashboard.form.label.absoluteTitle"/>		
 	<table class="table table-sm">
+		<caption></caption>
 			<tr>	
-				<th>
+				<th id="">
 					<acme:message code="patron.patron-dashboard.form.label.totalNumberOfProposedPatronages"/>		
 		
 				</th>
-				<td align="right">
+				<td style= "text-align:right;">
 					<acme:print value="${totalNumberOfProposedPatronages}"/>
 				</td>		
 			</tr>
 			<tr>	
-				<th>
+				<th id="">
 					<acme:message code="patron.patron-dashboard.form.label.totalNumberOfAcceptedPatronages"/>
 				</th>
-				<td align="right">
+				<td style= "text-align:right;">
 					<acme:print value="${totalNumberOfAcceptedPatronages}"/>
 				</td>		
 			</tr>
 			<tr>	
-				<th>
+				<th id="">
 					<acme:message code="patron.patron-dashboard.form.label.totalNumberOfDeniedPatronages"/>		
 				</th>
-				<td align="right">
+				<td style= "text-align:right;">
 					<acme:print value="${totalNumberOfDeniedPatronages}"/> 
 				</td>		
 			</tr>
