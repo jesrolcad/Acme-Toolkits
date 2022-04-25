@@ -24,6 +24,7 @@ inventor.patronage.form.label.legalStuff = Legal stuff
 inventor.patronage.form.label.budget = Budget
 inventor.patronage.form.label.link = Link
 inventor.patronage.form.label.status = Status
+inventor.patronage.form.label.username = Patron's username
 inventor.patronage.form.label.company = Patron's company
 inventor.patronage.form.label.patron-link = Patron's link
 inventor.patronage.form.label.statement = Patron's statement
