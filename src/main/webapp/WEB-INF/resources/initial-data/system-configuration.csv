@@ -1,2 +1,2 @@
-key,accepted-currencies,system-currency,strong-spam-words,strong-spam-threshold,weak-spam-words,weak-spam-threshold
-system-configuration-01,"EUR, USD, GBP","EUR", "sex, sexo, hard core, viagra, cialis", 10.00, "sexy, nigeria, you've won, has ganado, one million, un millón", 25.00
+key,accepted-currencies,system-currency,strong-spam-words,strong-spam-threshold,weak-spam-words,weak-spam-threshold,money-exchange-service-name,money-exchange-service-description,money-exchange-service-link
+system-configuration-01,"EUR, USD, GBP","EUR", "sex, sexo, hard core, viagra, cialis", 10.00, "sexy, nigeria, you've won, has ganado, one million, un millón", 25.00,Exchange rates API,"Exchange rates API is a simple and lightweight free service for current and historical foreign exchange rates & crypto exchange rates. Reliable and up-to-date EU VAT rates, sourced directly from the European Commission's databases.",https://exchangerate.host/
