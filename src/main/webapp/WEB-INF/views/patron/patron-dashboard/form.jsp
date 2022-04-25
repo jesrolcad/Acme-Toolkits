@@ -48,6 +48,12 @@
 	<acme:message code="patron.patron-dashboard.form.label.deviationTitle"/>		
 	<table class="table table-sm">
 		<caption></caption>
+		
+	<jstl:if test="${empty deviationBudgetByCurrency}">
+	<acme:message code="patron.patron-dashboard.form.label.nohayPatrocinios"/>	
+	<br>
+	<br>
+	</jstl:if>
 		<jstl:forEach items="${deviationBudgetByCurrency}" var="entry"> 
 		<tr>	
 			<th id="">
@@ -70,6 +76,11 @@
 	<acme:message code="patron.patron-dashboard.form.label.minTitle"/>
 	<table class="table table-sm">	
 		<caption></caption>
+	<jstl:if test="${empty minBudgetByCurrency}">
+	<acme:message code="patron.patron-dashboard.form.label.nohayPatrocinios"/>	
+	<br>
+	<br>
+	</jstl:if>
 		<jstl:forEach items="${minBudgetByCurrency}" var="entry"> 
 			<tr>	
 				<th id="">
@@ -90,6 +101,11 @@
 	<acme:message code="patron.patron-dashboard.form.label.maxTitle"/>		
 	<table class="table table-sm">	
 		<caption></caption>
+	<jstl:if test="${empty maxBudgetByCurrency}">
+	<acme:message code="patron.patron-dashboard.form.label.nohayPatrocinios"/>	
+	<br>
+	<br>
+	</jstl:if>
 		<jstl:forEach items="${maxBudgetByCurrency}" var="entry"> 
 			<tr>	
 				<th id="">
