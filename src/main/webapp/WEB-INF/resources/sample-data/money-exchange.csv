@@ -1,0 +1,7 @@
+key,source,currency-target,target,date
+money-exchange-01,"EUR 15.00","USD","USD 16.19",2022/04/24 11:40
+money-exchange-02,"USD 17.18","EUR","EUR 15.90",2022/04/24 11:40
+money-exchange-03,"EUR 22.22","GBP","GBP 18.67",2022/04/24 11:40
+money-exchange-04,"GBP 5.24","EUR","EUR 6.23",2022/04/24 11:40
+money-exchange-05,"USD 100.50","GBP","GBP 78.22",2022/04/24 11:40
+money-exchange-06,"GBP 775.99","USD","USD 996.99",2022/04/24 11:40

@@ -27,7 +27,7 @@ public class AuthenticatedSystemConfigurationShowService implements AbstractShow
 		assert request != null;
 
 		SystemConfiguration result;
-		result= this.repository.findSystemConfiguration().stream().findFirst().get();
+		result= this.repository.findSystemConfiguration();
 		return result;
 	}
 
@@ -38,7 +38,8 @@ public class AuthenticatedSystemConfigurationShowService implements AbstractShow
 		assert model != null;
 		
 		request.unbind(entity, model, "acceptedCurrencies", "systemCurrency", "strongSpamWords", 
-			"strongSpamThreshold", "weakSpamWords", "weakSpamThreshold");
+			"strongSpamThreshold", "weakSpamWords", "weakSpamThreshold", "moneyExchangeServiceName",
+			"moneyExchangeServiceDescription","moneyExchangeServiceLink");
 		model.setAttribute("confirmation", false);
 		model.setAttribute("readonly", true);
 	}

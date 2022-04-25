@@ -10,6 +10,7 @@
 	<acme:input-textbox code="any.toolkit.form.label.assembly-notes" path="assemblyNotes"/>
 	<acme:input-textbox code="any.toolkit.form.label.optional-link" path="optionalLink"/>	
 	<acme:input-textbox code="any.toolkit.form.label.retailPrice" path="retailPrice"/>
+	<acme:input-textbox code="any.toolkit.form.label.inventor" path="inventor.userAccount.username"/>
 	
 	<acme:button code="any.toolkit.form.button.items" action="/any/item/listToolkitItems?id=${id}"/>
 </acme:form>

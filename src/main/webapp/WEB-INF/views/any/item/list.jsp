@@ -8,4 +8,6 @@
 	<acme:list-column code="any.item.list.label.name" path="name" width="20%"/>
 	<acme:list-column code="any.item.list.label.code" path="code" width="20%"/>	
 	<acme:list-column code="any.item.list.label.technology" path="technology" width="20%"/>
+	<acme:list-column code="any.item.list.label.retail-price" path="retailPrice" width="20%"/>
+	
 </acme:list>

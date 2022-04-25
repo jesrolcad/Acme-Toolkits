@@ -28,6 +28,9 @@ public interface InventorToolkitRepository extends AbstractRepository{
 	
 	@Query("Select q.item from Quantity q where q.id = :id")
 	 Collection<Item> findManyItemByQuantityId(int id);
+	
+	@Query("select sc.systemCurrency from SystemConfiguration sc")
+	String findSystemCurrency();
 
-
+ 
 }

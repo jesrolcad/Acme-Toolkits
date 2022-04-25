@@ -295,7 +295,7 @@ has v</panel_attributes>
       <x>826</x>
       <y>399</y>
       <w>273</w>
-      <h>119</h>
+      <h>98</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Chirp
@@ -332,7 +332,7 @@ Announcement
       <x>1106</x>
       <y>0</y>
       <w>392</w>
-      <h>119</h>
+      <h>126</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Toolkit
@@ -343,7 +343,8 @@ Toolkit
 + description: String {NotBlank, Length(Max=256)}
 + assemblyNotes: String {NotBlank, Length(Max=256)}
 + published: boolean
-+ link: String {URL}</panel_attributes>
++ link: String {URL}
++ / retailPrice: Money {Valid}</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -389,15 +390,15 @@ PatronageReport
     <id>Relation</id>
     <coordinates>
       <x>1316</x>
-      <y>112</y>
+      <y>119</y>
       <w>49</w>
-      <h>84</h>
+      <h>77</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=1
 m2=0..*
 has ^</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -437,7 +438,7 @@ about ^</panel_attributes>
       <x>637</x>
       <y>175</y>
       <w>273</w>
-      <h>119</h>
+      <h>140</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 SystemConfiguration
@@ -447,7 +448,10 @@ SystemConfiguration
 + strongSpamWords: String {NotBlank}
 + strongSpamThreshold: double {Range(0, 100), Digits(3, 2)}
 + weakSpamWords: String {NotBlank}
-+ weakSpamThreshold: double {Range(0, 100), Digits(3, 2)} </panel_attributes>
++ weakSpamThreshold: double {Range(0, 100), Digits(3, 2)} 
++ moneyExchangeServiceName: String {NotBlank}
++ moneyExchangeServiceDescription: String {NotBlank, Length(Max=256)}
++ moneyExchangeServiceLink: String {URL}</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -498,13 +502,13 @@ bg=white</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>651</x>
-      <y>287</y>
+      <y>308</y>
       <w>21</w>
-      <h>84</h>
+      <h>63</h>
     </coordinates>
     <panel_attributes>lt=..
 </panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -541,7 +545,7 @@ has v</panel_attributes>
       <x>1169</x>
       <y>350</y>
       <w>315</w>
-      <h>189</h>
+      <h>147</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Item
@@ -674,22 +678,19 @@ with every new patronage report</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>7</x>
-      <y>476</y>
+      <x>21</x>
+      <y>336</y>
       <w>287</w>
-      <h>126</h>
+      <h>91</h>
     </coordinates>
-    <panel_attributes>&lt;&lt;Form&gt;&gt;
-PatronDashboard
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+MoneyExchange
 
 --
-+ totalNumberOfProposedPatronages: int
-+ totalNumberOfAcceptedPatronages: int
-+ totalNumberOfDeniedPatronages: int
-+ averageBudgetByCurrency: Map&lt;Pair&lt;String,String&gt;,Double&gt;
-+ deviationBudgetByCurrency: Map&lt;Pair&lt;String,String&gt;,Double&gt;
-+ minBudgetByCurrency: Map&lt;Pair&lt;String,String&gt;,Double&gt;
-+ maxBudgetByCurrency: Map&lt;Pair&lt;String,String&gt;,Double&gt;</panel_attributes>
++ source: Money {Valid, NotNull}
++ currencyTarget: String {NotBlank}
++ target: Money {Valid}
++ date: Date</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -790,15 +791,15 @@ received by ^</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1421</x>
-      <y>532</y>
+      <y>490</y>
       <w>84</w>
-      <h>77</h>
+      <h>119</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
 m1=0..*
 m2=1
 invented by v</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;150.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -813,5 +814,26 @@ m1=1
 m2=0..*
 belongs to v</panel_attributes>
     <additional_attributes>130.0;800.0;550.0;800.0;550.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>21</x>
+      <y>476</y>
+      <w>287</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Form&gt;&gt;
+PatronDashboard
+
+--
++ totalNumberOfProposedPatronages: int
++ totalNumberOfAcceptedPatronages: int
++ totalNumberOfDeniedPatronages: int
++ averageBudgetByCurrency: Map&lt;Pair&lt;String,String&gt;,Double&gt;
++ deviationBudgetByCurrency: Map&lt;Pair&lt;String,String&gt;,Double&gt;
++ minBudgetByCurrency: Map&lt;Pair&lt;String,String&gt;,Double&gt;
++ maxBudgetByCurrency: Map&lt;Pair&lt;String,String&gt;,Double&gt;</panel_attributes>
+    <additional_attributes/>
   </element>
 </diagram>

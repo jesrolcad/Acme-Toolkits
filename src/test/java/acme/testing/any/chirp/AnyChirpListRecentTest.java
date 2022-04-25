@@ -19,6 +19,7 @@ public class AnyChirpListRecentTest extends TestHarness {
 		super.clickOnMenu("Any", "List recent chirps");
 
 		super.checkListingExists();
+		super.sortListing(0, "asc");
 		super.checkColumnHasValue(recordIndex, 0, title);
 		super.checkColumnHasValue(recordIndex, 1, author);
 		super.checkColumnHasValue(recordIndex, 2, moment);

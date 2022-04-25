@@ -15,9 +15,6 @@ public interface AnyToolkitRepository extends AbstractRepository{
 		
 		@Query("select t from Toolkit t where t.published = :published")
 		Collection<Toolkit> findManyPublishedToolkits(boolean published);
-		
-		//@Query("select q.toolkit from Quantity q where q.toolkit.published =:published and q.item.id = :itemId")
-		//Collection<Toolkit> findManyPublishedToolkitsWithItem(boolean published, int itemId);
 
 		@Query("select q.item from Quantity q where q.toolkit.id = :toolkitId")
 		Collection<Item> findManyItemsByToolkitId(int toolkitId);
@@ -30,6 +27,9 @@ public interface AnyToolkitRepository extends AbstractRepository{
 		
 		@Query("Select q.item from Quantity q where q.id = :id")
 		 Collection<Item> findManyItemByQuantityId(int id);
+		
+		@Query("select sc.systemCurrency from SystemConfiguration sc")
+		String findSystemCurrency();
 }
 
 

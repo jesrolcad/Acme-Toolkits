@@ -2,3 +2,6 @@
 
 authenticated.systemconfiguration.form.label.accepted-currencies = Monedas aceptadas:
 authenticated.systemconfiguration.form.label.system-currency = Sistema de moneda:
+authenticated.systemconfiguration.form.label.money-exchange-service-name = Nombre del servicio de conversión de monedas:
+authenticated.systemconfiguration.form.label.money-exchange-service-description = Descripción del servicio:
+authenticated.systemconfiguration.form.label.money-exchange-service-link = Enlace del servicio:

@@ -6,14 +6,14 @@ import org.junit.jupiter.params.provider.CsvFileSource;
 
 import acme.testing.TestHarness;
 
-public class AnyToolkitListTest extends TestHarness{
+public class AnyToolkitListShowTest extends TestHarness{
 	
 	@ParameterizedTest
 	@CsvFileSource(resources = "/any/toolkit/list.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
 	public void positiveItem(final int recordIndex, final String code, final String description,
-		final String assemblynotes) {
-		
+		final String assemblynotes, final String link) {
+
 		super.clickOnMenu("Any", "List published toolkits");
 		super.checkListingExists();
 		super.sortListing(0, "asc");
@@ -22,18 +22,17 @@ public class AnyToolkitListTest extends TestHarness{
 		super.checkColumnHasValue(recordIndex, 2, assemblynotes);
 		
 		//show
-		/*super.clickOnListingRecord(recordIndex);
+		super.clickOnListingRecord(recordIndex);
 		super.checkFormExists();
 		super.checkInputBoxHasValue("code", code);
 		super.checkInputBoxHasValue("description", description);
 		super.checkInputBoxHasValue("assemblyNotes", assemblynotes);
 		super.checkInputBoxHasValue("optionalLink", link);
-		super.checkInputBoxHasValue("retailPrice", retailprice);;
-		super.checkInputBoxHasValue("inventor.userAccount.username", inventor);
+		//super.checkInputBoxHasValue("retailPrice", retailprice);
 		super.clickOnButton("Items");
-		super.checkListingExists();*/
+		super.checkListingExists();
 
-	
+		
 	}
 
 	// Ancillary methods ------------------------------------------------------

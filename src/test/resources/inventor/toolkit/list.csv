@@ -1,5 +1,5 @@
-recordIndex,code,description,assemblynotes,link,retailprice,inventor
-0,ABC-123-X,Toolkit created in order to build the new Ferrari car,Take in consideration the new carbon fiber spoiler,,EUR 150.00,inventor1
-1,ABC-124-O,This is the second toolkit.,Assembly notes for Toolkit 02,https://es.wikipedia.org/wiki/Link,EUR 129.87,inventor1
-2,ABC-126,This is the fourth toolkit.,Assembly notes for Toolkit 04,https://es.wikipedia.org/wiki/Link,"EUR 28,585.74",inventor1
-3,QWE-125,This is the third toolkit.,Assembly notes for Toolkit 03,,EUR 120.00,inventor1
+recordIndex,code,description,assemblynotes,link,published,inventor
+0,ABC-123-X,Toolkit created in order to build the new Ferrari car,Take in consideration the new carbon fiber spoiler,,true,inventor1
+1,ABC-124-O,This is the second toolkit.,Assembly notes for Toolkit 02,https://es.wikipedia.org/wiki/Link,true,inventor1
+2,ABC-126,This is the fourth toolkit.,Assembly notes for Toolkit 04,https://es.wikipedia.org/wiki/Link,true,inventor1
+3,QWE-125,This is the third toolkit.,Assembly notes for Toolkit 03,,true,inventor1

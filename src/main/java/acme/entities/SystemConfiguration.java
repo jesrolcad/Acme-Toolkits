@@ -5,7 +5,9 @@ import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.Range;
+import org.hibernate.validator.constraints.URL;
 
 import acme.framework.entities.AbstractEntity;
 import lombok.Getter;
@@ -39,5 +41,15 @@ public class SystemConfiguration extends AbstractEntity{
 	@Digits(integer = 3, fraction = 2)
 	@NotNull
 	public double weakSpamThreshold;
+	
+	@NotBlank
+	public String moneyExchangeServiceName;
+	
+	@NotBlank
+	@Length(max=256)
+	public String moneyExchangeServiceDescription;
+	
+	@URL
+	public String moneyExchangeServiceLink;
 
 }

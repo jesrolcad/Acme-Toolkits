@@ -23,6 +23,7 @@
 	<acme:input-money code="inventor.patronage.form.label.budget" path="budget"/>
 	<acme:input-textbox code="inventor.patronage.form.label.link" path="link"/>
 	<acme:input-textbox code="inventor.patronage.form.label.status" path="status"/>
+	<acme:input-textbox code="inventor.patronage.form.label.username" path="patron.userAccount.username"/>
 	<acme:input-textbox code="inventor.patronage.form.label.company" path="patron.company"/>
 	<acme:input-textbox code="inventor.patronage.form.label.patron-link" path="patron.link"/>
 	<acme:input-textbox code="inventor.patronage.form.label.statement" path="patron.statement"/>
