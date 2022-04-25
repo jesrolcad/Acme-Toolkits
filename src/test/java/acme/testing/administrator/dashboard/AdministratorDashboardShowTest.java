@@ -33,24 +33,25 @@ public class AdministratorDashboardShowTest extends TestHarness {
 		BrowserDriver driver= super.getDriver();
 		//components
 		
-		WebElement averageByBudgetGBP = driver.locateOne(By.cssSelector("table.table:nth-child(5) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2)"));
-		WebElement averageByBudgetEUR = driver.locateOne(By.cssSelector("table.table:nth-child(5) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(2)"));
-		WebElement averageByBudgetUSD = driver.locateOne(By.cssSelector("table.table:nth-child(5) > tbody:nth-child(1) > tr:nth-child(3) > td:nth-child(2)"));
+		WebElement averageByBudgetGBP = driver.locateOne(By.cssSelector("table.table:nth-child(5) > tbody:nth-child(3) > tr:nth-child(1) > td:nth-child(2)"));
+		WebElement averageByBudgetEUR = driver.locateOne(By.cssSelector("table.table:nth-child(5) > tbody:nth-child(3) > tr:nth-child(2) > td:nth-child(2)"));
+		WebElement averageByBudgetUSD = driver.locateOne(By.cssSelector("table.table:nth-child(5) > tbody:nth-child(3) > tr:nth-child(3) > td:nth-child(2)"));
 		System.out.println(averageByBudgetGBP +"entrada"+averageBudgetGBP);
 		assert averageBudgetGBP.equals(averageByBudgetGBP.getText());
 		assert averageBudgetEUR.equals(averageByBudgetEUR.getText());
 		assert averageBudgetUSD.equals(averageByBudgetUSD.getText());
-		WebElement deviationBGBP = driver.locateOne(By.cssSelector("table.table:nth-child(6) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2)"));
-		WebElement deviationBEUR = driver.locateOne(By.cssSelector("table.table:nth-child(6) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(2)"));
-		WebElement deviationBUSD = driver.locateOne(By.cssSelector("table.table:nth-child(6) > tbody:nth-child(1) > tr:nth-child(3) > td:nth-child(2)"));
+		
+		WebElement deviationBGBP = driver.locateOne(By.cssSelector("table.table:nth-child(6) > tbody:nth-child(3) > tr:nth-child(1) > td:nth-child(2)"));
+		WebElement deviationBEUR = driver.locateOne(By.cssSelector("table.table:nth-child(6) > tbody:nth-child(3) > tr:nth-child(2) > td:nth-child(2)"));
+		WebElement deviationBUSD = driver.locateOne(By.cssSelector("table.table:nth-child(6) > tbody:nth-child(3) > tr:nth-child(3) > td:nth-child(2)"));
 
 		assert deviationBudgetGBP.equals(deviationBGBP.getText());
 		assert deviationBudgetEUR.equals(deviationBEUR.getText());
 		assert deviationBudgetUSD.equals(deviationBUSD.getText());
 		
-		WebElement minBudgetBGBP = driver.locateOne(By.cssSelector("table.table:nth-child(7) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2)"));
-		WebElement minBudgetBEUR = driver.locateOne(By.cssSelector("table.table:nth-child(7) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(2)"));
-		WebElement minBudgetBUSD = driver.locateOne(By.cssSelector("table.table:nth-child(7) > tbody:nth-child(1) > tr:nth-child(3) > td:nth-child(2)"));
+		WebElement minBudgetBGBP = driver.locateOne(By.cssSelector("table.table:nth-child(7) > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(2)"));
+		WebElement minBudgetBEUR = driver.locateOne(By.cssSelector("table.table:nth-child(7) > tbody:nth-child(2) > tr:nth-child(2) > td:nth-child(2)"));
+		WebElement minBudgetBUSD = driver.locateOne(By.cssSelector("table.table:nth-child(7) > tbody:nth-child(2) > tr:nth-child(3) > td:nth-child(2)"));
 
 		assert minBudgetGBP.equals(minBudgetBGBP.getText());
 		assert minBudgetEUR.equals(minBudgetBEUR.getText());
@@ -60,17 +61,17 @@ public class AdministratorDashboardShowTest extends TestHarness {
 		
 
 		
-		WebElement minBuToolEUR = driver.locateOne(By.cssSelector("table.table:nth-child(12) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2)"));
-		WebElement minBuToolGBP = driver.locateOne(By.cssSelector("table.table:nth-child(12) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(2)"));
-		WebElement minBuToolUSD = driver.locateOne(By.cssSelector("table.table:nth-child(12) > tbody:nth-child(1) > tr:nth-child(3) > td:nth-child(2)"));
+		WebElement minBuToolEUR = driver.locateOne(By.cssSelector("table.table:nth-child(13) > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(2)"));
+		WebElement minBuToolGBP = driver.locateOne(By.cssSelector("table.table:nth-child(12) > tbody:nth-child(3) > tr:nth-child(2) > td:nth-child(2)"));
+		WebElement minBuToolUSD = driver.locateOne(By.cssSelector("table.table:nth-child(12) > tbody:nth-child(3) > tr:nth-child(3) > td:nth-child(2)"));
 
 		assert minBToolEUR.equals(minBuToolEUR.getText());
 		assert minBToolGBP.equals(minBuToolGBP.getText());
 		assert minBToolUSD.equals(minBuToolUSD.getText());
 		
-		WebElement maxBuToolEUR = driver.locateOne(By.cssSelector("table.table:nth-child(13) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2)"));
-		WebElement maxBuToolGBP = driver.locateOne(By.cssSelector("table.table:nth-child(13) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(2)"));
-		WebElement maxBuToolUSD = driver.locateOne(By.cssSelector("table.table:nth-child(13) > tbody:nth-child(1) > tr:nth-child(3) > td:nth-child(2)"));
+		WebElement maxBuToolEUR = driver.locateOne(By.cssSelector("table.table:nth-child(13) > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(2)"));
+		WebElement maxBuToolGBP = driver.locateOne(By.cssSelector("table.table:nth-child(13) > tbody:nth-child(2) > tr:nth-child(2) > td:nth-child(2)"));
+		WebElement maxBuToolUSD = driver.locateOne(By.cssSelector("table.table:nth-child(13) > tbody:nth-child(2) > tr:nth-child(3) > td:nth-child(2)"));
 
 		assert maxBToolEUR.equals(maxBuToolEUR.getText());
 		assert maxBToolGBP.equals(maxBuToolGBP.getText());
@@ -80,18 +81,18 @@ public class AdministratorDashboardShowTest extends TestHarness {
 		
 		
 		
-		WebElement deviationRPatDenied = driver.locateOne(By.cssSelector("table.table:nth-child(16) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2)"));
-		WebElement deviationRPatAccepted = driver.locateOne(By.cssSelector("table.table:nth-child(16) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(2)"));
-		WebElement deviationRPatProposed = driver.locateOne(By.cssSelector("table.table:nth-child(16) > tbody:nth-child(1) > tr:nth-child(3) > td:nth-child(2)"));
+		WebElement deviationRPatDenied = driver.locateOne(By.cssSelector("table.table:nth-child(16) > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(2)"));
+		WebElement deviationRPatAccepted = driver.locateOne(By.cssSelector("table.table:nth-child(16) > tbody:nth-child(2) > tr:nth-child(2) > td:nth-child(2)"));
+		WebElement deviationRPatProposed = driver.locateOne(By.cssSelector("table.table:nth-child(16) > tbody:nth-child(2) > tr:nth-child(3) > td:nth-child(2)"));
 
 		
 		assert deviationRPDenied.equals(deviationRPatDenied.getText());
 		assert deviationRPAccepted.equals(deviationRPatAccepted.getText());
 		assert deviationRPProposed.equals(deviationRPatProposed.getText());
 
-		WebElement minBRPatDenied = driver.locateOne(By.cssSelector("table.table:nth-child(17) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2)"));
-		WebElement minBRPatAccepted = driver.locateOne(By.cssSelector("table.table:nth-child(17) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(2)"));
-		WebElement minBRPatProposed = driver.locateOne(By.cssSelector("table.table:nth-child(17) > tbody:nth-child(1) > tr:nth-child(3) > td:nth-child(2)"));
+		WebElement minBRPatDenied = driver.locateOne(By.cssSelector("table.table:nth-child(17) > tbody:nth-child(3) > tr:nth-child(1) > td:nth-child(2)"));
+		WebElement minBRPatAccepted = driver.locateOne(By.cssSelector("table.table:nth-child(17) > tbody:nth-child(3) > tr:nth-child(2) > td:nth-child(2)"));
+		WebElement minBRPatProposed = driver.locateOne(By.cssSelector("table.table:nth-child(17) > tbody:nth-child(3) > tr:nth-child(3) > td:nth-child(2)"));
 
 		
 		assert minBRPDenied.equals(minBRPatDenied.getText());
@@ -99,9 +100,9 @@ public class AdministratorDashboardShowTest extends TestHarness {
 		assert minBRPProposed.equals(minBRPatProposed.getText());
 		
 
-		WebElement maxBRPatDenied = driver.locateOne(By.cssSelector("table.table:nth-child(18) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2)"));
-		WebElement maxBRPatAccepted = driver.locateOne(By.cssSelector("table.table:nth-child(18) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(2)"));
-		WebElement maxBRPatProposed = driver.locateOne(By.cssSelector("table.table:nth-child(18) > tbody:nth-child(1) > tr:nth-child(3) > td:nth-child(2)"));
+		WebElement maxBRPatDenied = driver.locateOne(By.cssSelector("table.table:nth-child(18) > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(2)"));
+		WebElement maxBRPatAccepted = driver.locateOne(By.cssSelector("table.table:nth-child(18) > tbody:nth-child(2) > tr:nth-child(2) > td:nth-child(2)"));
+		WebElement maxBRPatProposed = driver.locateOne(By.cssSelector("table.table:nth-child(18) > tbody:nth-child(2) > tr:nth-child(3) > td:nth-child(2)"));
 
 		
 		assert maxBRPDenied.equals(maxBRPatDenied.getText());
@@ -109,11 +110,11 @@ public class AdministratorDashboardShowTest extends TestHarness {
 		assert maxBRPProposed.equals(maxBRPatProposed.getText());
 
 		//Total
-		WebElement totalNumberOfTools = driver.locateOne(By.cssSelector("table.table:nth-child(19) > tbody:nth-child(1) > tr:nth-child(5) > td:nth-child(2)"));
-		WebElement totalNumberOfComponents = driver.locateOne(By.cssSelector("table.table:nth-child(19) > tbody:nth-child(1) > tr:nth-child(4) > td:nth-child(2)"));
-		WebElement totalNumberOfDeniedPatronages = driver.locateOne(By.cssSelector("table.table:nth-child(19) > tbody:nth-child(1) > tr:nth-child(3) > td:nth-child(2)"));
-		WebElement totalNumberOfAcceptedPatronages = driver.locateOne(By.cssSelector("table.table:nth-child(19) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(2)"));
-		WebElement totalNumberOfProposedPatronages = driver.locateOne(By.cssSelector("table.table:nth-child(19) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2)"));
+		WebElement totalNumberOfTools = driver.locateOne(By.cssSelector("table.table:nth-child(19) > tbody:nth-child(3) > tr:nth-child(5) > td:nth-child(2)"));
+		WebElement totalNumberOfComponents = driver.locateOne(By.cssSelector("table.table:nth-child(19) > tbody:nth-child(3) > tr:nth-child(4) > td:nth-child(2)"));
+		WebElement totalNumberOfDeniedPatronages = driver.locateOne(By.cssSelector("table.table:nth-child(19) > tbody:nth-child(3) > tr:nth-child(3) > td:nth-child(2)"));
+		WebElement totalNumberOfAcceptedPatronages = driver.locateOne(By.cssSelector("table.table:nth-child(19) > tbody:nth-child(3) > tr:nth-child(2) > td:nth-child(2)"));
+		WebElement totalNumberOfProposedPatronages = driver.locateOne(By.cssSelector("table.table:nth-child(19) > tbody:nth-child(3) > tr:nth-child(1) > td:nth-child(2)"));
 		
 		assert totalProposedPatronages.equals(totalNumberOfProposedPatronages.getText());
 		assert totalAcceptedPatronages.equals(totalNumberOfAcceptedPatronages.getText());
