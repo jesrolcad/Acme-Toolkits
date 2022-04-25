@@ -25,33 +25,33 @@ public class PatronDashboardShowTest  extends TestHarness {
 	super.clickOnMenu("Patron", "Dashboard");
 
 	BrowserDriver driver= super.getDriver();
-	WebElement averageBudgetBYEURACCEPTED = driver.locateOne(By.cssSelector("table.table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2)"));
-	WebElement averageBudgetBYUSDPROPOSED = driver.locateOne(By.cssSelector("table.table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(2)"));
-	WebElement averageBudgetBYEURDENIED = driver.locateOne(By.cssSelector("table.table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(3) > td:nth-child(2)"));
-	WebElement averageBudgetBYGBPDENIED = driver.locateOne(By.cssSelector("table.table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(4) > td:nth-child(2)"));
+	WebElement averageBudgetBYEURACCEPTED = driver.locateOne(By.cssSelector("table.table:nth-child(1) > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(2)"));
+	WebElement averageBudgetBYUSDPROPOSED = driver.locateOne(By.cssSelector("table.table:nth-child(1) > tbody:nth-child(2) > tr:nth-child(2) > td:nth-child(2)"));
+	WebElement averageBudgetBYEURDENIED = driver.locateOne(By.cssSelector("table.table:nth-child(1) > tbody:nth-child(2) > tr:nth-child(3) > td:nth-child(2)"));
+	WebElement averageBudgetBYGBPDENIED = driver.locateOne(By.cssSelector("table.table:nth-child(1) > tbody:nth-child(2) > tr:nth-child(4) > td:nth-child(2)"));
 	assert averageBudgetEURACCEPTED.equals(averageBudgetBYEURACCEPTED.getText());
 	assert averageBudgetUSDPROPOSED.equals(averageBudgetBYUSDPROPOSED.getText());
 	assert averageBudgetEURDENIED.equals(averageBudgetBYEURDENIED.getText());
 	assert averageBudgetGBPDENIED.equals(averageBudgetBYGBPDENIED.getText());
 
 
-	WebElement deviationByEURACCEPTED = driver.locateOne(By.cssSelector("table.table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2)"));
-	WebElement deviationByUSDPROPOSED = driver.locateOne(By.cssSelector("table.table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(2)"));
-	WebElement deviationByEURDENIED = driver.locateOne(By.cssSelector("table.table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(3) > td:nth-child(2)"));
-	WebElement deviationByGBPDENIED = driver.locateOne(By.cssSelector("table.table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(4) > td:nth-child(2)"));
+	WebElement deviationByEURACCEPTED = driver.locateOne(By.cssSelector("table.table:nth-child(2) > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(2)"));
+	WebElement deviationByUSDPROPOSED = driver.locateOne(By.cssSelector("table.table:nth-child(2) > tbody:nth-child(2) > tr:nth-child(2) > td:nth-child(2)"));
+	WebElement deviationByEURDENIED = driver.locateOne(By.cssSelector("table.table:nth-child(2) > tbody:nth-child(2) > tr:nth-child(3) > td:nth-child(2)"));
+	WebElement deviationByGBPDENIED = driver.locateOne(By.cssSelector("table.table:nth-child(2) > tbody:nth-child(2) > tr:nth-child(4) > td:nth-child(2)"));
 	assert deviationEURACCEPTED.equals(deviationByEURACCEPTED.getText());
 	assert deviationUSDPROPOSED.equals(deviationByUSDPROPOSED.getText());
 	assert deviationEURDENIED.equals(deviationByEURDENIED.getText());
 	assert deviationGBPDENIED.equals(deviationByGBPDENIED.getText());
-	WebElement minByEURACCEPTED = driver.locateOne(By.cssSelector("table.table:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2)"));
-	WebElement minByUSDPROPOSED = driver.locateOne(By.cssSelector("table.table:nth-child(3) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(2)"));
-	WebElement minByEURDENIED = driver.locateOne(By.cssSelector("table.table:nth-child(3) > tbody:nth-child(1) > tr:nth-child(3) > td:nth-child(2)"));
-	WebElement minByGBPDENIED = driver.locateOne(By.cssSelector("table.table:nth-child(3) > tbody:nth-child(1) > tr:nth-child(4) > td:nth-child(2)"));
+	WebElement minByEURACCEPTED = driver.locateOne(By.cssSelector("table.table:nth-child(3) > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(2)"));
+	WebElement minByUSDPROPOSED = driver.locateOne(By.cssSelector("table.table:nth-child(3) > tbody:nth-child(2) > tr:nth-child(2) > td:nth-child(2)"));
+	WebElement minByEURDENIED = driver.locateOne(By.cssSelector("table.table:nth-child(3) > tbody:nth-child(2) > tr:nth-child(3) > td:nth-child(2)"));
+	WebElement minByGBPDENIED = driver.locateOne(By.cssSelector("table.table:nth-child(3) > tbody:nth-child(2) > tr:nth-child(4) > td:nth-child(2)"));
 	
-	WebElement maxByEURACCEPTED = driver.locateOne(By.cssSelector("table.table:nth-child(4) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2)"));
-	WebElement maxByUSDPROPOSED = driver.locateOne(By.cssSelector("table.table:nth-child(4) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(2)"));
-	WebElement maxByEURDENIED = driver.locateOne(By.cssSelector("table.table:nth-child(4) > tbody:nth-child(1) > tr:nth-child(3) > td:nth-child(2)"));
-	WebElement maxByGBPDENIED = driver.locateOne(By.cssSelector("table.table:nth-child(4) > tbody:nth-child(1) > tr:nth-child(4) > td:nth-child(2)"));
+	WebElement maxByEURACCEPTED = driver.locateOne(By.cssSelector("table.table:nth-child(4) > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(2)"));
+	WebElement maxByUSDPROPOSED = driver.locateOne(By.cssSelector("table.table:nth-child(4) > tbody:nth-child(2) > tr:nth-child(2) > td:nth-child(2)"));
+	WebElement maxByEURDENIED = driver.locateOne(By.cssSelector("table.table:nth-child(4) > tbody:nth-child(2) > tr:nth-child(3) > td:nth-child(2)"));
+	WebElement maxByGBPDENIED = driver.locateOne(By.cssSelector("table.table:nth-child(4) > tbody:nth-child(2) > tr:nth-child(4) > td:nth-child(2)"));
 
 	assert minEURACCEPTED.equals(minByEURACCEPTED.getText());
 	assert minUSDPROPOSED.equals(minByUSDPROPOSED.getText());
@@ -61,9 +61,9 @@ public class PatronDashboardShowTest  extends TestHarness {
 	assert maxUSDPROPOSED.equals(maxByUSDPROPOSED.getText());
 	assert maxEURDENIED.equals(maxByEURDENIED.getText());
 	assert maxGBPDENIED.equals(maxByGBPDENIED.getText());
-	WebElement totalBYPROPOSED = driver.locateOne(By.cssSelector("table.table:nth-child(5) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2)"));
-	WebElement totalBYACCEPTED = driver.locateOne(By.cssSelector("table.table:nth-child(5) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(2)"));
-	WebElement totalBYDENIED = driver.locateOne(By.cssSelector("table.table:nth-child(5) > tbody:nth-child(1) > tr:nth-child(3) > td:nth-child(2)"));
+	WebElement totalBYPROPOSED = driver.locateOne(By.cssSelector("table.table:nth-child(5) > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(2)"));
+	WebElement totalBYACCEPTED = driver.locateOne(By.cssSelector("table.table:nth-child(5) > tbody:nth-child(2) > tr:nth-child(2) > td:nth-child(2)"));
+	WebElement totalBYDENIED = driver.locateOne(By.cssSelector("table.table:nth-child(5) > tbody:nth-child(2) > tr:nth-child(3) > td:nth-child(2)"));
 	
 	assert totalPROPOSED.equals(totalBYPROPOSED.getText());
 	assert totalACCEPTED.equals(totalBYACCEPTED.getText());

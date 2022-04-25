@@ -148,7 +148,7 @@
 	<acme:message code="patron.patron-dashboard.form.label.deviationTitle"/>	
 	<table class="table table-sm">	
 		<caption></caption>
-		<jstl:forEach items="${averageRetailPriceOfTools}" var="entry"> 	
+		<jstl:forEach items="${deviationRetailPriceOfTools}" var="entry"> 	
 		<tr>	
 			<th id="">	
 			<acme:message code="patron.patron-dashboard.form.label.deviation-sentence"/>		
