@@ -21,7 +21,7 @@ patron.patron-dashboard.form.label.deviationTitle= Deviations information.
 patron.patron-dashboard.form.label.maxTitle= Maximums information.
 patron.patron-dashboard.form.label.minTitle= Minimums information.
 patron.patron-dashboard.form.label.absoluteTitle = Total Metrics
-patron.patron-dashboard.form.label.nohayPatrocinios =	 0
+patron.patron-dashboard.form.label.nohayPatrocinios =	 There are no patronages to compute metrics (see total metrics information below)
 
 patron.patron-dashboard.form.label.totalNumberOfProposedPatronages = Total number of proposed patronages:
 patron.patron-dashboard.form.label.totalNumberOfAcceptedPatronages = Total number of accepted patronages:
