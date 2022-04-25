@@ -10,7 +10,8 @@ public class AuthenticatedSystemConfigurationShowTest extends TestHarness{
 	@ParameterizedTest
 	@CsvFileSource(resources = "/authenticated/system-configuration/show.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
-	public void positive(final int recordIndex, final String acceptedCurrencies, final String systemCurrency) {
+	public void positive(final int recordIndex, final String acceptedCurrencies, final String systemCurrency,
+		final String moneyExchangeServiceName,final String moneyExchangeServiceDescription, final String moneyExchangeServiceLink) {
 		
 		
 	super.signIn("inventor1", "inventor1");	
@@ -20,6 +21,9 @@ public class AuthenticatedSystemConfigurationShowTest extends TestHarness{
 	super.checkFormExists();
 	super.checkInputBoxHasValue("acceptedCurrencies", acceptedCurrencies);
 	super.checkInputBoxHasValue("systemCurrency", systemCurrency);
+	super.checkInputBoxHasValue("moneyExchangeServiceName", moneyExchangeServiceName);
+	super.checkInputBoxHasValue("moneyExchangeServiceDescription", moneyExchangeServiceDescription);
+	super.checkInputBoxHasValue("moneyExchangeServiceLink", moneyExchangeServiceLink);
 	
 	super.signOut();
 	}

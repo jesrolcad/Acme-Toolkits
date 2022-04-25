@@ -2,3 +2,6 @@
 
 authenticated.systemconfiguration.form.label.accepted-currencies = Accepted currencies:
 authenticated.systemconfiguration.form.label.system-currency = System currency:
+authenticated.systemconfiguration.form.label.money-exchange-service-name = Money exchange service name:
+authenticated.systemconfiguration.form.label.money-exchange-service-description = Service description: 
+authenticated.systemconfiguration.form.label.money-exchange-service-link = Service link:
