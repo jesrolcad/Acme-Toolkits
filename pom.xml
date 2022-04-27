@@ -22,7 +22,7 @@
 	<description>This is the Acme-Toolkits project for the students of Design &amp; Testing.</description>
 
 	<groupId>Acme</groupId>	
-	<artifactId>Acme-Toolkits</artifactId>
+	<artifactId>Acme-Toolkits-22.5</artifactId>
 	<version>22.5</version>
 	<packaging>war</packaging>
 
