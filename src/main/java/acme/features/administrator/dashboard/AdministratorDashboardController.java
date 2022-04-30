@@ -10,7 +10,7 @@ import acme.framework.controllers.AbstractController;
 import acme.framework.roles.Administrator;
 
 @Controller
-public class AdministratorDashboardControler extends AbstractController<Administrator, AdministratorDashboard>{
+public class AdministratorDashboardController extends AbstractController<Administrator, AdministratorDashboard>{
 	@Autowired
 	protected AdministratorDashboardShowService adShowService;
 
