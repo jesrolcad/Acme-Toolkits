@@ -1,0 +1,8 @@
+administrator.announcement.form.label.title = Título:
+administrator.announcement.form.label.body = Cuerpo:
+administrator.announcement.form.label.info = Info:
+administrator.announcement.form.label.critical = Crítico
+administrator.announcement.form.label.confirmation = Confirma que el anuncio es correcto
+administrator.announcement.form.button.create = Crear
+
+administrator.announcement.confirmation.error = Por favor, marque la casilla
