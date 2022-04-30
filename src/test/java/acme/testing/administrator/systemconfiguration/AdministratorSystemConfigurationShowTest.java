@@ -1,6 +1,7 @@
 package acme.testing.administrator.systemconfiguration;
 
 import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
@@ -31,6 +32,23 @@ public class AdministratorSystemConfigurationShowTest extends TestHarness{
 			super.checkInputBoxHasValue("weakSpamWords", weakSpamWords);
 			super.checkInputBoxHasValue("weakSpamThreshold", weakSpamThreshold);
 
+			super.signOut();
+		}
+		
+		@Test
+		@Order(30)
+		public void hackingTest() {
+			super.navigate("/administrator/system-configuration/show");
+			super.checkPanicExists();
+
+			super.signIn("inventor1", "inventor1");
+			super.navigate("/administrator/system-configuration/show");
+			super.checkPanicExists();
+			super.signOut();
+			
+			super.signIn("patron1", "patron1");
+			super.navigate("/administrator/system-configuration/show");
+			super.checkPanicExists();
 			super.signOut();
 		}
 
