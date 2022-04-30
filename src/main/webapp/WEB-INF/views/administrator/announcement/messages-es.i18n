@@ -5,4 +5,5 @@ administrator.announcement.form.label.critical = Crítico
 administrator.announcement.form.label.confirmation = Confirma que el anuncio es correcto
 administrator.announcement.form.button.create = Crear
 
+administrator.announcement.body.error = La longitud no puede ser superior a 255 caracteres
 administrator.announcement.confirmation.error = Por favor, marque la casilla
