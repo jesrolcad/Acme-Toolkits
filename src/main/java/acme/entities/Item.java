@@ -29,6 +29,9 @@ public class Item extends AbstractEntity {
 	@NotNull
 	protected TipoDeItem tipo;
 	
+	@NotNull
+	protected boolean			spam;
+	
 	@NotBlank
 	@Length(max=101)
 	protected String name;
