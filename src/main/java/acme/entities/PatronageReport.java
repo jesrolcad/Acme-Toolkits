@@ -44,7 +44,7 @@ public class PatronageReport extends AbstractEntity {
 	protected Date				creationMoment;
 	
 	@NotBlank
-	@Length(max = 256)
+	@Length(max = 255)
 	protected String 			memorandum;
 	
 	@URL

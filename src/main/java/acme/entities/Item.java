@@ -33,7 +33,7 @@ public class Item extends AbstractEntity {
 	protected boolean			spam;
 	
 	@NotBlank
-	@Length(max=101)
+	@Length(max=100)
 	protected String name;
 	
 	@NotBlank
@@ -41,11 +41,11 @@ public class Item extends AbstractEntity {
 	protected String code;
 	
 	@NotBlank
-	@Length(max=101)
+	@Length(max=100)
 	protected String technology;
 	
 	@NotBlank
-	@Length(max=256)
+	@Length(max=255)
 	protected String description;
 	
 	@Valid
