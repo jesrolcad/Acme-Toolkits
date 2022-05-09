@@ -301,6 +301,7 @@ has v</panel_attributes>
 Chirp
 --
 + moment: Date {NotNull, Temporal(TIMESTAMP)}
++ spam: boolean {NotNull}
 + title: String {NotBlank, Length(Max=101)}
 + author: String {NotBlank, Length(Max=101)}
 + body: String {NotBlank, Length(Max=256)}
@@ -320,6 +321,7 @@ Announcement
 
 --
 + moment: Date {NotNull, Temporal(TIMESTAMP), Past}
++ spam: boolean {NotNull}
 + title: String {NotBlank, Length(Max=101)}
 + body: String {NotBlank, Length(Max=256)}
 + critical: boolean 
@@ -339,6 +341,7 @@ Toolkit
 
 --
 + code: String {NotBlank, Pattern (“^[A-Z]{3}-[0-9]{3}(-[A-Z])?$”), Unique}
++ spam: boolean {NotNull}
 + title: String {NotBlank, Length(Max=101)}
 + description: String {NotBlank, Length(Max=256)}
 + assemblyNotes: String {NotBlank, Length(Max=256)}
@@ -360,6 +363,7 @@ Patronage
 
 --
 + status: Status {NotNull}
++ published: boolean {NotNull}
 + code: String {NotBlank, Pattern (“^[A-Z]{3}-[0-9]{3}(-[A-Z])?$”), Unique}
 + legalStuff: String {NotBlank, Length(Max=256)}
 + budget: Money {Valid}
@@ -552,6 +556,7 @@ Item
 
 --
 + type: TipoDeItem {NotNull}
++ spam: boolean {NotNull}
 + name: String {NotBlank, Length(Max=101)}
 + code: String {NotBlank, Pattern (“^[A-Z]{3}-[0-9]{3}(-[A-Z])?$”), Unique}
 + technology: String {NotBlank, Length(Max=101)}

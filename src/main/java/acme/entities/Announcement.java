@@ -32,6 +32,10 @@ public class Announcement extends AbstractEntity {
 	@Past
 	@NotNull
 	protected Date				moment;
+	
+	@NotNull
+	protected boolean			spam;
+	
 
 	@Length(max = 101)
 	@NotBlank
