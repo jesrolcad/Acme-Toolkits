@@ -29,6 +29,9 @@ public class Chirp extends AbstractEntity {
 	@Temporal(TemporalType.TIMESTAMP)
 	@NotNull
 	protected Date				moment;
+	
+	@NotNull
+	protected boolean			spam;
 
 	@Length(max = 101)
 	@NotBlank
