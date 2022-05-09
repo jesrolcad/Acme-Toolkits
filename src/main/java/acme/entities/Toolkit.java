@@ -40,11 +40,11 @@ public class Toolkit extends AbstractEntity {
 
 	
 	@NotBlank
-	@Length(max=256)
+	@Length(max=255)
 	protected String description;
  
 	@NotBlank
-	@Length(max=256)
+	@Length(max=255)
 	protected String assemblyNotes;
 	
 	protected boolean published;
