@@ -29,9 +29,6 @@ public class Item extends AbstractEntity {
 	@NotNull
 	protected TipoDeItem tipo;
 	
-	@NotNull
-	protected boolean			spam;
-	
 	@NotBlank
 	@Length(max=100)
 	protected String name;
@@ -62,4 +59,9 @@ public class Item extends AbstractEntity {
 	@Valid
 	@ManyToOne(optional=false)
 	protected Inventor inventor;
+	
+	//derived attributes
+		
+		@Valid
+		protected boolean			spam;
 }
