@@ -48,6 +48,9 @@ public class Patronage extends AbstractEntity {
 
 	@NotNull
 	protected Status			status;
+	
+	@NotNull
+	protected boolean			published;
 
 	@Pattern(regexp = "^[A-Z]{3}-[0-9]{3}(-[A-Z])?$")
 	@Column(unique = true)
@@ -55,7 +58,7 @@ public class Patronage extends AbstractEntity {
 	protected String			code;
 	
 	@NotBlank
-	@Length(max = 256)
+	@Length(max = 255)
 	protected String 			legalStuff;
 	
 
