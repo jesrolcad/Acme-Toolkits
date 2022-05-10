@@ -13,7 +13,7 @@ public class AnyChirpListRecentTest extends TestHarness {
 	// Test cases -------------------------------------------------------------
 
 	@ParameterizedTest
-	@CsvFileSource(resources = "/any/chirp/chirp.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@CsvFileSource(resources = "/any/chirp/list-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
 	public void positive(final int recordIndex, final String title, final String author, final String moment, final String body, final String email) {
 		super.clickOnMenu("Any", "List recent chirps");
