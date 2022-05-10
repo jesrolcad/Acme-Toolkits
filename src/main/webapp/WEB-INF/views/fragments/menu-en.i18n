@@ -22,7 +22,6 @@ master.menu.any = Any
 master.menu.any.published-items = List published items
 master.menu.any.published-toolkits = List published toolkits
 master.menu.any.enabled-userAccounts = List enabled user accounts
-master.menu.any.chirp.create = Publish chirp
 master.menu.any.all-chirps = List recent chirps
 
 # master.menu.anonymous #######################################################

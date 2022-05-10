@@ -21,7 +21,6 @@
 	
 		<acme:menu-option code="master.menu.any">
 			<acme:menu-suboption code="master.menu.any.published-items" action="/any/item/list"/>
-			<acme:menu-suboption code="master.menu.any.chirp.create" action="/any/chirp/create"/>
 			<acme:menu-suboption code="master.menu.any.all-chirps" action="/any/chirp/list"/>
 			<acme:menu-suboption code="master.menu.any.published-toolkits" action="/any/toolkit/list"/>
 			<acme:menu-suboption code="master.menu.any.enabled-userAccounts" action="/any/user-account/list"/>		

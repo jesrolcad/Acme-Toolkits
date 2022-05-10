@@ -10,6 +10,8 @@ any.chirp.form.label.body = Cuerpo
 any.chirp.form.label.email = Correo electrónico
 any.chirp.form.label.confirmation = Confirma que el chirrido es correcto
 any.chirp.form.button.create = Crear
+any.chirp.list.button.create = Crear
+any.Chirp.confirmation.error = Por favor, marque la casilla
 	
 
 
