@@ -8,7 +8,6 @@
 	<acme:list-column code="inventor.toolkit.list.label.description" path="description" width="20%"/>
 	<acme:list-column code="inventor.toolkit.list.label.assemblyNotes" path="assemblyNotes" width="20%"/>
 	
-	<jstl:if test="${command == 'list'}">
 	<acme:button code="inventor.toolkit.list.button.create" action="/inventor/toolkit/create"/>
-	</jstl:if>
+	
 </acme:list>
