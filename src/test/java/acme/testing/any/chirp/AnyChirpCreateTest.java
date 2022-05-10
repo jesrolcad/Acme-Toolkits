@@ -14,7 +14,8 @@ public class AnyChirpCreateTest extends TestHarness{
 	public void positiveTest(final int recordIndex, final String title, final String body, 
 		final String author, final String email, final String confirmation) {
 		
-		super.clickOnMenu("Any", "Publish chirp");
+		super.clickOnMenu("Any", "List recent chirps");
+		super.clickOnButton("Create");
 		
 		super.fillInputBoxIn("title", title);
 		super.fillInputBoxIn("body", body);
@@ -36,6 +37,7 @@ public class AnyChirpCreateTest extends TestHarness{
 		super.checkInputBoxHasValue("body", body);
 		super.checkInputBoxHasValue("info", author);
 		super.checkInputBoxHasValue("email", email);
+		super.checkInputBoxHasValue("confirmation", confirmation);
 	}
 	
 	
@@ -46,7 +48,9 @@ public class AnyChirpCreateTest extends TestHarness{
 		final String author, final String email, final String confirmation) {
 		
 
-		super.clickOnMenu("Any", "Publish chirp");
+		super.clickOnMenu("Any", "List recent chirps");
+		super.clickOnButton("Create");
+		super.checkFormExists();
 		
 		super.fillInputBoxIn("title", title);
 		super.fillInputBoxIn("body", body);
