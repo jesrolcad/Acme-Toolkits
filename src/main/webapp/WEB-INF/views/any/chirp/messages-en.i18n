@@ -10,6 +10,8 @@ any.chirp.form.label.body = Body
 any.chirp.form.label.email = Email
 any.chirp.form.label.confirmation = Confirm that the chirp is correct
 any.chirp.form.button.create = Create
+any.chirp.list.button.create = Create
+any.Chirp.confirmation.error = Please, mark the checkbox
 	
 
 	

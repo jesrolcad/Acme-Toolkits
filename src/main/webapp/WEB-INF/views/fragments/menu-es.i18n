@@ -21,7 +21,6 @@ master.menu.any = Cualquier usuario
 master.menu.any.published-items = Listar ítems publicados
 master.menu.any.published-toolkits = Listar cajas de herramientas publicadas
 master.menu.any.enabled-userAccounts = Listar cuentas de usuario activadas
-master.menu.any.chirp.create = Publicar chirrido
 master.menu.any.all-chirps = Listar chirridos recientes
 
 
