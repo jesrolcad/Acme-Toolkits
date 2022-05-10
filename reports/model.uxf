@@ -176,8 +176,8 @@ bg=orange</panel_attributes>
     <panel_attributes>&lt;&lt;Role&gt;&gt;
 Inventor
 --
-+ company: String {NotBlank, Length(Max=101)}
-+ statement: String {NotBlank, Length(Max=256)}
++ company: String {NotBlank, Length(Max=100)}
++ statement: String {NotBlank, Length(Max=255)}
 + link: String {URL}
 </panel_attributes>
     <additional_attributes/>
@@ -193,8 +193,8 @@ Inventor
     <panel_attributes>&lt;&lt;Role&gt;&gt;
 Patron
 --
-+ company: String {NotBlank, Length(Max=101)}
-+ statement: String {NotBlank, Length(Max=256)}
++ company: String {NotBlank, Length(Max=100)}
++ statement: String {NotBlank, Length(Max=255)}
 + link: String {URL}
 </panel_attributes>
     <additional_attributes/>
@@ -302,9 +302,9 @@ Chirp
 --
 + moment: Date {NotNull, Temporal(TIMESTAMP)}
 + spam: boolean {NotNull}
-+ title: String {NotBlank, Length(Max=101)}
-+ author: String {NotBlank, Length(Max=101)}
-+ body: String {NotBlank, Length(Max=256)}
++ title: String {NotBlank, Length(Max=100)}
++ author: String {NotBlank, Length(Max=100)}
++ body: String {NotBlank, Length(Max=255)}
 + email: String {Email}</panel_attributes>
     <additional_attributes/>
   </element>
@@ -322,8 +322,8 @@ Announcement
 --
 + moment: Date {NotNull, Temporal(TIMESTAMP), Past}
 + spam: boolean {NotNull}
-+ title: String {NotBlank, Length(Max=101)}
-+ body: String {NotBlank, Length(Max=256)}
++ title: String {NotBlank, Length(Max=100)}
++ body: String {NotBlank, Length(Max=255)}
 + critical: boolean 
 + link: String {URL}</panel_attributes>
     <additional_attributes/>
@@ -334,7 +334,7 @@ Announcement
       <x>1106</x>
       <y>0</y>
       <w>392</w>
-      <h>126</h>
+      <h>140</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Toolkit
@@ -342,9 +342,9 @@ Toolkit
 --
 + code: String {NotBlank, Pattern (“^[A-Z]{3}-[0-9]{3}(-[A-Z])?$”), Unique}
 + spam: boolean {NotNull}
-+ title: String {NotBlank, Length(Max=101)}
-+ description: String {NotBlank, Length(Max=256)}
-+ assemblyNotes: String {NotBlank, Length(Max=256)}
++ title: String {NotBlank, Length(Max=100)}
++ description: String {NotBlank, Length(Max=255)}
++ assemblyNotes: String {NotBlank, Length(Max=255)}
 + published: boolean
 + link: String {URL}
 + / retailPrice: Money {Valid}</panel_attributes>
@@ -356,7 +356,7 @@ Toolkit
       <x>1246</x>
       <y>861</y>
       <w>322</w>
-      <h>126</h>
+      <h>140</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Patronage
@@ -365,7 +365,7 @@ Patronage
 + status: Status {NotNull}
 + published: boolean {NotNull}
 + code: String {NotBlank, Pattern (“^[A-Z]{3}-[0-9]{3}(-[A-Z])?$”), Unique}
-+ legalStuff: String {NotBlank, Length(Max=256)}
++ legalStuff: String {NotBlank, Length(Max=255)}
 + budget: Money {Valid}
 + startDate: Date {NotNull, TemporalType.TIMESTAMP}
 + endDate: Date {NotNull, TemporalType.TIMESTAMP}
@@ -384,9 +384,9 @@ Patronage
 PatronageReport
 
 --
-+ sequence: String {NotBlank, Pattern(“〈patronage-code〉:〈serial-number〉”)}
++ sequence: String {NotBlank, Pattern(“patronage-code:serial-number”)}
 + moment: Date {NotNull, Temporal(TIMESTAMP), Past}
-+ memorandum: String {NotBlank, Length(Max=256)}
++ memorandum: String {NotBlank, Length(Max=255)}
 + link: String {URL}</panel_attributes>
     <additional_attributes/>
   </element>
@@ -394,15 +394,15 @@ PatronageReport
     <id>Relation</id>
     <coordinates>
       <x>1316</x>
-      <y>119</y>
+      <y>133</y>
       <w>49</w>
-      <h>77</h>
+      <h>84</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=1
 m2=0..*
 has ^</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -426,22 +426,22 @@ bg=white</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1379</x>
-      <y>980</y>
+      <y>994</y>
       <w>56</w>
-      <h>98</h>
+      <h>84</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=1
 m2=0..*
 about ^</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>637</x>
+      <x>602</x>
       <y>175</y>
-      <w>273</w>
+      <w>343</w>
       <h>140</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
@@ -454,7 +454,7 @@ SystemConfiguration
 + weakSpamWords: String {NotBlank}
 + weakSpamThreshold: double {Range(0, 100), Digits(3, 2)} 
 + moneyExchangeServiceName: String {NotBlank}
-+ moneyExchangeServiceDescription: String {NotBlank, Length(Max=256)}
++ moneyExchangeServiceDescription: String {NotBlank, Length(Max=255)}
 + moneyExchangeServiceLink: String {URL}</panel_attributes>
     <additional_attributes/>
   </element>
@@ -477,12 +477,12 @@ bg=white</panel_attributes>
     <coordinates>
       <x>525</x>
       <y>224</y>
-      <w>126</w>
+      <w>91</w>
       <h>28</h>
     </coordinates>
     <panel_attributes>lt=..
 </panel_attributes>
-    <additional_attributes>160.0;20.0;10.0;20.0</additional_attributes>
+    <additional_attributes>110.0;20.0;10.0;20.0</additional_attributes>
   </element>
   <element>
     <id>UMLNote</id>
@@ -518,7 +518,7 @@ bg=white</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>1225</x>
-      <y>182</y>
+      <y>203</y>
       <w>196</w>
       <h>98</h>
     </coordinates>
@@ -533,22 +533,22 @@ Quantity
     <id>Relation</id>
     <coordinates>
       <x>1316</x>
-      <y>273</y>
+      <y>294</y>
       <w>49</w>
-      <h>91</h>
+      <h>70</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
 m1=0..*
 m2= 1
 has v</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>1169</x>
       <y>350</y>
-      <w>315</w>
+      <w>329</w>
       <h>147</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
@@ -557,10 +557,10 @@ Item
 --
 + type: TipoDeItem {NotNull}
 + spam: boolean {NotNull}
-+ name: String {NotBlank, Length(Max=101)}
++ name: String {NotBlank, Length(Max=100)}
 + code: String {NotBlank, Pattern (“^[A-Z]{3}-[0-9]{3}(-[A-Z])?$”), Unique}
-+ technology: String {NotBlank, Length(Max=101)}
-+ description: String {NotBlank, Length(Max=256)}
++ technology: String {NotBlank, Length(Max=100)}
++ description: String {NotBlank, Length(Max=255)}
 + retailPrice: Money {Valid}
 + published: boolean
 + link: String {URL}</panel_attributes>
@@ -610,15 +610,15 @@ positive</panel_attributes>
       <x>1414</x>
       <y>210</y>
       <w>126</w>
-      <h>35</h>
+      <h>56</h>
     </coordinates>
     <panel_attributes>lt=..</panel_attributes>
-    <additional_attributes>160.0;10.0;10.0;30.0</additional_attributes>
+    <additional_attributes>160.0;10.0;10.0;60.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1498</x>
+      <x>1519</x>
       <y>378</y>
       <w>154</w>
       <h>63</h>

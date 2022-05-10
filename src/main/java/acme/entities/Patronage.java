@@ -58,7 +58,7 @@ public class Patronage extends AbstractEntity {
 	protected String			code;
 	
 	@NotBlank
-	@Length(max = 256)
+	@Length(max = 255)
 	protected String 			legalStuff;
 	
 
