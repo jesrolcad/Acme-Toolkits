@@ -24,20 +24,15 @@ public class AnyChirpCreateTest extends TestHarness{
 		super.fillInputBoxIn("confirmation", confirmation);
 		super.clickOnSubmit("Create");
 
-		super.clickOnMenu("Any", "List of recent chirps");
+		super.clickOnMenu("Any", "List recent chirps");
 		super.checkListingExists();
 		super.sortListing(0, "asc");
 		super.checkColumnHasValue(recordIndex, 0, title);
-		super.checkColumnHasValue(recordIndex, 2, body);
-		super.checkColumnHasValue(recordIndex, 3, author);
+		super.checkColumnHasValue(recordIndex, 1, author);
+		super.checkColumnHasValue(recordIndex, 3, body);
+		super.checkColumnHasValue(recordIndex, 4, email);
 		super.clickOnListingRecord(recordIndex);
-		
-		super.checkFormExists();
-		super.checkInputBoxHasValue("title", title);
-		super.checkInputBoxHasValue("body", body);
-		super.checkInputBoxHasValue("info", author);
-		super.checkInputBoxHasValue("email", email);
-		super.checkInputBoxHasValue("confirmation", confirmation);
+
 	}
 	
 	
