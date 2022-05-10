@@ -72,15 +72,6 @@ public class AdministratorAnnouncementCreateService implements AbstractCreateSer
 		assert entity != null;
 		assert errors != null;
 		
-		final String body = entity.getBody();
-		
-		
-		if(!errors.hasErrors("body")) {
-			final boolean longitudSoportada = body.length() < 256;
-			errors.state(request, longitudSoportada, "body","administrator.announcement.body.error");
-			
-		}
-		
 		boolean confirmation;
 
 		confirmation = request.getModel().getBoolean("confirmation");
