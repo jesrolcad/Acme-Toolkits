@@ -24,4 +24,9 @@
 		path="inventor.userAccount.username" />
 	<acme:input-textbox code="inventor.item.form.label.published"
 		path="published" />
+
+	<jstl:if test="${command == 'create'}">
+		<acme:submit code="inventor.item.form.button.create"
+			action="/inventor/item/create" />
+	</jstl:if>
 </acme:form>
