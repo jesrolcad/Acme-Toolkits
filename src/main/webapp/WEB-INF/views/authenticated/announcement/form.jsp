@@ -7,7 +7,7 @@
 	<acme:input-textbox code="authenticated.announcement.form.label.title" path="title"/>
 	<acme:input-textbox code="authenticated.announcement.form.label.moment" path="moment"/>	
 	<acme:input-textarea code="authenticated.announcement.form.label.body" path="body"/>
-	<acme:input-textarea code="authenticated.announcement.form.label.info" path="info"/>	
+	<acme:input-url code="authenticated.announcement.form.label.info" path="info"/>	
 	<acme:input-textbox code="authenticated.announcement.form.label.critical" path="critical"/>
 		
 	
