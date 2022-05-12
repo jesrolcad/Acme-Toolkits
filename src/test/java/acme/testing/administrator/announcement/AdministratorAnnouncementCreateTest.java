@@ -17,17 +17,14 @@ public class AdministratorAnnouncementCreateTest extends TestHarness{
 		
 		
 		super.signIn("administrator", "administrator");
-
-		super.clickOnMenu("Administrator", "Create announcement");
-		
+		super.clickOnMenu("Authenticated", "List of recent announcements");
+		super.clickOnButton("Create announcement");
 		super.fillInputBoxIn("title", title);
 		super.fillInputBoxIn("body", body);
 		super.fillInputBoxIn("info", info);
 		super.fillInputBoxIn("critical", critical);
 		super.fillInputBoxIn("confirmation", confirmation);
 		super.clickOnSubmit("Create");
-
-		super.clickOnMenu("Authenticated", "List of recent announcements");
 		super.checkListingExists();
 		super.sortListing(0, "asc");
 		super.checkColumnHasValue(recordIndex, 0, title);
@@ -55,8 +52,9 @@ public class AdministratorAnnouncementCreateTest extends TestHarness{
 		
 		super.signIn("administrator", "administrator");
 
-		super.clickOnMenu("Administrator", "Create announcement");
-		
+		super.clickOnMenu("Authenticated", "List of recent announcements");
+		super.clickOnButton("Create announcement");
+		 
 		super.fillInputBoxIn("title", title);
 		super.fillInputBoxIn("body", body);
 		super.fillInputBoxIn("info", info);
