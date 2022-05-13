@@ -43,7 +43,6 @@ master.menu.authenticated.system-configuration = System configuration
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrator
-master.menu.administrator.announcement.create = Create announcement
 master.menu.administrator.user-accounts = User accounts
 master.menu.administrator.system-configuration = System configuration
 master.menu.administrator.populate-initial = Populate DB (initial)
