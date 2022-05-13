@@ -40,7 +40,8 @@ public class AdministratorSystemConfigurationShowService implements AbstractShow
 		assert model != null;
 		
 		request.unbind(entity, model, "acceptedCurrencies", "systemCurrency", "strongSpamWords", 
-			"strongSpamThreshold", "weakSpamWords", "weakSpamThreshold");
+			"strongSpamThreshold", "weakSpamWords", "weakSpamThreshold","moneyExchangeServiceName","moneyExchangeServiceDescription",
+			"moneyExchangeServiceLink");
 		
 		
 	}

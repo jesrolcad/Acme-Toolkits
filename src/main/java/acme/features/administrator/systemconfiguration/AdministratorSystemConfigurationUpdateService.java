@@ -6,7 +6,10 @@ import org.springframework.stereotype.Service;
 import acme.entities.SystemConfiguration;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
+import acme.framework.controllers.HttpMethod;
 import acme.framework.controllers.Request;
+import acme.framework.controllers.Response;
+import acme.framework.helpers.PrincipalHelper;
 import acme.framework.roles.Administrator;
 import acme.framework.services.AbstractUpdateService;
 
@@ -30,7 +33,8 @@ public class AdministratorSystemConfigurationUpdateService implements AbstractUp
 		assert errors != null;
 		
 		request.bind(entity, errors, "acceptedCurrencies", "systemCurrency", "strongSpamWords", 
-			"strongSpamThreshold", "weakSpamWords", "weakSpamThreshold");
+			"strongSpamThreshold", "weakSpamWords", "weakSpamThreshold","moneyExchangeServiceName","moneyExchangeServiceDescription",
+			"moneyExchangeServiceLink");
 
 	}
 
@@ -41,7 +45,8 @@ public class AdministratorSystemConfigurationUpdateService implements AbstractUp
 		assert model != null;
 		
 		request.unbind(entity, model, "acceptedCurrencies", "systemCurrency", "strongSpamWords", 
-			"strongSpamThreshold", "weakSpamWords", "weakSpamThreshold");
+			"strongSpamThreshold", "weakSpamWords", "weakSpamThreshold","moneyExchangeServiceName","moneyExchangeServiceDescription",
+			"moneyExchangeServiceLink");
 //		model.setAttribute("confirmation", false);
 		
 	}
@@ -71,5 +76,16 @@ public class AdministratorSystemConfigurationUpdateService implements AbstractUp
 		this.repository.save(entity);
 		
 	}
+	
+	@Override
+	public void onSuccess(final Request<SystemConfiguration> request, final Response<SystemConfiguration> response) {
+		assert request != null;
+		assert response != null;
+
+		if (request.isMethod(HttpMethod.POST)) {
+			PrincipalHelper.handleUpdate();
+		}
+	}
+
 
 }

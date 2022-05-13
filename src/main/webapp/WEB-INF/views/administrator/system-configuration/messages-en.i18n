@@ -1,10 +1,11 @@
-
-
 administrator.systemconfiguration.form.label.accepted-currencies = Accepted currencies:
 administrator.systemconfiguration.form.label.system-currency = System currency:
 administrator.systemconfiguration.form.label.strong-spam-words = Strong spam words:
 administrator.systemconfiguration.form.label.strong-spam-threshold = Strong spam threshold:
 administrator.systemconfiguration.form.label.weak-spam-words = Strong spam words:
 administrator.systemconfiguration.form.label.weak-spam-threshold = Strong spam threshold:
+administrator.systemconfiguration.form.label.money-exchange-service-name: Money exchange service name: 
+administrator.systemconfiguration.form.label.money-exchange-service-description: Money exchange service description:
+administrator.systemconfiguration.form.label.money-exchange-service-link: Money exchange service link:
 
 administrator.systemconfiguration.form.button.update = Update
