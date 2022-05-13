@@ -63,7 +63,7 @@ public class InventorPatronageReportCreateService implements AbstractCreateServi
 		
 		String auxLetras = "";
 		String auxNum = "";
-		final String chars = "ABCDEFGHIJKLMNÑOPQRSTUVXTZ";
+		final String chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 		int i = 0;
 		while (i < 3) {
 			Random rnd = new Random();
