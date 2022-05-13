@@ -29,16 +29,19 @@ public class Chirp extends AbstractEntity {
 	@Temporal(TemporalType.TIMESTAMP)
 	@NotNull
 	protected Date				moment;
+	
+	@NotNull
+	protected boolean			spam;
 
-	@Length(max = 101)
+	@Length(max = 100)
 	@NotBlank
 	protected String			title;
 
-	@Length(max = 101)
+	@Length(max = 100)
 	@NotBlank
 	protected String			author;
 
-	@Length(max = 256)
+	@Length(max = 255)
 	@NotBlank
 	protected String			body;
 
