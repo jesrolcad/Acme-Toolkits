@@ -13,4 +13,16 @@
 	<acme:input-textbox code="inventor.toolkit.form.label.retailPrice" path="retailPrice"/>
 	<acme:input-textbox code="inventor.toolkit.form.label.inventor" path="inventor.userAccount.username"/>
 	<acme:button code="inventor.toolkit.form.button.items" action="/inventor/item/listToolkitItems?id=${id}"/>
+	
+	<jstl:choose>
+	<jstl:when test="${command == 'show' && published == true}">
+	
+	</jstl:when>
+	<jstl:when test="${acme:anyOf(command, 'show, update, delete, publish') && published == false}">	
+	<<acme:submit code="inventor.toolkit.form.button.delete" action="/inventor/toolkit/delete"/>
+	</jstl:when>
+	<jstl:when test="${command == 'create'}">
+	<<acme:submit code="inventor.toolkit.form.button.create" action="/inventor/toolkit/create"/>
+	</jstl:when>
+	</jstl:choose>
 </acme:form>
