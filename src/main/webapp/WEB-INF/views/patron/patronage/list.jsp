@@ -10,4 +10,5 @@
 	<acme:list-column code="patron.patronage.list.label.end_date" path="endDate"/>
 	<acme:list-column code="patron.patronage.list.label.status" path="status"/>
 	 
-</acme:list>                                                                                               
+</acme:list>  
+<acme:button code="master.menu.patron.create-patronage" action="/patron/patronage/create?"/>                                                                                             
