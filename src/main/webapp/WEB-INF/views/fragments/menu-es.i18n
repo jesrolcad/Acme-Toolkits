@@ -42,6 +42,7 @@ master.menu.authenticated.system-configuration = Configuración del sistema
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrador
+master.menu.administrator.announcement.create = Crear anuncio
 master.menu.administrator.all-chirps = Listar todos los chirridos
 master.menu.administrator.user-accounts = Cuentas de usuario
 master.menu.administrator.system-configuration = Configuración del sistema
