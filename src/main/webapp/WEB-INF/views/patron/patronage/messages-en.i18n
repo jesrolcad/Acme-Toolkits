@@ -15,8 +15,9 @@ patron.patronage.list.label.end_date= End date
 patron.patronage.list.label.legal_stuff = Legal Stuff
 patron.patronage.list.label.link = Link
 patron.patronage.list.label.status = Status
-
-
+patron.create-patronage = Create new patronage
+patron.patronage.form.button.create = Confirm creating new patronage
+patron.patronage.form.label.inventor = Select one inventor
 patron.patronage.form.label.code = Code
 patron.patronage.form.label.startDate = Start date
 patron.patronage.form.label.endDate = End date
@@ -28,3 +29,5 @@ patron.patronage.form.label.username = Inventor's username
 patron.patronage.form.label.company = Inventor's company
 patron.patronage.form.label.inventor-link = Inventor's link
 patron.patronage.form.label.statement = Inventor's statement
+patron.update-patronage= Update Patronage
+patron.patronage.form.button.update = Confirm Updating Patronage

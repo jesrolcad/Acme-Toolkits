@@ -15,6 +15,10 @@ patron.patronage.list.label.end_date= Fecha de Fin
 patron.patronage.list.label.legal_stuff = Cosas legales
 patron.patronage.list.label.link = Enlace
 patron.patronage.list.label.status = Estado
+patron.create-patronage = Crear nuevo patrocinio
+patron.patronage.form.button.create = Confirma crear nuevo patrocinio
+patron.update-patronage= Editar patrocinio
+patron.patronage.form.button.update = Confirma editar patrocinio
 
 
 patron.patronage.form.label.code = Código

@@ -11,4 +11,4 @@
 	<acme:list-column code="patron.patronage.list.label.status" path="status"/>
 	 
 </acme:list>  
-<acme:button code="master.menu.patron.create-patronage" action="/patron/patronage/create?"/>                                                                                             
+<acme:button code="patron.create-patronage" action="/patron/patronage/create"/>                                                                                             
