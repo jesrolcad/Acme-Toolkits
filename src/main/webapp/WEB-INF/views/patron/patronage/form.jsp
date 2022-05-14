@@ -16,12 +16,39 @@
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
 <acme:form>
+	<jstl:if test="${published==true}">	
+	<acme:input-moment code="patron.patronage.form.label.startDate" path="startDate"/>
+	<acme:input-moment code="patron.patronage.form.label.endDate" path="endDate"/>
+	<acme:input-textbox code="patron.patronage.form.label.legalStuff" path="legalStuff"/>
+	<acme:input-money code="patron.patronage.form.label.budget" path="budget"/>
+	<acme:input-textbox code="patron.patronage.form.label.link" path="link"/>
+	
+	</jstl:if>	
+	
+
+	<jstl:if test="${command == 'create' or command == 'update' or command == 'show' and published==false}">	
+	
 	<acme:input-textbox code="patron.patronage.form.label.code" path="code"/>
 	<acme:input-moment code="patron.patronage.form.label.startDate" path="startDate"/>
 	<acme:input-moment code="patron.patronage.form.label.endDate" path="endDate"/>
 	<acme:input-textbox code="patron.patronage.form.label.legalStuff" path="legalStuff"/>
 	<acme:input-money code="patron.patronage.form.label.budget" path="budget"/>
 	<acme:input-textbox code="patron.patronage.form.label.link" path="link"/>
+	</jstl:if>	
+		<jstl:if test="${command == 'publish' and published==false}">	
+	
+	<acme:input-textbox code="patron.patronage.form.label.code" path="code" readonly="true"/>
+	<acme:input-moment code="patron.patronage.form.label.startDate" path="startDate" readonly="true"/>
+	<acme:input-moment code="patron.patronage.form.label.endDate" path="endDate" readonly="true"/>
+	<acme:input-textbox code="patron.patronage.form.label.legalStuff" path="legalStuff" readonly="true"/>
+	<acme:input-money code="patron.patronage.form.label.budget" path="budget" readonly="true"/>
+	<acme:input-textbox code="patron.patronage.form.label.link" path="link" readonly="true"/>
+	<acme:input-textbox code="patron.patronage.form.label.status" path="status" readonly="true"/>	
+	<acme:input-textbox code="patron.patronage.form.label.username" path="inventor.userAccount.username" readonly="true"/>
+	<acme:input-textbox code="patron.patronage.form.label.company" path="inventor.company" readonly="true"/>
+	<acme:input-textbox code="patron.patronage.form.label.inventor-link" path="inventor.link" readonly="true"/>
+	<acme:input-textbox code="patron.patronage.form.label.statement" path="inventor.statement" readonly="true"/>
+	</jstl:if>	
 		<jstl:if test="${command == 'create' or command == 'update' and published==false}">	
 	        <acme:input-select code="patron.patronage.form.label.inventor" path="inventorId">
 	   			<jstl:forEach items="${inventors}" var="inventor">
@@ -46,18 +73,24 @@
 	</jstl:if>
 	
 	<jstl:choose>
-		<jstl:when test="${acme:anyOf(command,'show, delete, publish') && published == false}"> 
+		<jstl:when test="${acme:anyOf(command,'show') && published == false}"> 
 			<acme:submit code="patron.patronage.form.button.delete" action="/patron/patronage/delete"/>
-			<acme:submit code="patron.patronage.form.button.publish" action="/patron/patronage/publish"/>
-			<acme:button code="patron.update-patronage" action="/patron/patronage/update?id=${id}"/>                                                                                             
+			<acme:button code="patron.publish-patronage" action="/patron/patronage/publish?id=${id}"/>
+			<acme:button code="patron.update-patronage" action="/patron/patronage/update?id=${id}"/>
+			                                                                                             
 		</jstl:when>
 		
-			<jstl:when test="${command=='update'}">
+		<jstl:when test="${command=='update' && published == false}">
 			<acme:submit code="patron.patronage.form.button.update" action="/patron/patronage/update"/>
 		</jstl:when>
-		<jstl:when test="${command=='create'}">
+		<jstl:when test="${command=='publish' && published == false}">
+			<acme:submit code="patron.patronage.form.button.publish" action="/patron/patronage/publish"/>
+		</jstl:when>
+		
+		<jstl:when test="${command=='create' && published == false}">
 			<acme:submit code="patron.patronage.form.button.create" action="/patron/patronage/create"/>
 		</jstl:when>
+		
 	</jstl:choose>	
 	
 </acme:form>

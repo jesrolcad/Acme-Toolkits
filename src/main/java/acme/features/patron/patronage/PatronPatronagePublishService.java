@@ -1,8 +1,5 @@
 package acme.features.patron.patronage;
 
-import java.util.Date;
-
-import org.apache.commons.lang3.time.DateUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,8 +9,12 @@ import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
 import acme.framework.services.AbstractUpdateService;
 import acme.roles.Patron;
+
 @Service
-public class PatronPatronageUpdateService implements AbstractUpdateService<Patron, Patronage>{
+public class PatronPatronagePublishService implements AbstractUpdateService<Patron, Patronage>{
+
+	// Internal state ---------------------------------------------------------
+
 	@Autowired
 	protected PatronPatronageRepository repository;
 
@@ -71,20 +72,6 @@ public class PatronPatronageUpdateService implements AbstractUpdateService<Patro
 			existing = this.repository.findPatronageByCode(entity.getCode());
 			errors.state(request, existing != null||existing.getCode()==entity.getCode(), "code", "patron.patronage.form.error.duplicated");
 		}
-		if(!errors.hasErrors("startDate")) {
-			final Date minimumStartDate=DateUtils.addMonths(DateUtils.addMonths( new Date(System.currentTimeMillis() - 1),1), 1);
-
-			
-			errors.state(request,entity.getStartDate().after(minimumStartDate), "startDate", "patron.patronage.form.error.too-close-start-date");
-			
-		}
-		
-		if(!errors.hasErrors("endDate")) {
-			final Date minimumFinishDate=DateUtils.addMonths(entity.getStartDate(), 1);
-
-			errors.state(request,entity.getEndDate().after(minimumFinishDate), "endDate", "patron.patronage.form.error.one-month");
-			
-		}
 	
 		if (!errors.hasErrors("budget")) {
 			final String[] currencies=this.repository.findSystemConfiguration().getAcceptedCurrencies().split(",");
@@ -102,26 +89,26 @@ public class PatronPatronageUpdateService implements AbstractUpdateService<Patro
 		
 
 	}
-
 	@Override
 	public void unbind(final Request<Patronage> request, final Patronage entity, final Model model) {
 		assert request != null;
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "code", "legalStuff", "budget", "startDate", "endDate","link","published");
+		request.unbind(entity, model, "code", "legalStuff", "budget", "startDate", "endDate","link","published","status","inventor.userAccount.username","inventor.company","inventor.link","inventor.statement");
 		model.setAttribute("inventors", this.repository.allInventors());
 		model.setAttribute("inventorId", entity.getInventor().getId());
-		
 	}
 
 	@Override
 	public void update(final Request<Patronage> request, final Patronage entity) {
 		assert request != null;
 		assert entity != null;
-	
-		entity.setPublished(false);
+		entity.setPublished(true);
+
 		this.repository.save(entity);
 
 	}
+
+	
 }

@@ -58,8 +58,8 @@ public class PatronPatronageCreateService  implements AbstractCreateService<Patr
 		Patronage result = new Patronage();
 
 		result.setLegalStuff("");
-		result.setStartDate(DateUtils.addMonths( new Date(System.currentTimeMillis() - 1),1));
-		result.setEndDate(DateUtils.addMonths( DateUtils.addMonths( new Date(System.currentTimeMillis() - 1),1),1));
+		result.setStartDate(DateUtils.addMonths( new Date(System.currentTimeMillis() - 1),6));
+		result.setEndDate(DateUtils.addMonths( DateUtils.addMonths( new Date(System.currentTimeMillis() - 1),1),8));
 		result.setPatron(this.repository.findPatronByUserAccountId(request.getPrincipal().getAccountId()));
 
 		
@@ -76,10 +76,21 @@ public class PatronPatronageCreateService  implements AbstractCreateService<Patr
 			Patronage existing;
 
 			existing = this.repository.findPatronageByCode(entity.getCode());
-			System.out.println(existing.getCode()+"vamoave"+entity.getCode());
-			errors.state(request, existing != null||existing.getCode()==entity.getCode(), "code", "patron.patronage.form.error.duplicated");
+			errors.state(request, existing == null, "code", "patron.patronage.form.error.duplicated");
 		}
-	
+		if(!errors.hasErrors("startDate")) {
+			final Date minimumStartDate=DateUtils.addMonths(DateUtils.addMonths( new Date(System.currentTimeMillis() - 1),1), 1);
+
+			
+			errors.state(request,entity.getStartDate().after(minimumStartDate), "startDate", "patron.patronage.form.error.too-close-start-date");
+			
+		}
+		if(!errors.hasErrors("endDate")) {
+			final Date minimumFinishDate=DateUtils.addMonths(entity.getStartDate(), 1);
+
+			errors.state(request,entity.getEndDate().after(minimumFinishDate), "endDate", "patron.patronage.form.error.one-month");
+			
+		}
 		if (!errors.hasErrors("budget")) {
 			final String[] currencies=this.repository.findSystemConfiguration().getAcceptedCurrencies().split(",");
 
