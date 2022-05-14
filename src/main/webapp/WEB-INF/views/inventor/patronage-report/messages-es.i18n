@@ -18,3 +18,5 @@ inventor.patronageReport.list.label.creationMoment = Momento de creación
 inventor.patronageReport.list.label.link = Enlace
 inventor.patronageReport.form.label.confirmation = Confirmar
 inventor.patronageReport.list.button.create= Crear
+patron.patronageReport.confirmation.error. = Debe confirmar
+patron.patronageReport.confirmation.error = Debe confirmar
