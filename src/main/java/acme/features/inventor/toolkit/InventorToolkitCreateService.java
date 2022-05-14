@@ -30,8 +30,8 @@ public class InventorToolkitCreateService implements AbstractCreateService<Inven
 		assert errors != null;
 
 		request.bind(entity, errors, "code", 
-			"description","assemblyNotes","published", "optionalLink", 
-			"inventor.userAccount.username","retailPrice");
+			"description","assemblyNotes", "optionalLink", 
+			"inventor.userAccount.username");
 		
 	}
 
