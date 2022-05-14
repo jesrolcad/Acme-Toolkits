@@ -20,16 +20,17 @@
 		path="retailPrice" />
 	<acme:input-textbox code="inventor.item.form.label.optional-link"
 		path="optionalLink" />
-		<jstl:choose>
-		<jstl:when test="${command == 'show'}">
-	<acme:input-textbox code="inventor.item.form.label.inventor"
-		path="inventor.userAccount.username" />
-	<acme:input-textbox code="inventor.item.form.label.published"
-		path="published" />
-	</jstl:when>
-	<jstl:when test="${command == 'create'}">
-		<acme:submit code="inventor.item.form.button.create"
-			action="/inventor/item/create" />
-	</jstl:when>
+	<jstl:choose>
+		<jstl:when test="${acme:anyOf(command, 'show, update, delete, publish') && published == false}">
+			<acme:input-textbox code="inventor.item.form.label.inventor"
+				path="inventor.userAccount.username" readonly="true" />
+				<acme:submit code="inventor.item.form.button.delete" action="/inventor/item/delete"/>
+				<acme:submit code="inventor.item.form.button.update" action="/inventor/item/update"/>
+				<acme:submit code="inventor.item.form.button.publish" action="/inventor/item/publish"/>
+		</jstl:when>
+		<jstl:when test="${command == 'create'}">
+			<acme:submit code="inventor.item.form.button.create"
+				action="/inventor/item/create" />
+		</jstl:when>
 	</jstl:choose>
 </acme:form>
