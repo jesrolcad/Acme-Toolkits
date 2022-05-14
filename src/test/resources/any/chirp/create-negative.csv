@@ -1,0 +1,9 @@
+recordIndex,title,body,author,email,confirmation
+0,,,,,false
+1,This is a title,,This is an author, example@gmail.com,false
+2,,This is a body,This is an author,example@gmail.com,false
+3,Title 01,Body 01,,example@gmail.com,true
+4,,,example@gmail.com,,true
+5,This is an example of title. This is an example of title. This is an example of title. Another example,Valid body, Valid author, example@gmail.com,false
+6,Valid title,This is an example of a long body. This body is not valid. This is an example of a long body. This body is not valid.This is an example of a long body. This body is not valid.This is an example of a long body. This body is not valid.This is an example of a long body. This body is not valid.,Valid author,example@gmail.com,true
+7,Title 01,Body 01,Author 01,example@gmail.com,false
