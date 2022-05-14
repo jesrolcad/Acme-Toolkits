@@ -19,12 +19,12 @@
 	<jstl:when test="${acme:anyOf(command, 'show, update, delete, publish') && published == false}">
 	<acme:input-textbox code="inventor.toolkit.form.label.retailPrice" path="retailPrice" readonly="true"/>	
 	<acme:button code="inventor.toolkit.form.button.items" action="/inventor/item/listToolkitItems?id=${id}"/>
-	<<acme:submit code="inventor.toolkit.form.button.delete" action="/inventor/toolkit/delete"/>
-	<<acme:submit code="inventor.toolkit.form.button.update" action="/inventor/toolkit/update"/>
-	<<acme:submit code="inventor.toolkit.form.button.publish" action="/inventor/toolkit/publish"/>
+	<acme:submit code="inventor.toolkit.form.button.delete" action="/inventor/toolkit/delete"/>
+	<acme:submit code="inventor.toolkit.form.button.update" action="/inventor/toolkit/update"/>
+	<acme:submit code="inventor.toolkit.form.button.publish" action="/inventor/toolkit/publish"/>
 	</jstl:when>
 	<jstl:when test="${command == 'create'}">
-	<<acme:submit code="inventor.toolkit.form.button.create" action="/inventor/toolkit/create"/>
+	<acme:submit code="inventor.toolkit.form.button.create" action="/inventor/toolkit/create"/>
 	</jstl:when>
 	</jstl:choose>
 	
