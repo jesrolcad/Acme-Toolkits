@@ -12,7 +12,7 @@
 	<acme:input-textbox code="inventor.toolkit.form.label.published" path="published"/>	
 	<acme:input-textbox code="inventor.toolkit.form.label.retailPrice" path="retailPrice"/>
 	<acme:input-textbox code="inventor.toolkit.form.label.inventor" path="inventor.userAccount.username"/>
-	<acme:button code="inventor.toolkit.form.button.items" action="/inventor/item/listToolkitItems?id=${id}"/>
+	<acme:button code="inventor.toolkit.form.button.items" action="/inventor/quantity/list?id=${id}"/>
 	
 	<jstl:choose>
 	<jstl:when test="${command == 'show' && published == true}">
