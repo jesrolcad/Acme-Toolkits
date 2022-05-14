@@ -1,8 +1,6 @@
 package acme.features.inventor.patronagereport;
 
 import java.util.Date;
-import java.util.Random;
-import java.util.concurrent.ThreadLocalRandom;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -56,25 +54,24 @@ public class InventorPatronageReportCreateService implements AbstractCreateServi
 		Patronage patronage;
 		Date creationMoment;
 		String sequenceNumber = "";
-		
+		String salida;
 		patronageId= request.getModel().getInteger("patronageId");
 		patronage = this.repository.findPatronageById(patronageId);
 		
-		
-		String auxLetras = "";
-		String auxNum = "";
-		final String chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-		int i = 0;
-		while (i < 3) {
-			Random rnd = new Random();
-			char c = chars.charAt(rnd.nextInt(chars.length()));
-			auxLetras = auxLetras + c;
-			int randomNum = ThreadLocalRandom.current().nextInt(0, 8 + 1);
-			auxNum = auxNum + randomNum;
-			i++;
+		int aux= this.repository.totalNumberPatronagesWithSameCode(patronage.getCode())+1;
+		if(aux<10) {
+			 salida= "000"+aux; 
+		}else if(aux<100){
+			 salida = "00" + aux;
+			
+		}else if(aux<1000){
+			 salida ="0"+ aux;
+		}else {
+			 salida = ""+aux;
 		}
-		Random rnd = new Random();
-		sequenceNumber = sequenceNumber + auxLetras + "-" + auxNum + "-" + chars.charAt(rnd.nextInt(chars.length())) + ":" + auxNum  + ThreadLocalRandom.current().nextInt(0, 8 + 1);
+		
+
+		sequenceNumber = sequenceNumber+patronage.getCode()+"-S:"+salida;
 
 		creationMoment = new Date(System.currentTimeMillis() - 1);
 		result.setPatronage(patronage);
