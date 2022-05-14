@@ -23,7 +23,7 @@ public class AuthenticatedAnnouncementController extends AbstractController<Auth
 	@PostConstruct
 	protected void initialise() {
 		super.addCommand("show", this.showService);
-		super.addCommand("list", "list", this.listRecentService);
+		super.addCommand( "list", this.listRecentService);
 	}
 
 }

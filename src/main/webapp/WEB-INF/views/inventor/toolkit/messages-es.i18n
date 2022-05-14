@@ -12,4 +12,8 @@ inventor.toolkit.form.label.retailPrice = Precio comercial
 inventor.toolkit.form.label.inventor = Inventor:
 inventor.toolkit.form.button.items = Ítems
 inventor.toolkit.form.label.published = Publicado
-inventor.toolkit.form.button.create.item = Crear nuevo Ítem
+
+inventor.toolkit.form.button.delete= Eliminar
+inventor.toolkit.form.button.create = Crear
+
+inventor.toolkit.list.button.create = Crear

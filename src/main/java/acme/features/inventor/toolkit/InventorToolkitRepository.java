@@ -32,5 +32,6 @@ public interface InventorToolkitRepository extends AbstractRepository{
 	@Query("select sc.systemCurrency from SystemConfiguration sc")
 	String findSystemCurrency();
 
+
  
 }
