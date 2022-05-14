@@ -301,11 +301,12 @@ has v</panel_attributes>
 Chirp
 --
 + moment: Date {NotNull, Temporal(TIMESTAMP)}
-+ spam: boolean {NotNull}
 + title: String {NotBlank, Length(Max=100)}
 + author: String {NotBlank, Length(Max=100)}
 + body: String {NotBlank, Length(Max=255)}
-+ email: String {Email}</panel_attributes>
++ email: String {Email}
++ / spam: boolean 
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -321,11 +322,11 @@ Announcement
 
 --
 + moment: Date {NotNull, Temporal(TIMESTAMP), Past}
-+ spam: boolean {NotNull}
 + title: String {NotBlank, Length(Max=100)}
 + body: String {NotBlank, Length(Max=255)}
 + critical: boolean 
-+ link: String {URL}</panel_attributes>
++ link: String {URL}
++ / spam: boolean </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -341,13 +342,13 @@ Toolkit
 
 --
 + code: String {NotBlank, Pattern (“^[A-Z]{3}-[0-9]{3}(-[A-Z])?$”), Unique}
-+ spam: boolean {NotNull}
 + title: String {NotBlank, Length(Max=100)}
 + description: String {NotBlank, Length(Max=255)}
 + assemblyNotes: String {NotBlank, Length(Max=255)}
 + published: boolean
 + link: String {URL}
-+ / retailPrice: Money {Valid}</panel_attributes>
++ / retailPrice: Money {Valid}
++ / spam: boolean </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -363,7 +364,7 @@ Patronage
 
 --
 + status: Status {NotNull}
-+ published: boolean {NotNull}
++ published: boolean 
 + code: String {NotBlank, Pattern (“^[A-Z]{3}-[0-9]{3}(-[A-Z])?$”), Unique}
 + legalStuff: String {NotBlank, Length(Max=255)}
 + budget: Money {Valid}
@@ -556,14 +557,14 @@ Item
 
 --
 + type: TipoDeItem {NotNull}
-+ spam: boolean {NotNull}
 + name: String {NotBlank, Length(Max=100)}
 + code: String {NotBlank, Pattern (“^[A-Z]{3}-[0-9]{3}(-[A-Z])?$”), Unique}
 + technology: String {NotBlank, Length(Max=100)}
 + description: String {NotBlank, Length(Max=255)}
 + retailPrice: Money {Valid}
 + published: boolean
-+ link: String {URL}</panel_attributes>
++ link: String {URL}
++ / spam: boolean </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
