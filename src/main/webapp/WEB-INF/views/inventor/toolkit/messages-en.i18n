@@ -22,3 +22,5 @@ inventor.toolkit.form.button.publish = Publish
 inventor.toolkit.list.button.create = Create
 
 inventor.toolkit.form.error.duplicated = This code already exists
+inventor.toolkit.form.error.no-items = No items assigned
+inventor.toolkit.form.error.no-items-published = Missing items to be published
