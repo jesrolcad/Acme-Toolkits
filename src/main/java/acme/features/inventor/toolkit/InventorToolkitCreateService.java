@@ -30,8 +30,7 @@ public class InventorToolkitCreateService implements AbstractCreateService<Inven
 		assert errors != null;
 
 		request.bind(entity, errors, "code", 
-			"description","assemblyNotes", "optionalLink", 
-			"inventor.userAccount.username");
+			"description","assemblyNotes", "optionalLink");
 		
 	}
 
@@ -66,7 +65,12 @@ public class InventorToolkitCreateService implements AbstractCreateService<Inven
 		assert entity != null;
 		assert errors != null;
 		
-		//Añadir posibles errores al crear el formulario
+		if(!errors.hasErrors("code")) {
+			Toolkit existing;
+			
+			existing = this.repository.findOneToolkitByCode(entity.getCode());
+			errors.state(request, existing == null || existing.getId() == entity.getId(), "code", "inventor.toolkit.form.error.duplicated");
+		}
 		
 	}
 

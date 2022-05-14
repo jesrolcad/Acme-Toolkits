@@ -20,3 +20,5 @@ inventor.toolkit.form.button.update = Update
 inventor.toolkit.form.button.publish = Publish
 
 inventor.toolkit.list.button.create = Create
+
+inventor.toolkit.form.error.duplicated = This code already exists
