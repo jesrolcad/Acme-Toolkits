@@ -69,7 +69,7 @@ public class InventorToolkitCreateService implements AbstractCreateService<Inven
 			Toolkit existing;
 			
 			existing = this.repository.findOneToolkitByCode(entity.getCode());
-			errors.state(request, existing == null || existing.getId() == entity.getId(), "code", "inventor.toolkit.form.error.duplicated");
+			errors.state(request, existing == null, "code", "inventor.toolkit.form.error.duplicated");
 		}
 		
 	}
