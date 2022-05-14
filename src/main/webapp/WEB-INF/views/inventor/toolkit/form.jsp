@@ -13,5 +13,4 @@
 	<acme:input-textbox code="inventor.toolkit.form.label.retailPrice" path="retailPrice"/>
 	<acme:input-textbox code="inventor.toolkit.form.label.inventor" path="inventor.userAccount.username"/>
 	<acme:button code="inventor.toolkit.form.button.items" action="/inventor/item/listToolkitItems?id=${id}"/>
-	<acme:button code="inventor.toolkit.form.button.create.item" action="/inventor/item/create?id=${id}"/>
 </acme:form>

@@ -17,3 +17,6 @@ inventor.item.form.label.optional-link = Link:
 inventor.item.form.label.inventor = Inventor:
 inventor.item.form.label.published = Público:
 inventor.item.form.button.create = Crear
+inventor.item.list.button.create = Crear nuevo Ítem
+
+inventor.item.form.error.duplicated = Este código ya existe

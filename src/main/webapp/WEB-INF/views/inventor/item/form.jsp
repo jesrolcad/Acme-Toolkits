@@ -20,13 +20,16 @@
 		path="retailPrice" />
 	<acme:input-textbox code="inventor.item.form.label.optional-link"
 		path="optionalLink" />
+		<jstl:choose>
+		<jstl:when test="${command == 'show'}">
 	<acme:input-textbox code="inventor.item.form.label.inventor"
 		path="inventor.userAccount.username" />
 	<acme:input-textbox code="inventor.item.form.label.published"
 		path="published" />
-
-	<jstl:if test="${command == 'create'}">
+	</jstl:when>
+	<jstl:when test="${command == 'create'}">
 		<acme:submit code="inventor.item.form.button.create"
 			action="/inventor/item/create" />
-	</jstl:if>
+	</jstl:when>
+	</jstl:choose>
 </acme:form>

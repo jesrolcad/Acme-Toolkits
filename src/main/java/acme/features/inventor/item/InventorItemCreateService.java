@@ -4,8 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.Item;
-import acme.entities.Quantity;
-import acme.entities.Toolkit;
 import acme.features.inventor.toolkit.InventorToolkitRepository;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
@@ -34,7 +32,7 @@ public class InventorItemCreateService implements AbstractCreateService<Inventor
 		assert entity != null; 
 		assert errors != null; 
  
-		request.bind(entity, errors, "tipo", "name", "code", "technology", "description", "retailPrice", "optionalLink", "inventor.userAccount.username", "published"); 
+		request.bind(entity, errors, "tipo", "name", "code", "technology", "description", "retailPrice", "optionalLink"); 
 		 
 	} 
  
@@ -65,6 +63,13 @@ public class InventorItemCreateService implements AbstractCreateService<Inventor
 		assert request != null; 
 		assert entity != null; 
 		assert errors != null; 
+		
+		if (!errors.hasErrors("code")) {
+			Item existing;
+
+			existing = this.repository.findOneItemByCode(entity.getCode());
+			errors.state(request, existing == null, "code", "inventor.item.form.error.duplicated");
+		}
 		 
 	} 
  
@@ -72,17 +77,10 @@ public class InventorItemCreateService implements AbstractCreateService<Inventor
 	public void create(final Request<Item> request, final Item entity) {
 		assert request != null; 
 		assert entity != null; 
-		Quantity quantity;
-		quantity = new Quantity();
-		int toolkitId;
-		toolkitId = request.getModel().getInteger("id");
-		final Toolkit toolkit = this.toolkitRepo.findOneToolkitById(toolkitId);
 		
 		 
 		entity.setInventor(this.repository.findInventorByUserAccountId(request.getPrincipal().getAccountId())); 
 		entity.setPublished(false); 
-		quantity.setItem(entity);
-		quantity.setToolkit(toolkit);
 		this.repository.save(entity); 
 		 
 		
