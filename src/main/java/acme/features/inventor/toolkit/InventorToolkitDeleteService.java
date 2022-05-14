@@ -47,7 +47,7 @@ public class InventorToolkitDeleteService implements AbstractDeleteService<Inven
 		assert errors != null;
 
 		request.bind(entity, errors, "code", 
-			"description","assemblyNotes","published", "optionalLink", 
+			"description","assemblyNotes", "optionalLink", 
 			"inventor.userAccount.username","retailPrice");
 		
 	}
