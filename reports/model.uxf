@@ -347,7 +347,7 @@ Toolkit
 + assemblyNotes: String {NotBlank, Length(Max=255)}
 + published: boolean
 + link: String {URL}
-+ / retailPrice: Money {Valid}
++ / retailPrice: Money {NotNull, Valid}
 + / spam: boolean </panel_attributes>
     <additional_attributes/>
   </element>
@@ -367,7 +367,7 @@ Patronage
 + published: boolean 
 + code: String {NotBlank, Pattern (“^[A-Z]{3}-[0-9]{3}(-[A-Z])?$”), Unique}
 + legalStuff: String {NotBlank, Length(Max=255)}
-+ budget: Money {Valid}
++ budget: Money {NotNull, Valid}
 + startDate: Date {NotNull, TemporalType.TIMESTAMP}
 + endDate: Date {NotNull, TemporalType.TIMESTAMP}
 + link: String {URL}</panel_attributes>
@@ -561,7 +561,7 @@ Item
 + code: String {NotBlank, Pattern (“^[A-Z]{3}-[0-9]{3}(-[A-Z])?$”), Unique}
 + technology: String {NotBlank, Length(Max=100)}
 + description: String {NotBlank, Length(Max=255)}
-+ retailPrice: Money {Valid}
++ retailPrice: Money {NotNull, Valid}
 + published: boolean
 + link: String {URL}
 + / spam: boolean </panel_attributes>

@@ -1,12 +1,17 @@
 package acme.features.inventor.item;
 
+import java.util.List;
+
+import org.assertj.core.util.Arrays;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.Item;
+import acme.entities.TipoDeItem;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
+import acme.framework.datatypes.Money;
 import acme.framework.services.AbstractUpdateService;
 import acme.roles.Inventor;
 
@@ -67,11 +72,26 @@ public class InventorItemUpdateService implements AbstractUpdateService<Inventor
 		return result;
 	}
 
-	@Override
-	public void validate(final Request<Item> request, final Item entity, final Errors errors) {
-		assert request != null;
-		assert entity != null;
-		assert errors != null;
+	public boolean validateCurrencyRetailPrice(final Money retailPrice) {
+		final boolean acceptedCurrency;
+		
+		final String currencies = this.repository.findAcceptedCurrencies().replace(" ", "");
+		final List<Object> listCurrencies = Arrays.asList(currencies.split(","));
+		acceptedCurrency = listCurrencies.contains(retailPrice.getCurrency());
+		
+		return acceptedCurrency;
+		
+		
+		
+	}
+ 
+	@Override 
+	public void validate(final Request<Item> request, final Item entity, final Errors errors) { 
+		assert request != null; 
+		assert entity != null; 
+		assert errors != null; 
+		
+		final Money retailPrice = entity.getRetailPrice();
 		
 		if (!errors.hasErrors("code")) {
 			Item existing;
@@ -80,7 +100,25 @@ public class InventorItemUpdateService implements AbstractUpdateService<Inventor
 			errors.state(request, existing == null || existing.getId() == entity.getId(), "code", "inventor.item.form.error.duplicated");
 		}
 		
-	}
+		if(!errors.hasErrors("retailPrice")){
+			
+			final boolean acceptedCurrency = this.validateCurrencyRetailPrice(retailPrice);
+			errors.state(request, acceptedCurrency, "retailPrice", "inventor.item.form.error.retail-price-currency-not-accepted");
+			
+			if(entity.getTipo().equals(TipoDeItem.COMPONENT)) {
+				
+				final boolean retailPriceComponentPositive = retailPrice.getAmount() > 0.;
+				errors.state(request, retailPriceComponentPositive, "retailPrice", "inventor.item.form.error.retail-price-component-positive");
+				
+			} else if(entity.getTipo().equals(TipoDeItem.TOOL)) {
+				final boolean retailPriceToolZeroOrPositive = retailPrice.getAmount() >= 0.;
+				errors.state(request, retailPriceToolZeroOrPositive, "retailPrice", "inventor.item.form.error.retail-price-tool-zero-or-positive");
+				
+			} 
+			
+		}
+		
+	} 
 
 	@Override
 	public void update(final Request<Item> request, final Item entity) {

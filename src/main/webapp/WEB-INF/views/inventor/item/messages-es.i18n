@@ -23,3 +23,6 @@ inventor.item.form.button.update = Actualizar
 inventor.item.form.button.publish = Publicar
 
 inventor.item.form.error.duplicated = Este código ya existe
+inventor.item.form.error.retail-price-tool-zero-or-positive = El precio de venta de una herramienta debe ser 0 o positivo
+inventor.item.form.error.retail-price-component-positive = El precio de venta de un componente debe ser positivo
+inventor.item.form.error.retail-price-currency-not-accepted = La moneda no está aceptada

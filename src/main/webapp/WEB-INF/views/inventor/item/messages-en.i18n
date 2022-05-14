@@ -23,4 +23,6 @@ inventor.item.form.button.update = Update
 inventor.item.form.button.publish = Publish
 
 inventor.item.form.error.duplicated = This code already exists
-
+inventor.item.form.error.retail-price-tool-zero-or-positive = The retail price of a tool must be 0 or positive
+inventor.item.form.error.retail-price-component-positive = The retail price of a component must be positive
+inventor.item.form.error.retail-price-currency-not-accepted = The currency is not accepted
