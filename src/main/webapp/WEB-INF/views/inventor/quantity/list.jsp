@@ -10,4 +10,8 @@
 	<acme:list-column code="inventor.quantity.item.list.label.technology" path="item.technology" width="20%"/>
 	<acme:list-column code="inventor.quantity.item.list.label.retail-price" path="item.retailPrice" width="20%"/>
 	<acme:list-column code="inventor.quantity.item.list.label.number" path="number" width="20%"/>
+	
+
+	
 </acme:list>
+<acme:button code="inventor.quantity.form.button.add" action="/inventor/quantity/create?masterId=${masterId}"/>
