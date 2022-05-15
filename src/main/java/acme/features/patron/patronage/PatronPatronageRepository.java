@@ -34,5 +34,8 @@ public interface PatronPatronageRepository extends AbstractRepository{
 	
 	@Query("SELECT p FROM Patronage p WHERE p.code LIKE :code")
 	Patronage findPatronageByCode(String code);
+	@Query("select count(i) from Patronage i where i.inventor.id = 25")
+	int tests();	
+
 	
 } 

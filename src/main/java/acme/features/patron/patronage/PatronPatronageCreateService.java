@@ -59,7 +59,7 @@ public class PatronPatronageCreateService  implements AbstractCreateService<Patr
 
 		result.setLegalStuff("");
 		result.setStartDate(DateUtils.addMonths( new Date(System.currentTimeMillis() - 1),6));
-		result.setEndDate(DateUtils.addMonths( DateUtils.addMonths( new Date(System.currentTimeMillis() - 1),1),8));
+		result.setEndDate(DateUtils.addMonths( new Date(System.currentTimeMillis() - 1),8));
 		result.setPatron(this.repository.findPatronByUserAccountId(request.getPrincipal().getAccountId()));
 
 		
@@ -76,10 +76,13 @@ public class PatronPatronageCreateService  implements AbstractCreateService<Patr
 			Patronage existing;
 
 			existing = this.repository.findPatronageByCode(entity.getCode());
-			errors.state(request, existing == null, "code", "patron.patronage.form.error.duplicated");
+			if(existing==null) {
+				existing=entity;
+			}
+			errors.state(request, existing != null||entity.getCode()==existing.getCode(), "code", "patron.patronage.form.error.duplicated");
 		}
 		if(!errors.hasErrors("startDate")) {
-			final Date minimumStartDate=DateUtils.addMonths(DateUtils.addMonths( new Date(System.currentTimeMillis() - 1),1), 1);
+			final Date minimumStartDate=DateUtils.addMonths(new Date(System.currentTimeMillis() - 1),1);
 
 			
 			errors.state(request,entity.getStartDate().after(minimumStartDate), "startDate", "patron.patronage.form.error.too-close-start-date");
@@ -107,6 +110,8 @@ public class PatronPatronageCreateService  implements AbstractCreateService<Patr
 		
 
 	}
+
+
 
 	@Override
 	public void create(Request<Patronage> request, Patronage entity) {
