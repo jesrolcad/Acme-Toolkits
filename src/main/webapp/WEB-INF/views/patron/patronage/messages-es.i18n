@@ -19,6 +19,7 @@ patron.patronage.form.button.delete= Barror patrocinio(y reportes asociados)
 
 patron.create-patronage = Crear nuevo patrocinio
 patron.patronage.form.button.create = Confirma crear nuevo patrocinio
+patron.patronage.form.label.inventor = Seleccionar inventor
 patron.update-patronage= Editar patrocinio
 patron.patronage.form.button.update = Confirma editar patrocinio
 patron.patronage.form.label.proposed = Propuesto
@@ -33,7 +34,7 @@ patron.patronage.form.error.negative-budget= Cantidad negativa
 patron.patronage.form.label.code = Código
 patron.patronage.form.label.startDate = Fecha de Inicio
 patron.patronage.form.label.endDate = Fecha de Fin
-patron.patronage.form.label.legalStuff = Cosas legales
+patron.patronage.form.label.legalStuff = Asuntos legales
 patron.patronage.form.label.budget = Presupuesto
 patron.patronage.form.error.too-close-start-date = Fecha de inicio muy cercana(1 mes después mínmo)
 patron.patronage.form.error.one-month = Un mes mínimo entre fechas
