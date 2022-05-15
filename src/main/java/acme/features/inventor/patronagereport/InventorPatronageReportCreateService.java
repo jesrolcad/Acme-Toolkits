@@ -71,7 +71,7 @@ public class InventorPatronageReportCreateService implements AbstractCreateServi
 		}
 		
 
-		sequenceNumber = sequenceNumber+patronage.getCode()+"-S:"+salida;
+		sequenceNumber = sequenceNumber+patronage.getCode()+":"+salida;
 
 		creationMoment = new Date(System.currentTimeMillis() - 1);
 		result.setPatronage(patronage);
