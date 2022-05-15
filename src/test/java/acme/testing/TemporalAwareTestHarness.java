@@ -8,16 +8,22 @@ import java.util.Date;
 import org.junit.jupiter.api.BeforeAll;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import acme.entities.Announcement;
 import acme.entities.Chirp;
 import acme.framework.helpers.FactoryHelper;
 import acme.testing.any.chirp.ChirpRepository;
+import acme.testing.authenticated.announcement.AnnouncementRepository;
+
 
 public class TemporalAwareTestHarness extends TestHarness {
 
 	// Lifecycle management ---------------------------------------------------
 
 	@Autowired
-	private ChirpRepository repository;
+	private ChirpRepository chirpRepository;
+
+	@Autowired
+	private AnnouncementRepository announcementRepository;
 	
 	@Override
 	@BeforeAll
@@ -25,6 +31,7 @@ public class TemporalAwareTestHarness extends TestHarness {
 		super.beforeAll();
 		FactoryHelper.autowire(this);
 		this.patchChirps();
+		this.patchAnnouncements();
 	}
 
 	// Business methods -------------------------------------------------------
@@ -34,11 +41,25 @@ public class TemporalAwareTestHarness extends TestHarness {
 		Collection<Chirp> chirps;
 		Date moment;
 
-		chirps = this.repository.findChirpsToPatch();
+		chirps = this.chirpRepository.findChirpsToPatch();
 		for (final Chirp chirp : chirps) {
 			moment = this.adjustMoment(chirp.getMoment());
 			chirp.setMoment(moment);
-			this.repository.save(chirp);
+			this.chirpRepository.save(chirp);
+			
+		}
+		
+	}
+
+	protected void patchAnnouncements() {
+		Collection<Announcement> announcements;
+		Date moment;
+
+		announcements = this.announcementRepository.findAnnouncementsToPatch();
+		for (final Announcement announcement : announcements) {
+			moment = this.adjustMoment(announcement.getMoment());
+			announcement.setMoment(moment);
+			this.announcementRepository.save(announcement);
 		}
 	}
 
@@ -91,3 +112,4 @@ public class TemporalAwareTestHarness extends TestHarness {
 	// Ancillary methods ------------------------------------------------------
 
 }
+

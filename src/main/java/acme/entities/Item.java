@@ -30,7 +30,7 @@ public class Item extends AbstractEntity {
 	protected TipoDeItem tipo;
 	
 	@NotBlank
-	@Length(max=101)
+	@Length(max=100)
 	protected String name;
 	
 	@NotBlank
@@ -38,11 +38,11 @@ public class Item extends AbstractEntity {
 	protected String code;
 	
 	@NotBlank
-	@Length(max=101)
+	@Length(max=100)
 	protected String technology;
 	
 	@NotBlank
-	@Length(max=256)
+	@Length(max=255)
 	protected String description;
 	
 	@Valid
@@ -59,4 +59,9 @@ public class Item extends AbstractEntity {
 	@Valid
 	@ManyToOne(optional=false)
 	protected Inventor inventor;
+	
+	//derived attributes
+		
+		@Valid
+		protected boolean			spam;
 }
