@@ -31,9 +31,6 @@ public class PatronPatronageUpdateTest extends TestHarness{
 		super.checkListingExists();
 		super.sortListing(0, "asc");
 		super.clickOnListingRecord(recordIndex);
-		super.clickOnButton("Update Patronage");
-
-
 		super.fillInputBoxIn("code", code);
 		
 		super.fillInputBoxIn("startDate",this.formattedDateTimeStart );
@@ -70,8 +67,6 @@ public class PatronPatronageUpdateTest extends TestHarness{
 		super.checkListingExists();
 		super.sortListing(0, "asc");
 		super.clickOnListingRecord(recordIndex);
-		super.clickOnButton("Update Patronage");
-
 
 		super.fillInputBoxIn("code", code);
 		
@@ -99,7 +94,6 @@ public class PatronPatronageUpdateTest extends TestHarness{
 		super.checkListingExists();
 		super.sortListing(0, "asc");
 		super.clickOnListingRecord(recordIndex);
-		super.clickOnButton("Update Patronage");
 		super.sortListing(0, "asc");
 
 		super.fillInputBoxIn("code", code);

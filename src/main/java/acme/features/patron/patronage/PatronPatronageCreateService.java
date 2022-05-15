@@ -58,8 +58,8 @@ public class PatronPatronageCreateService  implements AbstractCreateService<Patr
 		final Patronage result = new Patronage();
 
 		result.setLegalStuff("");
-//		result.setStartDate(DateUtils.addMonths( new Date(System.currentTimeMillis() - 1),6));
-//		result.setEndDate(DateUtils.addMonths( new Date(System.currentTimeMillis() - 1),8));
+		result.setStartDate(DateUtils.addMonths( new Date(System.currentTimeMillis() - 1),6));
+		result.setEndDate(DateUtils.addMonths( new Date(System.currentTimeMillis() - 1),8));
 		result.setPatron(this.repository.findPatronByUserAccountId(request.getPrincipal().getAccountId()));
 
 		
@@ -72,14 +72,13 @@ public class PatronPatronageCreateService  implements AbstractCreateService<Patr
 		assert entity != null;
 		assert errors != null;
 		
+	
 		if (!errors.hasErrors("code")) {
 			Patronage existing;
-
+			
 			existing = this.repository.findPatronageByCode(entity.getCode());
-			if(existing==null) {
-				existing=entity;
-			}
-			errors.state(request, existing != null||entity.getCode()==existing.getCode(), "code", "patron.patronage.form.error.duplicated");
+			
+			errors.state(request, existing == null, "code", "patron.patronage.form.error.duplicated");
 		}
 		if(!errors.hasErrors("startDate")) {
 			final Date minimumStartDate=DateUtils.addMonths(new Date(System.currentTimeMillis() - 1),1);
@@ -89,7 +88,8 @@ public class PatronPatronageCreateService  implements AbstractCreateService<Patr
 			
 		}
 		if(!errors.hasErrors("endDate")) {
-			final Date minimumFinishDate=DateUtils.addMonths(entity.getStartDate(), 1);
+			final Date minimumFinishDate=(DateUtils.addDays(entity.getStartDate(), 28));
+			
 
 			errors.state(request,entity.getEndDate().after(minimumFinishDate), "endDate", "patron.patronage.form.error.one-month");
 			

@@ -18,11 +18,16 @@
 <acme:form>
 	<jstl:if test="${published==true}">	
 	<acme:input-moment code="patron.patronage.form.label.startDate" path="startDate"/>
-	<acme:input-moment code="patron.patronage.form.label.endDate" path="endDate"/>
+	<acme:input-moment code="patron.patronage.form.label.endDate" path="endDate" />
 	<acme:input-textbox code="patron.patronage.form.label.legalStuff" path="legalStuff"/>
 	<acme:input-money code="patron.patronage.form.label.budget" path="budget"/>
 	<acme:input-textbox code="patron.patronage.form.label.link" path="link"/>
-	
+	<acme:input-textbox code="patron.patronage.form.label.username" path="inventor.userAccount.username"/>
+	<acme:input-textbox code="patron.patronage.form.label.company" path="inventor.company"/>
+	<acme:input-textbox code="patron.patronage.form.label.inventor-link" path="inventor.link"/>
+	<acme:input-textbox code="patron.patronage.form.label.statement" path="inventor.statement"/>
+	<acme:input-textbox code="patron.patronage.form.label.status" path="status"/>	
+	<acme:input-textbox code="patron.patronage.form.label.username" path="inventor.userAccount.username"/>
 	</jstl:if>	
 	
 
@@ -44,10 +49,7 @@
 	<acme:input-money code="patron.patronage.form.label.budget" path="budget" readonly="true"/>
 	<acme:input-textbox code="patron.patronage.form.label.link" path="link" readonly="true"/>
 	<acme:input-textbox code="patron.patronage.form.label.status" path="status" readonly="true"/>	
-	<acme:input-textbox code="patron.patronage.form.label.username" path="inventor.userAccount.username" readonly="true"/>
-	<acme:input-textbox code="patron.patronage.form.label.company" path="inventor.company" readonly="true"/>
-	<acme:input-textbox code="patron.patronage.form.label.inventor-link" path="inventor.link" readonly="true"/>
-	<acme:input-textbox code="patron.patronage.form.label.statement" path="inventor.statement" readonly="true"/>
+
 	</jstl:if>	
 		<jstl:if test="${command == 'create' or command == 'update' and published==false}">	
 	        <acme:input-select code="patron.patronage.form.label.inventor" path="inventorId">
@@ -64,19 +66,26 @@
 			</acme:input-select>
 		</jstl:if>	
 		
-	<jstl:if test="${command == 'show'}">
-		<acme:input-textbox code="patron.patronage.form.label.status" path="status"/>	
-		<acme:input-textbox code="patron.patronage.form.label.username" path="inventor.userAccount.username"/>
-		<acme:input-textbox code="patron.patronage.form.label.company" path="inventor.company"/>
-		<acme:input-textbox code="patron.patronage.form.label.inventor-link" path="inventor.link"/>
-		<acme:input-textbox code="patron.patronage.form.label.statement" path="inventor.statement"/>
+	<jstl:if test="${command == 'show' and published==false}">
+	 <acme:input-select code="patron.patronage.form.label.inventor" path="inventorId">
+	   			<jstl:forEach items="${inventors}" var="inventor">
+					<acme:input-option code="${inventor.getUserAccount().getUsername()}" value="${inventor.getId()}" selected="${ inventor.getId() == inventId }"/>
+				</jstl:forEach>
+			</acme:input-select>
+			<acme:input-select code="patron.patronage.form.label.status" path="status">
+				<acme:input-option code="patron.patronage.form.label.proposed" value="PROPOSED" selected="${ status == 'PROPOSED' }"/>
+				<acme:input-option code="patron.patronage.form.label.accepted" value="ACCEPTED" selected="${ status == 'ACCEPTED' }"/>
+				<acme:input-option code="patron.patronage.form.label.denied" value="DENIED" selected="${ status == 'DENIED' }"/>
+			</acme:input-select>
+			<acme:submit code="patron.patronage.form.button.update" action="/patron/patronage/update"/>
+			
+	
 	</jstl:if>
 	
 	<jstl:choose>
 		<jstl:when test="${acme:anyOf(command,'show') && published == false}"> 
 			<acme:submit code="patron.patronage.form.button.delete" action="/patron/patronage/delete"/>
 			<acme:button code="patron.publish-patronage" action="/patron/patronage/publish?id=${id}"/>
-			<acme:button code="patron.update-patronage" action="/patron/patronage/update?id=${id}"/>
 			                                                                                             
 		</jstl:when>
 		
