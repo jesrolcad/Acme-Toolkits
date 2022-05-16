@@ -8,14 +8,13 @@
 	<jstl:if test="${command == 'create'}">	
 	        <acme:input-select code="inventor.quantity.form.label.item" path="itemId">
 	   			<jstl:forEach items="${items}" var="item">
-					<acme:input-option code="${item.getName()}" value="${item.getId()}" selected="${ item.getId() == inventId }"/>
+					<acme:input-option code="${item.getName()}" value="${item.getId()}" selected="${ item.getId() == itemId }"/>
 				</jstl:forEach>
 			</acme:input-select>
 		</jstl:if>	
 	<jstl:choose>
 		<jstl:when test="${command == 'create'}">
-			<acme:submit code="inventor.quantity.form.button.create"
-				action="/inventor/quantity/create" />
+			<acme:submit code="inventor.quantity.form.button.create" action="/inventor/quantity/create?masterId=${masterId}"/>
 		</jstl:when>
 	</jstl:choose>
 </acme:form>

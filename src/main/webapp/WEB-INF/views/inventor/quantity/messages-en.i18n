@@ -10,3 +10,5 @@ inventor.quantity.form.label.item = Select an item
 
 inventor.quantity.form.button.add = Add new item
 inventor.quantity.form.button.create = Add
+
+inventor.quantity.form.error.toolkit-has-tool = This toolkit has already an assigned tool

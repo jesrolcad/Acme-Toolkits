@@ -10,6 +10,7 @@ import acme.entities.Toolkit;
 import acme.features.inventor.toolkit.InventorToolkitRepository;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
+import acme.framework.helpers.CollectionHelper;
 import acme.framework.services.AbstractListService;
 import acme.roles.Inventor;
 
@@ -21,11 +22,12 @@ public class InventorToolkitItemListService implements AbstractListService<Inven
 	@Override
 	public boolean authorise(final Request<Quantity> request) {
 		assert request != null;
+		
 		boolean res=false;
 		int id;
 		int inventorId;
 		int userId;
-		id=request.getModel().getInteger("id");
+		id=request.getModel().getInteger("masterId");
 		final Toolkit toolkit = this.repository.findOneToolkitById(id);
 		inventorId = toolkit.getInventor().getId();
 		userId= request.getPrincipal().getAccountId();
@@ -42,21 +44,33 @@ public class InventorToolkitItemListService implements AbstractListService<Inven
 
 	@Override
 	public Collection<Quantity> findMany(final Request<Quantity> request) {
-//		final Collection<Item> result = new HashSet<Item>();
 		final int toolkitId;
-		toolkitId = request.getModel().getInteger("id");
+		toolkitId = request.getModel().getInteger("masterId");
 		final Collection<Quantity> quantities = this.repository.findQuantityByToolkitId(toolkitId);
 		
-		
-//		for(final Quantity quantity: quantities) {
-//			final int id=quantity.getId();
-//			final Collection<Item> items=this.repository.findManyItemByQuantityId(id);
-//			result.addAll(items);
-//		}
-//		
 		return quantities;
 	}
 
+	@Override
+	public void unbind(final Request<Quantity> request, final Collection<Quantity> entities, final Model model) {
+		assert request != null; 
+		assert !CollectionHelper.someNull(entities); 
+		assert model != null; 
+		
+		int masterId;
+		final Toolkit toolkit;
+		
+		masterId = request.getModel().getInteger("masterId");
+		
+		toolkit = this.repository.findOneToolkitById(masterId);
+		
+		final boolean showCreate = (!toolkit.isPublished() && request.isPrincipal(toolkit.getInventor()));
+		
+		model.setAttribute("masterId", masterId);
+		model.setAttribute("showCreate", showCreate);
+		 
+	}
+	
 	@Override
 	public void unbind(final Request<Quantity> request, final Quantity entity, final Model model) {
 		assert request != null; 

@@ -32,6 +32,9 @@ public interface InventorToolkitRepository extends AbstractRepository{
 	@Query("select sc.systemCurrency from SystemConfiguration sc")
 	String findSystemCurrency();
 	
+	@Query("select count(q.item) from Quantity q where q.item.tipo = acme.entities.TipoDeItem.TOOL and q.toolkit.id = :toolkitId")
+	Integer findNumToolsOfToolkit(int toolkitId);
+	
 
 
  

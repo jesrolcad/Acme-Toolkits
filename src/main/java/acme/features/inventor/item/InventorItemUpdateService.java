@@ -31,7 +31,7 @@ public class InventorItemUpdateService implements AbstractUpdateService<Inventor
 		final Inventor inventor;
 		
 		itemId=request.getModel().getInteger("id");
-		item=this.repository.findItemlById(itemId);
+		item=this.repository.findItemById(itemId);
 		inventor=item.getInventor();
 		
 		result= !item.isPublished() && request.isPrincipal(inventor);
@@ -68,7 +68,7 @@ public class InventorItemUpdateService implements AbstractUpdateService<Inventor
 		int id;
 		
 		id=request.getModel().getInteger("id");
-		result=this.repository.findItemlById(id);
+		result=this.repository.findItemById(id);
 		return result;
 	}
 
