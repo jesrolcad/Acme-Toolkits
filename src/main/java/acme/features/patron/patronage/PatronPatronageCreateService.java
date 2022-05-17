@@ -58,8 +58,8 @@ public class PatronPatronageCreateService  implements AbstractCreateService<Patr
 		final Patronage result = new Patronage();
 
 		result.setLegalStuff("");
-		result.setStartDate(DateUtils.addMonths( new Date(System.currentTimeMillis() - 1),6));
-		result.setEndDate(DateUtils.addMonths( new Date(System.currentTimeMillis() - 1),8));
+//		result.setStartDate(DateUtils.addMonths( new Date(System.currentTimeMillis() - 1),6));
+//		result.setEndDate(DateUtils.addMonths( new Date(System.currentTimeMillis() - 1),8));
 		result.setPatron(this.repository.findPatronByUserAccountId(request.getPrincipal().getAccountId()));
 
 		

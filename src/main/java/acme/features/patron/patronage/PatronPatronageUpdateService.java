@@ -60,7 +60,7 @@ public class PatronPatronageUpdateService implements AbstractUpdateService<Patro
 	}
 
 	@Override
-	public void validate(Request<Patronage> request, Patronage entity, Errors errors) {
+	public void validate(final Request<Patronage> request, final Patronage entity, final Errors errors) {
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
@@ -81,7 +81,8 @@ public class PatronPatronageUpdateService implements AbstractUpdateService<Patro
 			
 		}
 		if(!errors.hasErrors("endDate")) {
-			final Date minimumFinishDate=DateUtils.addMonths(entity.getStartDate(), 1);
+			final Date minimumFinishDate=(DateUtils.addDays(entity.getStartDate(), 28));
+			
 
 			errors.state(request,entity.getEndDate().after(minimumFinishDate), "endDate", "patron.patronage.form.error.one-month");
 			

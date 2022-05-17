@@ -27,6 +27,8 @@ patron.patronage.form.label.accepted = Aceptado
 patron.patronage.form.label.denied = Denegado
 patron.patronage.form.button.publish = Publicar
 patron.publish-patronage= Confirma publicar
+
+
 patron.patronage.form.error.non-accepted-currency= Divisa no aceptada
 patron.patronage.form.error.duplicated. = Código duplicado
 patron.patronage.form.error.duplicated = Código duplicado
@@ -45,3 +47,4 @@ patron.patronage.form.label.username = Nombre de usuario del inventor
 patron.patronage.form.label.company = Empresa del inventor
 patron.patronage.form.label.inventor-link = Enlace del inventor
 patron.patronage.form.label.statement = Declaración del inventor
+patron.patronage.form.label.published = Publicado
