@@ -120,7 +120,7 @@ public class AnyToolkitShowService implements AbstractShowService<Any, Toolkit>{
 			model.setAttribute("retailPrice", this.retailPriceOfToolkit(entity.getId()));
 			
 			
-			request.unbind(entity, model, "code", "description", "assemblyNotes", "published",
+			request.unbind(entity, model, "code", "title", "description", "assemblyNotes", "published",
 				"optionalLink", "inventor.userAccount.username");
 			
 		}
