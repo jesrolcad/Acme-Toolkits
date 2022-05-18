@@ -1,10 +1,15 @@
 package acme.features.patron.patronage;
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.MoneyExchange;
 import acme.entities.Patronage;
+import acme.features.authenticated.moneyExchange.AuthenticatedMoneyExchangePerformService;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
+import acme.framework.datatypes.Money;
 import acme.framework.services.AbstractShowService;
 import acme.roles.Patron; 
  
@@ -41,6 +46,40 @@ public class PatronPatronageShowService implements AbstractShowService<Patron, P
 		result=this.repository.findPatronageById(id);
 		return result; 
 	} 
+	
+	
+	/* Método que realiza conversiones de divisas. Si la divisa del objeto money que se pasa como parámetro
+	 * es diferente de la divisa predeterminada de la configuración del sistema, entonces se obtiene o calcula 
+	 * la conversión. En caso contrario, no es necesario realizar una conversión, por lo que los Money fuente y destino +
+	 * son iguales. */
+	public MoneyExchange conversion(final Money money) {
+	
+		final AuthenticatedMoneyExchangePerformService moneyExchange = new AuthenticatedMoneyExchangePerformService();
+		
+		MoneyExchange conversion = new MoneyExchange();
+		
+		final String systemCurrency = this.repository.findSystemCurrency();
+
+		if(!money.getCurrency().equals(systemCurrency)) {
+			conversion = this.repository.findMoneyExchangeByCurrencyAndAmount(money.getCurrency(), money.getAmount());
+			
+			if(conversion == null) {
+				conversion = moneyExchange.computeMoneyExchange(money, systemCurrency);
+				this.repository.save(conversion);
+				
+			}
+			
+		}else {
+			conversion.setSource(money);
+			conversion.setTarget(money);
+			conversion.setCurrencyTarget(systemCurrency);
+			conversion.setDate(new Date(System.currentTimeMillis()));
+			
+		}
+		
+		return conversion;
+		
+	}
  
 	@Override 
 	public void unbind(final Request<Patronage> request, final Patronage entity, final Model model) { 
@@ -48,9 +87,13 @@ public class PatronPatronageShowService implements AbstractShowService<Patron, P
 		assert entity != null; 
 		assert model != null; 
 		 
-		request.unbind(entity, model, "code", "budget", "legalStuff", "link", "startDate","endDate","status","inventor.userAccount.username","inventor.company","inventor.link","inventor.statement");	 
 		model.setAttribute("confirmation", false); 
-		model.setAttribute("readonly", true); 
+		model.setAttribute("inventors", this.repository.allInventors());
+		model.setAttribute("conversion", this.conversion(entity.getBudget()).getTarget());
+		model.setAttribute("inventorId", entity.getInventor().getId());
+
+		request.unbind(entity, model, "code", "budget", "legalStuff", "link", "startDate","endDate","status","published","inventor.userAccount.username","inventor.company","inventor.link","inventor.statement");	 
+
 	} 
  
 } 

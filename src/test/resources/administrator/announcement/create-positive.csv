@@ -1,0 +1,10 @@
+recordIndex,title,body,info,critical,confirmation
+0,A This is a title,This is a body,http://www.example.com,true,true
+1,B This is a title,a,http://www.example.com,true,true
+2,C,This is a body,,true,true
+3,D aa,bb,,true,true
+4,EThis is a very long title. This is a very long title. This is a very long title. A very long title.,T,,true,true
+5,Ftitle,This is a very long body. This is a very long body. This is a very long body. This is a very long body. This is a very long body. This is a very long body. This is a very long body. This is a very long body. This is a very long body. This is a very long.,https://www.contadordecaracteres.com/,false,true
+6,GThis is a very long title. This is a very long title. This is a very long title. A very long title.,This is a very long body. This is a very long body. This is a very long body. This is a very long body. This is a very long body. This is a very long body. This is a very long body. This is a very long body. This is a very long body. This is a very long.,,false,true
+7,"H Este título contiene tildes y caracteres especiales ""@124;¿?!+-^*","Este cuerpo contiene tildes y caracteres especiales ""@124;¿?!+-^**ç",http://www.example.com,false,true
+8,I ¿?ç[[]],¿?ç[[]],https://www.fichajes.net/,false,true
