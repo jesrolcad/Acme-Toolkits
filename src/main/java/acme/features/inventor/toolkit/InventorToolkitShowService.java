@@ -70,7 +70,7 @@ public class InventorToolkitShowService implements AbstractShowService<Inventor,
 		
 		model.setAttribute("masterId", entity.getId());
 		
-		request.unbind(entity, model, "code", 
+		request.unbind(entity, model, "code","title", 
 			"description","assemblyNotes","published", "optionalLink", 
 			"inventor.userAccount.username","retailPrice");
 

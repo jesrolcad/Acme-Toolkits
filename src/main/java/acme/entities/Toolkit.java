@@ -36,6 +36,10 @@ public class Toolkit extends AbstractEntity {
 	protected String code;
 	
 	@NotBlank
+	@Length(max=100)
+	protected String title;
+	
+	@NotBlank
 	@Length(max=255)
 	protected String description;
  
