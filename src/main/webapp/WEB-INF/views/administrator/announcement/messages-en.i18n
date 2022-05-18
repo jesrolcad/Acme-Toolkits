@@ -1,0 +1,9 @@
+administrator.announcement.form.label.title = Title:
+administrator.announcement.form.label.body = Body:
+administrator.announcement.form.label.info = Info:
+administrator.announcement.form.label.critical = Critical
+administrator.announcement.form.label.confirmation = Confirm that the announcement is correct
+administrator.announcement.form.button.create = Create
+
+administrator.announcement.body.error = Length cannot exceed 255 characters
+administrator.announcement.confirmation.error = Please, mark the checkbox

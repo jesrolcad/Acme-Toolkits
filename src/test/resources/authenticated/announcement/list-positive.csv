@@ -1,0 +1,5 @@
+recordIndex,title,delta-days,body,info,critical
+0,Announcement 10,-4,This is the tenth announcement,https://es.wikipedia.org/wiki/Link,true
+1,Announcement 7,-1,This is the seventh announcement,https://es.wikipedia.org/wiki/Link,false
+2,Announcement 8,-2,This is the eighth announcement,https://es.wikipedia.org/wiki/Link,false
+3,Announcement 9,-3,This is the ninth announcement,,false

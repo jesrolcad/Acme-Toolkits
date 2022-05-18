@@ -16,7 +16,6 @@ anonymous.user-account.form.label.confirmation = Confirmation:
 anonymous.user-account.form.label.name = Name:
 anonymous.user-account.form.label.surname = Surname:
 anonymous.user-account.form.label.email = Email:
-anonymous.user-account.form.label.phone = Phone: (optional)
 anonymous.user-account.form.label.accept = I do accept the license
 
 anonymous.user-account.form.button.create = Sign up
