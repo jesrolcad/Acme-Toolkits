@@ -12,6 +12,7 @@ inventor.toolkit.form.label.optional-link = Link:
 inventor.toolkit.form.label.inventor = Inventor:
 inventor.toolkit.form.label.retailPrice = Retail Price:
 inventor.toolkit.form.button.items = Items
+inventor.toolkit.form.button.create.item = Create new Item
 inventor.toolkit.form.label.published = Published
 
 inventor.toolkit.form.button.delete = Delete

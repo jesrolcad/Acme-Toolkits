@@ -19,5 +19,17 @@ public interface InventorItemRepository extends AbstractRepository{
 	Inventor findInventorByUserAccountId(int id);
 	
 	@Query("select i from Item i where i.id = :id")
-	Item findItemlById(int id);
+	Item findItemById(int id);
+	
+	@Query("select i from Item i where i.code = :code")
+	Item findOneItemByCode(String code);
+	
+	@Query("select sc.acceptedCurrencies from SystemConfiguration sc")
+	String findAcceptedCurrencies();
+	
+	@Query("select i from Item i")
+	Collection<Item> findManyItems();
+	
+	@Query("select i from Item i where i.published = true and i not in (select q.item from Quantity q where q.toolkit.id = :toolkitId)")
+	Collection<Item> findAssignableItemsToToolkit(int toolkitId);
 } 

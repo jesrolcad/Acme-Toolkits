@@ -6,9 +6,13 @@
 <acme:form>
 	
 	<acme:input-textbox code="inventor.toolkit.form.label.code" path="code"/>	
-	<acme:input-textarea code="inventor.toolkit.form.label.description" path="description"/>	
-	<acme:input-textarea code="inventor.toolkit.form.label.assemblyNotes" path="assemblyNotes"/>
-	<acme:input-url code="inventor.toolkit.form.label.optional-link" path="optionalLink"/>	
+	<acme:input-textbox code="inventor.toolkit.form.label.description" path="description"/>	
+	<acme:input-textbox code="inventor.toolkit.form.label.assemblyNotes" path="assemblyNotes"/>
+	<acme:input-textbox code="inventor.toolkit.form.label.optional-link" path="optionalLink"/>	
+	<acme:input-textbox code="inventor.toolkit.form.label.published" path="published"/>	
+	<acme:input-textbox code="inventor.toolkit.form.label.retailPrice" path="retailPrice"/>
+	<acme:input-textbox code="inventor.toolkit.form.label.inventor" path="inventor.userAccount.username"/>
+	<acme:button code="inventor.toolkit.form.button.items" action="/inventor/quantity/list?masterId=${masterId}"/>
 	
 	<jstl:choose>
 	<jstl:when test="${command == 'show' && published == true}">
