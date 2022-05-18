@@ -52,6 +52,8 @@ public class InventorToolkitUpdateService implements AbstractUpdateService<Inven
 		assert request != null;
 		assert entity != null;
 		assert model != null;
+		
+		model.setAttribute("masterId", request.getModel().getInteger("masterId"));
 
 		request.unbind(entity, model,"code", 
 			"description","assemblyNotes","published", "optionalLink", 

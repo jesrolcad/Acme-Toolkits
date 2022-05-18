@@ -57,6 +57,8 @@ public class InventorToolkitPublishService implements AbstractUpdateService<Inve
 		assert request != null;
 		assert entity != null;
 		assert model != null;
+		
+		model.setAttribute("masterId", request.getModel().getInteger("masterId"));
 
 		request.unbind(entity, model,"code", 
 			"description","assemblyNotes","published", "optionalLink", 
@@ -66,7 +68,7 @@ public class InventorToolkitPublishService implements AbstractUpdateService<Inve
 
 	@Override
 	public Toolkit findOne(final Request<Toolkit> request) {
-assert request != null;
+		assert request != null;
 		
 		Toolkit result;
 		int id;
