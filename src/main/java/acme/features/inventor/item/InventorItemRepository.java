@@ -29,4 +29,7 @@ public interface InventorItemRepository extends AbstractRepository{
 	
 	@Query("select i from Item i")
 	Collection<Item> findManyItems();
+	
+	@Query("select i from Item i where i.published = true and i not in (select q.item from Quantity q where q.toolkit.id = :toolkitId)")
+	Collection<Item> findAssignableItemsToToolkit(int toolkitId);
 } 

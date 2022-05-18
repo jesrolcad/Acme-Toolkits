@@ -20,13 +20,23 @@
 				path="item.retailPrice" readonly="true" />
 			<acme:input-textbox code="inventor.item.form.label.optional-link"
 				path="item.optionalLink" readonly="true" />
+				
+			<jstl:if test="${item.published == true}">
+			<acme:input-textbox code="inventor.item.form.label.published"
+			path="published" />
+			</jstl:if>
 			<acme:input-textbox code="inventor.item.form.label.inventor"
 				path="item.inventor.userAccount.username" readonly="true" />
+				
+			<jstl:if test="${toolkitPublished == false}">
 			<acme:submit code="inventor.quantity.form.button.update"
 				action="/inventor/quantity/update" />
 			<acme:submit code="inventor.quantity.form.button.delete"
 				action="/inventor/quantity/delete" />
+			</jstl:if>
 		</jstl:when>
+		
+		
 		<jstl:when test="${command == 'create'}">
 			<acme:input-select code="inventor.quantity.form.label.item"
 				path="itemId">
