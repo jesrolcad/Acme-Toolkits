@@ -70,9 +70,11 @@ public class InventorToolkitShowService implements AbstractShowService<Inventor,
 		
 		model.setAttribute("masterId", entity.getId());
 		
+		model.setAttribute("retailPrice", this.retailPriceOfToolkit(entity.getId()));
+		
 		request.unbind(entity, model, "code","title", 
 			"description","assemblyNotes","published", "optionalLink", 
-			"inventor.userAccount.username","retailPrice");
+			"inventor.userAccount.username");
 
 	}
 
@@ -112,21 +114,30 @@ public class InventorToolkitShowService implements AbstractShowService<Inventor,
 	}
 
 	private Money retailPriceOfToolkit(final int toolkitid) {
-		final Money result = new Money();
+		Money result = new Money();
 		result.setAmount(0.0);
 		result.setCurrency("EUR");
 		
 		final Collection<Quantity> quantitis=this.repository.findQuantityByToolkitId(toolkitid);
+		final Toolkit toolkit = this.repository.findOneToolkitById(toolkitid);
 		
-		for(final Quantity quantity:quantitis) {
-			final Double conversionAmount;
-			final Money moneyOfItem = quantity.getItem().getRetailPrice();
-			final int numberOfItem = quantity.getNumber();
+		if(toolkit.getRetailPrice() == null) {
+		
+			for(final Quantity quantity:quantitis) {
+				final Double conversionAmount;
+				final Money moneyOfItem = quantity.getItem().getRetailPrice();
+				final int numberOfItem = quantity.getNumber();
+				
+				conversionAmount = this.conversion(moneyOfItem).getTarget().getAmount();
+				
+				final Double newAmount = (double) Math.round((result.getAmount() + conversionAmount*numberOfItem)*100)/100;
+				result.setAmount(newAmount);
+			}
 			
-			conversionAmount = this.conversion(moneyOfItem).getTarget().getAmount();
-			
-			final Double newAmount = (double) Math.round((result.getAmount() + conversionAmount*numberOfItem)*100)/100;
-			result.setAmount(newAmount);
+			toolkit.setRetailPrice(result);
+		
+		} else {
+			result = toolkit.getRetailPrice();
 		}
 		
 		return result;
