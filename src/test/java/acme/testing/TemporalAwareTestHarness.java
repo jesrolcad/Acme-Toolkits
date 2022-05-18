@@ -1,15 +1,3 @@
-/*
- * TemporalAwareTestHarness.java
- *
- * Copyright (C) 2012-2022 Rafael Corchuelo.
- *
- * In keeping with the traditional purpose of furthering education and research, it is
- * the policy of the copyright owner to permit non-commercial use and redistribution of
- * this software. It has been tested carefully, but it is not guaranteed for any particular
- * purposes. The copyright owner does not offer any warranties or representations, nor do
- * they accept any liabilities with respect to them.
- */
-
 package acme.testing;
 
 import java.text.SimpleDateFormat;
@@ -21,36 +9,57 @@ import org.junit.jupiter.api.BeforeAll;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.entities.Announcement;
+import acme.entities.Chirp;
 import acme.framework.helpers.FactoryHelper;
+import acme.testing.any.chirp.ChirpRepository;
 import acme.testing.authenticated.announcement.AnnouncementRepository;
+
 
 public class TemporalAwareTestHarness extends TestHarness {
 
 	// Lifecycle management ---------------------------------------------------
 
 	@Autowired
-	private AnnouncementRepository repository;
+	private ChirpRepository chirpRepository;
+
+	@Autowired
+	private AnnouncementRepository announcementRepository;
 	
 	@Override
 	@BeforeAll
 	public void beforeAll() {
 		super.beforeAll();
 		FactoryHelper.autowire(this);
+		this.patchChirps();
 		this.patchAnnouncements();
 	}
 
 	// Business methods -------------------------------------------------------
 
 
+	protected void patchChirps() {
+		Collection<Chirp> chirps;
+		Date moment;
+
+		chirps = this.chirpRepository.findChirpsToPatch();
+		for (final Chirp chirp : chirps) {
+			moment = this.adjustMoment(chirp.getMoment());
+			chirp.setMoment(moment);
+			this.chirpRepository.save(chirp);
+			
+		}
+		
+	}
+
 	protected void patchAnnouncements() {
 		Collection<Announcement> announcements;
 		Date moment;
 
-		announcements = this.repository.findAnnouncementsToPatch();
+		announcements = this.announcementRepository.findAnnouncementsToPatch();
 		for (final Announcement announcement : announcements) {
 			moment = this.adjustMoment(announcement.getMoment());
 			announcement.setMoment(moment);
-			this.repository.save(announcement);
+			this.announcementRepository.save(announcement);
 		}
 	}
 
@@ -103,3 +112,4 @@ public class TemporalAwareTestHarness extends TestHarness {
 	// Ancillary methods ------------------------------------------------------
 
 }
+

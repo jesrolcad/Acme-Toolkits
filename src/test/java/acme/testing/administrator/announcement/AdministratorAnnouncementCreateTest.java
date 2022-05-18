@@ -14,12 +14,12 @@ public class AdministratorAnnouncementCreateTest extends TestHarness{
 	@Order(10)
 	public void positiveTest(final int recordIndex, final String title, final String body, 
 		final String info, final String critical, final String confirmation) {
-		
-		
+
+
 		super.signIn("administrator", "administrator");
 
 		super.clickOnMenu("Administrator", "Create announcement");
-		
+
 		super.fillInputBoxIn("title", title);
 		super.fillInputBoxIn("body", body);
 		super.fillInputBoxIn("info", info);
@@ -34,7 +34,7 @@ public class AdministratorAnnouncementCreateTest extends TestHarness{
 		super.checkColumnHasValue(recordIndex, 2, body);
 		super.checkColumnHasValue(recordIndex, 3, critical);
 		super.clickOnListingRecord(recordIndex);
-		
+
 		super.checkFormExists();
 		super.checkInputBoxHasValue("title", title);
 		super.checkInputBoxHasValue("body", body);
@@ -44,19 +44,19 @@ public class AdministratorAnnouncementCreateTest extends TestHarness{
 
 		super.signOut();
 	}
-	
-	
+
+
 	@ParameterizedTest
 	@CsvFileSource(resources = "/administrator/announcement/create-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
 	public void negativeTest(final int recordIndex, final String title, final String body, 
 		final String info, final String critical, final String confirmation) {
-		
-		
+
+
 		super.signIn("administrator", "administrator");
 
 		super.clickOnMenu("Administrator", "Create announcement");
-		
+
 		super.fillInputBoxIn("title", title);
 		super.fillInputBoxIn("body", body);
 		super.fillInputBoxIn("info", info);
@@ -68,7 +68,7 @@ public class AdministratorAnnouncementCreateTest extends TestHarness{
 
 		super.signOut();
 	}
-	
+
 	@Test
 	@Order(30)
 	public void hackingTest() {
@@ -79,7 +79,7 @@ public class AdministratorAnnouncementCreateTest extends TestHarness{
 		super.navigate("/administrator/announcement/create");
 		super.checkPanicExists();
 		super.signOut();
-		
+
 		super.signIn("patron1", "patron1");
 		super.navigate("/administrator/announcement/create");
 		super.checkPanicExists();
