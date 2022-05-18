@@ -1,12 +1,13 @@
 package acme.testing.patron.patronage;
 
 import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
 import acme.testing.TestHarness;
 
-public class PatronPatronageListShowMineTest extends TestHarness{
+public class PatronPatronageShowTest extends TestHarness{
 	
 	@ParameterizedTest
 	@CsvFileSource(resources = "/patron/patronage/list.csv", encoding = "utf-8", numLinesToSkip = 1)
@@ -16,17 +17,9 @@ public class PatronPatronageListShowMineTest extends TestHarness{
 		
 		
 		super.signIn("patron1", "patron1");
-		//list
 		super.clickOnMenu("Patron", "List patronages");
 		super.checkListingExists();
 		super.sortListing(0, "asc");
-		super.checkColumnHasValue(recordIndex, 0, code);
-		super.checkColumnHasValue(recordIndex, 1, budget);
-		super.checkColumnHasValue(recordIndex, 2, start_date);
-		super.checkColumnHasValue(recordIndex, 3, end_date);
-		super.checkColumnHasValue(recordIndex, 4, status);
-		
-		//show
 		super.clickOnListingRecord(recordIndex);
 		super.checkFormExists();
 		super.checkInputBoxHasValue("code", code);
@@ -39,7 +32,13 @@ public class PatronPatronageListShowMineTest extends TestHarness{
 
 		super.signOut();
 	}
-
+	@Test
+	@Order(30)
+	public void hackingTest() {
+		super.checkNotLinkExists("Patron");
+		super.navigate("/patron/patronage/list");
+		super.checkPanicExists();
+	}
 	// Ancillary methods ------------------------------------------------------
 
 }
