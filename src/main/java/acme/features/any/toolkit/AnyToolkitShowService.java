@@ -57,7 +57,7 @@ public class AnyToolkitShowService implements AbstractShowService<Any, Toolkit>{
 			
 			model.setAttribute("inventor", entity.getInventor().getUserAccount().getUsername());
 			
-			request.unbind(entity, model, "code", "description", "assemblyNotes", "published",
+			request.unbind(entity, model, "code","title", "description", "assemblyNotes", "published",
 				"optionalLink", "retailPrice", "inventor.userAccount.username");
 			
 		}
