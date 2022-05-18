@@ -10,6 +10,7 @@ any.item.form.label.code = Código:
 any.item.form.label.technology = Tecnología:
 any.item.form.label.description = Descripción:
 any.item.form.label.retail-price = Precio de venta:
+inventor.patronage.form.label.conversion = Intercambio de moneda: 
 any.item.form.label.optional-link = Link:
 any.item.form.label.inventor = Inventor:
 any.item.form.label.published = Publicado:
