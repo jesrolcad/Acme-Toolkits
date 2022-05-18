@@ -28,3 +28,5 @@ inventor.patronage.form.label.username = Nombre de usuario del patrocinador
 inventor.patronage.form.label.company = Compañía del patrocinador
 inventor.patronage.form.label.patron-link = Enlace del patrocinador
 inventor.patronage.form.label.statement = Declaración del patrocinador
+
+inventor.patronage.form.button.update = Actualizar estado

@@ -15,7 +15,6 @@ public class InventorPatronageReportListShowMineTest extends TestHarness{
 		
 		
 		super.signIn("inventor1", "inventor1");
-		//list
 		super.clickOnMenu("Inventor", "Patronage reports");
 		super.checkListingExists();
 		super.sortListing(0, "asc");
