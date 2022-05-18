@@ -35,11 +35,7 @@ public class PatronPatronageListShowMineTest extends TestHarness{
 		super.checkInputBoxHasValue("legalStuff", legal_stuff);
 		super.checkInputBoxHasValue("budget", budget);
 		super.checkInputBoxHasValue("link", link);
-		super.checkInputBoxHasValue("status", status);
-		super.checkInputBoxHasValue("inventor.userAccount.username", inventor_username);
-		super.checkInputBoxHasValue("inventor.company", inventor_company);
-		super.checkInputBoxHasValue("inventor.link", inventor_link);
-		super.checkInputBoxHasValue("inventor.statement", inventor_statement);
+	
 
 		super.signOut();
 	}

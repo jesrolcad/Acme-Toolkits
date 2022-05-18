@@ -11,7 +11,7 @@
 authenticated.inventor.inventor.form.title.create = Hazte trabajador
 authenticated.inventor.inventor.form.title.update = Actualiza tus datos de trabajador
 
-authenticated.inventor.inventor.form.label.compañía = Compañía
+authenticated.inventor.inventor.form.label.company = Compañía
 authenticated.inventor.inventor.form.label.statement = Declaración
 authenticated.inventor.inventor.form.label.link = Enlace
 

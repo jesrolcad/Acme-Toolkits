@@ -59,7 +59,7 @@ public class InventorToolkitItemCreateService  implements AbstractCreateService<
 		assert entity != null; 
 		assert model != null; 
 		
-		final int masterId = Integer.valueOf((String) request.getModel().getAttribute("masterId"));
+		final int masterId = Integer.parseInt((String) request.getModel().getAttribute("masterId"));
 		model.setAttribute("masterId", masterId);
 		model.setAttribute("items", this.itemRepository.findAssignableItemsToToolkit(masterId));
 		request.unbind(entity, model, "number");
@@ -97,8 +97,6 @@ public class InventorToolkitItemCreateService  implements AbstractCreateService<
 			
 			
 		}
-		
-		// Si un item ya ha sido elegido en el selector, entonces no se puede añadir más (eso se haría en el update service)
 		
 
 	}
