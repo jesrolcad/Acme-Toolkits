@@ -13,6 +13,7 @@ inventor.item.form.label.code = Code:
 inventor.item.form.label.technology = Technology:
 inventor.item.form.label.description = Description:
 inventor.item.form.label.retail-price = Retail price:
+inventor.item.form.label.conversion = Money exchange:
 inventor.item.form.label.optional-link = Link:
 inventor.item.form.label.inventor = Inventor:
 inventor.item.form.label.published = Published:

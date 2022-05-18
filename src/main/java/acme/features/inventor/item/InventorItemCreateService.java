@@ -46,8 +46,9 @@ public class InventorItemCreateService implements AbstractCreateService<Inventor
 		assert request != null; 
 		assert entity != null; 
 		assert model != null; 
- 
-		request.unbind(entity, model, "tipo", "name", "code", "technology", "description", "retailPrice", "optionalLink", "inventor.userAccount.username", "published"); 
+	
+		
+		request.unbind(entity, model, "tipo", "name", "code", "technology", "description", "retailPrice", "optionalLink", "inventor.userAccount.username", "published");
 		 
 	} 
 	@Override
@@ -119,6 +120,8 @@ public class InventorItemCreateService implements AbstractCreateService<Inventor
 		 
 		entity.setInventor(this.repository.findInventorByUserAccountId(request.getPrincipal().getAccountId())); 
 		entity.setPublished(false); 
+		
+		
 		this.repository.save(entity); 
 		 
 		

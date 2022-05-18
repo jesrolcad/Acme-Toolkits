@@ -36,6 +36,9 @@ public interface InventorToolkitRepository extends AbstractRepository{
 	Integer findNumToolsOfToolkit(int toolkitId);
 	
 
+	@Query("select i from Toolkit i where i.code = :code")
+	Toolkit findOneToolkitByCode(String code);
+
 
  
 }
