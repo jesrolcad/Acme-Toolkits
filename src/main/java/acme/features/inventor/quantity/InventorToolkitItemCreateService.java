@@ -16,6 +16,7 @@ import acme.framework.services.AbstractCreateService;
 import acme.roles.Inventor;
 @Service
 public class InventorToolkitItemCreateService  implements AbstractCreateService<Inventor, Quantity>{
+	
 	@Autowired
 	protected InventorToolkitRepository toolkitRepository;
 
@@ -50,9 +51,9 @@ public class InventorToolkitItemCreateService  implements AbstractCreateService<
 		assert entity != null; 
 		assert model != null; 
 		
-		
-		model.setAttribute("masterId", request.getModel().getAttribute("masterId"));
-		model.setAttribute("items", this.itemRepository.findManyItems());
+		final int masterId = Integer.valueOf((String) request.getModel().getAttribute("masterId"));
+		model.setAttribute("masterId", masterId);
+		model.setAttribute("items", this.itemRepository.findAssignableItemsToToolkit(masterId));
 		request.unbind(entity, model, "number");
 	}
 	
