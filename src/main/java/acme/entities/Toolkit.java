@@ -35,9 +35,9 @@ public class Toolkit extends AbstractEntity {
 	@NotBlank
 	protected String code;
 	
-	@NotNull
-	protected boolean			spam;
-
+	@NotBlank
+	@Length(max=100)
+	protected String title;
 	
 	@NotBlank
 	@Length(max=255)
@@ -61,6 +61,9 @@ public class Toolkit extends AbstractEntity {
 	//derived attributes
 	@Valid
 	protected Money retailPrice;
+	
+	@Valid
+	protected boolean			spam;
 	
 	
 	
