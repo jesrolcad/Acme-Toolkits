@@ -50,6 +50,11 @@ public class InventorItemShowService implements AbstractShowService<Inventor, It
 		return result;
 	}
 	
+	
+	/* Método que realiza conversiones de divisas. Si la divisa del objeto money que se pasa como parámetro
+	 * es diferente de la divisa predeterminada de la configuración del sistema, entonces se obtiene o calcula 
+	 * la conversión. En caso contrario, no es necesario realizar una conversión, por lo que los Money fuente y destino +
+	 * son iguales. */
 	public MoneyExchange conversion(final Money money) {
 	
 		final AuthenticatedMoneyExchangePerformService moneyExchange = new AuthenticatedMoneyExchangePerformService();
@@ -57,20 +62,17 @@ public class InventorItemShowService implements AbstractShowService<Inventor, It
 		MoneyExchange conversion = new MoneyExchange();
 		
 		final String systemCurrency = this.repository.findSystemCurrency();
-		
+
 		if(!money.getCurrency().equals(systemCurrency)) {
-			System.out.println("La moneda del money NO coincide con la moneda del sistema");
 			conversion = this.repository.findMoneyExchangeByCurrencyAndAmount(money.getCurrency(), money.getAmount());
 			
 			if(conversion == null) {
-				System.out.println("No hay conversión en BD. Se realiza una llamada a la API");
 				conversion = moneyExchange.computeMoneyExchange(money, systemCurrency);
 				this.repository.save(conversion);
 				
 			}
 			
 		}else {
-			System.out.println("La moneda del money coincide con la del sistema. No se realiza llamada a la API");
 			conversion.setSource(money);
 			conversion.setTarget(money);
 			conversion.setCurrencyTarget(systemCurrency);
