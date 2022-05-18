@@ -1,14 +1,22 @@
 recordIndex,tipo,name,code,technology,retail-price
 0,COMPONENT,Component 7,ABK-312,Technology2,EUR 199.78
-1,COMPONENT,Component 2,AUK-312,Technology3,USD 0.01
-2,COMPONENT,Component 1,KBK-312,Technology2,EUR 0.01
-3,COMPONENT,Component 4,OIU-312,Technology2,EUR 180.00
-4,COMPONENT,Component 3,NBI-312-M,Technology1,GBP 0.10
-5,COMPONENT,Component 5,QWE-312-L,Technology3,"USD 1,900.27"
-6,TOOL,Tool 6,XYZ-312,Technology3,"USD 10,000.00"
-7,TOOL,Tool 8,ABI-312,Technology2,EUR 760.61
-8,TOOL,Vapormax,AAA-123-F,Technology1,EUR 150.00
-9,TOOL,Tool 3,ABD-999,Technology3,EUR 0.01
-10,TOOL,Tool 2,ABC-312-A,Technology2,EUR 0.00
-11,TOOL,Tool 5,ZZZ-312,Technology2,EUR 120.00
-12,TOOL,Tool 4,ABE-187,Technology1,USD 20.10
+1,COMPONENT,Component 14,HJD-312-Y,Technology1,EUR 10.00
+2,COMPONENT,Component Cuerpo,REX-001-T,Technology2,"EUR 50,000.00"
+3,COMPONENT,Component brazo,REX-003-T,Technology1,EUR 247.73
+4,COMPONENT,Component pierna,REX-005-P,Technology2,"EUR 6,500.73"
+5,COMPONENT,Component cola,REX-004-C,Technology3,"EUR 1,500.73"
+6,COMPONENT,Component 2,AUK-312,Technology3,USD 0.01
+7,COMPONENT,Component 1,KBK-312,Technology2,EUR 0.01
+8,COMPONENT,Component diente,REX-006-D,Technology2,EUR 249.95
+9,COMPONENT,Component 4,OIU-312,Technology2,EUR 180.00
+10,COMPONENT,Component 3,NBI-312-M,Technology1,GBP 0.10
+11,COMPONENT,Component 5,QWE-312-L,Technology3,"USD 1,900.27"
+12,TOOL,Vapormax,AAA-123-F,Technology1,EUR 150.00
+13,TOOL,Tool 3,ABD-999,Technology3,EUR 0.01
+14,TOOL,Tool 2,ABC-312-A,Technology2,EUR 0.00
+15,TOOL,Tool 12,ABK-312-W,Technology2,EUR 25.44
+16,TOOL,Tool 5,ZZZ-312,Technology2,EUR 120.00
+17,TOOL,Tool 4,ABE-187,Technology1,USD 20.10
+18,TOOL,Tool 6,XYZ-312,Technology3,"USD 10,000.00"
+19,TOOL,Tool Cabeza,REX-000-C,Technology3,"EUR 290,000.00"
+20,TOOL,Tool 8,ABI-312,Technology2,EUR 760.61
