@@ -14,11 +14,16 @@
 	<acme:input-textbox code="inventor.item.form.label.code" path="code" />
 	<acme:input-textbox code="inventor.item.form.label.technology"
 		path="technology" />
-	<acme:input-textbox code="inventor.item.form.label.description"
+	<acme:input-textarea code="inventor.item.form.label.description"
 		path="description" />
-	<acme:input-textbox code="inventor.item.form.label.retail-price"
+	<acme:input-money code="inventor.item.form.label.retail-price"
 		path="retailPrice" />
-	<acme:input-textbox code="inventor.item.form.label.optional-link"
+	
+	<jstl:if test="${command != 'create'}">
+	<acme:input-money code="inventor.item.form.label.conversion" path="conversion" readonly="true"/>
+	</jstl:if>
+	
+	<acme:input-url code="inventor.item.form.label.optional-link"
 		path="optionalLink" />
 		
 	<jstl:if test="${published == true}">

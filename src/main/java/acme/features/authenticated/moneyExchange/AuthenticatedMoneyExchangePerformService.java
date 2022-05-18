@@ -31,6 +31,8 @@ import acme.framework.services.AbstractPerformService;
 public class AuthenticatedMoneyExchangePerformService implements AbstractPerformService<Authenticated, MoneyExchange> {
 
 	// AbstractPerformService<Authenticated, ExchangeRecord> interface ---------
+	
+	
 
 	@Override
 	public boolean authorise(final Request<MoneyExchange> request) {
@@ -131,7 +133,7 @@ public class AuthenticatedMoneyExchangePerformService implements AbstractPerform
 			targetAmount = rate * sourceAmount;
 
 			target = new Money();
-			target.setAmount(targetAmount);
+			target.setAmount((double) Math.round(targetAmount*100)/100);
 			target.setCurrency(targetCurrency);
 
 			result = new MoneyExchange();
