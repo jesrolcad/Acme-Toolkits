@@ -75,7 +75,7 @@ public class AnyToolkitListPublishedService implements AbstractListService<Any, 
 			"%s; %s; %s; %s", //
 			bufferName.toString(),bufferCode.toString(),bufferDescription.toString(),bufferTechnology.toString());
 	
-		request.unbind(entity, model, "code", 
+		request.unbind(entity, model, "code","title", 
 			"description","assemblyNotes", "optionalLink", 
 			"published", "retailPrice");
 		

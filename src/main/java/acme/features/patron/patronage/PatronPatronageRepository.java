@@ -7,6 +7,7 @@ import java.util.List;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import acme.entities.MoneyExchange;
 import acme.entities.Patronage;
 import acme.entities.PatronageReport;
 import acme.entities.SystemConfiguration;
@@ -34,6 +35,14 @@ public interface PatronPatronageRepository extends AbstractRepository{
 	
 	@Query("SELECT p FROM Patronage p WHERE p.code LIKE :code")
 	Patronage findPatronageByCode(String code);
+	
+	@Query("select sc.systemCurrency from SystemConfiguration sc")
+	String findSystemCurrency();
+	
+	@Query("select me from MoneyExchange me where me.source.currency = :currency and me.source.amount = :amount")
+	MoneyExchange findMoneyExchangeByCurrencyAndAmount(String currency, Double amount);
+	
+	
 	@Query("select count(i) from Patronage i where i.inventor.id = 25")
 	int tests();	
 

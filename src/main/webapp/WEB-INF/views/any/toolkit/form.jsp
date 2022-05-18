@@ -5,7 +5,8 @@
 
 <acme:form>
 	
-	<acme:input-textbox code="any.toolkit.form.label.code" path="code"/>	
+	<acme:input-textbox code="any.toolkit.form.label.code" path="code"/>
+	<acme:input-textbox code="any.toolkit.form.label.title" path="title"/>	
 	<acme:input-textbox code="any.toolkit.form.label.description" path="description"/>	
 	<acme:input-textbox code="any.toolkit.form.label.assembly-notes" path="assemblyNotes"/>
 	<acme:input-textbox code="any.toolkit.form.label.optional-link" path="optionalLink"/>	

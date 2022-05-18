@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import acme.entities.Item;
+import acme.entities.MoneyExchange;
 import acme.entities.Quantity;
 import acme.entities.Toolkit;
 import acme.framework.repositories.AbstractRepository;
@@ -30,6 +31,9 @@ public interface AnyToolkitRepository extends AbstractRepository{
 		
 		@Query("select sc.systemCurrency from SystemConfiguration sc")
 		String findSystemCurrency();
+		
+		@Query("select me from MoneyExchange me where me.source.currency = :currency and me.source.amount = :amount")
+		MoneyExchange findMoneyExchangeByCurrencyAndAmount(String currency, Double amount);
 }
 
 
