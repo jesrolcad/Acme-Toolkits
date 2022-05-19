@@ -42,6 +42,7 @@ public class AnyToolkitShowService implements AbstractShowService<Any, Toolkit>{
 			
 			id = request.getModel().getInteger("id");
 			result = this.repository.findOneToolkitById(id);
+			result.setRetailPrice(this.retailPriceOfToolkit(id));
 			return result;
 		}
 		
@@ -79,31 +80,23 @@ public class AnyToolkitShowService implements AbstractShowService<Any, Toolkit>{
 		}
 
 		private Money retailPriceOfToolkit(final int toolkitid) {
-			Money result = new Money();
+			final Money result = new Money();
 			result.setAmount(0.0);
-			result.setCurrency("EUR");
+			result.setCurrency(this.repository.findSystemCurrency());
 			
-			final Collection<Quantity> quantitis=this.repository.findQuantityByToolkitId(toolkitid);
-			final Toolkit toolkit = this.repository.findOneToolkitById(toolkitid);
-			
-			if(toolkit.getRetailPrice() == null) {
-			
-				for(final Quantity quantity:quantitis) {
-					final Double conversionAmount;
-					final Money moneyOfItem = quantity.getItem().getRetailPrice();
-					final int numberOfItem = quantity.getNumber();
+			final Collection<Quantity> quantitis = this.repository.findQuantityByToolkitId(toolkitid);
 					
-					conversionAmount = this.conversion(moneyOfItem).getTarget().getAmount();
-					
-					final Double newAmount = (double) Math.round((result.getAmount() + conversionAmount*numberOfItem)*100)/100;
-					result.setAmount(newAmount);
+					for(final Quantity quantity:quantitis) {
+						final Double conversionAmount;
+						final Money moneyOfItem = quantity.getItem().getRetailPrice();
+						final int numberOfItem = quantity.getNumber();
+						
+						conversionAmount = this.conversion(moneyOfItem).getTarget().getAmount();
+						
+						final Double newAmount = (double) Math.round((result.getAmount() + conversionAmount*numberOfItem)*100)/100;
+						result.setAmount(newAmount);
 				}
-				
-				toolkit.setRetailPrice(result);
 			
-			} else {
-				result = toolkit.getRetailPrice();
-			}
 			
 			return result;
 
@@ -117,8 +110,7 @@ public class AnyToolkitShowService implements AbstractShowService<Any, Toolkit>{
 			
 			model.setAttribute("inventor", entity.getInventor().getUserAccount().getUsername());
 			
-			model.setAttribute("retailPrice", this.retailPriceOfToolkit(entity.getId()));
-			
+			model.setAttribute("retailPrice",entity.getRetailPrice());
 			
 			request.unbind(entity, model, "code", "title", "description", "assemblyNotes", "published",
 				"optionalLink", "inventor.userAccount.username");
