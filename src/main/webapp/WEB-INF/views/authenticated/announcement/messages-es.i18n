@@ -1,12 +1,14 @@
-authenticated.announcement.list.label.title = Titulo
+authenticated.announcement.list.label.title = Título
 authenticated.announcement.list.label.moment= Momento	
 authenticated.announcement.list.label.body = Cuerpo
 authenticated.announcement.list.label.info = Info	
-authenticated.announcement.list.label.critical = Critico
+authenticated.announcement.list.label.critical = Crítico
+
+administrator.announcement.list.button.create = Crear anuncio
 
 
-authenticated.announcement.form.label.title = Titulo
+authenticated.announcement.form.label.title = Título
 authenticated.announcement.form.label.moment= Momento	
 authenticated.announcement.form.label.body = Cuerpo
 authenticated.announcement.form.label.info = Info	
-authenticated.announcement.form.label.critical = Critico
+authenticated.announcement.form.label.critical = Crítico

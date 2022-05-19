@@ -16,7 +16,6 @@ anonymous.user-account.form.label.confirmation = Confirmación:
 anonymous.user-account.form.label.name = Nombre:
 anonymous.user-account.form.label.surname = Apellidos:
 anonymous.user-account.form.label.email = E-mail:
-anonymous.user-account.form.label.phone = Teléfono: (opcional)
 anonymous.user-account.form.label.accept = Acepto la licencia
 
 anonymous.user-account.form.button.create = Registrar
