@@ -1,25 +1,29 @@
 inventor.toolkit.list.label.code = Código
+inventor.toolkit.list.label.title= Titulo:
 inventor.toolkit.list.label.description = Descripción
 inventor.toolkit.list.label.assemblyNotes = Notas de montaje
 inventor.toolkit.list.label.optional-link = Link
 inventor.toolkit.list.label.inventor = Inventor
 
 inventor.toolkit.form.label.code = Código:
+inventor.toolkit.form.label.title = Titulo
 inventor.toolkit.form.label.description = Descripción:
 inventor.toolkit.form.label.assemblyNotes = Notas de montaje:
 inventor.toolkit.form.label.optional-link = Link:
 inventor.toolkit.form.label.retailPrice = Precio comercial:
 inventor.toolkit.form.label.inventor = Inventor:
 inventor.toolkit.form.button.items = Ítems
-inventor.toolkit.form.label.published = Publicado
+inventor.toolkit.form.label.published = Publicado:
 
 inventor.toolkit.form.button.delete= Eliminar
 inventor.toolkit.form.button.create = Crear
 inventor.toolkit.form.button.update = Actualizar
 inventor.toolkit.form.button.publish = Publicar
-
-inventor.toolkit.list.button.create =Crear
+inventor.toolkit.list.button.create = Crear
 
 inventor.toolkit.form.error.duplicated = Este codigo ya existe
 inventor.toolkit.form.error.no-items = No hay items asignados
 inventor.toolkit.form.error.no-items-published = Faltan items por publicar
+inventor.toolkit.form.error.no-components = No hay items componentes asignados
+inventor.toolkit.form.error.no-tools = No hay items tools asignados
+inventor.toolkit.form.error.only-one-tool = Hay mas de un item tool asignado, se requiere unicamente uno

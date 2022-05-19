@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.Item;
 import acme.entities.Quantity;
+import acme.entities.TipoDeItem;
 import acme.entities.Toolkit;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
@@ -46,7 +47,7 @@ public class InventorToolkitPublishService implements AbstractUpdateService<Inve
 		assert entity != null;
 		assert errors != null;
 
-		request.bind(entity, errors, "code", 
+		request.bind(entity, errors, "code","title", 
 			"description","assemblyNotes", "optionalLink", 
 			"inventor.userAccount.username","retailPrice");
 		
@@ -57,8 +58,10 @@ public class InventorToolkitPublishService implements AbstractUpdateService<Inve
 		assert request != null;
 		assert entity != null;
 		assert model != null;
+		
+		model.setAttribute("masterId", request.getModel().getInteger("masterId"));
 
-		request.unbind(entity, model,"code", 
+		request.unbind(entity, model,"code","title", 
 			"description","assemblyNotes","published", "optionalLink", 
 			"inventor.userAccount.username","retailPrice");
 		
@@ -66,7 +69,7 @@ public class InventorToolkitPublishService implements AbstractUpdateService<Inve
 
 	@Override
 	public Toolkit findOne(final Request<Toolkit> request) {
-assert request != null;
+		assert request != null;
 		
 		Toolkit result;
 		int id;
@@ -87,6 +90,8 @@ assert request != null;
 		final Collection<Quantity> quantities = this.repository.findQuantityByToolkitId(toolkitid);
 		final Collection<Item> items = new HashSet<Item>();
 		Boolean publishItem = true;
+		int cantidadTools=0;
+		int cantidadComponents=0;
 		
 		for(final Quantity quantity: quantities) {
 			final int id=quantity.getId();
@@ -97,8 +102,18 @@ assert request != null;
 		
 		for (final Item item : items) {
 			publishItem= publishItem && item.isPublished();
+			if (item.getTipo()==TipoDeItem.TOOL) {
+				cantidadTools=cantidadTools+1;
+			}else if (item.getTipo()==TipoDeItem.COMPONENT) {
+				cantidadComponents=cantidadComponents+1;
+			}
 		}
+		
+		
 		errors.state(request, publishItem==true, "*", "inventor.toolkit.form.error.no-items-published");
+		errors.state(request, cantidadComponents>0, "*", "inventor.toolkit.form.error.no-components");
+		errors.state(request, cantidadTools>0, "*", "inventor.toolkit.form.error.no-tools");
+		errors.state(request, cantidadTools<2, "*", "inventor.toolkit.form.error.only-one-tool");
 		
 	}
 

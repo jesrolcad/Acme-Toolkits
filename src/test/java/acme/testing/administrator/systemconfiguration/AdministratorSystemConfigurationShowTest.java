@@ -18,7 +18,9 @@ public class AdministratorSystemConfigurationShowTest extends TestHarness{
 		@Order(10)
 		public void positive(final int recordIndex, final String acceptedCurrencies, final String systemCurrency, 
 			final String strongSpamWords, final String strongSpamThreshold, 
-			final String weakSpamWords, final String weakSpamThreshold) {
+			final String weakSpamWords, final String weakSpamThreshold,
+			final String money_exchange_service_name, final String money_exchange_service_description,
+			final String money_exchange_service_link) {
 			
 			super.signIn("administrator", "administrator");
 
@@ -31,7 +33,11 @@ public class AdministratorSystemConfigurationShowTest extends TestHarness{
 			super.checkInputBoxHasValue("strongSpamThreshold", strongSpamThreshold);
 			super.checkInputBoxHasValue("weakSpamWords", weakSpamWords);
 			super.checkInputBoxHasValue("weakSpamThreshold", weakSpamThreshold);
-
+			
+			super.checkInputBoxHasValue("moneyExchangeServiceName", money_exchange_service_name);
+			super.checkInputBoxHasValue("moneyExchangeServiceDescription", money_exchange_service_description);
+			super.checkInputBoxHasValue("moneyExchangeServiceLink", money_exchange_service_link);
+			
 			super.signOut();
 		}
 		

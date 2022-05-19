@@ -16,10 +16,12 @@
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
 <acme:form>
-	<acme:input-textbox code="inventor.patronageReport.form.label.sequenceNumber" path="sequenceNumber"/>
-	<acme:input-moment code="inventor.patronageReport.form.label.creationMoment" path="creationMoment"/>
+	<acme:hidden-data  path="sequenceNumber" />
+	<acme:hidden-data  path="creationMoment" />
 	<acme:input-textbox code="inventor.patronageReport.form.label.memorandum" path="memorandum"/>
 	<acme:input-textbox code="inventor.patronageReport.form.label.link" path="link"/>
-
-
+	<jstl:if test="${command == 'create'}">
+		<acme:input-checkbox code="inventor.patronageReport.form.label.confirmation" path="confirmation"/>
+	</jstl:if>
+	<acme:submit test="${command == 'create'}" code="inventor.patronageReport.list.button.create" action="/inventor/patronage-report/create?patronageId=${patronageId}"/>
 </acme:form>

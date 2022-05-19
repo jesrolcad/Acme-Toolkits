@@ -9,7 +9,7 @@ import acme.testing.TestHarness;
 public class AnyUserAccountListEnabledTest extends TestHarness{
 	
 	@ParameterizedTest
-	@CsvFileSource(resources = "/any/user-account/list.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@CsvFileSource(resources = "/any/user-account/list-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
 	public void anonymousPositive(final int recordIndex, final String roles, 
 		final String username, final String name, final String surname, final String email) {
@@ -21,14 +21,6 @@ public class AnyUserAccountListEnabledTest extends TestHarness{
 		super.checkColumnHasValue(recordIndex, 0, roles);
 		super.checkColumnHasValue(recordIndex, 1, username);
 		super.checkColumnHasValue(recordIndex, 2, email);
-		
-
-		super.clickOnListingRecord(recordIndex);
-		super.checkFormExists();
-		super.checkInputBoxHasValue("username", username);
-		super.checkInputBoxHasValue("identity.name", name);
-		super.checkInputBoxHasValue("identity.surname", surname);
-		super.checkInputBoxHasValue("identity.email", email);
 
 	}
 	

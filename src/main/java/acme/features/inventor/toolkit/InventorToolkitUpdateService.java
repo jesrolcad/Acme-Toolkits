@@ -41,7 +41,7 @@ public class InventorToolkitUpdateService implements AbstractUpdateService<Inven
 		assert entity != null;
 		assert errors != null;
 
-		request.bind(entity, errors, "code", 
+		request.bind(entity, errors, "code","title", 
 			"description","assemblyNotes", "optionalLink", 
 			"inventor.userAccount.username","retailPrice");
 		
@@ -52,8 +52,10 @@ public class InventorToolkitUpdateService implements AbstractUpdateService<Inven
 		assert request != null;
 		assert entity != null;
 		assert model != null;
+		
+		model.setAttribute("masterId", request.getModel().getInteger("masterId"));
 
-		request.unbind(entity, model,"code", 
+		request.unbind(entity, model,"code","title", 
 			"description","assemblyNotes","published", "optionalLink", 
 			"inventor.userAccount.username","retailPrice");
 		

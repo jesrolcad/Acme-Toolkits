@@ -16,3 +16,7 @@ inventor.patronageReport.form.label.link = Link
 inventor.patronageReport.list.label.sequenceNumber = Sequence number
 inventor.patronageReport.list.label.creationMoment = Creation moment
 inventor.patronageReport.list.label.link = Link
+inventor.patronageReport.form.label.confirmation = Confirm
+inventor.patronageReport.list.button.create= Create
+patron.patronageReport.confirmation.error. = You have to confirm
+patron.patronageReport.confirmation.error = You have to confirm
