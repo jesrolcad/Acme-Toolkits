@@ -26,3 +26,6 @@ inventor.toolkit.list.button.create = Create
 inventor.toolkit.form.error.duplicated = This code already exists
 inventor.toolkit.form.error.no-items = No items assigned
 inventor.toolkit.form.error.no-items-published = Missing items to be published
+inventor.toolkit.form.error.no-components = No items components assigned
+inventor.toolkit.form.error.no-tools = No items tools assigned
+inventor.toolkit.form.error.only-one-tool = There is more than one item tool assigned, only one is required
