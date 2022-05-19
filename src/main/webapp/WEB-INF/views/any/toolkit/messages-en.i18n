@@ -1,10 +1,12 @@
 any.toolkit.list.label.code = Code
+any.toolkit.list.label.title = Title
 any.toolkit.list.label.description = Description
 any.toolkit.list.label.assembly-notes = Assembly Notes
 any.toolkit.list.label.optional-link = Link
 
 
 any.toolkit.form.label.code = Code:
+any.toolkit.form.label.title = Title:
 any.toolkit.form.label.description = Description:
 any.toolkit.form.label.assembly-notes = Assembly Notes:
 any.toolkit.form.label.optional-link = Link:

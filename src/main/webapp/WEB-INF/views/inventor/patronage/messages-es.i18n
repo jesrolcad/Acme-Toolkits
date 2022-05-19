@@ -10,6 +10,7 @@
 
 inventor.patronage.list.label.code= Código
 inventor.patronage.list.label.budget= Presupuesto
+inventor.patronage.form.label.conversion = Intercambio de moneda
 inventor.patronage.list.label.start_date= Fecha de inicio
 inventor.patronage.list.label.end_date= Fecha de fin
 inventor.patronage.list.label.legal_stuff = Cosas legales
@@ -28,3 +29,5 @@ inventor.patronage.form.label.username = Nombre de usuario del patrocinador
 inventor.patronage.form.label.company = Compañía del patrocinador
 inventor.patronage.form.label.patron-link = Enlace del patrocinador
 inventor.patronage.form.label.statement = Declaración del patrocinador
+
+inventor.patronage.form.button.update = Actualizar estado
