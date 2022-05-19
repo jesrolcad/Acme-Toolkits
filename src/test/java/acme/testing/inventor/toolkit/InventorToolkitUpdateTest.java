@@ -1,7 +1,6 @@
 package acme.testing.inventor.toolkit;
 
 import org.junit.jupiter.api.Order;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
@@ -45,7 +44,7 @@ public class InventorToolkitUpdateTest extends TestHarness{
 	@ParameterizedTest
 	@CsvFileSource(resources = "/inventor/toolkit/update-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(20)
-	public void negativeTest(final int recordIndex, final String code,final String title, final String description,
+	public void negativeTest1(final int recordIndex, final String code,final String title, final String description,
 		final String assemblynotes, final String link) {
 		super.signIn("inventor2", "inventor2");
 		super.clickOnMenu("Inventor", "List my toolkits");
@@ -63,24 +62,25 @@ public class InventorToolkitUpdateTest extends TestHarness{
 		super.checkErrorsExist();
 		super.signOut();
 	}
-	@Test
-	@Order(30)
-	public void hackingTest() {
-		super.checkNotLinkExists("Account");
-		super.navigate("/inventor/toolkit/list");
-		super.checkPanicExists();
+	@ParameterizedTest
+	@CsvFileSource(resources = "/inventor/toolkit/update-negative2.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@Order(20)
+	public void negativeTest2(final int recordIndex, final String code,final String title, final String description,
+		final String assemblynotes, final String link) {
+		super.signIn("inventor1", "inventor1");
+		super.clickOnMenu("Inventor", "List my toolkits");
+		super.checkListingExists();
+		super.sortListing(0, "asc");
+		super.clickOnListingRecord(recordIndex);
+		super.checkFormExists();
+		super.checkInputBoxHasValue("code", code);
+		super.checkInputBoxHasValue("title", title);
+		super.checkInputBoxHasValue("description", description);
+		super.checkInputBoxHasValue("assemblyNotes", assemblynotes);
+		super.checkInputBoxHasValue("optionalLink", link);
+		super.checkNotSubmitExists("Update");
 		
-		super.signIn("administrator", "administrator");
-		super.navigate("/inventor/toolkit/list");
-		super.checkPanicExists();
 		super.signOut();
-		
-		super.signIn("patron1", "patron1");
-		super.navigate("/inventor/toolkit/list");
-		super.checkPanicExists();
-		super.signOut();
-		
-		
 	}
 
 	// Ancillary methods ------------------------------------------------------
