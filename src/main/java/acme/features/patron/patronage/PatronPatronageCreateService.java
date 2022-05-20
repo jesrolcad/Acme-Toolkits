@@ -6,8 +6,10 @@ import org.apache.commons.lang3.time.DateUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.components.SpamFilter;
 import acme.entities.Patronage;
 import acme.entities.Status;
+import acme.features.administrator.systemconfiguration.AdministratorSystemConfigurationRepository;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
@@ -15,10 +17,11 @@ import acme.framework.services.AbstractCreateService;
 import acme.roles.Patron;
 @Service
 public class PatronPatronageCreateService  implements AbstractCreateService<Patron, Patronage>{
+	
 	@Autowired
 	protected PatronPatronageRepository repository;
-
-
+	@Autowired
+	protected AdministratorSystemConfigurationRepository scRepository;
 	@Override
 	public boolean authorise(final Request<Patronage> request) {
 		assert request != null;
@@ -72,7 +75,9 @@ public class PatronPatronageCreateService  implements AbstractCreateService<Patr
 		assert entity != null;
 		assert errors != null;
 		
-	
+		if (!errors.hasErrors("legalStuff")) {
+            errors.state(request, SpamFilter.spamValidator(entity.getLegalStuff(), this.scRepository.findWeakSpamWords(), this.scRepository.findStrongSpamWords(),this.scRepository.findWeakSpamThreshold(),this.scRepository.findStrongSpamThreshold()), "legalStuff", "form.error.spam");
+        }
 		if (!errors.hasErrors("code")) {
 			Patronage existing;
 			
