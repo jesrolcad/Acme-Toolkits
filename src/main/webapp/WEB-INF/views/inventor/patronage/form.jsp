@@ -39,6 +39,8 @@
 	<acme:input-textbox code="inventor.patronage.form.label.company" path="patron.company" readonly="true"/>
 	<acme:input-textbox code="inventor.patronage.form.label.patron-link" path="patron.link" readonly="true"/>
 	<acme:input-textbox code="inventor.patronage.form.label.statement" path="patron.statement" readonly="true"/>
+	<acme:button code="master.menu.patron.create-patronage-reports" action="/inventor/patronage-report/create?patronageId=${id}"/>
+
 
 	<acme:submit test="${command == 'show' && status == 'PROPOSED'}" code="inventor.patronage.form.button.update" action="/inventor/patronage/update"/>
 </acme:form>
