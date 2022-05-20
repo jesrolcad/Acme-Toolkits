@@ -2,6 +2,7 @@
 package acme.components;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -49,8 +50,8 @@ public class SpamFilter {
 		return count;
 	}
 	private static int wordsInText(final String text) {
-		final String[] parts = text.split(" ");
-		return parts.length;
+		String[] resultArray = Arrays.stream(text.split(",")).filter(e -> e.trim().length() > 0).toArray(String[]::new);
+		return resultArray.length;
 
 	}
 	private static String regexBuilder(final List<String> spamWords) {
