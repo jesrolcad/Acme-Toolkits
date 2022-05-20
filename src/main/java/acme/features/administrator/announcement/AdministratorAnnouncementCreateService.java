@@ -5,7 +5,9 @@ import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.components.SpamFilter;
 import acme.entities.Announcement;
+import acme.features.administrator.systemconfiguration.AdministratorSystemConfigurationRepository;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
@@ -16,7 +18,8 @@ import acme.framework.services.AbstractCreateService;
 public class AdministratorAnnouncementCreateService implements AbstractCreateService<Administrator, Announcement> {
 	
 	// Internal state ---------------------------------------------------------
-
+		@Autowired
+		protected AdministratorSystemConfigurationRepository scRepository;
 		@Autowired
 		protected AdministratorAnnouncementRepository repository;
 
@@ -73,6 +76,17 @@ public class AdministratorAnnouncementCreateService implements AbstractCreateSer
 		assert errors != null;
 		
 		boolean confirmation;
+		
+		if (!errors.hasErrors("title")) {
+            errors.state(request, SpamFilter.spamValidator(entity.getTitle(), this.scRepository.findWeakSpamWords(), this.scRepository.findStrongSpamWords(),this.scRepository.findWeakSpamThreshold(),this.scRepository.findStrongSpamThreshold()), "title", "form.error.spam");
+        }
+		if (!errors.hasErrors("body")) {
+            errors.state(request, SpamFilter.spamValidator(entity.getBody(), this.scRepository.findWeakSpamWords(), this.scRepository.findStrongSpamWords(),this.scRepository.findWeakSpamThreshold(),this.scRepository.findStrongSpamThreshold()), "body", "form.error.spam");
+        }
+		
+		if (!errors.hasErrors("info")) {
+            errors.state(request, SpamFilter.spamValidator(entity.getInfo(), this.scRepository.findWeakSpamWords(), this.scRepository.findStrongSpamWords(),this.scRepository.findWeakSpamThreshold(),this.scRepository.findStrongSpamThreshold()), "info", "form.error.spam");
+        }
 
 		confirmation = request.getModel().getBoolean("confirmation");
 		errors.state(request, confirmation, "confirmation", "administrator.announcement.confirmation.error");

@@ -5,7 +5,9 @@ import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.components.SpamFilter;
 import acme.entities.Chirp;
+import acme.features.administrator.systemconfiguration.AdministratorSystemConfigurationRepository;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
@@ -16,7 +18,8 @@ import acme.framework.services.AbstractCreateService;
 public class AnyChirpCreateService implements AbstractCreateService<Any, Chirp> {
 	
 	// Internal state ---------------------------------------------------------
-
+		@Autowired
+		protected AdministratorSystemConfigurationRepository scRepository;
 		@Autowired
 		protected AnyChirpRepository repository;
 
@@ -25,6 +28,7 @@ public class AnyChirpCreateService implements AbstractCreateService<Any, Chirp> 
 
 	@Override
 	public boolean authorise(final Request<Chirp> request) {
+		
 		assert request != null;
 
 		return true;
@@ -73,7 +77,18 @@ public class AnyChirpCreateService implements AbstractCreateService<Any, Chirp> 
 		assert errors != null;
 
 		boolean confirmation;
-
+		if (!errors.hasErrors("title")) {
+            errors.state(request, SpamFilter.spamValidator(entity.getTitle(), this.scRepository.findWeakSpamWords(), this.scRepository.findStrongSpamWords(),this.scRepository.findWeakSpamThreshold(),this.scRepository.findStrongSpamThreshold()), "title", "form.error.spam");
+        }
+		if (!errors.hasErrors("body")) {
+            errors.state(request, SpamFilter.spamValidator(entity.getBody(), this.scRepository.findWeakSpamWords(), this.scRepository.findStrongSpamWords(),this.scRepository.findWeakSpamThreshold(),this.scRepository.findStrongSpamThreshold()), "body", "form.error.spam");
+        }
+		if (!errors.hasErrors("author")) {
+            errors.state(request, SpamFilter.spamValidator(entity.getAuthor(), this.scRepository.findWeakSpamWords(), this.scRepository.findStrongSpamWords(),this.scRepository.findWeakSpamThreshold(),this.scRepository.findStrongSpamThreshold()), "author", "form.error.spam");
+        }
+		if (!errors.hasErrors("email")) {
+            errors.state(request, SpamFilter.spamValidator(entity.getAuthor(), this.scRepository.findWeakSpamWords(), this.scRepository.findStrongSpamWords(),this.scRepository.findWeakSpamThreshold(),this.scRepository.findStrongSpamThreshold()), "email", "form.error.spam");
+        }
 		confirmation = request.getModel().getBoolean("confirmation");
 		errors.state(request, confirmation, "confirmation", "any.Chirp.confirmation.error");
 		

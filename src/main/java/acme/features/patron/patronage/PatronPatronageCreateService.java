@@ -6,7 +6,6 @@ import org.apache.commons.lang3.time.DateUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.components.SpamFilter;
 import acme.entities.Patronage;
 import acme.entities.Status;
 import acme.features.administrator.systemconfiguration.AdministratorSystemConfigurationRepository;
@@ -74,9 +73,7 @@ public class PatronPatronageCreateService  implements AbstractCreateService<Patr
 		assert entity != null;
 		assert errors != null;
 		
-		if (!errors.hasErrors("legalStuff")) {
-            errors.state(request, SpamFilter.spamValidator(entity.getLegalStuff(), this.scRepository.findWeakSpamWords(), this.scRepository.findStrongSpamWords(),this.scRepository.findWeakSpamThreshold(),this.scRepository.findStrongSpamThreshold()), "legalStuff", "form.error.spam");
-        }
+
 		if (!errors.hasErrors("code")) {
 			Patronage existing;
 			
