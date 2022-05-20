@@ -13,6 +13,17 @@ inventor.item.form.label.code = Código:
 inventor.item.form.label.technology = Tecnología:
 inventor.item.form.label.description = Descripción:
 inventor.item.form.label.retail-price = Precio de venta:
+inventor.item.form.label.conversion = Intercambio de moneda:
 inventor.item.form.label.optional-link = Link:
 inventor.item.form.label.inventor = Inventor:
 inventor.item.form.label.published = Público:
+inventor.item.form.button.create = Crear
+inventor.item.list.button.create = Crear nuevo Ítem
+inventor.item.form.button.delete = Borrar
+inventor.item.form.button.update = Actualizar
+inventor.item.form.button.publish = Publicar
+
+inventor.item.form.error.duplicated = Este código ya existe
+inventor.item.form.error.retail-price-tool-zero-or-positive = El precio de venta de una herramienta debe ser 0 o positivo
+inventor.item.form.error.retail-price-component-positive = El precio de venta de un componente debe ser positivo
+inventor.item.form.error.retail-price-currency-not-accepted = La moneda no está aceptada

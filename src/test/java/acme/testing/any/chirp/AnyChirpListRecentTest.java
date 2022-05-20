@@ -4,18 +4,21 @@ import org.junit.jupiter.api.Order;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
-import acme.testing.TestHarness;
+import acme.testing.TemporalAwareTestHarness;
 
-public class AnyChirpListRecentTest extends TestHarness {
+public class AnyChirpListRecentTest extends TemporalAwareTestHarness {
 
 	// Lifecycle management ---------------------------------------------------
 
 	// Test cases -------------------------------------------------------------
 
 	@ParameterizedTest
-	@CsvFileSource(resources = "/any/chirp/chirp.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@CsvFileSource(resources = "/any/chirp/list-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
-	public void positive(final int recordIndex, final String title, final String author, final String moment, final String body, final String email) {
+	public void positive(final int recordIndex, final String title, final String author, final int deltaDays, final String body, final String email) {
+		
+		String moment;
+		moment = super.computeDeltaMoment(deltaDays);
 		super.clickOnMenu("Any", "List recent chirps");
 
 		super.checkListingExists();
