@@ -60,7 +60,7 @@ public class PatronPatronageUpdateService implements AbstractUpdateService<Patro
 	}
 
 	@Override
-	public void validate(Request<Patronage> request, Patronage entity, Errors errors) {
+	public void validate(final Request<Patronage> request, final Patronage entity, final Errors errors) {
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
@@ -69,23 +69,24 @@ public class PatronPatronageUpdateService implements AbstractUpdateService<Patro
 			Patronage existing;
 
 			existing = this.repository.findPatronageByCode(entity.getCode());
-			errors.state(request, existing != null||existing.getCode()==entity.getCode(), "code", "patron.patronage.form.error.duplicated");
-		}
+			if(existing!=null) {
+				errors.state(request, existing.getId()==entity.getId() , "code", "patron.patronage.form.error.duplicated");
+				}
+			}
 		if(!errors.hasErrors("startDate")) {
-			final Date minimumStartDate=DateUtils.addMonths(DateUtils.addMonths( new Date(System.currentTimeMillis() - 1),1), 1);
+			final Date minimumStartDate=DateUtils.addMonths(new Date(System.currentTimeMillis() - 1),1);
 
 			
 			errors.state(request,entity.getStartDate().after(minimumStartDate), "startDate", "patron.patronage.form.error.too-close-start-date");
 			
 		}
-		
 		if(!errors.hasErrors("endDate")) {
-			final Date minimumFinishDate=DateUtils.addMonths(entity.getStartDate(), 1);
+			final Date minimumFinishDate=(DateUtils.addDays(entity.getStartDate(), 28));
+			
 
 			errors.state(request,entity.getEndDate().after(minimumFinishDate), "endDate", "patron.patronage.form.error.one-month");
 			
 		}
-	
 		if (!errors.hasErrors("budget")) {
 			final String[] currencies=this.repository.findSystemConfiguration().getAcceptedCurrencies().split(",");
 
@@ -102,6 +103,7 @@ public class PatronPatronageUpdateService implements AbstractUpdateService<Patro
 		
 
 	}
+
 
 	@Override
 	public void unbind(final Request<Patronage> request, final Patronage entity, final Model model) {

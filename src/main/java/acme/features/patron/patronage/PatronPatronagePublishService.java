@@ -1,5 +1,8 @@
 package acme.features.patron.patronage;
 
+import java.util.Date;
+
+import org.apache.commons.lang3.time.DateUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -70,9 +73,24 @@ public class PatronPatronagePublishService implements AbstractUpdateService<Patr
 			Patronage existing;
 
 			existing = this.repository.findPatronageByCode(entity.getCode());
-			errors.state(request, existing != null||existing.getCode()==entity.getCode(), "code", "patron.patronage.form.error.duplicated");
+			if(existing==null) {
+				existing=entity;
+			}
+			errors.state(request, existing != null||entity.getCode()==existing.getCode(), "code", "patron.patronage.form.error.duplicated");
 		}
-	
+		if(!errors.hasErrors("startDate")) {
+			final Date minimumStartDate=DateUtils.addMonths(new Date(System.currentTimeMillis() - 1),1);
+
+			
+			errors.state(request,entity.getStartDate().after(minimumStartDate), "startDate", "patron.patronage.form.error.too-close-start-date");
+			
+		}
+		if(!errors.hasErrors("endDate")) {
+			final Date minimumFinishDate=DateUtils.addMonths(entity.getStartDate(), 1);
+
+			errors.state(request,entity.getEndDate().after(minimumFinishDate), "endDate", "patron.patronage.form.error.one-month");
+			
+		}
 		if (!errors.hasErrors("budget")) {
 			final String[] currencies=this.repository.findSystemConfiguration().getAcceptedCurrencies().split(",");
 
@@ -89,6 +107,8 @@ public class PatronPatronagePublishService implements AbstractUpdateService<Patr
 		
 
 	}
+
+
 	@Override
 	public void unbind(final Request<Patronage> request, final Patronage entity, final Model model) {
 		assert request != null;

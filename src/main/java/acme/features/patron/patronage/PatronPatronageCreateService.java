@@ -20,13 +20,13 @@ public class PatronPatronageCreateService  implements AbstractCreateService<Patr
 
 
 	@Override
-	public boolean authorise(Request<Patronage> request) {
+	public boolean authorise(final Request<Patronage> request) {
 		assert request != null;
 		return true;
 	}
 
 	@Override
-	public void bind(Request<Patronage> request, Patronage entity, Errors errors) {
+	public void bind(final Request<Patronage> request, final Patronage entity, final Errors errors) {
 
 		assert request != null;
 		assert entity != null;
@@ -45,7 +45,7 @@ public class PatronPatronageCreateService  implements AbstractCreateService<Patr
 	}	
 
 	@Override
-	public void unbind(Request<Patronage> request, Patronage entity, Model model) {
+	public void unbind(final Request<Patronage> request, final Patronage entity, final Model model) {
 
 		assert request != null; 
 		assert entity != null; 
@@ -58,13 +58,13 @@ public class PatronPatronageCreateService  implements AbstractCreateService<Patr
 
 
 	@Override
-	public Patronage instantiate(Request<Patronage> request) {
+	public Patronage instantiate(final Request<Patronage> request) {
 		assert request != null;
-		Patronage result = new Patronage();
+		final Patronage result = new Patronage();
 
 		result.setLegalStuff("");
-		result.setStartDate(DateUtils.addMonths( new Date(System.currentTimeMillis() - 1),6));
-		result.setEndDate(DateUtils.addMonths( DateUtils.addMonths( new Date(System.currentTimeMillis() - 1),1),8));
+//		result.setStartDate(DateUtils.addMonths( new Date(System.currentTimeMillis() - 1),6));
+//		result.setEndDate(DateUtils.addMonths( new Date(System.currentTimeMillis() - 1),8));
 		result.setPatron(this.repository.findPatronByUserAccountId(request.getPrincipal().getAccountId()));
 
 		
@@ -72,34 +72,32 @@ public class PatronPatronageCreateService  implements AbstractCreateService<Patr
 	}
 
 	@Override
-	public void validate(Request<Patronage> request, Patronage entity, Errors errors) {
+	public void validate(final Request<Patronage> request, final Patronage entity, final Errors errors) {
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
 		
+
 		 if(entity.getInventor()==null) {
 	            errors.state(request, entity.getInventor() != null, "inventorId", "patron.patronage.form.error.noInventor");
 	        }
-//		if (!errors.hasErrors("inventorId")) {
-//			errors.state(request, this.repository.allInventors()!=null, "inventorId", "patron.patronage.form.error.inventorId");
-//
-//		}
-//		
 		if (!errors.hasErrors("code")) {
 			Patronage existing;
-
+			
 			existing = this.repository.findPatronageByCode(entity.getCode());
+			
 			errors.state(request, existing == null, "code", "patron.patronage.form.error.duplicated");
 		}
 		if(!errors.hasErrors("startDate")) {
-			final Date minimumStartDate=DateUtils.addMonths(DateUtils.addMonths( new Date(System.currentTimeMillis() - 1),1), 1);
+			final Date minimumStartDate=DateUtils.addMonths(new Date(System.currentTimeMillis() - 1),1);
 
 			
 			errors.state(request,entity.getStartDate().after(minimumStartDate), "startDate", "patron.patronage.form.error.too-close-start-date");
 			
 		}
 		if(!errors.hasErrors("endDate")) {
-			final Date minimumFinishDate=DateUtils.addMonths(entity.getStartDate(), 1);
+			final Date minimumFinishDate=(DateUtils.addDays(entity.getStartDate(), 28));
+			
 
 			errors.state(request,entity.getEndDate().after(minimumFinishDate), "endDate", "patron.patronage.form.error.one-month");
 			
@@ -121,8 +119,10 @@ public class PatronPatronageCreateService  implements AbstractCreateService<Patr
 
 	}
 
+
+
 	@Override
-	public void create(Request<Patronage> request, Patronage entity) {
+	public void create(final Request<Patronage> request, final Patronage entity) {
 		assert request != null;
 		assert entity != null;		
 		this.repository.save(entity);
