@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.Item;
 import acme.entities.Quantity;
+import acme.entities.TipoDeItem;
 import acme.entities.Toolkit;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
@@ -89,6 +90,8 @@ public class InventorToolkitPublishService implements AbstractUpdateService<Inve
 		final Collection<Quantity> quantities = this.repository.findQuantityByToolkitId(toolkitid);
 		final Collection<Item> items = new HashSet<Item>();
 		Boolean publishItem = true;
+		int cantidadTools=0;
+		int cantidadComponents=0;
 		
 		for(final Quantity quantity: quantities) {
 			final int id=quantity.getId();
@@ -99,8 +102,18 @@ public class InventorToolkitPublishService implements AbstractUpdateService<Inve
 		
 		for (final Item item : items) {
 			publishItem= publishItem && item.isPublished();
+			if (item.getTipo()==TipoDeItem.TOOL) {
+				cantidadTools=cantidadTools+1;
+			}else if (item.getTipo()==TipoDeItem.COMPONENT) {
+				cantidadComponents=cantidadComponents+1;
+			}
 		}
+		
+		
 		errors.state(request, publishItem==true, "*", "inventor.toolkit.form.error.no-items-published");
+		errors.state(request, cantidadComponents>0, "*", "inventor.toolkit.form.error.no-components");
+		errors.state(request, cantidadTools>0, "*", "inventor.toolkit.form.error.no-tools");
+		errors.state(request, cantidadTools<2, "*", "inventor.toolkit.form.error.only-one-tool");
 		
 	}
 

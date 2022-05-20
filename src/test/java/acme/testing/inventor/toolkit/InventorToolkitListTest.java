@@ -12,8 +12,8 @@ public class InventorToolkitListTest extends TestHarness{
 	@ParameterizedTest
 	@CsvFileSource(resources = "/inventor/toolkit/list-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
-	public void positiveItem(final int recordIndex, final String code, final String description,
-		final String assemblynotes, final String link,final String published, final String inventor) {
+	public void positiveItem(final int recordIndex, final String code,final String title, final String description,
+		final String assemblynotes) {
 		
 		
 		super.signIn("inventor1", "inventor1");
@@ -22,8 +22,9 @@ public class InventorToolkitListTest extends TestHarness{
 		super.checkListingExists();
 		super.sortListing(0, "asc");
 		super.checkColumnHasValue(recordIndex, 0, code);
-		super.checkColumnHasValue(recordIndex, 1, description);
-		super.checkColumnHasValue(recordIndex, 2, assemblynotes);
+		super.checkColumnHasValue(recordIndex, 1, title);
+		super.checkColumnHasValue(recordIndex, 2, description);
+		super.checkColumnHasValue(recordIndex, 3, assemblynotes);
 		
 
 		super.signOut();

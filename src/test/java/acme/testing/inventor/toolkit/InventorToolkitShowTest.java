@@ -12,8 +12,8 @@ public class InventorToolkitShowTest extends TestHarness{
 	@ParameterizedTest
 	@CsvFileSource(resources = "/inventor/toolkit/show-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
-	public void positiveItem(final int recordIndex, final String code, final String description,
-		final String assemblynotes, final String link,final String published, final String inventor) {
+	public void positiveItem(final int recordIndex, final String code,final String title, final String description,
+		final String assemblynotes, final String link) {
 		
 		
 		super.signIn("inventor1", "inventor1");
