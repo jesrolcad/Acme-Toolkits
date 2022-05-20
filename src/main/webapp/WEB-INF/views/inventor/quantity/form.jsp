@@ -8,6 +8,8 @@
 		path="number" />
 	<jstl:choose>
 		<jstl:when test="${acme:anyOf(command, 'show, update, delete')}">
+			<acme:input-textbox code="inventor.item.form.label.tipo" 
+				path="item.tipo" readonly="true"/>
 			<acme:input-textbox code="inventor.item.form.label.name"
 				path="item.name" readonly="true" />
 			<acme:input-textbox code="inventor.item.form.label.code"
