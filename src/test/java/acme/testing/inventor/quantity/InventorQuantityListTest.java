@@ -11,7 +11,7 @@ public class InventorQuantityListTest extends TestHarness{
 	@ParameterizedTest
 	@CsvFileSource(resources = "/inventor/quantity/list-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
-	public void positiveTest(final int toolkitRecordIndex, final String toolkitCode, final int quantityRecordIndex, final String type, final String name, final String itemCode, final String technology, final String retailPrice, final String quantity) {
+	public void positiveTest(final int toolkitRecordIndex, final String toolkitCode, final int quantityRecordIndex, final String type, final String name, final String retailPrice, final String quantity) {
 		super.signIn("inventor1", "inventor1");
 
 		super.clickOnMenu("Inventor", "List my toolkits");
@@ -24,13 +24,11 @@ public class InventorQuantityListTest extends TestHarness{
 		super.clickOnButton("Items");
 
 		super.checkListingExists();
-		super.sortListing(5, "asc");
+		super.sortListing(3, "asc");
 		super.checkColumnHasValue(quantityRecordIndex, 0, type);
 		super.checkColumnHasValue(quantityRecordIndex, 1, name);
-		super.checkColumnHasValue(quantityRecordIndex, 2, itemCode);
-		super.checkColumnHasValue(quantityRecordIndex, 3, technology);
-		super.checkColumnHasValue(quantityRecordIndex, 4, retailPrice);
-		super.checkColumnHasValue(quantityRecordIndex, 5, quantity);
+		super.checkColumnHasValue(quantityRecordIndex, 2, retailPrice);
+		super.checkColumnHasValue(quantityRecordIndex, 3, quantity);
 		super.clickOnListingRecord(quantityRecordIndex);
 	
 		super.signOut();

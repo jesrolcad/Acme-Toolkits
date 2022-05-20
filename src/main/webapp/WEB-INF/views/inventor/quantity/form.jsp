@@ -9,18 +9,27 @@
 		
 			<acme:input-integer code="inventor.quantity.form.label.number"
 			path="number"/>
+			
 			<acme:input-textbox code="inventor.item.form.label.tipo" 
 				path="item.tipo" readonly="true"/>
+				
 			<acme:input-textbox code="inventor.item.form.label.name"
 				path="item.name" readonly="true"/>
+				
+			<acme:input-textbox code="inventor.quantity.item.form.label.code" 
+				path="item.code" readonly="true"/>
+				
 			<acme:input-money code="inventor.item.form.label.retail-price"
 				path="item.retailPrice" readonly="true" />
 			<jstl:if test="${differentCurrency == true}">
 				<acme:input-money code="inventor.item.form.label.conversion"
 				 path="conversion" readonly="true"/>
 			 </jstl:if>
-			<acme:input-url code="inventor.item.form.label.optional-link"
-				path="item.optionalLink" readonly="true" />
+			
+			<acme:input-textbox code="inventor.quantity.toolkit.form.label.code" 
+				path="toolkit.code" readonly="true"/>
+				
+				
 				
 			</jstl:if>
 				

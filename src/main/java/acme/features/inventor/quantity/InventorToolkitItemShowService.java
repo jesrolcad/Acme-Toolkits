@@ -108,7 +108,7 @@ public class InventorToolkitItemShowService implements AbstractShowService<Inven
 		model.setAttribute("differentCurrency", differentCurrency);
 		model.setAttribute("conversion", this.conversion(entity.getItem().getRetailPrice()).getTarget());
 
-		request.unbind(entity, model, "number", "item.tipo", "item.name", "item.retailPrice");
+		request.unbind(entity, model, "number", "toolkit.code", "item.tipo", "item.name", "item.code", "item.retailPrice");
 
 	}
 }

@@ -6,8 +6,6 @@
 <acme:list>
 	<acme:list-column code="inventor.quantity.item.list.label.tipo" path="item.tipo" width="20%"/>
 	<acme:list-column code="inventor.quantity.item.list.label.name" path="item.name" width="20%"/>
-	<acme:list-column code="inventor.quantity.item.list.label.code" path="item.code" width="20%"/>	
-	<acme:list-column code="inventor.quantity.item.list.label.technology" path="item.technology" width="20%"/>
 	<acme:list-column code="inventor.quantity.item.list.label.retail-price" path="item.retailPrice" width="20%"/>
 	<acme:list-column code="inventor.quantity.item.list.label.number" path="number" width="20%"/>
 	
