@@ -92,8 +92,6 @@ public class InventorItemShowService implements AbstractShowService<Inventor, It
 		
 		final MoneyExchange conversion = this.conversion(entity.getRetailPrice());
 		model.setAttribute("conversion", conversion.getTarget());
-		System.out.println(conversion.getSource());
-		System.out.println(conversion.getTarget());
 		request.unbind(entity, model, "tipo", "name", "code", "technology", "description", "retailPrice", "optionalLink", "inventor.userAccount.username", "published");
 
 	}

@@ -59,7 +59,10 @@ public class InventorToolkitItemUpdateService implements AbstractUpdateService<I
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "number", "item.tipo", "item.name", "item.code", "item.technology", "item.description", "item.retailPrice", "item.optionalLink", "item.inventor.userAccount.username","item.published");
+		model.setAttribute("toolkitPublished", entity.getToolkit().isPublished());
+		
+		request.unbind(entity, model, "number", "item.tipo", "item.name", "item.code", "item.technology",
+			"item.description", "item.retailPrice", "item.optionalLink", "item.inventor.userAccount.username","item.published");
 		
 	}
 

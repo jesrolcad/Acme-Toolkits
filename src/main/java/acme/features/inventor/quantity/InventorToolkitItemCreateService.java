@@ -44,9 +44,16 @@ public class InventorToolkitItemCreateService  implements AbstractCreateService<
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-
+		
+		if(this.itemRepository.findAssignableItemsToToolkit(entity.getToolkit().getId()).isEmpty()) {
+			request.bind(entity, errors, "number");
+		} else {
+			
 			entity.setItem(this.itemRepository.findItemById(Integer.valueOf(request.getModel().getAttribute("itemId").toString())));
 			request.bind(entity, errors, "number","itemId");
+			
+		}
+
 			
 	}	
 	
@@ -87,12 +94,14 @@ public class InventorToolkitItemCreateService  implements AbstractCreateService<
 		assert entity != null;
 		assert errors != null;
 		
-		// Una toolkit no puede tener más de una tool asociada
-		if(!errors.hasErrors("items")) {
+		if(entity.getItem()==null) {
+			
+			errors.state(request, entity.getItem()!=null, "itemId", "inventor.quantity.form.error.null-item");
+			
+		} else {
 			final Item selectedItem = this.itemRepository.findItemById(Integer.valueOf(request.getModel().getAttribute("itemId").toString()));
-			if(selectedItem.getTipo().equals(TipoDeItem.TOOL)) {
-				final Integer numTools = this.toolkitRepository.findNumToolsOfToolkit(entity.getToolkit().getId());
-				errors.state(request, numTools == 0, "*", "inventor.quantity.form.error.toolkit-has-tool");
+			 if(selectedItem.getTipo().equals(TipoDeItem.TOOL)) {
+				errors.state(request, entity.getNumber() == 1, "number", "inventor.quantity.form.error.toolkit-one-quantity-tool");
 			}
 			
 			

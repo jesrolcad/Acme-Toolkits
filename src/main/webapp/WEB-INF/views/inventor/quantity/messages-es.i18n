@@ -13,4 +13,5 @@ inventor.quantity.form.button.create = Añadir
 inventor.quantity.form.button.update = Actualizar
 inventor.quantity.form.button.delete = Borrar
 
-inventor.quantity.form.error.toolkit-has-tool = Este kit ya tiene una herramienta asignada
+inventor.quantity.form.error.toolkit-one-quantity-tool = Solo puede seleccionar una unidad para una herramienta
+inventor.quantity.form.error.null-item = Por favor, selecciona un ítem
