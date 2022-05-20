@@ -44,39 +44,6 @@ public class InventorToolkitShowService implements AbstractShowService<Inventor,
 
 		return res;
 	}
-
-	@Override
-	public Toolkit findOne(final Request<Toolkit> request) {
-		assert request != null;
-
-		Toolkit result;
-		int id;
-		
-		id = request.getModel().getInteger("id");
-		result = this.repository.findOneToolkitById(id);
-		
-		result.setRetailPrice(this.retailPriceOfToolkit(id));
-		
-		
-		
-		return result;
-	}
-
-	@Override
-	public void unbind(final Request<Toolkit> request, final Toolkit entity, final Model model) {
-		assert request != null;
-		assert entity != null;
-		assert model != null;
-		
-		model.setAttribute("masterId", entity.getId());
-		
-		request.unbind(entity, model, "code","title", 
-			"description","assemblyNotes","published", "optionalLink", 
-			"inventor.userAccount.username","retailPrice");
-
-	}
-
-	//Metodos adicionales
 	
 	/* Método que realiza conversiones de divisas. Si la divisa del objeto money que se pasa como parámetro
 	 * es diferente de la divisa predeterminada de la configuración del sistema, entonces se obtiene o calcula 
@@ -114,23 +81,62 @@ public class InventorToolkitShowService implements AbstractShowService<Inventor,
 	private Money retailPriceOfToolkit(final int toolkitid) {
 		final Money result = new Money();
 		result.setAmount(0.0);
-		result.setCurrency("EUR");
+		result.setCurrency(this.repository.findSystemCurrency());
 		
-		final Collection<Quantity> quantitis=this.repository.findQuantityByToolkitId(toolkitid);
+		final Collection<Quantity> quantitis = this.repository.findQuantityByToolkitId(toolkitid);
+				
+				for(final Quantity quantity:quantitis) {
+					final Double conversionAmount;
+					final Money moneyOfItem = quantity.getItem().getRetailPrice();
+					final int numberOfItem = quantity.getNumber();
+					
+					conversionAmount = this.conversion(moneyOfItem).getTarget().getAmount();
+					
+					final Double newAmount = (double) Math.round((result.getAmount() + conversionAmount*numberOfItem)*100)/100;
+					result.setAmount(newAmount);
+			}
 		
-		for(final Quantity quantity:quantitis) {
-			final Double conversionAmount;
-			final Money moneyOfItem = quantity.getItem().getRetailPrice();
-			final int numberOfItem = quantity.getNumber();
-			
-			conversionAmount = this.conversion(moneyOfItem).getTarget().getAmount();
-			
-			final Double newAmount = (double) Math.round((result.getAmount() + conversionAmount*numberOfItem)*100)/100;
-			result.setAmount(newAmount);
-		}
 		
 		return result;
 
 	}
+
+	@Override
+	public void unbind(final Request<Toolkit> request, final Toolkit entity, final Model model) {
+		assert request != null;
+		assert entity != null;
+		assert model != null;
+		
+		model.setAttribute("masterId", entity.getId());
+		
+		model.setAttribute("retailPrice",entity.getRetailPrice());
+		
+		request.unbind(entity, model, "code","title", 
+			"description","assemblyNotes","published", "optionalLink", 
+			"inventor.userAccount.username", "retailPrice");
+
+	}
+
+	@Override
+	public Toolkit findOne(final Request<Toolkit> request) {
+		assert request != null;
+
+		Toolkit result;
+		int id;
+		
+		id = request.getModel().getInteger("id");
+		result = this.repository.findOneToolkitById(id);
+		
+		result.setRetailPrice(this.retailPriceOfToolkit(id));
+		
+		return result;
+	}
+
+	
+	
+
+	//Metodos adicionales
+	
+	
 
 }

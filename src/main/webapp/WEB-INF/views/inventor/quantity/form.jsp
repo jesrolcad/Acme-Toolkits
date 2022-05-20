@@ -16,8 +16,10 @@
 				path="item.technology" readonly="true" />
 			<acme:input-textbox code="inventor.item.form.label.description"
 				path="item.description" readonly="true" />
-			<acme:input-textbox code="inventor.item.form.label.retail-price"
+			<acme:input-money code="inventor.item.form.label.retail-price"
 				path="item.retailPrice" readonly="true" />
+			<acme:input-money code="inventor.item.form.label.conversion"
+			 path="conversion" readonly="true"/>
 			<acme:input-textbox code="inventor.item.form.label.optional-link"
 				path="item.optionalLink" readonly="true" />
 				

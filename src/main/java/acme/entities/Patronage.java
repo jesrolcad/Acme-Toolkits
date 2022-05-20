@@ -71,7 +71,6 @@ public class Patronage extends AbstractEntity {
 	
 	@Temporal(TemporalType.TIMESTAMP)
 	@NotNull
-
 	protected Date				endDate;
 	
 	@URL
