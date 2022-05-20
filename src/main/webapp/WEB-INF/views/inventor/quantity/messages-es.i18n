@@ -5,7 +5,7 @@ inventor.quantity.item.list.label.technology = Tecnología
 inventor.quantity.item.list.label.retail-price = Precio de venta
 inventor.quantity.item.list.label.number = Cantidad
 
-inventor.quantity.form.label.number  = Cantidad
+inventor.quantity.form.label.number  = Cantidad:
 inventor.quantity.form.label.item = Selecciona un ítem
 
 inventor.quantity.form.button.add = Añadir nuevo ítem
