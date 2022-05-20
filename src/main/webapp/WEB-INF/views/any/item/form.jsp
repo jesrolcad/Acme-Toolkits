@@ -13,7 +13,9 @@
 	<acme:input-textbox code="any.item.form.label.technology" path="technology"/>
 	<acme:input-textarea code="any.item.form.label.description" path="description"/>	
 	<acme:input-money code="any.item.form.label.retail-price" path="retailPrice"/>
-	<acme:input-money code="any.item.form.label.conversion" path="conversion" readonly="true"/>
+	<jstl:if test="${differentCurrency == true}">
+		<acme:input-money code="any.item.form.label.conversion" path="conversion" readonly="true"/>
+	</jstl:if>
 	<acme:input-url code="any.item.form.label.optional-link" path="optionalLink"/>	
 	<acme:input-textbox code="any.item.form.label.inventor" path="inventor.userAccount.username"/>
 	<acme:input-textbox code="any.item.form.label.published" path="published"/>

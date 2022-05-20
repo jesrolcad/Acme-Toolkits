@@ -91,6 +91,8 @@ public class InventorItemShowService implements AbstractShowService<Inventor, It
 		assert model != null;
 		
 		final MoneyExchange conversion = this.conversion(entity.getRetailPrice());
+		final boolean differentCurrency = !entity.getRetailPrice().getCurrency().equals(this.repository.findSystemCurrency());
+		model.setAttribute("differentCurrency", differentCurrency);
 		model.setAttribute("conversion", conversion.getTarget());
 		request.unbind(entity, model, "tipo", "name", "code", "technology", "description", "retailPrice", "optionalLink", "inventor.userAccount.username", "published");
 

@@ -20,7 +20,9 @@
 		path="retailPrice" />
 	
 	<jstl:if test="${command != 'create'}">
-	<acme:input-money code="inventor.item.form.label.conversion" path="conversion" readonly="true"/>
+		<jstl:if test="${differentCurrency == true}">
+			<acme:input-money code="inventor.item.form.label.conversion" path="conversion" readonly="true"/>
+		</jstl:if>
 	</jstl:if>
 	
 	<acme:input-url code="inventor.item.form.label.optional-link"
