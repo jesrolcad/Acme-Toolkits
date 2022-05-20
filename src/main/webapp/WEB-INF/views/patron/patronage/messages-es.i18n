@@ -25,6 +25,8 @@ patron.patronage.form.label.proposed = Propuesto
 patron.patronage.form.label.accepted = Aceptado
 patron.patronage.form.label.denied = Denegado
 patron.patronage.form.button.publish = Publicar
+patron.patronage.form.error.noInventor = No hay inventores en la base da datos
+
 patron.publish-patronage= Confirma publicar
 patron.patronage.form.error.non-accepted-currency= Divisa no aceptada
 patron.patronage.form.error.duplicated. = Código duplicado

@@ -38,6 +38,7 @@ patron.patronage.form.label.link = Link
 patron.patronage.form.label.status = Status
 patron.patronage.form.label.username = Inventor's username
 patron.patronage.form.label.company = Inventor's company
+patron.patronage.form.error.noInventor = No inventors on bd
 patron.patronage.form.label.inventor-link = Inventor's link
 patron.patronage.form.label.statement = Inventor's statement
 patron.update-patronage= Update Patronage
