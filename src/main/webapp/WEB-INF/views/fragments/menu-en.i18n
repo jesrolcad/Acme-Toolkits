@@ -77,7 +77,8 @@ master.menu.inventor.toolkits.list = List my toolkits
 master.menu.inventor.item.list = List my items
 master.menu.inventor.favourite-link = Favourite link
 master.menu.inventor.patronage-reports = Patronage reports
-master.menu.inventor.list-patronages = List patronages
+master.menu.inventor.list-patronages = List accepted and denied patronages
+master.menu.inventor.list-proposed-patronages = List proposed patronages
 
 # master.menu.user-account ####################################################
 

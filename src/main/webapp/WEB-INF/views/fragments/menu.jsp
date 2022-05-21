@@ -75,6 +75,7 @@
 			<acme:menu-suboption code="master.menu.inventor.item.list" action="/inventor/item/list"/>
 			<acme:menu-suboption code="master.menu.inventor.toolkits.list" action="/inventor/toolkit/list"/>
 			<acme:menu-suboption code="master.menu.inventor.list-patronages" action="/inventor/patronage/list"/>
+			<acme:menu-suboption code="master.menu.inventor.list-proposed-patronages" action="/inventor/patronage/list-proposed"/>
       		<acme:menu-suboption code="master.menu.inventor.patronage-reports" action="/inventor/patronage-report/list"/>
 			<acme:menu-suboption code="master.menu.inventor.favourite-link" action="http://www.example.com/"/>
 		</acme:menu-option>
