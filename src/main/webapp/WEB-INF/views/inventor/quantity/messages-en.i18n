@@ -1,16 +1,18 @@
 inventor.quantity.item.list.label.tipo = Type
 inventor.quantity.item.list.label.name = Name
-inventor.quantity.item.list.label.code = Code
-inventor.quantity.item.list.label.technology = Technology
 inventor.quantity.item.list.label.retail-price = Retail price
 inventor.quantity.item.list.label.number = Quantity
 
 inventor.quantity.form.label.number = Quantity:
-inventor.quantity.form.label.item = Select an item
+inventor.quantity.form.label.item = Select an item:
+
+inventor.quantity.toolkit.form.label.code = Toolkit code:
+inventor.quantity.item.form.label.code = Item code:
 
 inventor.quantity.form.button.add = Add new item
 inventor.quantity.form.button.create = Add
 inventor.quantity.form.button.update = Update
 inventor.quantity.form.button.delete = Delete
 
-inventor.quantity.form.error.toolkit-has-tool = This toolkit has already an assigned tool
+inventor.quantity.form.error.toolkit-one-quantity-tool = You can only select one unit for a tool
+inventor.quantity.form.error.null-item = Please, select an item

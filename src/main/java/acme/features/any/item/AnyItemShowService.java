@@ -89,6 +89,8 @@ public class AnyItemShowService implements AbstractShowService<Any, Item>{
 			assert entity != null;
 			assert model != null;
 			
+			final boolean differentCurrency = !entity.getRetailPrice().getCurrency().equals(this.repository.findSystemCurrency());
+			model.setAttribute("differentCurrency", differentCurrency);
 			model.setAttribute("conversion", this.conversion(entity.getRetailPrice()).getTarget());
 			
 			request.unbind(entity, model, "tipo", "name", "code", "technology",

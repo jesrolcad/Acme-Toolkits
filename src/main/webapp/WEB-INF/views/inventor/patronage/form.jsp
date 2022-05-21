@@ -21,7 +21,9 @@
 	<acme:input-moment code="inventor.patronage.form.label.endDate" path="endDate" readonly="true"/>
 	<acme:input-textbox code="inventor.patronage.form.label.legalStuff" path="legalStuff" readonly="true"/>
 	<acme:input-money code="inventor.patronage.form.label.budget" path="budget" readonly="true"/>
-	<acme:input-money code="inventor.patronage.form.label.conversion" path="conversion" readonly="true"/>
+	<jstl:if test="${differentCurrency == true}">
+		<acme:input-money code="inventor.patronage.form.label.conversion" path="conversion" readonly="true"/>
+	</jstl:if>
 	<acme:input-textbox code="inventor.patronage.form.label.link" path="link" readonly="true"/>
 	
 	<jstl:if test="${status!='PROPOSED'}">
