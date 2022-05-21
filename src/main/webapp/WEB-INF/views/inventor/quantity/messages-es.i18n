@@ -9,7 +9,7 @@ inventor.quantity.form.label.item = Selecciona un ítem:
 inventor.quantity.toolkit.form.label.code = Código de la toolkit:
 inventor.quantity.item.form.label.code = Código del ítem:
 
-inventor.quantity.form.button.add = Añadir nuevo ítem
+inventor.quantity.form.button.add = Añadir nuevo item
 inventor.quantity.form.button.create = Añadir
 inventor.quantity.form.button.update = Actualizar
 inventor.quantity.form.button.delete = Borrar
