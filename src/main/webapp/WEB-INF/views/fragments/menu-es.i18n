@@ -76,7 +76,8 @@ master.menu.inventor.toolkits.list = Listar mis kits de herramientas
 master.menu.inventor.item.list = Listar mis ítems
 master.menu.inventor.favourite-link = Enlace favorito
 master.menu.inventor.patronage-reports = Reportes de patrocinios
-master.menu.inventor.list-patronages = Listar patrocinios
+master.menu.inventor.list-patronages = Listar patrocinios aceptados y rechazados
+master.menu.inventor.list-proposed-patronages = Listar patrocinios propuestos
 
 
 # master.menu.user-account ####################################################
