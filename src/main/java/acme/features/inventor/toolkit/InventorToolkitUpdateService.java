@@ -3,7 +3,9 @@ package acme.features.inventor.toolkit;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.components.SpamFilter;
 import acme.entities.Toolkit;
+import acme.features.administrator.systemconfiguration.AdministratorSystemConfigurationRepository;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
@@ -12,7 +14,8 @@ import acme.roles.Inventor;
 
 @Service
 public class InventorToolkitUpdateService implements AbstractUpdateService<Inventor, Toolkit>{
-
+	@Autowired 
+	protected AdministratorSystemConfigurationRepository scRepository; 
 	@Autowired
 	protected InventorToolkitRepository repository;
 	 
@@ -78,6 +81,16 @@ public class InventorToolkitUpdateService implements AbstractUpdateService<Inven
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+		
+		if (!errors.hasErrors("title")) {
+            errors.state(request, SpamFilter.spamValidator(entity.getTitle(), this.scRepository.findWeakSpamWords(), this.scRepository.findStrongSpamWords(),this.scRepository.findWeakSpamThreshold(),this.scRepository.findStrongSpamThreshold()), "title", "form.error.spam");
+        }
+		if (!errors.hasErrors("assemblyNotes")) {
+            errors.state(request, SpamFilter.spamValidator(entity.getAssemblyNotes(), this.scRepository.findWeakSpamWords(), this.scRepository.findStrongSpamWords(),this.scRepository.findWeakSpamThreshold(),this.scRepository.findStrongSpamThreshold()), "assemblyNotes", "form.error.spam");
+        }
+		if (!errors.hasErrors("description")) {
+            errors.state(request, SpamFilter.spamValidator(entity.getDescription(), this.scRepository.findWeakSpamWords(), this.scRepository.findStrongSpamWords(),this.scRepository.findWeakSpamThreshold(),this.scRepository.findStrongSpamThreshold()), "description", "form.error.spam");
+        }
 		
 		if(!errors.hasErrors("code")) {
 			Toolkit existing;

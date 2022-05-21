@@ -104,9 +104,11 @@ public class InventorToolkitItemShowService implements AbstractShowService<Inven
 		assert model != null;
 		
 		model.setAttribute("toolkitPublished", entity.getToolkit().isPublished());
+		final boolean differentCurrency = !entity.getItem().getRetailPrice().getCurrency().equals(this.itemRepository.findSystemCurrency());
+		model.setAttribute("differentCurrency", differentCurrency);
 		model.setAttribute("conversion", this.conversion(entity.getItem().getRetailPrice()).getTarget());
 
-		request.unbind(entity, model, "number", "item.tipo", "item.name", "item.code", "item.technology", "item.description", "item.retailPrice", "item.optionalLink", "item.inventor.userAccount.username","item.published");
+		request.unbind(entity, model, "number", "toolkit.code", "item.tipo", "item.name", "item.code", "item.retailPrice");
 
 	}
 }

@@ -1,8 +1,8 @@
-toolkit-record-index,toolkit-code,quantity-record-index,tipo,name,code,technology,retail-price,quantity
-0,ABC-123-X,0,TOOL,Vapormax,AAA-123-F,Technology1,EUR 150.00,1
-0,ABC-123-X,1,COMPONENT,Component 1,KBK-312,Technology2,EUR 0.01,2
-1,ABC-124-O,0,TOOL,Tool 3,ABD-999,Technology3,EUR 0.01,4
-1,ABC-124-O,1,COMPONENT,Component 2,AUK-312,Technology3,USD 0.01,7
-2,ABC-126,0,TOOL,Tool 6,XYZ-312,Technology3,"USD 10,000.00",3
-2,ABC-126,1,COMPONENT,Component 2,AUK-312,Technology3,USD 0.01,10
-3,QWE-125,0,TOOL,Tool 5,ZZZ-312,Technology2,EUR 120.00,1
+toolkit-record-index,toolkit-code,quantity-record-index,tipo,name,retail-price,quantity
+0,ABC-123-X,0,TOOL,Vapormax,EUR 150.00,1
+0,ABC-123-X,1,COMPONENT,Component 1,EUR 0.01,2
+1,ABC-124-O,0,TOOL,Tool 3,EUR 0.01,4
+1,ABC-124-O,1,COMPONENT,Component 2,USD 0.01,7
+2,ABC-126,0,TOOL,Tool 6,"USD 10,000.00",3
+2,ABC-126,1,COMPONENT,Component 2,USD 0.01,10
+3,QWE-125,0,TOOL,Tool 5,EUR 120.00,1
