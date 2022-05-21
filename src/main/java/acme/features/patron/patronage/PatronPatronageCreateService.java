@@ -77,12 +77,11 @@ public class PatronPatronageCreateService  implements AbstractCreateService<Patr
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-		
 
 		 if(entity.getInventor()==null) {
 	            errors.state(request, entity.getInventor() != null, "inventorId", "patron.patronage.form.error.noInventor");
 	        }
-
+    
 		if (!errors.hasErrors("code")) {
 			Patronage existing;
 			
