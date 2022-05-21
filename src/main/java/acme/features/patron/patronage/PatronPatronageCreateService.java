@@ -8,17 +8,18 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.Patronage;
 import acme.entities.Status;
+import acme.features.administrator.systemconfiguration.AdministratorSystemConfigurationRepository;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
 import acme.framework.services.AbstractCreateService;
 import acme.roles.Patron;
 @Service
-public class PatronPatronageCreateService  implements AbstractCreateService<Patron, Patronage>{
+public class PatronPatronageCreateService  implements AbstractCreateService<Patron, Patronage>{	
 	@Autowired
 	protected PatronPatronageRepository repository;
-
-
+	@Autowired
+	protected AdministratorSystemConfigurationRepository scRepository;
 	@Override
 	public boolean authorise(final Request<Patronage> request) {
 		assert request != null;
@@ -34,9 +35,14 @@ public class PatronPatronageCreateService  implements AbstractCreateService<Patr
 
 		entity.setStatus(Status.PROPOSED);
 		entity.setPublished(false);
-			entity.setInventor(this.repository.findInventorById(Integer.valueOf(request.getModel().getAttribute("inventorId").toString())));
-			request.bind(entity, errors, "code", "startDate","endDate","legalStuff","link","budget","inventorId");
+		if(this.repository.allInventors().isEmpty()) {			
+			request.bind(entity, errors, "code", "startDate","endDate","legalStuff","link","budget");
+
 			
+		}else {
+		entity.setInventor(this.repository.findInventorById(Integer.valueOf(request.getModel().getAttribute("inventorId").toString())));
+		request.bind(entity, errors, "code", "startDate","endDate","legalStuff","link","budget","inventorId");
+		}
 	}	
 
 	@Override
@@ -71,8 +77,11 @@ public class PatronPatronageCreateService  implements AbstractCreateService<Patr
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-		
-	
+
+		 if(entity.getInventor()==null) {
+	            errors.state(request, entity.getInventor() != null, "inventorId", "patron.patronage.form.error.noInventor");
+	        }
+    
 		if (!errors.hasErrors("code")) {
 			Patronage existing;
 			

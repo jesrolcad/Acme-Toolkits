@@ -7,7 +7,7 @@
 # this software. It has been tested carefully, but it is not guaranteed for any particular
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
-
+patron.patronage.form.error.noInventor = Please select one inventor
 patron.patronage.list.label.code= Code
 patron.patronage.list.label.budget= Budget
 patron.patronage.form.label.conversion = Money exchange
@@ -42,7 +42,8 @@ patron.patronage.form.label.link = Link
 patron.patronage.form.label.status = Status
 patron.patronage.form.label.username = Inventor's username
 patron.patronage.form.label.company = Inventor's company
+patron.patronage.form.error.noInventor = Please select one inventor
 patron.patronage.form.label.inventor-link = Inventor's link
 patron.patronage.form.label.statement = Inventor's statement
-patron.update-patronage= Update Patronage
-patron.patronage.form.button.update = Confirm Updating Patronage
+patron.update-patronage= Update 
+patron.patronage.form.button.update =  Update

@@ -18,6 +18,7 @@ inventor.patronage.list.label.link = Enlace
 inventor.patronage.list.label.status = Estado
 
 
+master.menu.patron.create-patronage-reports = Create Reports
 inventor.patronage.form.label.code = Código
 inventor.patronage.form.label.startDate = Fecha de inicio
 inventor.patronage.form.label.endDate = Fecha de fin

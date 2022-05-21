@@ -6,8 +6,10 @@ import org.assertj.core.util.Arrays;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.components.SpamFilter;
 import acme.entities.Item;
 import acme.entities.TipoDeItem;
+import acme.features.administrator.systemconfiguration.AdministratorSystemConfigurationRepository;
 import acme.features.inventor.toolkit.InventorToolkitRepository;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
@@ -18,7 +20,8 @@ import acme.roles.Inventor;
  
 @Service 
 public class InventorItemCreateService implements AbstractCreateService<Inventor, Item>{ 
- 
+	@Autowired 
+	protected AdministratorSystemConfigurationRepository scRepository; 
 	@Autowired 
 	protected InventorItemRepository repository; 
 	
@@ -84,6 +87,17 @@ public class InventorItemCreateService implements AbstractCreateService<Inventor
 		assert errors != null; 
 		
 		final Money retailPrice = entity.getRetailPrice();
+		
+		if (!errors.hasErrors("name")) {
+            errors.state(request, SpamFilter.spamValidator(entity.getName(), this.scRepository.findWeakSpamWords(), this.scRepository.findStrongSpamWords(),this.scRepository.findWeakSpamThreshold(),this.scRepository.findStrongSpamThreshold()), "name", "form.error.spam");
+        }
+		if (!errors.hasErrors("technology")) {
+            errors.state(request, SpamFilter.spamValidator(entity.getTechnology(), this.scRepository.findWeakSpamWords(), this.scRepository.findStrongSpamWords(),this.scRepository.findWeakSpamThreshold(),this.scRepository.findStrongSpamThreshold()), "technology", "form.error.spam");
+        }
+		if (!errors.hasErrors("description")) {
+            errors.state(request, SpamFilter.spamValidator(entity.getDescription(), this.scRepository.findWeakSpamWords(), this.scRepository.findStrongSpamWords(),this.scRepository.findWeakSpamThreshold(),this.scRepository.findStrongSpamThreshold()), "description", "form.error.spam");
+        }
+	
 		
 		if (!errors.hasErrors("code")) {
 			Item existing;

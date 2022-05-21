@@ -21,7 +21,9 @@
 	<acme:input-moment code="inventor.patronage.form.label.endDate" path="endDate" readonly="true"/>
 	<acme:input-textbox code="inventor.patronage.form.label.legalStuff" path="legalStuff" readonly="true"/>
 	<acme:input-money code="inventor.patronage.form.label.budget" path="budget" readonly="true"/>
-	<acme:input-money code="inventor.patronage.form.label.conversion" path="conversion" readonly="true"/>
+	<jstl:if test="${differentCurrency == true}">
+		<acme:input-money code="inventor.patronage.form.label.conversion" path="conversion" readonly="true"/>
+	</jstl:if>
 	<acme:input-textbox code="inventor.patronage.form.label.link" path="link" readonly="true"/>
 	
 	<jstl:if test="${status!='PROPOSED'}">
@@ -39,6 +41,10 @@
 	<acme:input-textbox code="inventor.patronage.form.label.company" path="patron.company" readonly="true"/>
 	<acme:input-textbox code="inventor.patronage.form.label.patron-link" path="patron.link" readonly="true"/>
 	<acme:input-textbox code="inventor.patronage.form.label.statement" path="patron.statement" readonly="true"/>
+	<jstl:if test="${status == 'ACCEPTED'}">	
+	<acme:button code="master.menu.patron.create-patronage-reports" action="/inventor/patronage-report/create?patronageId=${id}"/>
+	</jstl:if>
+	
 
 	<acme:submit test="${command == 'show' && status == 'PROPOSED'}" code="inventor.patronage.form.button.update" action="/inventor/patronage/update"/>
 </acme:form>

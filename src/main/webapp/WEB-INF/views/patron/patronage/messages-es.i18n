@@ -7,6 +7,7 @@
 # this software. It has been tested carefully, but it is not guaranteed for any particular
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
+patron.patronage.form.error.noInventor = Por favor, seleccione un inventor
 
 patron.patronage.list.label.code= Código
 patron.patronage.list.label.budget= Presupuesto
@@ -21,12 +22,14 @@ patron.patronage.form.button.delete= Barror patrocinio(y reportes asociados)
 patron.create-patronage = Crear nuevo patrocinio
 patron.patronage.form.button.create = Confirma crear nuevo patrocinio
 patron.patronage.form.label.inventor = Seleccionar inventor
-patron.update-patronage= Editar patrocinio
-patron.patronage.form.button.update = Confirma editar patrocinio
+patron.update-patronage= Editar
+patron.patronage.form.button.update = Editar
 patron.patronage.form.label.proposed = Propuesto
 patron.patronage.form.label.accepted = Aceptado
 patron.patronage.form.label.denied = Denegado
 patron.patronage.form.button.publish = Publicar
+patron.patronage.form.error.noInventor = Por favor, seleccione un inventor
+
 patron.publish-patronage= Confirma publicar
 
 
