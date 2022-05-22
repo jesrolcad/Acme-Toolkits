@@ -30,7 +30,7 @@ public class InventorPatronageReportCreateService implements AbstractCreateServi
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-		request.bind(entity, errors, "creationMoment", "sequenceNumber","memorandum", "link");
+		request.bind(entity, errors,"memorandum", "link");
 		
 	}
 
@@ -39,12 +39,12 @@ public class InventorPatronageReportCreateService implements AbstractCreateServi
 		assert request != null; 
 		assert entity != null; 
 		assert model != null; 
-		 
-		request.unbind(entity, model, "creationMoment","sequenceNumber", "memorandum", "link");	 
 		model.setAttribute("confirmation", false); 
 		model.setAttribute("readonly", false); 
 		model.setAttribute("status", entity.getPatronage().getStatus());
 		model.setAttribute("patronageId", entity.getPatronage().getId());
+		request.unbind(entity, model, "creationMoment","sequenceNumber", "memorandum", "link");	 
+	
 	}
 
 	@Override
