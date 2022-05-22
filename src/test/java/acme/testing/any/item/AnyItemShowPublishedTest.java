@@ -30,8 +30,7 @@ public class AnyItemShowPublishedTest extends TestHarness {
 		super.checkInputBoxHasValue("optionalLink", optionalLink);
 		super.checkInputBoxHasValue("inventor.userAccount.username", inventor);
 		super.checkInputBoxHasValue("published", published);
-		
-		
+	
 	}
 }
 
