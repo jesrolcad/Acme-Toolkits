@@ -6,6 +6,7 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
@@ -32,12 +33,13 @@ public class Announcement extends AbstractEntity {
 	@Past
 	@NotNull
 	protected Date				moment;
+	
 
-	@Length(max = 101)
+	@Length(max = 100)
 	@NotBlank
 	protected String			title;
 
-	@Length(max = 256)
+	@Length(max = 255)
 	@NotBlank
 	protected String			body;
 	
@@ -48,6 +50,9 @@ public class Announcement extends AbstractEntity {
 	protected String			info;
 
 	// Derived attributes -----------------------------------------------------
+	
+	@Valid
+	protected boolean			spam;
 
 	// Relationships ----------------------------------------------------------
 
