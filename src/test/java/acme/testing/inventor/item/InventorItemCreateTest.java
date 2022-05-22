@@ -10,7 +10,7 @@ import acme.testing.TestHarness;
 public class InventorItemCreateTest extends TestHarness{
 	
 	@ParameterizedTest
-	@CsvFileSource(resources = "/inventor/item/create-positive2.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@CsvFileSource(resources = "/inventor/item/create-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
 	public void positiveItem(final int recordIndex, final String tipo, final String name, final String code, final String technology, final String description, final String retailPrice, final String optionalLink) {
 		

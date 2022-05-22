@@ -1,0 +1,17 @@
+recordIndex,tipo,name,code,technology,description,retail-price,optional-link
+1,COMPONENT,,,,,,
+1,COMPONENT,Component 12,,Technology1,This is the component 12 and uses the tecnology 1,EUR -0.01,https://www.google.com/
+1,COMPONENT,,ABK-312-Y,Technology1,This is the component 12 and uses the tecnology 1,USD -0.01,https://www.google.com/
+1,COMPONENT,Component 12,ABK-312-Y,,This is the component 12 and uses the tecnology 1,GBP -0.01,
+1,COMPONENT,Component 12,ABK-312-Y,Technology1,,EUR 0,
+1,COMPONENT,Component 12,ABK-312-Y,Technology1,This is the component 12 and uses the tecnology 1,USD 0,
+1,COMPONENT,Component 12,error,Technology1,This is the component 12 and uses the tecnology 1,GBP 0,
+1,COMPONENT,Component 12,ABK-312-Y,Technology1,This is the component 12 and uses the tecnology 1,ASD -0.01,error
+1,COMPONENT,Component 12,ABK-312-Y,EstoSonDoscientosCincuentaYSeisCaracteresVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVac,This is the component 12 and uses the tecnology 1,ASD 0,https://www.google.com/
+1,COMPONENT,EstoSonCientoYUnCaracteresVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVac,ABK-312-Y,Technology1,This is the component 12 and uses the tecnology 1,ASD 0.01,
+1,COMPONENT,Component 12,ABK-312-Y,Technology1,EstoSonDoscientosCincuentaYSeisCaracteresVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVac,USD 5.30,
+1,COMPONENT,Component 12,ABK-312-Y,EstoSonDoscientosCincuentaYSeisCaracteresVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVac,This is the component 12 and uses the tecnology 1,error,
+1,TOOL,Tool 56,ABK-312-Y,Technology1,This is the component 12 and uses the tecnology 1,EUR -5,
+1,TOOL,SEX,ABK-312-Y,Technology1,This is the component 12 and uses the tecnology 1,EUR 101.11,
+1,COMPONENT,Component 12,ABK-312-Y,Technology1,sexo,GBP 5.30,
+1,TOOL,Component 12,ABK-312-Y,SEXO,This is the component 12 and uses the tecnology 1,EUR 5.30,

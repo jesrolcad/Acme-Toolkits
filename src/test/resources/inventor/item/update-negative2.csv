@@ -1,6 +1,6 @@
 recordIndex,tipo,name,code,technology,description,retail-price,optional-link
 0,COMPONENT,Component 2,AUK-312,Technology3,This is the component 2 and uses the tecnology 3,USD 0.01,
-1,COMPONENT,Component 1,KBK-312,Technology2,This is the component 1 and uses the technology 2,EUR 0.01,https://www.google.com/
+1,COMPONENT,Component 1,KBK-312,Technology2,This is the component 1 and uses the tecnology 2,EUR 0.01,https://www.google.com/
 2,TOOL,Vapormax,AAA-123-F,Technology1,This are the new Nike Vapormax it will provide you more speed,USD 45.30,
-3,TOOL,Tool 3,ABD-999,Technology2,This is the tool 3 and uses the tecnology 3,EUR 0.01,
+3,TOOL,Tool 3,ABD-999,Technology3,This is the tool 3 and uses the tecnology 3,EUR 0.01,
 4,TOOL,Tool 2,ABC-312-A,Technology2,This is the tool 2 and uses the tecnology 2,EUR 0.00,https://www.google.com/

@@ -44,8 +44,7 @@ public class InventorItemDeleteTest extends TestHarness {
 	@ParameterizedTest
 	@CsvFileSource(resources = "/inventor/item/delete-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(20)
-	public void negativeTest(final int recordIndex, final String tipo, final String name, final String code, final String technology, final String description, final String retailPrice, final String optionalLink, final String inventor,
-		final String published) {
+	public void negativeTest(final int recordIndex, final String tipo, final String name, final String code, final String technology, final String description, final String retailPrice, final String optionalLink) {
 		super.signIn("inventor1", "inventor1");
 		super.clickOnMenu("Inventor", "List my items");
 		super.checkListingExists();
@@ -68,16 +67,16 @@ public class InventorItemDeleteTest extends TestHarness {
 	@Order(30)
 	public void hackingTest() {
 		super.checkNotLinkExists("Account");
-		super.navigate("/inventor/item/create");
+		super.navigate("/inventor/item/delete");
 		super.checkPanicExists();
 
 		super.signIn("administrator", "administrator");
-		super.navigate("/inventor/item/create");
+		super.navigate("/inventor/item/delete");
 		super.checkPanicExists();
 		super.signOut();
 
 		super.signIn("patron1", "patron1");
-		super.navigate("/inventor/item/create");
+		super.navigate("/inventor/item/delete");
 		super.checkPanicExists();
 		super.signOut();
 

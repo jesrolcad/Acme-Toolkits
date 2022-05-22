@@ -9,9 +9,9 @@ import acme.testing.TestHarness;
 public class InventorPatronageReportCreateTest extends TestHarness{
 	
 	@ParameterizedTest
-	@CsvFileSource(resources = "/inventor/patronageReport/createPositive.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@CsvFileSource(resources = "/inventor/patronageReport/create-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(2)
-	public void positivePatronage(final int recordIndex, final String memorandum,final String link) {
+	public void positivePatronage(final int recordIndex, final String memorandum,final String link,final String confirmation) {
 		
 		
 		super.signIn("inventor1", "inventor1");
@@ -22,7 +22,7 @@ public class InventorPatronageReportCreateTest extends TestHarness{
 		super.clickOnButton("Create Report");
 		super.fillInputBoxIn("memorandum", memorandum);
 		super.fillInputBoxIn("link", link);
-		super.fillInputBoxIn("confirmation", "true");
+		super.fillInputBoxIn("confirmation", confirmation);
 		super.clickOnSubmit("Create");
 		super.clickOnMenu("Inventor", "Patronage reports");
 		super.clickOnListingRecord(recordIndex);
