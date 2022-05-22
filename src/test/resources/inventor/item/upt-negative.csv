@@ -12,3 +12,6 @@ recordIndex,tipo,name,code,technology,description,retail-price,optional-link
 0,COMPONENT,Component 12,ABK-312-Y,Technology1,EstoSonDoscientosCincuentaYSeisCaracteresVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVac,USD 5.30,
 0,COMPONENT,Component 12,ABK-312-Y,EstoSonDoscientosCincuentaYSeisCaracteresVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVacaVac,This is the component 12 and uses the tecnology 1,error,
 0,TOOL,Tool 56,ABK-312-Y,Technology1,This is the component 12 and uses the tecnology 1,EUR -5,
+0,TOOL,SEX,ABK-312-Y,Technology1,This is the component 12 and uses the tecnology 1,EUR 101.11,
+0,COMPONENT,Component 12,ABK-312-Y,Technology1,sexo,GBP 5.30,
+0,TOOL,Component 12,ABK-312-Y,SEXO,This is the component 12 and uses the tecnology 1,EUR 5.30,
