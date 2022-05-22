@@ -11,5 +11,14 @@ public interface AdministratorSystemConfigurationRepository extends AbstractRepo
 	
 	@Query("select sc from SystemConfiguration sc")
 	SystemConfiguration findSystemConfiguration();
+	@Query("select sc.weakSpamWords from SystemConfiguration sc")
+	String findWeakSpamWords();
+	@Query("select sc.strongSpamWords from SystemConfiguration sc")
+	String findStrongSpamWords();
+	@Query("select sc.weakSpamThreshold from SystemConfiguration sc")
+	double findWeakSpamThreshold();
+	@Query("select sc.strongSpamThreshold from SystemConfiguration sc")
+	double findStrongSpamThreshold();
+	
 
 }

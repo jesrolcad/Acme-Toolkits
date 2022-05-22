@@ -1,0 +1,12 @@
+recordIndex,tipo,name,code,technology,description,retail-price,optional-link
+0,COMPONENT,El 1,AAA-000-A,EstoSonCienCaracteresPalomaPalomaPalomaPalomaPalomaPalomaPalomaPalomaPalomaPalomaPalomaPalomaPalomaP,EstoSon255Caracterestooolkit 9tooolkit 9tooolkit 9tooolkit 9tooolkit 9tooolkit 9tooolkit 9tooolkit 9tooolkit 9tooolkit 9tooolkit 9tooolkit 9tooolkit 9tooolkit 9tooolkit 9tooolkit 9tooolkit 9tooolkit 9tooolkit 9tooolkit 9tooolkit 9tooolkit 9tooolkit 9toool,USD 5.30,https://www.google.com/
+1,COMPONENT,El 2,AAA-001-A,1234,This is the component 12 and uses the tecnology 1,EUR 6.30,
+2,COMPONENT,El 3,AAA-002-A,AA,EstoSon255Caracterestooolkit 9tooolkit 9tooolkit 9tooolkit 9tooolkit 9tooolkit 9tooolkit 9tooolkit 9tooolkit 9tooolkit 9tooolkit 9tooolkit 9tooolkit 9tooolkit 9tooolkit 9tooolkit 9tooolkit 9tooolkit 9tooolkit 9tooolkit 9tooolkit 9tooolkit 9tooolkit 9toool,GBP 100.51,
+3,COMPONENT,El 4,AAA-003-A,Technology1,This is the component 12 and uses the tecnology 1,USD 1.00,
+4,COMPONENT,El 5,AAA-004-A,Technology1,Descripcion,EUR 30.01,
+5,TOOL,El 6,AAA-005-A,Technology1,1234,GBP 0.00,
+6,TOOL,El 7,AAA-006-A,Technology1,Descripcione,EUR 10.02,https://www.google.com/
+7,TOOL,El 8,AAA-007-A,Technology1,Descripciones,USD 30.35,
+8,TOOL,El 9,AAA-008-I,Technology1,AA 123,GBP 44.07,https://www.google.com/
+9,TOOL,El 10,AAA-009-J,Technology1,Vaca,EUR 102.00,
+10,TOOL,EstoSonCienCaracteresPalomaPalomaPalomaPalomaPalomaPalomaPalomaPalomaPalomaPalomaPalomaPalomaPalomaP,AAA-010-K,Technology1,EstoSon255Caracterestooolkit 9tooolkit 9tooolkit 9tooolkit 9tooolkit 9tooolkit 9tooolkit 9tooolkit 9tooolkit 9tooolkit 9tooolkit 9tooolkit 9tooolkit 9tooolkit 9tooolkit 9tooolkit 9tooolkit 9tooolkit 9tooolkit 9tooolkit 9tooolkit 9tooolkit 9tooolkit 9toool,USD 50.50,

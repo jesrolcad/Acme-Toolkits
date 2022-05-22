@@ -19,16 +19,16 @@ item-17,COMPONENT,Component 7,Technology2,This is the component 7 and uses the t
 item-18,COMPONENT,Component 8,Technology3,This is the component 8 and uses the tecnology 3,USD 0.03,false,null,BNM-987,inventor-04
 item-19,COMPONENT,Component 9,Technology1,This is the component 9 and uses the tecnology 1,GBP 18.00,false,https://www.google.com/,ABK-111-H,inventor-05
 item-20,COMPONENT,Component 10,Technology2,This is the component 10 and uses the tecnology 2,"EUR 1,000.19",false,https://www.google.com/,ABK-312-L,inventor-05
-item-21,TOOL,Tool 11,Technology3,This is the tool 11 and uses the tecnology 25,EUR 244.19,false,https://www.google.com/,ABK-312-M,inventor-02
-item-22,COMPONENT,Component 11,Technology1,This is the component 11 and uses the tecnology 1,USD 45.3,false,https://www.google.com/,ABK-312-U,inventor-02
+item-21,TOOL,Tool 11,Technology25,This is the tool 11 and uses the tecnology 25,EUR 244.19,false,https://www.google.com/,ABK-312-M,inventor-02
+item-22,COMPONENT,Component 11,Technology1,This is the component 11 and uses the tecnology 1,EUR 45.3,false,https://www.google.com/,ABK-312-U,inventor-02
 item-23,COMPONENT,Component 12,Technology1,This is the component 12 and uses the tecnology 1,USD 5.3,false,https://www.google.com/,ABK-312-Y,inventor-02
-item-24,TOOL,Tool 12,Technology2,This is the tool doce and uses the tecnology 2,EUR 25.44,true,https://www.google.com/,ABK-312-W,inventor-02
-item-25,COMPONENT,Component 13,Technology1,This is the component trece and uses the tecnology 1,USD 45.3,false,https://www.google.com/,MLB-392-X,inventor-02
+item-24,TOOL,Tool 12,Technology5,This is the tool doce and uses the tecnology 5,EUR 25.44,true,https://www.google.com/,ABK-312-W,inventor-02
+item-25,COMPONENT,Component 13,Technology1,This is the component trece and uses the tecnology 1,EUR 45.3,false,https://www.google.com/,MLB-392-X,inventor-02
 item-26,COMPONENT,Component 14,Technology1,This is the component catorce and uses the tecnology 1,EUR 10.0,true,https://www.google.com/,HJD-312-Y,inventor-02
 item-27,COMPONENT,Component 15,Technology1,This is the component quince and uses the tecnology 1,EUR 499.95,false,https://www.google.com/,COR-318,inventor-02
-item-28,TOOL,Tool Cabeza,Technology3,Es la cabeza del rex y usa tecnology 3,EUR 290000.00,true,https://www.tododinosaurios.com/,REX-000-C,inventor-02
-item-29,COMPONENT,Component Cuerpo,Technology2,Es el cuerpo del rex y usa tecnology 2,EUR 50000.00,true,https://www.tododinosaurios.com/,REX-001-T,inventor-02
-item-30,COMPONENT,Component brazo,Technology1,Es el brazo del rex y usa tecnology 1,EUR 247.73,true,https://www.tododinosaurios.com/,REX-003-T,inventor-02
-item-31,COMPONENT,Component cola,Technology3,Es la cola del rex y usa tecnology 3,EUR 1500.73,true,https://www.tododinosaurios.com/,REX-004-C,inventor-02
+item-28,TOOL,Tool Cabeza,Technology5,Es la cabeza del rex y usa tecnology 5,EUR 290000.00,true,https://www.tododinosaurios.com/,REX-000-C,inventor-02
+item-29,COMPONENT,Component Cuerpo,Technology5,Es el cuerpo del rex y usa tecnology 5,EUR 50000.00,true,https://www.tododinosaurios.com/,REX-001-T,inventor-02
+item-30,COMPONENT,Component brazo,Technology5,Es el brazo del rex y usa tecnology 5,EUR 247.73,true,https://www.tododinosaurios.com/,REX-003-T,inventor-02
+item-31,COMPONENT,Component cola,Technology5,Es la cola del rex y usa tecnology 5,EUR 1500.73,true,https://www.tododinosaurios.com/,REX-004-C,inventor-02
 item-32,COMPONENT,Component pierna,Technology2,Es la pierna del rex y usa tecnology 2,EUR 6500.73,true,https://www.tododinosaurios.com/,REX-005-P,inventor-02
 item-33,COMPONENT,Component diente,Technology2,Es el diente del rex y usa tecnology 2,EUR 249.95,true,https://www.tododinosaurios.com/,REX-006-D,inventor-02

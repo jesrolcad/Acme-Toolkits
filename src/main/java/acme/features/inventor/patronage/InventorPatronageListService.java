@@ -29,8 +29,7 @@ public class InventorPatronageListService implements AbstractListService<Invento
 		final Collection<Patronage> result; 
 		final int UAId = request.getPrincipal().getAccountId();
 		final int InventorId = this.repository.findInventorByUserAccountId(UAId).getId();
-		result=this.repository.findPatronagesByInventorId(InventorId); 
-		
+		result=this.repository.findPublishedAcceptedOrDeniedPatronagesByInventorId(InventorId, true); 
 		return result;
 	} 
  

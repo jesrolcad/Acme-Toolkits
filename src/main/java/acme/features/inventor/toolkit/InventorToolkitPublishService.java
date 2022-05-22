@@ -100,7 +100,10 @@ public class InventorToolkitPublishService implements AbstractUpdateService<Inve
 		for (final Item item : items) {
 			publishItem= publishItem && item.isPublished();
 		}
+		
+		
 		errors.state(request, publishItem==true, "*", "inventor.toolkit.form.error.no-items-published");
+		
 		
 	}
 

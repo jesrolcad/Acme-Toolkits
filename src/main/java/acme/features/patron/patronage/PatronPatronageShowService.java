@@ -89,6 +89,8 @@ public class PatronPatronageShowService implements AbstractShowService<Patron, P
 		 
 		model.setAttribute("confirmation", false); 
 		model.setAttribute("inventors", this.repository.allInventors());
+		final boolean differentCurrency = !entity.getBudget().getCurrency().equals(this.repository.findSystemCurrency());
+		model.setAttribute("differentCurrency", differentCurrency);
 		model.setAttribute("conversion", this.conversion(entity.getBudget()).getTarget());
 		model.setAttribute("inventorId", entity.getInventor().getId());
 

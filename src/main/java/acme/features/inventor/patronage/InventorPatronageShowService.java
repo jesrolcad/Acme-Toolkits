@@ -31,7 +31,8 @@ public class InventorPatronageShowService implements AbstractShowService<Invento
 		patronageID = request.getModel().getInteger("id");
 		pat = this.repository.findPatronageById(patronageID);
 		inv =this.repository.findInventorByUserAccountId(request.getPrincipal().getAccountId());
-		result = pat.getInventor().equals(inv);
+		result = pat.getInventor().equals(inv) && pat.isPublished();
+
 		return result; 
 	} 
  
@@ -87,6 +88,8 @@ public class InventorPatronageShowService implements AbstractShowService<Invento
 		assert entity != null; 
 		assert model != null; 
 		
+		final boolean differentCurrency = !entity.getBudget().getCurrency().equals(this.repository.findSystemCurrency());
+		model.setAttribute("differentCurrency", differentCurrency);
 		model.setAttribute("conversion", this.conversion(entity.getBudget()).getTarget());
 		 
 		request.unbind(entity, model, "code", "budget", "legalStuff", "link", "startDate","endDate","status","patron.userAccount.username","patron.company","patron.link","patron.statement");	 

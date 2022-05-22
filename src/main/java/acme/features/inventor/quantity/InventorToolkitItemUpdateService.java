@@ -3,7 +3,9 @@ package acme.features.inventor.quantity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.Item;
 import acme.entities.Quantity;
+import acme.entities.TipoDeItem;
 import acme.entities.Toolkit;
 import acme.features.inventor.toolkit.InventorToolkitRepository;
 import acme.framework.components.models.Model;
@@ -59,7 +61,10 @@ public class InventorToolkitItemUpdateService implements AbstractUpdateService<I
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "number", "item.tipo", "item.name", "item.code", "item.technology", "item.description", "item.retailPrice", "item.optionalLink", "item.inventor.userAccount.username","item.published");
+		model.setAttribute("toolkitPublished", entity.getToolkit().isPublished());
+		
+		request.unbind(entity, model, "number", "item.tipo", "item.name", "item.code", "item.technology",
+			"item.description", "item.retailPrice", "item.optionalLink", "item.inventor.userAccount.username","item.published");
 		
 	}
 
@@ -80,6 +85,13 @@ public class InventorToolkitItemUpdateService implements AbstractUpdateService<I
 		assert request != null; 
 		assert entity != null; 
 		assert errors != null; 
+		
+		final Item selectedItem = entity.getItem();
+		
+		if(selectedItem.getTipo().equals(TipoDeItem.TOOL)) {
+			errors.state(request, entity.getNumber() == 1, "number", "inventor.quantity.form.error.toolkit-one-quantity-tool");
+		}
+		
 		
 		
 		

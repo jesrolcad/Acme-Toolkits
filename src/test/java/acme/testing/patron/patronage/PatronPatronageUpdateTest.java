@@ -80,34 +80,34 @@ public class PatronPatronageUpdateTest extends TestHarness{
 		super.checkErrorsExist();
 		super.signOut();
 	}
-	
-	@ParameterizedTest
-	@CsvFileSource(resources = "/patron/patronage/negativeUpdateValidations.csv", encoding = "utf-8", numLinesToSkip = 1)
-	@Order(3)
-	public void negativePatronageValidations(final int recordIndex, final String code, final String budget, final String start_date, final String end_date, 
-		final String status, final String legal_stuff, final String link,final String inventor_username, final String inventor_company, final String inventor_link, final String inventor_statement) {
-		
-		
-		super.signIn("patron1", "patron1");
-		//list
-		super.clickOnMenu("Patron", "List patronages");
-		super.checkListingExists();
-		super.sortListing(0, "asc");
-		super.clickOnListingRecord(recordIndex);
-		super.sortListing(0, "asc");
-
-		super.fillInputBoxIn("code", code);
-		
-		super.fillInputBoxIn("startDate",this.formattedDateTimeStart );
-		super.fillInputBoxIn("endDate", this.formattedDateTimeEND);
-		super.fillInputBoxIn("legalStuff", legal_stuff);
-		super.fillInputBoxIn("budget", budget);
-		super.fillInputBoxIn("link", link);
-		
-		super.clickOnSubmit("Confirm Updating Patronage");
-		super.checkErrorsExist();
-		super.signOut();
-	}
+//	
+//	@ParameterizedTest
+//	@CsvFileSource(resources = "/patron/patronage/negativeUpdateValidations.csv", encoding = "utf-8", numLinesToSkip = 1)
+//	@Order(3)
+//	public void negativePatronageValidations(final int recordIndex, final String code, final String budget, final String start_date, final String end_date, 
+//		final String status, final String legal_stuff, final String link,final String inventor_username, final String inventor_company, final String inventor_link, final String inventor_statement) {
+//		
+//		
+//		super.signIn("patron1", "patron1");
+//		//list
+//		super.clickOnMenu("Patron", "List patronages");
+//		super.checkListingExists();
+//		super.sortListing(0, "asc");
+//		super.clickOnListingRecord(recordIndex);
+//		super.sortListing(0, "asc");
+//
+//		super.fillInputBoxIn("code", code);
+//		
+//		super.fillInputBoxIn("startDate",this.formattedDateTimeStart );
+//		super.fillInputBoxIn("endDate", this.formattedDateTimeEND);
+//		super.fillInputBoxIn("legalStuff", legal_stuff);
+//		super.fillInputBoxIn("budget", budget);
+//		super.fillInputBoxIn("link", link);
+//		
+//		super.clickOnSubmit("Confirm Updating Patronage");
+//		super.checkErrorsExist();
+//		super.signOut();
+//	}
 
 	// Ancillary methods ------------------------------------------------------
 

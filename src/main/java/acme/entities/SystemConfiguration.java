@@ -46,7 +46,7 @@ public class SystemConfiguration extends AbstractEntity{
 	public String moneyExchangeServiceName;
 	
 	@NotBlank
-	@Length(max=256)
+	@Length(max=255)
 	public String moneyExchangeServiceDescription;
 	
 	@URL

@@ -23,7 +23,9 @@
 	<acme:input-textbox code="patron.patronage.form.label.legalStuff" path="legalStuff"/>
 	<acme:input-money code="patron.patronage.form.label.budget" path="budget"/>
 	<jstl:if test="${command != 'create'}">
-	<acme:input-money code="patron.patronage.form.label.conversion" path="conversion" readonly="true"/>
+		<jstl:if test="${differentCurrency == true}">
+			<acme:input-money code="patron.patronage.form.label.conversion" path="conversion" readonly="true"/>
+		</jstl:if>
 	<acme:input-textbox code="patron.patronage.form.label.status" path="status" readonly="true"/>
 	</jstl:if>
 	<acme:input-url code="patron.patronage.form.label.link" path="link"/>

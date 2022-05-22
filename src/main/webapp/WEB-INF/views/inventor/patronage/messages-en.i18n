@@ -30,4 +30,5 @@ inventor.patronage.form.label.company = Patron's company
 inventor.patronage.form.label.patron-link = Patron's link
 inventor.patronage.form.label.statement = Patron's statement
 
+master.menu.patron.create-patronage-reports = Create Report
 inventor.patronage.form.button.update = Update status
