@@ -11,7 +11,7 @@ import acme.framework.services.AbstractListService;
 import acme.roles.Inventor; 
  
 @Service 
-public class InventorPatronageListService implements AbstractListService<Inventor, Patronage> { 
+public class InventorPatronageListProposedService implements AbstractListService<Inventor, Patronage> { 
 	 
 	@Autowired 
 	protected InventorPatronageRepository repository; 
@@ -29,7 +29,8 @@ public class InventorPatronageListService implements AbstractListService<Invento
 		final Collection<Patronage> result; 
 		final int UAId = request.getPrincipal().getAccountId();
 		final int InventorId = this.repository.findInventorByUserAccountId(UAId).getId();
-		result=this.repository.findPublishedAcceptedOrDeniedPatronagesByInventorId(InventorId, true); 
+		result=this.repository.findPublishedProposedPatronagesByInventorId(InventorId, true); 
+		
 		return result;
 	} 
  

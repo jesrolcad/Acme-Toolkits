@@ -28,10 +28,10 @@
 	<acme:input-url code="inventor.item.form.label.optional-link"
 		path="optionalLink" />
 		
-	<jstl:if test="${published == true}">
+	<%-- <jstl:if test="${published == true}">
 		<acme:input-textbox code="inventor.item.form.label.published"
 		path="published" />
-	</jstl:if>
+	</jstl:if> --%>
 	<jstl:choose>
 		<jstl:when test="${acme:anyOf(command, 'show, update, delete, publish') && published == false}">
 			<acme:input-textbox code="inventor.item.form.label.inventor"

@@ -6,7 +6,9 @@ import java.time.format.DateTimeFormatter;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
+import org.openqa.selenium.By;
 
+import acme.framework.testing.BrowserDriver;
 import acme.testing.TestHarness;
 
 public class PatronPatronageCreateTest extends TestHarness{
@@ -22,7 +24,7 @@ public class PatronPatronageCreateTest extends TestHarness{
 	@CsvFileSource(resources = "/patron/patronage/create.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(1)
 	public void positivePatronage(final int recordIndex, final String code, final String budget, final String start_date, final String end_date, 
-		final String status, final String legal_stuff, final String link,final String inventor_username, final String inventor_company, final String inventor_link, final String inventor_statement) {
+		final String status, final String legal_stuff, final String link,final String inventor_username, final String inventor_company, final String inventor_link, final String inventor_statement, final String inventorId) {
 		
 		
 		super.signIn("patron1", "patron1");
@@ -39,7 +41,8 @@ public class PatronPatronageCreateTest extends TestHarness{
 		super.fillInputBoxIn("legalStuff", legal_stuff);
 		super.fillInputBoxIn("budget", budget);
 		super.fillInputBoxIn("link", link);
-		
+		final BrowserDriver driver = super.getDriver();
+		driver.locateOne(By.xpath("//*[@id=\"inventorId\"]/option[" + inventorId +"]")).click();
 		super.clickOnSubmit("Confirm creating new patronage");
 		super.clickOnMenu("Patron", "List patronages");
 
