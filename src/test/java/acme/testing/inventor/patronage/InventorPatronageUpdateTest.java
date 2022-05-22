@@ -15,8 +15,8 @@ public class InventorPatronageUpdateTest extends TestHarness {
 	public void positiveTest(final int proposedRecordIndex, final String status, final int acceptedOrDeniedRecordIndex) {
 		
 		
-		super.signIn("inventor2", "inventor2");
-		//list
+		super.signIn("inventor1", "inventor1");
+
 		super.clickOnMenu("Inventor", "List proposed patronages");
 		super.checkListingExists();
 		super.sortListing(0, "asc");
@@ -41,7 +41,7 @@ public class InventorPatronageUpdateTest extends TestHarness {
 	public void negativeTest(final int proposedRecordIndex, final String status) {
 		
 		
-		super.signIn("inventor2", "inventor2");
+		super.signIn("inventor1", "inventor1");
 		//list
 		super.clickOnMenu("Inventor", "List accepted and denied patronages");
 		super.checkListingExists();
