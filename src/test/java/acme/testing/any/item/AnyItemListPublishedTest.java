@@ -9,11 +9,10 @@ import acme.testing.TestHarness;
 public class AnyItemListPublishedTest extends TestHarness{
 	
 	@ParameterizedTest
-	@CsvFileSource(resources = "/any/item/list.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@CsvFileSource(resources = "/any/item/list-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
 	public void positive(final int recordIndex, final String tipo, final String name,
-		final String code, final String technology, final String description, 
-		final String retailPrice, final String optionalLink, final String inventor, final String published) {
+		final String code, final String technology, final String retailPrice) {
 		
 
 		super.clickOnMenu("Any", "List published items");
@@ -24,18 +23,6 @@ public class AnyItemListPublishedTest extends TestHarness{
 		super.checkColumnHasValue(recordIndex, 2, code);
 		super.checkColumnHasValue(recordIndex, 3, technology);
 		super.checkColumnHasValue(recordIndex, 4, retailPrice);
-
-		super.clickOnListingRecord(recordIndex);
-		super.checkFormExists();
-		super.checkInputBoxHasValue("tipo", tipo);
-		super.checkInputBoxHasValue("name", name);
-		super.checkInputBoxHasValue("code", code);
-		super.checkInputBoxHasValue("technology", technology);
-		super.checkInputBoxHasValue("description", description);
-		super.checkInputBoxHasValue("retailPrice", retailPrice);
-		super.checkInputBoxHasValue("optionalLink", optionalLink);
-		super.checkInputBoxHasValue("inventor.userAccount.username", inventor);
-		super.checkInputBoxHasValue("published", published);
 
 	}
 	

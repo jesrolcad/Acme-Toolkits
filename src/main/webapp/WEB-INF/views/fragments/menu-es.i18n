@@ -42,6 +42,7 @@ master.menu.authenticated.system-configuration = Configuración del sistema
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrador
+master.menu.administrator.announcement.create = Crear anuncio
 master.menu.administrator.all-chirps = Listar todos los chirridos
 master.menu.administrator.user-accounts = Cuentas de usuario
 master.menu.administrator.system-configuration = Configuración del sistema
@@ -75,7 +76,8 @@ master.menu.inventor.toolkits.list = Listar mis kits de herramientas
 master.menu.inventor.item.list = Listar mis ítems
 master.menu.inventor.favourite-link = Enlace favorito
 master.menu.inventor.patronage-reports = Reportes de patrocinios
-master.menu.inventor.list-patronages = Listar patrocinios
+master.menu.inventor.list-patronages = Listar patrocinios aceptados y rechazados
+master.menu.inventor.list-proposed-patronages = Listar patrocinios propuestos
 
 
 # master.menu.user-account ####################################################
