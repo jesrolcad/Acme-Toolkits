@@ -14,7 +14,7 @@ public class InventorItemPublishTest extends TestHarness{
 	public void positiveItem(final int recordIndex, final String tipo, final String name, final String code, final String technology, final String description, final String retailPrice, final String optionalLink) {
 		
 		
-		super.signIn("inventor2", "inventor2");
+		super.signIn("inventor3", "inventor3");
 		super.clickOnMenu("Inventor", "List my items");
 		super.checkListingExists();
 		super.sortListing(0, "desc");
@@ -34,12 +34,10 @@ public class InventorItemPublishTest extends TestHarness{
 		super.clickOnMenu("Inventor", "List my items");
 		super.checkListingExists();
 		super.sortListing(0, "asc");
-		super.checkColumnHasValue(recordIndex, 2, code);
 		super.clickOnListingRecord(recordIndex);
 		
 		super.checkFormExists();
-		super.clickOnSubmit("Publish");
-		super.checkAlertExists(false);
+		super.checkNotButtonExists("Publish");
 		
 		
 		super.signOut();

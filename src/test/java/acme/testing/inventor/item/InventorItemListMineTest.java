@@ -29,11 +29,6 @@ public class InventorItemListMineTest extends TestHarness{
 
 		super.signOut();
 	}
-	@Test
-	@Order(20)
-	public void negativeTest() {
-		// Es una lista, asi que no hay datos para un caso negativo
-	}
 	
 	@Test
 	@Order(30)

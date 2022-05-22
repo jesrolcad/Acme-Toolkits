@@ -20,13 +20,13 @@ public class InventorPatronageReportCreateService implements AbstractCreateServi
 	
 
 	@Override
-	public boolean authorise(Request<PatronageReport> request) {
+	public boolean authorise(final Request<PatronageReport> request) {
 		assert request != null;
 		return true;
 	}
 
 	@Override
-	public void bind(Request<PatronageReport> request, PatronageReport entity, Errors errors) {
+	public void bind(final Request<PatronageReport> request, final PatronageReport entity, final Errors errors) {
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
@@ -35,7 +35,7 @@ public class InventorPatronageReportCreateService implements AbstractCreateServi
 	}
 
 	@Override
-	public void unbind(Request<PatronageReport> request, PatronageReport entity, Model model) {
+	public void unbind(final Request<PatronageReport> request, final PatronageReport entity, final Model model) {
 		assert request != null; 
 		assert entity != null; 
 		assert model != null; 
@@ -43,14 +43,15 @@ public class InventorPatronageReportCreateService implements AbstractCreateServi
 		request.unbind(entity, model, "creationMoment","sequenceNumber", "memorandum", "link");	 
 		model.setAttribute("confirmation", false); 
 		model.setAttribute("readonly", false); 
+		model.setAttribute("status", entity.getPatronage().getStatus());
 		model.setAttribute("patronageId", entity.getPatronage().getId());
 	}
 
 	@Override
-	public PatronageReport instantiate(Request<PatronageReport> request) {
+	public PatronageReport instantiate(final Request<PatronageReport> request) {
 		assert request != null;
 		int patronageId;
-		PatronageReport result = new PatronageReport();
+		final PatronageReport result = new PatronageReport();
 		Patronage patronage;
 		Date creationMoment;
 		String sequenceNumber = "";
@@ -58,7 +59,7 @@ public class InventorPatronageReportCreateService implements AbstractCreateServi
 		patronageId= request.getModel().getInteger("patronageId");
 		patronage = this.repository.findPatronageById(patronageId);
 		
-		int aux= this.repository.totalNumberPatronagesWithSameCode(patronage.getCode())+1;
+		final int aux= this.repository.totalNumberPatronagesWithSameCode(patronage.getCode())+1;
 		if(aux<10) {
 			 salida= "000"+aux; 
 		}else if(aux<100){
@@ -82,7 +83,7 @@ public class InventorPatronageReportCreateService implements AbstractCreateServi
 	}
 
 	@Override
-	public void validate(Request<PatronageReport> request, PatronageReport entity, Errors errors) {
+	public void validate(final Request<PatronageReport> request, final PatronageReport entity, final Errors errors) {
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
@@ -98,7 +99,7 @@ public class InventorPatronageReportCreateService implements AbstractCreateServi
 	}
 
 	@Override
-	public void create(Request<PatronageReport> request, PatronageReport entity) {
+	public void create(final Request<PatronageReport> request, final PatronageReport entity) {
 		assert request != null;
 		assert entity != null;
 		Date creationMoment;

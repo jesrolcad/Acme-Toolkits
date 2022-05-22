@@ -1,6 +1,7 @@
 package acme.testing.inventor.item;
 
 import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
@@ -11,10 +12,10 @@ public class InventorItemUpdateTest extends TestHarness{
 	@ParameterizedTest
 	@CsvFileSource(resources = "/inventor/item/update-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
-	public void positiveItem(final int recordIndex, final String tipo, final String name, final String code, final String technology, final String description, final String retailPrice, final String optionalLink) {
+	public void positiveItem(final int recordIndex, final int updatedRecordIndex, final String tipo, final String name, final String code, final String technology, final String description, final String retailPrice, final String optionalLink) {
 		
 		
-		super.signIn("inventor2", "inventor2");
+		super.signIn("inventor3", "inventor3");
 		super.clickOnMenu("Inventor", "List my items");
 		super.checkListingExists();
 		super.sortListing(2, "asc");
@@ -28,10 +29,8 @@ public class InventorItemUpdateTest extends TestHarness{
 		super.fillInputBoxIn("optionalLink", optionalLink);
 		
 		super.clickOnSubmit("Update");
-		super.clickOnMenu("Inventor", "List my items");
 		
-		super.sortListing(2, "asc");
-		super.clickOnListingRecord(recordIndex);
+		super.clickOnListingRecord(updatedRecordIndex);
 		super.checkInputBoxHasValue("tipo", tipo);
 		super.checkInputBoxHasValue("name", name);
 		super.checkInputBoxHasValue("code", code);
@@ -43,10 +42,10 @@ public class InventorItemUpdateTest extends TestHarness{
 		super.signOut();
 	}
 	@ParameterizedTest
-	@CsvFileSource(resources = "/inventor/item/upt-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@CsvFileSource(resources = "/inventor/item/update-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(20)
 	public void negativeTest1(final int recordIndex, final String tipo, final String name, final String code, final String technology, final String description, final String retailPrice, final String optionalLink) {
-		super.signIn("inventor2", "inventor2");
+		super.signIn("inventor3", "inventor3");
 		super.clickOnMenu("Inventor", "List my items");
 		super.checkListingExists();
 		super.sortListing(0, "asc");
@@ -65,7 +64,7 @@ public class InventorItemUpdateTest extends TestHarness{
 		super.signOut();
 	}
 	@ParameterizedTest
-	@CsvFileSource(resources = "/inventor/item/upt-negative2.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@CsvFileSource(resources = "/inventor/item/update-negative2.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(20)
 	public void negativeTest2(final int recordIndex, final String tipo, final String name, final String code, final String technology, final String description, final String retailPrice, final String optionalLink) {
 		super.signIn("inventor1", "inventor1");
@@ -84,6 +83,26 @@ public class InventorItemUpdateTest extends TestHarness{
 		super.checkNotSubmitExists("Update");
 		
 		super.signOut();
+	}
+	
+	
+	@Test
+	@Order(30)
+	public void hackingTest() {
+		super.checkNotLinkExists("Account");
+		super.navigate("/inventor/item/update");
+		super.checkPanicExists();
+
+		super.signIn("administrator", "administrator");
+		super.navigate("/inventor/item/update");
+		super.checkPanicExists();
+		super.signOut();
+
+		super.signIn("patron1", "patron1");
+		super.navigate("/inventor/item/update");
+		super.checkPanicExists();
+		super.signOut();
+
 	}
 
 	// Ancillary methods ------------------------------------------------------

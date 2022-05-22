@@ -1,8 +1,8 @@
-recordIndex,tipo,name,code,technology,description,retail-price,optional-link
-0,COMPONENT,EstoSonCienCaracteresPalomaPalomaPalomaPalomaPalomaPalomaPalomaPalomaPalomaPalomaPalomaPalomaPalomaP,ABK-312-B,Technology1,This is the component 12 and uses the tecnology 1,USD 5.30,https://www.google.com/
-0,COMPONENT,Component 22,ABK-312-C,Technology1,EstoSonDoscientosCincuentaYCincoCaracteresPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoP,USD 5.30,
-0,COMPONENT,Component 20,ABK-312-A,EstoSonCienCaracteresPalomaPalomaPalomaPalomaPalomaPalomaPalomaPalomaPalomaPalomaPalomaPalomaPalomaP,This is the component 12 and uses the tecnology 1,EUR 5.30,https://www.google.com/
-0,TOOL,Tool,AAA-000,La tecnologia,La descripcion,EUR 25.00,
-0,TOOL,Tool,AAA-000-A,AEIOU,aks,EUR 0.00,
-0,TOOL,Pruebas,AAA-000-R,AEIOU,aks,GBP 44.30,https://www.google.com/
-0,TOOL,1234,AAA-000-R,AEIOU,aks,GBP 44.30,
+recordIndex,updatedRecordIndex,tipo,name,code,technology,description,retail-price,optional-link
+1,0,COMPONENT,EstoSonCienCaracteresPalomaPalomaPalomaPalomaPalomaPalomaPalomaPalomaPalomaPalomaPalomaPalomaPalomaP,ABK-312-B,Technology1,This is the component 12 and uses the tecnology 1,EUR 0.01,https://www.google.com/
+0,0,COMPONENT,Component 22,ABK-312-C,Technology1,EstoSonDoscientosCincuentaYCincoCaracteresPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoPatoP,USD 0.01,
+0,0,COMPONENT,Component 20,ABK-312-A,EstoSonCienCaracteresPalomaPalomaPalomaPalomaPalomaPalomaPalomaPalomaPalomaPalomaPalomaPalomaPalomaP,This is the component 12 and uses the tecnology 1,GBP 0.01,https://www.google.com/
+0,0,TOOL,Tool,AAA-000,La tecnologia,La descripcion,EUR 25.00,
+0,0,TOOL,Tool,AAA-000-A,AEIOU,aks,EUR 0.00,
+0,0,TOOL,Pruebas,AAA-000-R,AEIOU,aks,USD 44.30,https://www.google.com/
+0,0,TOOL,1234,AAA-000-R,AEIOU,aks,GBP 44.30,
