@@ -21,13 +21,7 @@ public class InventorToolkitPublishTest extends TestHarness{
 		super.sortListing(0, "desc");
 		super.checkColumnHasValue(recordIndex, 0, code);
 		super.clickOnListingRecord(recordIndex);
-		//
-		super.clickOnMenu("Inventor", "List my toolkits");
-		super.checkListingExists();
-		super.sortListing(0, "desc");
-		super.checkColumnHasValue(recordIndex, 0, code);
-		super.clickOnListingRecord(recordIndex);
-		//
+		
 		super.checkFormExists();
 		super.clickOnSubmit("Publish");
 		super.checkNotErrorsExist();
