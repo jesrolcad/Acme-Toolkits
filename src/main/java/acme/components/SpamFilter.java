@@ -50,7 +50,7 @@ public class SpamFilter {
 		return count;
 	}
 	private static int wordsInText(final String text) {
-		String[] resultArray = Arrays.stream(text.split(",")).filter(e -> e.trim().length() > 0).toArray(String[]::new);
+		final String[] resultArray = Arrays.stream(text.split(" ")).filter(e -> e.trim().length() > 0).toArray(String[]::new);
 		return resultArray.length;
 
 	}
