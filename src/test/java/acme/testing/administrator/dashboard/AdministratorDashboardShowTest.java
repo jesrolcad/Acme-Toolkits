@@ -124,4 +124,21 @@ public class AdministratorDashboardShowTest extends TestHarness {
 		
 
 	}
+	@ParameterizedTest
+	@CsvFileSource(resources = "/administrator/dashboard/show.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@Order(10)
+	public void administatorHackingTest() {
+		super.signIn("inventor1", "inventor1");
+		super.navigate("/administrator/administrator-dashboard/show");
+		super.checkErrorsExist();
+		
+		super.signOut();
+		super.signIn("patron1", "patron1");
+		super.navigate("/administrator/administrator-dashboard/show");
+		super.checkErrorsExist();
+		
+		super.signOut();
+	
+		
+	}
 }
