@@ -22,6 +22,7 @@ import acme.roles.Inventor;
 public class InventorItemCreateService implements AbstractCreateService<Inventor, Item>{ 
 	@Autowired 
 	protected AdministratorSystemConfigurationRepository scRepository; 
+	
 	@Autowired 
 	protected InventorItemRepository repository; 
 	
