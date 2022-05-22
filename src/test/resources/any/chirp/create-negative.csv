@@ -7,3 +7,6 @@ recordIndex,title,body,author,email,confirmation
 5,This is an example of title. This is an example of title. This is an example of title. Another example,Valid body, Valid author, example@gmail.com,false
 6,Valid title,This is an example of a long body. This body is not valid. This is an example of a long body. This body is not valid.This is an example of a long body. This body is not valid.This is an example of a long body. This body is not valid.This is an example of a long body. This body is not valid.,Valid author,example@gmail.com,true
 7,Title 01,Body 01,Author 01,example@gmail.com,false
+8,sex,Body 01,Author 01,example@gmail.com,true
+9,Title 01,sexy,Author 01,example@gmail.com,true
+10,Title 01,Body 01,has ganado,example@gmail.com,true
