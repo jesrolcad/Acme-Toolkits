@@ -14,17 +14,25 @@ public class AdministratorDashboardShowTest extends TestHarness {
 	@ParameterizedTest
 	@CsvFileSource(resources = "/administrator/dashboard/show.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
-	public void administatorDashboardPositive(
-		final String averageBudgetGBP,final String averageBudgetEUR,final String averageBudgetUSD,
-		final String deviationBudgetGBP,final String deviationBudgetEUR,final String deviationBudgetUSD,
-		final String minBudgetGBP,final String minBudgetEUR,final String minBudgetUSD,
-		final String maxBudgetGBP,final String maxBudgetEUR,final String maxBudgetUSD,
-		final String deviationBToolEUR, final String deviationBToolGBP, final String deviationBToolUSD,
-		final String minBToolEUR,final String minBToolGBP,final String minBToolUSD,
-		final String maxBToolEUR,final String maxBToolGBP,final String maxBToolUSD,
-		final String deviationRPDenied, final String deviationRPAccepted, final String deviationRPProposed,
-		final String minBRPDenied,	final String minBRPAccepted,	final String minBRPProposed,
-		final String maxBRPDenied,	final String maxBRPAccepted,	final String maxBRPProposed,
+	public void administatorDashboardPositive(final String averageBudgetEURT1,
+		final String averageBudgetGBPT1,final String averageBudgetGBPT2,final String averageBudgetUSDT1,
+		final String averageBudgetEURT2, final String averageBudgetUSDT3,	
+		final String deviationBudgetEURT1,final String deviationBudgetGBPT1,final String deviationBudgetGBPT2,final String deviationBudgetUSDT1,
+		final String deviationBudgetEURT2,final String deviationBudgetUSDT3,
+		final String minBudgetEURT1,final String minBudgetGBPT1,final String minBudgetGBPT2,final String minBudgetUSDT1,
+		final String minBudgetEURT2,final String minBudgetUSDT3,
+		final String maxBudgetEURT1,final String maxBudgetGBPT1,final String maxBudgetGBPT2,final String maxBudgetUSDT1,
+		final String maxBudgetEURT2,final String maxBudgetUSDT3,
+		
+		
+		final String averageBToolEUR, final String averageBToolGBP,final String averageBToolUSD,
+		final String deviationBToolEUR,final String deviationBToolGBP,final String deviationBToolUSD,
+		final String minBToolEUR,final String minBToolGBP,final String minBToolUSD,final String maxBToolEUR,final String maxBToolGBP,final String maxBToolUSD,
+		
+		final String averageRPDenied,final String averageRPAccepted,final String averageRPProposed,
+		final String deviationRPDenied,final String deviationRPAccepted,final String deviationRPProposed,
+		final String minBRPDenied,final String minBRPAccepted,final String minBRPProposed,
+		final String maxBRPDenied,final String maxBRPAccepted,final String maxBRPProposed,
 		
 		final String totalProposedPatronages,final String totalAcceptedPatronages,final String totalDeniedPatronages, final String totalComponents,final String totalTools) {
 		super.signIn("administrator", "administrator");
@@ -32,39 +40,83 @@ public class AdministratorDashboardShowTest extends TestHarness {
 	
 		BrowserDriver driver= super.getDriver();
 		//components
+		WebElement averageByBudgetEURT1 = driver.locateOne(By.cssSelector("table.table:nth-child(5) > tbody:nth-child(3) > tr:nth-child(1) > td:nth-child(2)"));
+		WebElement averageByBudgetGBPT1 = driver.locateOne(By.cssSelector("table.table:nth-child(5) > tbody:nth-child(3) > tr:nth-child(2) > td:nth-child(2)"));
+		WebElement averageByBudgetGBPT2 = driver.locateOne(By.cssSelector("table.table:nth-child(5) > tbody:nth-child(3) > tr:nth-child(3) > td:nth-child(2)"));
+		WebElement averageByBudgetUSDT1 = driver.locateOne(By.cssSelector("table.table:nth-child(5) > tbody:nth-child(3) > tr:nth-child(4) > td:nth-child(2)"));
+		WebElement averageByBudgetEURT2 = driver.locateOne(By.cssSelector("table.table:nth-child(5) > tbody:nth-child(3) > tr:nth-child(5) > td:nth-child(2)"));
+		WebElement averageByBudgetUSDT3 = driver.locateOne(By.cssSelector("table.table:nth-child(5) > tbody:nth-child(3) > tr:nth-child(6) > td:nth-child(2)"));
+		assert averageBudgetEURT1.equals(averageByBudgetEURT1.getText());
+		assert averageBudgetGBPT1.equals(averageByBudgetGBPT1.getText());
+		assert averageBudgetGBPT2.equals(averageByBudgetGBPT2.getText());
+		assert averageBudgetUSDT1.equals(averageByBudgetUSDT1.getText());
+		assert averageBudgetEURT2.equals(averageByBudgetEURT2.getText());
+		assert averageBudgetUSDT3.equals(averageByBudgetUSDT3.getText());
 		
-		WebElement averageByBudgetGBP = driver.locateOne(By.cssSelector("table.table:nth-child(5) > tbody:nth-child(3) > tr:nth-child(1) > td:nth-child(2)"));
-		WebElement averageByBudgetEUR = driver.locateOne(By.cssSelector("table.table:nth-child(5) > tbody:nth-child(3) > tr:nth-child(2) > td:nth-child(2)"));
-		WebElement averageByBudgetUSD = driver.locateOne(By.cssSelector("table.table:nth-child(5) > tbody:nth-child(3) > tr:nth-child(3) > td:nth-child(2)"));
-		System.out.println(averageByBudgetGBP +"entrada"+averageBudgetGBP);
-		assert averageBudgetGBP.equals(averageByBudgetGBP.getText());
-		assert averageBudgetEUR.equals(averageByBudgetEUR.getText());
-		assert averageBudgetUSD.equals(averageByBudgetUSD.getText());
+		WebElement deviationByBudgetEURT1 = driver.locateOne(By.cssSelector("table.table:nth-child(6) > tbody:nth-child(3) > tr:nth-child(1) > td:nth-child(2)"));
+		WebElement deviationByBudgetGBPT1 = driver.locateOne(By.cssSelector("table.table:nth-child(6) > tbody:nth-child(3) > tr:nth-child(2) > td:nth-child(2)"));
+		WebElement deviationByBudgetGBPT2 = driver.locateOne(By.cssSelector("table.table:nth-child(6) > tbody:nth-child(3) > tr:nth-child(3) > td:nth-child(2)"));
+		WebElement deviationByBudgetUSDT1 = driver.locateOne(By.cssSelector("table.table:nth-child(6) > tbody:nth-child(3) > tr:nth-child(4) > td:nth-child(2)"));
+		WebElement deviationByBudgetEURT2 = driver.locateOne(By.cssSelector("table.table:nth-child(6) > tbody:nth-child(3) > tr:nth-child(5) > td:nth-child(2)"));
+		WebElement deviationByBudgetUSDT3 = driver.locateOne(By.cssSelector("table.table:nth-child(6) > tbody:nth-child(3) > tr:nth-child(6) > td:nth-child(2)"));
+		assert deviationBudgetEURT1.equals(deviationByBudgetEURT1.getText());
+		assert deviationBudgetGBPT1.equals(deviationByBudgetGBPT1.getText());
+		assert deviationBudgetGBPT2.equals(deviationByBudgetGBPT2.getText());
+		assert deviationBudgetUSDT1.equals(deviationByBudgetUSDT1.getText());
+		assert deviationBudgetEURT2.equals(deviationByBudgetEURT2.getText());
+		assert deviationBudgetUSDT3.equals(deviationByBudgetUSDT3.getText());
 		
-		WebElement deviationBGBP = driver.locateOne(By.cssSelector("table.table:nth-child(6) > tbody:nth-child(3) > tr:nth-child(1) > td:nth-child(2)"));
-		WebElement deviationBEUR = driver.locateOne(By.cssSelector("table.table:nth-child(6) > tbody:nth-child(3) > tr:nth-child(2) > td:nth-child(2)"));
-		WebElement deviationBUSD = driver.locateOne(By.cssSelector("table.table:nth-child(6) > tbody:nth-child(3) > tr:nth-child(3) > td:nth-child(2)"));
+		
+		WebElement minByBudgetEURT1 = driver.locateOne(By.cssSelector("table.table:nth-child(7) > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(2)"));
+		WebElement minByBudgetGBPT1 = driver.locateOne(By.cssSelector("table.table:nth-child(7) > tbody:nth-child(2) > tr:nth-child(2) > td:nth-child(2)"));
+		WebElement minByBudgetGBPT2 = driver.locateOne(By.cssSelector("table.table:nth-child(7) > tbody:nth-child(2) > tr:nth-child(3) > td:nth-child(2)"));
+		WebElement minByBudgetUSDT1 = driver.locateOne(By.cssSelector("table.table:nth-child(7) > tbody:nth-child(2) > tr:nth-child(4) > td:nth-child(2)"));
+		WebElement minByBudgetEURT2 = driver.locateOne(By.cssSelector("table.table:nth-child(7) > tbody:nth-child(2) > tr:nth-child(5) > td:nth-child(2)"));
+		WebElement minByBudgetUSDT3 = driver.locateOne(By.cssSelector("table.table:nth-child(7) > tbody:nth-child(2) > tr:nth-child(6) > td:nth-child(2)"));
+		assert minBudgetEURT1.equals(minByBudgetEURT1.getText());
+		assert minBudgetGBPT1.equals(minByBudgetGBPT1.getText());
+		assert minBudgetGBPT2.equals(minByBudgetGBPT2.getText());
+		assert minBudgetUSDT1.equals(minByBudgetUSDT1.getText());
+		assert minBudgetEURT2.equals(minByBudgetEURT2.getText());
+		assert minBudgetUSDT3.equals(minByBudgetUSDT3.getText());
+		
+		WebElement maxByBudgetEURT1 = driver.locateOne(By.cssSelector("table.table:nth-child(8) > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(2)"));
+		WebElement maxByBudgetGBPT1 = driver.locateOne(By.cssSelector("table.table:nth-child(8) > tbody:nth-child(2) > tr:nth-child(2) > td:nth-child(2)"));
+		WebElement maxByBudgetGBPT2 = driver.locateOne(By.cssSelector("table.table:nth-child(8) > tbody:nth-child(2) > tr:nth-child(3) > td:nth-child(2)"));
+		WebElement maxByBudgetUSDT1 = driver.locateOne(By.cssSelector("table.table:nth-child(8) > tbody:nth-child(2) > tr:nth-child(4) > td:nth-child(2)"));
+		WebElement maxByBudgetEURT2 = driver.locateOne(By.cssSelector("table.table:nth-child(8) > tbody:nth-child(2) > tr:nth-child(5) > td:nth-child(2)"));
+		WebElement maxByBudgetUSDT3 = driver.locateOne(By.cssSelector("table.table:nth-child(8) > tbody:nth-child(2) > tr:nth-child(6) > td:nth-child(2)"));
+		assert maxBudgetEURT1.equals(maxByBudgetEURT1.getText());
+		assert maxBudgetGBPT1.equals(maxByBudgetGBPT1.getText());
+		assert maxBudgetGBPT2.equals(maxByBudgetGBPT2.getText());
+		assert maxBudgetUSDT1.equals(maxByBudgetUSDT1.getText());
+		assert maxBudgetEURT2.equals(maxByBudgetEURT2.getText());
+		assert maxBudgetUSDT3.equals(maxByBudgetUSDT3.getText());
+		
 
-		assert deviationBudgetGBP.equals(deviationBGBP.getText());
-		assert deviationBudgetEUR.equals(deviationBEUR.getText());
-		assert deviationBudgetUSD.equals(deviationBUSD.getText());
-		
-		WebElement minBudgetBGBP = driver.locateOne(By.cssSelector("table.table:nth-child(7) > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(2)"));
-		WebElement minBudgetBEUR = driver.locateOne(By.cssSelector("table.table:nth-child(7) > tbody:nth-child(2) > tr:nth-child(2) > td:nth-child(2)"));
-		WebElement minBudgetBUSD = driver.locateOne(By.cssSelector("table.table:nth-child(7) > tbody:nth-child(2) > tr:nth-child(3) > td:nth-child(2)"));
-
-		assert minBudgetGBP.equals(minBudgetBGBP.getText());
-		assert minBudgetEUR.equals(minBudgetBEUR.getText());
-		assert minBudgetUSD.equals(minBudgetBUSD.getText());
 
 //		tools
 		
-
+		WebElement averageBuToolEUR = driver.locateOne(By.cssSelector("table.table:nth-child(10) > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(2)"));
+		WebElement averageBuToolGBP = driver.locateOne(By.cssSelector("table.table:nth-child(10) > tbody:nth-child(2) > tr:nth-child(2) > td:nth-child(2)"));
+		WebElement averageBuToolUSD = driver.locateOne(By.cssSelector("table.table:nth-child(10) > tbody:nth-child(2) > tr:nth-child(3) > td:nth-child(2)"));
 		
-		WebElement minBuToolEUR = driver.locateOne(By.cssSelector("table.table:nth-child(13) > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(2)"));
+		assert averageBToolEUR.equals(averageBuToolEUR.getText());
+		assert averageBToolGBP.equals(averageBuToolGBP.getText());
+		assert averageBToolUSD.equals(averageBuToolUSD.getText());
+		
+		WebElement deviationBuToolEUR = driver.locateOne(By.cssSelector("table.table:nth-child(11) > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(2)"));
+		WebElement deviationBuToolGBP = driver.locateOne(By.cssSelector("table.table:nth-child(11) > tbody:nth-child(2) > tr:nth-child(2) > td:nth-child(2)"));
+		WebElement deviationBuToolUSD = driver.locateOne(By.cssSelector("table.table:nth-child(11) > tbody:nth-child(2) > tr:nth-child(3) > td:nth-child(2)"));
+		
+		assert deviationBToolEUR.equals(deviationBuToolEUR.getText());
+		assert deviationBToolGBP.equals(deviationBuToolGBP.getText());
+		assert deviationBToolUSD.equals(deviationBuToolUSD.getText());
+		
+		WebElement minBuToolEUR = driver.locateOne(By.cssSelector("table.table:nth-child(12) > tbody:nth-child(3) > tr:nth-child(1) > td:nth-child(2)"));
 		WebElement minBuToolGBP = driver.locateOne(By.cssSelector("table.table:nth-child(12) > tbody:nth-child(3) > tr:nth-child(2) > td:nth-child(2)"));
 		WebElement minBuToolUSD = driver.locateOne(By.cssSelector("table.table:nth-child(12) > tbody:nth-child(3) > tr:nth-child(3) > td:nth-child(2)"));
-
+		
 		assert minBToolEUR.equals(minBuToolEUR.getText());
 		assert minBToolGBP.equals(minBuToolGBP.getText());
 		assert minBToolUSD.equals(minBuToolUSD.getText());
@@ -72,10 +124,13 @@ public class AdministratorDashboardShowTest extends TestHarness {
 		WebElement maxBuToolEUR = driver.locateOne(By.cssSelector("table.table:nth-child(13) > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(2)"));
 		WebElement maxBuToolGBP = driver.locateOne(By.cssSelector("table.table:nth-child(13) > tbody:nth-child(2) > tr:nth-child(2) > td:nth-child(2)"));
 		WebElement maxBuToolUSD = driver.locateOne(By.cssSelector("table.table:nth-child(13) > tbody:nth-child(2) > tr:nth-child(3) > td:nth-child(2)"));
-
+		
 		assert maxBToolEUR.equals(maxBuToolEUR.getText());
 		assert maxBToolGBP.equals(maxBuToolGBP.getText());
 		assert maxBToolUSD.equals(maxBuToolUSD.getText());
+
+
+
 
 //PATRONAGES
 		
