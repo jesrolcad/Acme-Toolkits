@@ -6,9 +6,11 @@ import java.util.HashSet;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.components.SpamFilter;
 import acme.entities.Item;
 import acme.entities.Quantity;
 import acme.entities.Toolkit;
+import acme.features.administrator.systemconfiguration.AdministratorSystemConfigurationRepository;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
@@ -20,6 +22,9 @@ public class InventorToolkitPublishService implements AbstractUpdateService<Inve
 
 	@Autowired
 	protected InventorToolkitRepository repository;
+	
+	@Autowired 
+	protected AdministratorSystemConfigurationRepository scRepository; 
 	
 	@Override
 	public boolean authorise(final Request<Toolkit> request) {
@@ -89,6 +94,24 @@ public class InventorToolkitPublishService implements AbstractUpdateService<Inve
 		final Collection<Quantity> quantities = this.repository.findQuantityByToolkitId(toolkitid);
 		final Collection<Item> items = new HashSet<Item>();
 		Boolean publishItem = true;
+		
+		if(!errors.hasErrors("code")) {
+			Toolkit existing;
+			
+			existing = this.repository.findOneToolkitByCode(entity.getCode());
+			errors.state(request, existing == null || existing.getId() == entity.getId(), "code", "inventor.toolkit.form.error.duplicated");
+		}
+		
+		
+		if (!errors.hasErrors("title")) {
+            errors.state(request, SpamFilter.spamValidator(entity.getTitle(), this.scRepository.findWeakSpamWords(), this.scRepository.findStrongSpamWords(),this.scRepository.findWeakSpamThreshold(),this.scRepository.findStrongSpamThreshold()), "title", "form.error.spam");
+        }
+		if (!errors.hasErrors("assemblyNotes")) {
+            errors.state(request, SpamFilter.spamValidator(entity.getAssemblyNotes(), this.scRepository.findWeakSpamWords(), this.scRepository.findStrongSpamWords(),this.scRepository.findWeakSpamThreshold(),this.scRepository.findStrongSpamThreshold()), "assemblyNotes", "form.error.spam");
+        }
+		if (!errors.hasErrors("description")) {
+            errors.state(request, SpamFilter.spamValidator(entity.getDescription(), this.scRepository.findWeakSpamWords(), this.scRepository.findStrongSpamWords(),this.scRepository.findWeakSpamThreshold(),this.scRepository.findStrongSpamThreshold()), "description", "form.error.spam");
+        }
 		
 		for(final Quantity quantity: quantities) {
 			final int id=quantity.getId();

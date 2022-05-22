@@ -8,3 +8,5 @@ recordIndex,title,body,info,critical,confirmation
 6,Valid title,This is an example of a long body. This body is not valid. This is an example of a long body. This body is not valid.This is an example of a long body. This body is not valid.This is an example of a long body. This body is not valid.This is an example of a long body. This body is not valid.,,false,true
 8,Title 01,Body 01,https://www.google.com/,false,false
 9,A new title,Body 01,google.com,false,true
+10,sex,Body 01,https://www.google.com/,false,true
+11,title,nigeria,https://www.google.com/,false,true

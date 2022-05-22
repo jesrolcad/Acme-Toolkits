@@ -86,9 +86,7 @@ public class AnyChirpCreateService implements AbstractCreateService<Any, Chirp> 
 		if (!errors.hasErrors("author")) {
             errors.state(request, SpamFilter.spamValidator(entity.getAuthor(), this.scRepository.findWeakSpamWords(), this.scRepository.findStrongSpamWords(),this.scRepository.findWeakSpamThreshold(),this.scRepository.findStrongSpamThreshold()), "author", "form.error.spam");
         }
-		if (!errors.hasErrors("email")) {
-            errors.state(request, SpamFilter.spamValidator(entity.getAuthor(), this.scRepository.findWeakSpamWords(), this.scRepository.findStrongSpamWords(),this.scRepository.findWeakSpamThreshold(),this.scRepository.findStrongSpamThreshold()), "email", "form.error.spam");
-        }
+		
 		confirmation = request.getModel().getBoolean("confirmation");
 		errors.state(request, confirmation, "confirmation", "any.Chirp.confirmation.error");
 		

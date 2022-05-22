@@ -83,11 +83,7 @@ public class AdministratorAnnouncementCreateService implements AbstractCreateSer
 		if (!errors.hasErrors("body")) {
             errors.state(request, SpamFilter.spamValidator(entity.getBody(), this.scRepository.findWeakSpamWords(), this.scRepository.findStrongSpamWords(),this.scRepository.findWeakSpamThreshold(),this.scRepository.findStrongSpamThreshold()), "body", "form.error.spam");
         }
-		
-		if (!errors.hasErrors("info")) {
-            errors.state(request, SpamFilter.spamValidator(entity.getInfo(), this.scRepository.findWeakSpamWords(), this.scRepository.findStrongSpamWords(),this.scRepository.findWeakSpamThreshold(),this.scRepository.findStrongSpamThreshold()), "info", "form.error.spam");
-        }
-
+	
 		confirmation = request.getModel().getBoolean("confirmation");
 		errors.state(request, confirmation, "confirmation", "administrator.announcement.confirmation.error");
 
