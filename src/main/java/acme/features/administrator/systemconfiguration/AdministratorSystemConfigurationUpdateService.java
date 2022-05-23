@@ -59,12 +59,35 @@ public class AdministratorSystemConfigurationUpdateService implements AbstractUp
 		result = this.repository.findSystemConfiguration();
 		return result;
 	}
+	
+	public boolean validateSystemCurrency(final String systemCurrency,final String acceptedCurrencies) {
+		
+		final String[] currencies= acceptedCurrencies.split(",");
+
+        Boolean acceptedCurrency = false;
+        for(int i=0;i<currencies.length;i++) {
+                if(systemCurrency.equals(currencies[i].trim())) {
+                	acceptedCurrency = true;
+            }
+        }
+		
+		return acceptedCurrency;
+		
+	}
 
 	@Override
 	public void validate(final Request<SystemConfiguration> request, final SystemConfiguration entity, final Errors errors) {
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+		
+		if(!errors.hasErrors("systemCurrency")) {
+			final boolean acceptedCurrency = this.validateSystemCurrency(entity.getSystemCurrency(),entity.getAcceptedCurrencies());
+			errors.state(request, acceptedCurrency, "systemCurrency", "administrator.system-configuration.form.error.system-currency-not-accepted");
+			
+		}
+		
+		
 		
 	}
 

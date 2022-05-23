@@ -19,6 +19,8 @@ public interface AdministratorSystemConfigurationRepository extends AbstractRepo
 	double findWeakSpamThreshold();
 	@Query("select sc.strongSpamThreshold from SystemConfiguration sc")
 	double findStrongSpamThreshold();
+	@Query("select sc.acceptedCurrencies from SystemConfiguration sc")
+	String findAcceptedCurrencies();
 	
 
 }

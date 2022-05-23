@@ -63,7 +63,7 @@ public class AnyItemShowService implements AbstractShowService<Any, Item>{
 			final String systemCurrency = this.repository.findSystemCurrency();
 
 			if(!money.getCurrency().equals(systemCurrency)) {
-				conversion = this.repository.findMoneyExchangeByCurrencyAndAmount(money.getCurrency(), money.getAmount());
+				conversion = this.repository.findMoneyExchangeByCurrencyAndAmount(money.getCurrency(), money.getAmount(),systemCurrency);
 				
 				if(conversion == null) {
 					conversion = moneyExchange.computeMoneyExchange(money, systemCurrency);
