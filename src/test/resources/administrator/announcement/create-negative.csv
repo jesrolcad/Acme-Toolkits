@@ -1,0 +1,12 @@
+recordIndex,title,body,info,critical,confirmation
+0,,,,false,false
+1,This is a title,,http://www.example.com,false,false
+2,,This is a body,http://www.example.com,true,false
+3,Title 01,Body 01,not valid url,true,true
+4,,,http://www.example.com,true,true
+5,This is an example of title. This is an example of title. This is an example of title. Another example,Valid body,http://www.example.com,true,false
+6,Valid title,This is an example of a long body. This body is not valid. This is an example of a long body. This body is not valid.This is an example of a long body. This body is not valid.This is an example of a long body. This body is not valid.This is an example of a long body. This body is not valid.,,false,true
+8,Title 01,Body 01,https://www.google.com/,false,false
+9,A new title,Body 01,google.com,false,true
+10,sex,Body 01,https://www.google.com/,false,true
+11,title,nigeria,https://www.google.com/,false,true

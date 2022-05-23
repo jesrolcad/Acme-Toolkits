@@ -43,6 +43,7 @@ master.menu.authenticated.system-configuration = System configuration
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrator
+master.menu.administrator.announcement.create = Create announcement
 master.menu.administrator.user-accounts = User accounts
 master.menu.administrator.system-configuration = System configuration
 master.menu.administrator.populate-initial = Populate DB (initial)
@@ -76,7 +77,8 @@ master.menu.inventor.toolkits.list = List my toolkits
 master.menu.inventor.item.list = List my items
 master.menu.inventor.favourite-link = Favourite link
 master.menu.inventor.patronage-reports = Patronage reports
-master.menu.inventor.list-patronages = List patronages
+master.menu.inventor.list-patronages = List accepted and denied patronages
+master.menu.inventor.list-proposed-patronages = List proposed patronages
 
 # master.menu.user-account ####################################################
 

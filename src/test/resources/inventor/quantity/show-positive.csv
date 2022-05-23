@@ -1,0 +1,8 @@
+toolkit-record-index,quantity-record-index,quantity,tipo,name,item-code,retail-price,toolkit-code
+0,0,1,TOOL,Vapormax,AAA-123-F,USD 45.30,ABC-123-X
+0,1,2,COMPONENT,Component 1,KBK-312,EUR 0.01,ABC-123-X
+1,0,1,TOOL,Tool 3,ABD-999,EUR 0.01,ABC-124-O
+1,1,7,COMPONENT,Component 2,AUK-312,USD 0.01,ABC-124-O
+2,0,1,TOOL,Tool 6,XYZ-312,"USD 10,000.00",ABC-126
+2,1,10,COMPONENT,Component 2,AUK-312,USD 0.01,ABC-126
+3,0,1,TOOL,Tool 5,ZZZ-312,EUR 120.00,QWE-125

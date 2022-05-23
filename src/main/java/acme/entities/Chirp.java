@@ -5,6 +5,7 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.Valid;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -30,15 +31,15 @@ public class Chirp extends AbstractEntity {
 	@NotNull
 	protected Date				moment;
 
-	@Length(max = 101)
+	@Length(max = 100)
 	@NotBlank
 	protected String			title;
 
-	@Length(max = 101)
+	@Length(max = 100)
 	@NotBlank
 	protected String			author;
 
-	@Length(max = 256)
+	@Length(max = 255)
 	@NotBlank
 	protected String			body;
 
@@ -46,6 +47,9 @@ public class Chirp extends AbstractEntity {
 	protected String			email;
 
 	// Derived attributes -----------------------------------------------------
+	
+	@Valid
+	protected boolean			spam;
 
 	// Relationships ----------------------------------------------------------
 

@@ -1,5 +1,6 @@
 package acme.entities;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.validation.Valid;
@@ -30,21 +31,23 @@ public class Item extends AbstractEntity {
 	protected TipoDeItem tipo;
 	
 	@NotBlank
-	@Length(max=101)
+	@Length(max=100)
 	protected String name;
 	
+	@Column(unique=true)
 	@NotBlank
 	@Pattern(regexp="^[A-Z]{3}-[0-9]{3}(-[A-Z])?$")
 	protected String code;
 	
 	@NotBlank
-	@Length(max=101)
+	@Length(max=100)
 	protected String technology;
 	
 	@NotBlank
-	@Length(max=256)
+	@Length(max=255)
 	protected String description;
 	
+	@NotNull
 	@Valid
 	protected Money retailPrice;
 	
@@ -59,4 +62,9 @@ public class Item extends AbstractEntity {
 	@Valid
 	@ManyToOne(optional=false)
 	protected Inventor inventor;
+	
+	//derived attributes
+		
+		@Valid
+		protected boolean			spam;
 }

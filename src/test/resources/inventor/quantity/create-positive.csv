@@ -1,0 +1,9 @@
+toolkit-record-index,quantity-record-index,number,item-id,type,name,retail-price,item-code,toolkit-code
+0,0,1,1,COMPONENT,Component 7,EUR 199.78,ABK-312,ABC-761-A
+0,1,1,4,TOOL,Tool 3,EUR 0.01,ABD-999,ABC-761-A
+0,2,6,10,COMPONENT,Component 14,GBP 10.00,HJD-312-Y,ABC-761-A
+0,3,9,15,COMPONENT,Component brazo,EUR 247.73,REX-003-T,ABC-761-A,761-A
+2,0,1,11,TOOL,Tool 4,USD 20.10,ABE-187,JRC-000-Z
+2,1,1,13,TOOL,Tool 6,"USD 10,000.00",XYZ-312,JRC-000-Z
+2,2,7,24,COMPONENT,Component 3,GBP 0.10,NBI-312-M,JRC-000-Z
+2,3,75,24,COMPONENT,Component 5,"USD 1,900.27",QWE-312-L,JRC-000-Z

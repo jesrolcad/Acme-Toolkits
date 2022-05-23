@@ -14,7 +14,6 @@ authenticated.user-account.form.label.confirmation = Confirmación:
 authenticated.user-account.form.label.name = Nombre:
 authenticated.user-account.form.label.surname = Apellidos:
 authenticated.user-account.form.label.email = E-mail:
-authenticated.user-account.form.label.phone = Teléfono: (Opcional)
  
 authenticated.user-account.form.button.update = Actualizar
 

@@ -1,0 +1,10 @@
+recordIndex,tipo,name,code,technology,retail-price
+0,TOOL,Vapormax,AAA-123-F,Technology1,USD 45.30
+1,TOOL,Tool 2,ABC-312-A,Technology2,EUR 0.00
+2,TOOL,Tool 3,ABD-999,Technology3,EUR 0.01
+3,TOOL,Tool 4,ABE-187,Technology1,USD 20.10
+4,TOOL,Tool 7,ABH-312-O,Technology1,EUR 90.24
+5,COMPONENT,Component 2,AUK-312,Technology3,USD 0.01
+6,COMPONENT,Component 1,KBK-312,Technology2,EUR 0.01
+7,TOOL,Tool 6,XYZ-312,Technology3,"USD 10,000.00"
+8,TOOL,Tool 5,ZZZ-312,Technology2,EUR 120.00

@@ -7,24 +7,48 @@
 # this software. It has been tested carefully, but it is not guaranteed for any particular
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
+patron.patronage.form.error.noInventor = Por favor, seleccione un inventor
 
 patron.patronage.list.label.code= Código
 patron.patronage.list.label.budget= Presupuesto
+patron.patronage.form.label.conversion = Intercambio de moneda
 patron.patronage.list.label.start_date= Fecha de Inicio
 patron.patronage.list.label.end_date= Fecha de Fin
 patron.patronage.list.label.legal_stuff = Cosas legales
 patron.patronage.list.label.link = Enlace
 patron.patronage.list.label.status = Estado
+patron.patronage.form.button.delete= Barror patrocinio(y reportes asociados)
+
+patron.create-patronage = Crear nuevo patrocinio
+patron.patronage.form.button.create = Confirma crear nuevo patrocinio
+patron.patronage.form.label.inventor = Seleccionar inventor
+patron.update-patronage= Editar
+patron.patronage.form.button.update = Editar
+patron.patronage.form.label.proposed = Propuesto
+patron.patronage.form.label.accepted = Aceptado
+patron.patronage.form.label.denied = Denegado
+patron.patronage.form.button.publish = Publicar
+patron.patronage.form.error.noInventor = Por favor, seleccione un inventor
+
+patron.publish-patronage= Confirma publicar
 
 
+patron.patronage.form.error.non-accepted-currency= Divisa no aceptada
+patron.patronage.form.error.duplicated. = Código duplicado
+patron.patronage.form.error.duplicated = Código duplicado
+patron.patronage.form.error.negative-budget= Cantidad negativa
 patron.patronage.form.label.code = Código
 patron.patronage.form.label.startDate = Fecha de Inicio
 patron.patronage.form.label.endDate = Fecha de Fin
-patron.patronage.form.label.legalStuff = Cosas legales
+patron.patronage.form.label.legalStuff = Asuntos legales
 patron.patronage.form.label.budget = Presupuesto
+patron.patronage.form.error.too-close-start-date = Fecha de inicio muy cercana(1 mes después mínmo)
+patron.patronage.form.error.one-month = Un mes mínimo entre fechas
+
 patron.patronage.form.label.link = Enlace
 patron.patronage.form.label.status = Estado
 patron.patronage.form.label.username = Nombre de usuario del inventor
 patron.patronage.form.label.company = Empresa del inventor
 patron.patronage.form.label.inventor-link = Enlace del inventor
 patron.patronage.form.label.statement = Declaración del inventor
+patron.patronage.form.label.published = Publicado
