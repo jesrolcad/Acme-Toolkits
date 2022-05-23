@@ -26,6 +26,8 @@ public class InventorToolkitPublishTest extends TestHarness{
 		super.clickOnSubmit("Publish");
 		super.checkNotErrorsExist();
 		
+		
+		
 		super.signOut();
 	}
 	@ParameterizedTest

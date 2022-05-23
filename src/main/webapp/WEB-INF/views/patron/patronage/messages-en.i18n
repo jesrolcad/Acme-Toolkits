@@ -17,15 +17,15 @@ patron.patronage.list.label.legal_stuff = Legal Stuff
 patron.patronage.list.label.link = Link
 patron.patronage.list.label.status = Status
 patron.patronage.form.label.published = Published
-patron.patronage.form.button.delete= Delete patronage(and associated reports)
+patron.patronage.form.button.delete= Delete patronage
 patron.create-patronage = Create new patronage
-patron.patronage.form.button.create = Confirm creating new patronage
+patron.patronage.form.button.create = Create patronage
 patron.patronage.form.label.inventor = Select one inventor
 patron.patronage.form.label.code = Code
 patron.patronage.form.label.proposed = Proposed
 patron.patronage.form.label.accepted = Accepted
 patron.patronage.form.label.denied = Denied
-patron.patronage.form.button.publish = Confirm Publish
+patron.patronage.form.button.publish = Publish
 patron.publish-patronage= Publish
 
 

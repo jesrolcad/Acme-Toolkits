@@ -10,7 +10,7 @@ import acme.testing.TestHarness;
 public class PatronPatronageListTest extends TestHarness{
 	
 	@ParameterizedTest
-	@CsvFileSource(resources = "/patron/patronage/list.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@CsvFileSource(resources = "/patron/patronage/list-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
 	public void positivePatronage(final int recordIndex, final String code, final String budget, final String start_date, final String end_date, 
 		final String status, final String legal_stuff, final String link,final String inventor_username, final String inventor_company, final String inventor_link, final String inventor_statement) {
@@ -28,6 +28,8 @@ public class PatronPatronageListTest extends TestHarness{
 
 		super.signOut();
 	}
+	
+	
 	@Test
 	@Order(30)
 	public void hackingTest() {

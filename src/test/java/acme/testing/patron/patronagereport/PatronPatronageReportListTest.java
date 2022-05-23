@@ -10,9 +10,9 @@ import acme.testing.TestHarness;
 public class PatronPatronageReportListTest extends TestHarness{
 	
 	@ParameterizedTest
-	@CsvFileSource(resources = "/patron/patronageReport/list.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@CsvFileSource(resources = "/patron/patronageReport/list-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
-	public void positivePatronage(final int recordIndex, final String seq_number,final String creation_moment,final String memorandum,final String link) {
+	public void positivePatronage(final int recordIndex, final String seq_number,final String creation_moment,final String link) {
 		
 		
 		super.signIn("patron1", "patron1");
