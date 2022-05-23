@@ -62,9 +62,4 @@ public class Item extends AbstractEntity {
 	@Valid
 	@ManyToOne(optional=false)
 	protected Inventor inventor;
-	
-	//derived attributes
-		
-		@Valid
-		protected boolean			spam;
 }

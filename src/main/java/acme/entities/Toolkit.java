@@ -64,9 +64,6 @@ public class Toolkit extends AbstractEntity {
 	@Transient
 	protected Money retailPrice;
 	
-	@Valid
-	protected boolean			spam;
-	
 	
 	
 
