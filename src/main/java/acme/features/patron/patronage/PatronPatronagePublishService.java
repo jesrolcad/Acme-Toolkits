@@ -64,7 +64,7 @@ public class PatronPatronagePublishService implements AbstractUpdateService<Patr
 	}
 
 	@Override
-	public void validate(Request<Patronage> request, Patronage entity, Errors errors) {
+	public void validate(final Request<Patronage> request, final Patronage entity, final Errors errors) {
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
@@ -73,11 +73,10 @@ public class PatronPatronagePublishService implements AbstractUpdateService<Patr
 			Patronage existing;
 
 			existing = this.repository.findPatronageByCode(entity.getCode());
-			if(existing==null) {
-				existing=entity;
+			if(existing!=null) {
+				errors.state(request, existing.getId()==entity.getId() , "code", "patron.patronage.form.error.duplicated");
+				}
 			}
-			errors.state(request, entity.getCode().equals(existing.getCode()), "code", "patron.patronage.form.error.duplicated");
-		}
 		if(!errors.hasErrors("startDate")) {
 			final Date minimumStartDate=DateUtils.addMonths(new Date(System.currentTimeMillis() - 1),1);
 
