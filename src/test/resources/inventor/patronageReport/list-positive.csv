@@ -1,0 +1,6 @@
+recordIndex,seq_number,creation_moment,memorandum,link
+0,AAA-321-S:0001,2022/01/01 10:15,This is a default memorandum,
+1,AAA-321-S:0002,2022/02/01 23:59,This is a default memorandum,https://es.wikipedia.org/wiki/Link
+2,AAA-321-S:0003,2022/02/05 10:00,A new memorandum,https://es.wikipedia.org/wiki/Link
+3,SSA-321:0001,2022/03/18 16:00,This is a default memorandum,
+4,SSA-321:0002,2022/04/29 10:00,This is the best patronage,https://www.google.com/

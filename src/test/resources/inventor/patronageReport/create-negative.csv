@@ -1,0 +1,6 @@
+recordIndex,memorandum,link,confimartion
+0,,,true
+0,,,false
+0,"fail Lorem ipsum dolor sit amet, nonummy ligula volutpat hac integer nonummy. Suspendisse ultricies, congue etiam tellus, erat libero, nulla eleifend, mauris pellentesque. Suspendisse integer praesent vel, integer gravida mauris, fringilla vehicula lacinia non",https://es.wikipedia.org/wiki/Link,true
+0,testGood,fail,true
+0,testGood,https://es.wikipedia.org/wiki/Link,false

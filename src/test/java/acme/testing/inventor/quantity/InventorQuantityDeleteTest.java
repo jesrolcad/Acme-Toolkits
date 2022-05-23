@@ -26,7 +26,7 @@ public class InventorQuantityDeleteTest extends TestHarness{
 
 		super.clickOnButton("Items");
 		super.checkListingExists();
-		
+		super.sortListing(1,"asc");
 		super.clickOnListingRecord(quantityRecordIndex);
 		super.checkFormExists();
 		super.checkInputBoxHasValue("number",number);
