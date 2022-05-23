@@ -42,8 +42,8 @@ public interface InventorToolkitRepository extends AbstractRepository{
 	@Query("select i from Toolkit i where i.code = :code")
 	Toolkit findOneToolkitByCode(String code);
 	
-	@Query("select me from MoneyExchange me where me.source.currency = :currency and me.source.amount = :amount")
-	MoneyExchange findMoneyExchangeByCurrencyAndAmount(String currency, Double amount);
+	@Query("select me from MoneyExchange me where me.source.currency = :currency and me.source.amount = :amount and me.target.currency = :systemCurrency")
+	MoneyExchange findMoneyExchangeByCurrencyAndAmount(String currency, Double amount, String systemCurrency);
 
  
 }

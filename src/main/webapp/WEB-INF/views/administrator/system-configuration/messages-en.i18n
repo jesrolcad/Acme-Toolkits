@@ -9,3 +9,5 @@ administrator.systemconfiguration.form.label.money-exchange-service-description:
 administrator.systemconfiguration.form.label.money-exchange-service-link: Money exchange service link:
 
 administrator.systemconfiguration.form.button.update = Update
+
+administrator.system-configuration.form.error.system-currency-not-accepted = The currency is not accepted

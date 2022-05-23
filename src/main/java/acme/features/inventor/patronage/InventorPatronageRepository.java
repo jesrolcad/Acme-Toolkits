@@ -27,6 +27,6 @@ public interface InventorPatronageRepository extends AbstractRepository{
 	@Query("select sc.systemCurrency from SystemConfiguration sc")
 	String findSystemCurrency();
 	
-	@Query("select me from MoneyExchange me where me.source.currency = :currency and me.source.amount = :amount")
-	MoneyExchange findMoneyExchangeByCurrencyAndAmount(String currency, Double amount);
+	@Query("select me from MoneyExchange me where me.source.currency = :currency and me.source.amount = :amount and me.target.currency = :systemCurrency")
+	MoneyExchange findMoneyExchangeByCurrencyAndAmount(String currency, Double amount, String systemCurrency);
 } 
