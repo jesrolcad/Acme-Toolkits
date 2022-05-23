@@ -46,9 +46,8 @@ public class InventorToolkitItemListService implements AbstractListService<Inven
 	public Collection<Quantity> findMany(final Request<Quantity> request) {
 		final int toolkitId;
 		toolkitId = request.getModel().getInteger("masterId");
-		final Collection<Quantity> quantities = this.repository.findQuantityByToolkitId(toolkitId);
 		
-		return quantities;
+		return this.repository.findQuantityByToolkitId(toolkitId);
 	}
 
 	@Override

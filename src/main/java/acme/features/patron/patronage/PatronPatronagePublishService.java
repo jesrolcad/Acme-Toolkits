@@ -76,7 +76,7 @@ public class PatronPatronagePublishService implements AbstractUpdateService<Patr
 			if(existing==null) {
 				existing=entity;
 			}
-			errors.state(request, existing != null||entity.getCode()==existing.getCode(), "code", "patron.patronage.form.error.duplicated");
+			errors.state(request, entity.getCode().equals(existing.getCode()), "code", "patron.patronage.form.error.duplicated");
 		}
 		if(!errors.hasErrors("startDate")) {
 			final Date minimumStartDate=DateUtils.addMonths(new Date(System.currentTimeMillis() - 1),1);
