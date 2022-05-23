@@ -38,7 +38,7 @@
 	<acme:input-textbox code="patron.patronage.form.label.statement" path="inventor.statement"/>
 	</jstl:if>	
 
-		<jstl:if test="${command == 'create' or command == 'update' and published==false}">	
+		<jstl:if test="${command == 'create' or command == 'update' or command == 'publish' and published==false}">	
 	        <acme:input-select code="patron.patronage.form.label.inventor" path="inventorId">
 	   			<jstl:forEach items="${inventors}" var="inventor">
 					<acme:input-option code="${inventor.getUserAccount().getUsername()}" value="${inventor.getId()}" selected="${ inventor.getId() == inventId }"/>

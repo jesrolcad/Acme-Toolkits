@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.Patronage;
 import acme.entities.PatronageReport;
+import acme.entities.Status;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
@@ -22,7 +23,15 @@ public class InventorPatronageReportCreateService implements AbstractCreateServi
 	@Override
 	public boolean authorise(final Request<PatronageReport> request) {
 		assert request != null;
-		return true;
+		final boolean result;
+		final int masterId;
+		final Patronage patronage;
+		
+		masterId = request.getModel().getInteger("patronageId");
+		patronage = this.repository.findPatronageById(masterId);
+		result = (patronage != null && patronage.isPublished() && patronage.getStatus().equals(Status.ACCEPTED) && request.isPrincipal(patronage.getInventor()));
+		
+		return result;
 	}
 
 	@Override
