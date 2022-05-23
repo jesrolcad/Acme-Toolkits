@@ -17,10 +17,10 @@ patron.patronage.list.label.end_date= Fecha de Fin
 patron.patronage.list.label.legal_stuff = Cosas legales
 patron.patronage.list.label.link = Enlace
 patron.patronage.list.label.status = Estado
-patron.patronage.form.button.delete= Barror patrocinio(y reportes asociados)
+patron.patronage.form.button.delete= Borrar patrocinio
 
 patron.create-patronage = Crear nuevo patrocinio
-patron.patronage.form.button.create = Confirma crear nuevo patrocinio
+patron.patronage.form.button.create = Crear patrocinio
 patron.patronage.form.label.inventor = Seleccionar inventor
 patron.update-patronage= Editar
 patron.patronage.form.button.update = Editar
@@ -30,7 +30,7 @@ patron.patronage.form.label.denied = Denegado
 patron.patronage.form.button.publish = Publicar
 patron.patronage.form.error.noInventor = Por favor, seleccione un inventor
 
-patron.publish-patronage= Confirma publicar
+patron.publish-patronage= Publicar
 
 
 patron.patronage.form.error.non-accepted-currency= Divisa no aceptada
