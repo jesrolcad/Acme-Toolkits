@@ -46,7 +46,7 @@ public class PatronPatronageDeleteTest extends TestHarness{
 		super.checkInputBoxHasValue("legalStuff", legal_stuff);
 		super.checkInputBoxHasValue("budget", budget);
 		super.checkInputBoxHasValue("status", status);
-		super.checkInputBoxHasValue("optionalLink", link);
+		super.checkInputBoxHasValue("link", link);
 		super.clickOnSubmit("Delete patronage");
 		super.checkNotErrorsExist();
 		
@@ -61,11 +61,10 @@ public class PatronPatronageDeleteTest extends TestHarness{
 	@CsvFileSource(resources = "/patron/patronage/delete-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
 	public void negativePatronage(final int recordIndex, final String code, final String budget, final String start_date, final String end_date, 
-		final String status, final String legal_stuff, final String link,final String inventor_username, final String inventor_company, final String inventor_link, final String inventor_statement) {
+		final String status, final String published, final String legal_stuff, final String link,final String inventor_username, final String inventor_company, final String inventor_link, final String inventor_statement) {
 		
 		
-		super.signIn("patron4", "patron4");
-		//list
+		super.signIn("patron1", "patron1");
 		super.clickOnMenu("Patron", "List patronages");
 		super.checkListingExists();
 		super.sortListing(0, "asc");
@@ -77,7 +76,8 @@ public class PatronPatronageDeleteTest extends TestHarness{
 		super.checkInputBoxHasValue("legalStuff", legal_stuff);
 		super.checkInputBoxHasValue("budget", budget);
 		super.checkInputBoxHasValue("status", status);
-		super.checkInputBoxHasValue("optionalLink", link);
+		super.checkInputBoxHasValue("published", published);
+		super.checkInputBoxHasValue("link", link);
 		super.checkNotSubmitExists("Delete patronage");
 		
 		super.signOut();

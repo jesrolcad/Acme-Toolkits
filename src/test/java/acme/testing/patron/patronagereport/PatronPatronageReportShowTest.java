@@ -10,7 +10,7 @@ import acme.testing.TestHarness;
 public class PatronPatronageReportShowTest extends TestHarness{
 	
 	@ParameterizedTest
-	@CsvFileSource(resources = "/patron/patronageReport/list.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@CsvFileSource(resources = "/patron/patronageReport/show-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
 	public void positivePatronage(final int recordIndex, final String seq_number,final String creation_moment,final String memorandum,final String link) {
 		
@@ -32,7 +32,7 @@ public class PatronPatronageReportShowTest extends TestHarness{
 	@Order(30)
 	public void hackingTest() {
 		super.checkNotLinkExists("Patron");
-		super.navigate("/patron/patronage-report/list");
+		super.navigate("/patron/patronage-report/show");
 		super.checkPanicExists();
 	}
 	// Ancillary methods ------------------------------------------------------
