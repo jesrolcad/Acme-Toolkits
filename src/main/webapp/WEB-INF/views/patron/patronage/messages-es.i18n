@@ -34,7 +34,7 @@ patron.publish-patronage= Publicar
 
 
 patron.patronage.form.error.non-accepted-currency= Divisa no aceptada
-patron.patronage.form.error.duplicated. = Código duplicado
+patron.patronage.form.error.duplicated = Código duplicado
 patron.patronage.form.error.duplicated = Código duplicado
 patron.patronage.form.error.negative-budget= Cantidad negativa
 patron.patronage.form.label.code = Código

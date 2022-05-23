@@ -29,7 +29,7 @@ patron.patronage.form.button.publish = Publish
 patron.publish-patronage= Publish
 
 
-patron.patronage.form.error.duplicated. = Duplicated Code
+patron.patronage.form.error.duplicated = Duplicated Code
 patron.patronage.form.error.too-close-start-date = Too close start date (1 month after as minimum)
 patron.patronage.form.error.one-month = At least one month between dates
 patron.patronage.form.error.negative-budget = The budget must be positive
