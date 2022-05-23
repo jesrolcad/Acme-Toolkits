@@ -118,14 +118,14 @@ public class InventorToolkitPublishService implements AbstractUpdateService<Inve
 			final Collection<Item> item=this.repository.findManyItemByQuantityId(id);
 			items.addAll(item);
 		}
-		errors.state(request, items!=null && items.isEmpty()==false, "*", "inventor.toolkit.form.error.no-items");
+		errors.state(request, !items.isEmpty(), "*", "inventor.toolkit.form.error.no-items");
 		
 		for (final Item item : items) {
 			publishItem= publishItem && item.isPublished();
 		}
 		
 		
-		errors.state(request, publishItem==true, "*", "inventor.toolkit.form.error.no-items-published");
+		errors.state(request, publishItem, "*", "inventor.toolkit.form.error.no-items-published");
 		
 		
 	}
