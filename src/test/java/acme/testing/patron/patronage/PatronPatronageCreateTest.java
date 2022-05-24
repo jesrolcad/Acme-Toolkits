@@ -42,7 +42,7 @@ public class PatronPatronageCreateTest extends TestHarness{
 		super.fillInputBoxIn("budget", budget);
 		super.fillInputBoxIn("link", link);
 		final BrowserDriver driver = super.getDriver();
-		driver.locateOne(By.xpath("//*[@id=\"inventorId\"]/option[" + inventorId +"]")).click();
+		driver.locateOne(By.xpath("//*[@id=\"inventorId_proxy\"]/option[" + inventorId +"]")).click();
 		super.clickOnSubmit("Create patronage");
 		super.clickOnMenu("Patron", "List patronages");
 

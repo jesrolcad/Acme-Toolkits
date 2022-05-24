@@ -32,7 +32,7 @@ public class InventorQuantityCreateTest extends TestHarness{
 		super.clickOnButton("Add new item");
 		super.fillInputBoxIn("number", number);
 		final BrowserDriver driver = super.getDriver();
-		driver.locateOne(By.xpath("//*[@id=\"itemId\"]/option[" + itemId +"]")).click();
+		driver.locateOne(By.xpath("//*[@id=\"itemId_proxy\"]/option[" + itemId +"]")).click();
 		
 		super.clickOnSubmit("Add");
 		
