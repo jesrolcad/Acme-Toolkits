@@ -80,7 +80,7 @@ public class PatronPatronageUpdateService implements AbstractUpdateService<Patro
 			errors.state(request,entity.getStartDate().after(minimumStartDate), "startDate", "patron.patronage.form.error.too-close-start-date");
 			
 		}
-		if(!errors.hasErrors("endDate")) {
+		if(!errors.hasErrors("endDate") && !errors.hasErrors("startDate")) {
 			final Date minimumFinishDate=(DateUtils.addDays(entity.getStartDate(), 28));
 			
 

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import acme.entities.Item;
 import acme.entities.MoneyExchange;
+import acme.entities.Quantity;
 import acme.framework.repositories.AbstractRepository;
 import acme.roles.Inventor; 
  
@@ -39,5 +40,8 @@ public interface InventorItemRepository extends AbstractRepository{
 
 	@Query("select i from Item i where i.published = true and i not in (select q.item from Quantity q where q.toolkit.id = :toolkitId)")
 	Collection<Item> findAssignableItemsToToolkit(int toolkitId);
+	
+	@Query("select q from Quantity q where q.item.id = :itemId")
+	Collection<Quantity> findQuantityByItemId(int itemId);
 
 } 

@@ -1,9 +1,12 @@
 package acme.features.inventor.item;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.Item;
+import acme.entities.Quantity;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
@@ -78,6 +81,12 @@ public class InventorItemDeleteService implements AbstractDeleteService<Inventor
 	public void delete(final Request<Item> request, final Item entity) {
 		assert request != null;
 		assert entity != null;
+		
+		final Collection<Quantity> quantities = this.repository.findQuantityByItemId(entity.getId());
+		
+		for(final Quantity q: quantities) {
+			this.repository.delete(q);
+		}
 		
 		
 		this.repository.delete(entity);
