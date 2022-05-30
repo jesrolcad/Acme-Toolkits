@@ -3,6 +3,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.Patronage;
+import acme.entities.Status;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
@@ -28,7 +29,7 @@ public class InventorPatronageUpdateService implements AbstractUpdateService<Inv
 		patronage=this.repository.findPatronageById(patronageId); 
 		inventor=patronage.getInventor(); 
 		 
-		result= request.isPrincipal(inventor); 
+		result= request.isPrincipal(inventor) && patronage.isPublished() && patronage.getStatus().equals(Status.PROPOSED);
 		 
 		 
 		return result; 
