@@ -34,7 +34,7 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 	List<String> deviationRetailPriceOfTools();
 	@Query("select i.retailPrice.currency, min(i.retailPrice.amount), i.tipo from Item i where i.tipo=acme.entities.TipoDeItem.TOOL group by i.retailPrice.currency")
 	List<String> minRetailPriceOfTools();
-	@Query("select i.retailPrice.currency, min(i.retailPrice.amount), i.tipo from Item i where i.tipo=acme.entities.TipoDeItem.TOOL group by i.retailPrice.currency")
+	@Query("select i.retailPrice.currency, max(i.retailPrice.amount), i.tipo from Item i where i.tipo=acme.entities.TipoDeItem.TOOL group by i.retailPrice.currency")
 	List<String> maxRetailPriceOfTools();
 	
 	@Query("select p.budget.currency, avg(p.budget.amount), p.status from Patronage p group by p.status")
@@ -43,7 +43,7 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 	List<String> deviationBudgetByStatus();
 	@Query("select p.budget.currency, min(p.budget.amount), p.status from Patronage p group by p.status")
 	List<String> minBudgetByStatus();
-	@Query("select p.budget.currency, min(p.budget.amount), p.status from Patronage p group by p.status")
+	@Query("select p.budget.currency, max(p.budget.amount), p.status from Patronage p group by p.status")
 	List<String> maxBudgetByStatus();
 	//Map<String,Double> averageBudgetByStatus;
 
