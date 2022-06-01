@@ -41,7 +41,7 @@
 		<jstl:if test="${command == 'create' or command == 'update' or command == 'publish' and published==false}">	
 	        <acme:input-select code="patron.patronage.form.label.inventor" path="inventorId">
 	   			<jstl:forEach items="${inventors}" var="inventor">
-					<acme:input-option code="${inventor.getUserAccount().getUsername()}" value="${inventor.getId()}" selected="${ inventor.getId() == inventId }"/>
+					<acme:input-option code="${inventor.getUserAccount().getUsername()}" value="${inventor.getId()}" selected="${ inventId == inventor.getId() }"/>
 				</jstl:forEach>
 			</acme:input-select>
 		</jstl:if>	
@@ -49,7 +49,9 @@
 	<jstl:if test="${command == 'show' and published==false}">
 	 <acme:input-select code="patron.patronage.form.label.inventor" path="inventorId">
 	   			<jstl:forEach items="${inventors}" var="inventor">
-					<acme:input-option code="${inventor.getUserAccount().getUsername()}" value="${inventor.getId()}" selected="${ inventor.getId() == inventId }"/>
+					<acme:input-option code="${inventor.getUserAccount().getUsername()}" value="${inventor.getId()}" selected="${ inventId == inventor.getId() }"/>
+				
+				
 				</jstl:forEach>
 			</acme:input-select>
 			

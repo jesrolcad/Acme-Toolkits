@@ -53,6 +53,8 @@ public class PatronPatronageUpdateService implements AbstractUpdateService<Patro
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+		entity.setInventor(this.repository.findInventorById(Integer.valueOf(request.getModel().getAttribute("inventorId").toString())));
+
 	//	entity.setInventor(this.repository.findInventorById(Integer.valueOf(request.getModel().getAttribute("inventorId").toString())));
 
 
@@ -113,14 +115,16 @@ public class PatronPatronageUpdateService implements AbstractUpdateService<Patro
 
 		request.unbind(entity, model, "code", "legalStuff", "budget", "startDate", "endDate","link","published");
 		model.setAttribute("inventors", this.repository.allInventors());
-		model.setAttribute("inventorId", entity.getInventor().getId());
+		model.setAttribute("inventId", entity.getInventor().getId());
 		
 	}
 
 	@Override
 	public void update(final Request<Patronage> request, final Patronage entity) {
 		assert request != null;
-		assert entity != null;
+		assert entity != null;		
+		entity.setInventor(this.repository.findInventorById(Integer.valueOf(request.getModel().getAttribute("inventorId").toString())));
+
 	
 		entity.setPublished(false);
 		this.repository.save(entity);
